@@ -11,11 +11,13 @@ const ApplyForm = (props) => {
   const projectId = props.match.params.id;
   const { userInfo, setUserInfo } = useContext(UserContext);
 
+  //need to insert some time lapse for loading
   const [applyInfo, setApplyInfo] = useState({
     projectId: projectId,
-    name: "",
+    studentId: userInfo.user._id?userInfo.user._id:"",
+    name: userInfo.user.name?userInfo.user.name:"",
     email: userInfo.user.email,
-    studentNumber: "",
+    studentNumber: userInfo.user.studentNumber?userInfo.user.studentNumber:"",
     description: "",
     resume: "",
     isApplied: true, // isApplied do not use for now

@@ -26,7 +26,8 @@ import Events from "./view/Events/Events";
 import CreateEvent from './view/Events/createEvent';
 import CreateTicket from './view/Events/createTicket';
 import UploadLogo from './view/Events/logoUpload';
-
+import StudentProfileDashboard from './view/Students/StudentProfile/StudentProfileDashboard'
+import StudentProfileView from './view/Students/StudentProfile/StudentProfileView'
 import Admin from "./view/Admin/Admin";
 import { Container } from "semantic-ui-react";
 import CompanyDashboard from "./view/CompanyDashboard/CompanyDashboard";
@@ -68,7 +69,8 @@ const Routers = () => {
             <Route exact path="/covid" component={Covid19}/>
             <Route exact path="/upload" component={UploadLogo} />
             <Route exact path="/feedback" component={Feedback} />
-            
+            <Route exact path="/student-profile" component={StudentProfileDashboard}/>
+            <Route exact path="/student/profile/:id" component={StudentProfileView}/>
             <Route exact path="/students/apply/:id" component={ApplyForm} />
             <Route
               exact

@@ -10,6 +10,10 @@ const userSchema = new Schema({
   picture: String,
   admin: Boolean,
   company: Boolean,
+  phoneNumber:String,
+  program:String,
+  skills:String,
+  studentNumber:String
 });
 
 const User = mongoose.model("pdc-users", userSchema);

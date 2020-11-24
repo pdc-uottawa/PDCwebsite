@@ -51,13 +51,30 @@ const CreateProject = (props) => {
    * include Machine Learning, Web Development, Game Development for now.
    */
   const categoryOptions = [
-    {
-      key: "machinelearning",
-      text: "Machine Learning",
-      value: "Machine Learning",
-    },
+    { key: "machinelearning", text: "Machine Learning", value: "Machine Learning"},
     { key: "web", text: "Web Development", value: "Web Development" },
     { key: "game", text: "Game Development", value: "Game Development" },
+    { key: "SoftwareDevelopment", text: "Software Development", value: "Software Development" },
+    { key: "BackendDevelopment", text: "Backend Development", value: "Back-end Development" },
+    { key: "Front-endDevelopment", text: "Front-end Development", value: "Front-end Development" },
+    { key: "Full-stackDevelopment", text: "Full-stack Development", value: "Full-stack Development" },
+    { key: "QualityAssurance", text: "Quality Assurance", value: "Quality Assurance" },
+    { key: "Testing", text: "Testing", value: "Testing" },
+    { key: "DataAnalytics", text: "Data Analytics", value: "Data Analytics" },
+    { key: "ProjectManagement", text: "Project Management", value: "Project Management" },
+    { key: "VirtualReality", text: "Virtual Reality", value: "Virtual Reality" },
+    { key: "ArtificialIntelligence", text: "Artificial Intelligence", value: "Artificial Intelligence" },
+    { key: "CivilProject", text: "Civil Project", value: "Civil Project" },
+    { key: "MechanicalProject", text: "Mechanical Project", value: "Mechanical Project" },
+    { key: "Infrastructure", text: "Infrastructure", value: "Infrastructure" },
+    { key: "Research-oriented", text: "Research-oriented", value: "Research-oriented" },
+    { key: "CloudComputing", text: "Cloud Computing", value: "Cloud Computing" },
+    { key: "BigData", text: "Big Data", value: "Big Data" },
+    { key: "Chatbot", text: "Chatbot", value: "Chatbot" },
+    { key: "Blockchain", text: "Blockchain", value: "Blockchain" },
+    { key: "RoboticDevelopment", text: "Robotic Development", value: "Robotic Development" },
+    { key: "GIS", text: "GIS", value: "GIS" },
+    { key: "Microservices", text: "Microservices", value: "Microservices" },
   ];
 
   // handle dropdown category

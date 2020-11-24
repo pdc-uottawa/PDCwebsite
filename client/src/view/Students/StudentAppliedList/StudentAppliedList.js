@@ -56,7 +56,7 @@ const StudentAppliedList = (props) => {
             studentList.map((student) => {
               return (
                 <Table.Row key={student._id}>
-                  <Table.Cell>
+                  <Table.Cell onClick={()=>props.history.push("/student/profile/" + student.studentId)}>
                     <Header>{student.name}</Header>
                   </Table.Cell>
                   <Table.Cell singleLine>{student.studentNumber}</Table.Cell>

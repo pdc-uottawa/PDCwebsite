@@ -50,7 +50,17 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
               />
             </Fragment>
           )}
-
+          {userInfo.user && !(userInfo.user.admin || userInfo.user.company) && (
+            <Fragment>
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/student-profile");
+                }}
+                text="My Profile"
+                icon="dashboard"
+              />
+            </Fragment>
+          )}
           <Dropdown.Item onClick={logOut} text="Log Out" icon="power" />
         </Dropdown.Menu>
       </Dropdown>
