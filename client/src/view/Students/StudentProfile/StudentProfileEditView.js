@@ -34,16 +34,15 @@ const StudentProfileEditView = () => {
       .then((res) => {
         if (res.data.message === "updated successfully") {
             alert("Your profile is updated!");
-            //return res.data;
+            return res.data;
         }
       })
-      ///this not working properly, need to consult with team
-      // .then((data) => {
-      //   setUserInfo({
-      //     ...userInfo,
-      //     user: data.user
-      //   });     
-      // })
+      .then((data) => {
+        setUserInfo({
+          ...userInfo,
+          user: data.user
+        });     
+      })
       .catch((e) => {
         console.log(e);
       });
@@ -66,8 +65,9 @@ const StudentProfileEditView = () => {
           <input
             name="name"
             value={studentProfileInfo.name}
-            onChange={handleFormChange}
+            //onChange={handleFormChange}
             placeholder="Name"
+            disabled
           />
         </Form.Field>
 
@@ -86,7 +86,7 @@ const StudentProfileEditView = () => {
           <input
             name="email"
             value={studentProfileInfo.email}
-            onChange={handleFormChange}
+            //onChange={handleFormChange}
             placeholder="Email"
             disabled
           />

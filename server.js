@@ -9,8 +9,9 @@ const authRoutes = require("./shared/routes/Auth");
 const projectRoutes = require("./shared/routes/ProjectRoute");
 const studentRoutes = require("./shared/routes/StudentRoute");
 const uploadRoutes = require("./shared/routes/Upload");
-const eventRoutes = require("./shared/routes/EventRoute")
-const userRoutes = require("./shared/routes/UserRoute")
+const eventRoutes = require("./shared/routes/EventRoute");
+const userRoutes = require("./shared/routes/UserRoute");
+const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
 const http = require("http");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -83,5 +84,6 @@ app.use("/student", studentRoutes);
 app.use("/file", uploadRoutes);
 app.use("/", eventRoutes);
 app.use("/user", userRoutes);
+app.use("/email", sendEmailRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));

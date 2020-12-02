@@ -44,7 +44,7 @@ const StudentAppliedList = (props) => {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell singleLine>Student Name</Table.HeaderCell>
-            <Table.HeaderCell>Student Number</Table.HeaderCell>
+            {/* <Table.HeaderCell>Student Number</Table.HeaderCell> */}
             <Table.HeaderCell>Email</Table.HeaderCell>
             <Table.HeaderCell>Description</Table.HeaderCell>
             <Table.HeaderCell>Resume</Table.HeaderCell>
@@ -56,10 +56,11 @@ const StudentAppliedList = (props) => {
             studentList.map((student) => {
               return (
                 <Table.Row key={student._id}>
-                  <Table.Cell onClick={()=>props.history.push("/student/profile/" + student.studentId)}>
-                    <Header>{student.name}</Header>
+                  <Table.Cell><a onClick={()=>props.history.push("/student/profile/" + student.studentId)}>
+                    <Header color="blue">{student.name}</Header>
+                    </a>
                   </Table.Cell>
-                  <Table.Cell singleLine>{student.studentNumber}</Table.Cell>
+                  {/* <Table.Cell singleLine>{student.user[0].studentNumber}</Table.Cell> */}
                   <Table.Cell>{student.email}</Table.Cell>
                   <Table.Cell>{student.description}</Table.Cell>
                   <Table.Cell>

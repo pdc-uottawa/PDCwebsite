@@ -5,7 +5,7 @@ const router = require("express").Router();
 // create a new project
 router.post("/project", (req, res) => {
   let newProject = req.body;
-  console.log(req);
+  
   Project.create(newProject, (error, doc) => {
     if (error) {
       console.log(error);

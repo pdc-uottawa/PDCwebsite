@@ -5,7 +5,7 @@ const applySchema = new Schema({
   studentId:String,
   projectId: String,
   name: String,
-  studentNumber: String,
+  //studentNumber: String,
   email: String,
   description: String,
   resume: String,

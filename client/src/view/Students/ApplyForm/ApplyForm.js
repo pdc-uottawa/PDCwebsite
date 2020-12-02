@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import { Segment, Form, Button } from "semantic-ui-react";
 import Axios from "axios";
 import { config } from "../../../common/config/config";
@@ -10,6 +10,7 @@ const ApplyForm = (props) => {
   const path = config();
   const projectId = props.match.params.id;
   const { userInfo, setUserInfo } = useContext(UserContext);
+  const [projectDetails, setProjectDetails] = useState({});
 
   //need to insert some time lapse for loading
   const [applyInfo, setApplyInfo] = useState({
@@ -17,7 +18,7 @@ const ApplyForm = (props) => {
     studentId: userInfo.user._id?userInfo.user._id:"",
     name: userInfo.user.name?userInfo.user.name:"",
     email: userInfo.user.email,
-    studentNumber: userInfo.user.studentNumber?userInfo.user.studentNumber:"",
+    //studentNumber: userInfo.user.studentNumber?userInfo.user.studentNumber:"",
     description: "",
     resume: "",
     isApplied: true, // isApplied do not use for now
@@ -31,6 +32,9 @@ const ApplyForm = (props) => {
         if (res.data === "You have already applied") {
           alert("You have already applied for this project!");
         }
+        else if (res.data === "added successfully"){
+          sendEmailToProjectOwner(applyInfo.projectId)
+        }
       })
       .catch((e) => {
         console.log(e);
@@ -38,12 +42,36 @@ const ApplyForm = (props) => {
     props.history.push("/project-list");
   };
 
+  const sendEmailToProjectOwner = () =>{
+      const emailOptions={
+        emailToAddress:projectDetails.user[0].email,
+        emailToName:projectDetails.user[0].name,
+        emailSubject:"Application Received for Project:"+ projectDetails.title,
+        emailApplicant:userInfo.user.email
+      }
+      //send email to owner
+      Axios.post(path + "email/send", emailOptions)
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
   const handleFormChange = ({ target: { name, value } }) => {
     setApplyInfo({
       ...applyInfo,
       [name]: value,
     });
   };
+  useEffect(()=>{
+    Axios.get(path + "project/" + applyInfo.projectId)
+    .then((res) => {
+      setProjectDetails(res.data);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  },[null]);
+
   return (
     <Segment>
       <Form onSubmit={handleFormSubmit} autoComplete="off">
@@ -52,27 +80,29 @@ const ApplyForm = (props) => {
           <input
             name="name"
             value={applyInfo.name}
-            onChange={handleFormChange}
+            //onChange={handleFormChange}
             placeholder="Your Name"
+            disabled
           />
         </Form.Field>
 
-        <Form.Field>
+        {/* <Form.Field>
           <label>Student Number</label>
           <input
             name="studentNumber"
-            value={applyInfo.studentNumber}
-            onChange={handleFormChange}
+            value={userInfo.user.studentNumber}
+            //onChange={handleFormChange}
             placeholder="Student Number"
+            disabled
           />
-        </Form.Field>
+        </Form.Field> */}
 
         <Form.Field>
           <label>Email</label>
           <input
             name="email"
             value={applyInfo.email}
-            onChange={handleFormChange}
+            //onChange={handleFormChange}
             placeholder="Your email"
             disabled
           />

@@ -1,5 +1,7 @@
 const ApplyForm = require("../models/StudentApplyModel");
 const User = require("../models/UserModel");
+const Project = require("../models/ProjectModel");
+var ObjectId = require('mongodb').ObjectID;
 
 const router = require("express").Router();
 
@@ -80,5 +82,15 @@ router.post("/profile/edit/", (req, res) => {
   );
 });
 
+router.post("/appliedprojectsDetails/", (req, res) => {
+  let ProjectIDs = req.body;
 
+  var obj_ids = ProjectIDs.map(function(id) { return ObjectId(id); });
+  Project.find({_id: {$in: obj_ids}}, (error, data) => {
+    if (error) {
+      console.log(error);
+    }
+    res.send(data);
+  });
+});
 module.exports = router;

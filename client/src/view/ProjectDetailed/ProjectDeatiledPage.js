@@ -23,7 +23,7 @@ const ProjectDeatiledPage = (props) => {
 
   const { id } = props.match.params;
 
-  // get project details accroding to project id
+  // get project details according to project id
   useEffect(() => {
     Axios.get(path + "project/" + id)
       .then((res) => {
