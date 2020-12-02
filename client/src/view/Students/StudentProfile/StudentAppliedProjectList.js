@@ -53,7 +53,7 @@ const StudentAppliedProjectList = () => {
     <Fragment>
       <Header as="h2">Applied Projects List</Header>
       {isLoading ? ("Loading...") : 
-        (studentAppliedProjectsInfo.count>0 ?(<Table celled padded>
+        (<Table celled padded>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Project Title</Table.HeaderCell>
@@ -65,7 +65,7 @@ const StudentAppliedProjectList = () => {
           </Table.Header>
 
           <Table.Body>
-            {studentAppliedProjectsInfo &&
+            {studentAppliedProjectsInfo.length>0?(
               studentAppliedProjectsInfo.map((project) => {
                 return (
                   <Table.Row key={project._id}>
@@ -80,9 +80,9 @@ const StudentAppliedProjectList = () => {
                     {/* <Table.Cell>{project.status}</Table.Cell> */}
                   </Table.Row>
                 );
-              })}
+              })):<div>No projects to show.</div>}
           </Table.Body>
-        </Table>):<div>No projects to show.</div>)
+        </Table>)
       }
     </Fragment>
   );
