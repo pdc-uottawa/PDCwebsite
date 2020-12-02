@@ -53,7 +53,7 @@ const StudentAppliedProjectList = () => {
     <Fragment>
       <Header as="h2">Applied Projects List</Header>
       {isLoading ? ("Loading...") : 
-        (<Table celled padded>
+        (studentAppliedProjectsInfo.count>0 ?(<Table celled padded>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Project Title</Table.HeaderCell>
@@ -82,7 +82,7 @@ const StudentAppliedProjectList = () => {
                 );
               })}
           </Table.Body>
-        </Table>)
+        </Table>):<div>No projects to show.</div>)
       }
     </Fragment>
   );
