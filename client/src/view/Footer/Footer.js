@@ -29,7 +29,8 @@ const Footer = () => {
         <Segment inverted color="blue" vertical className="footer">
           <Container textAlign="center">
             <Grid divided inverted stackable>
-              <Grid.Column width={8}>
+              {/* <Grid.Column width={8}> */}
+              <Grid.Column>
                 <Header inverted as="h4" content="FOLLOW US" />
 
                 <p>
@@ -54,9 +55,9 @@ const Footer = () => {
                   </button>
                 </p>
               </Grid.Column>
-              <GridColumn  width={8} textAlign="center">
+              {/* <GridColumn  width={8} textAlign="center">
               <a href="#/our-partners"><Header inverted as="h4" content="OUR PARTNERS"/></a>
-              </GridColumn>
+              </GridColumn> */}
             </Grid>
           </Container>
         </Segment>

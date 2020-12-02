@@ -50,7 +50,7 @@ const Home = (props) => {
           </Grid.Column>
         </Grid>
         </Segment>
-        <Segment placeholder>
+        {/* <Segment placeholder>
           <h2 class="ui center aligned">
           Our Collaborators and Partners
           </h2><br/>
@@ -62,7 +62,7 @@ const Home = (props) => {
           <Image centered size="large" size="small"  src="/assets/FBSC-logo.png"></Image>
           <Image centered size="large" size="small"  src="/assets/mitacs_colour.jpg"></Image>
         </Card.Group>
-       </Segment>     
+       </Segment>      */}
     </Fragment>
     
   );
