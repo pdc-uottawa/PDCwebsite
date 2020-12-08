@@ -15,9 +15,9 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
     <Menu.Item position="right">
       <Image avatar spaced="right" src={userPicture} />
       <Dropdown pointing="top left" text={username}>
-        {/* if a user is admin, show create project button */}
+        {/* if a user is admin, show create project button, dashboard,csv download */}
         <Dropdown.Menu>
-          {userInfo.user && (userInfo.user.admin || userInfo.user.company) && (
+          {userInfo.user && (userInfo.user.admin) && (
             <Fragment>
               <Dropdown.Item
                 onClick={() => {
@@ -41,6 +41,31 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
                 icon="download"
               >
               </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/company-dashboard");
+                }}
+                text="Dashboard"
+                icon="dashboard"
+              />
+            </Fragment>
+          )}
+          {userInfo.user && (userInfo.user.company) && (
+            <Fragment>
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/create-event");
+                }}
+                text="Post events"
+                icon="plus"
+              />
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/create-project");
+                }}
+                text="Create Project"
+                icon="plus"
+              />
               <Dropdown.Item
                 onClick={() => {
                   history.push("/company-dashboard");
