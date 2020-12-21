@@ -39,20 +39,7 @@ const Student = (props) => {
           <a class="item" href="#/useful-links">
           Useful University Resources for Newly Admitted Students
           </a>
-          {/* <a class="item"> */}
-          <div class="item">
-          <details>
-          <summary class="mysummaryItem">Industry Internship Project</summary>
-          <br/>
-          <p>ELG/GNG - 5902 Please find more information at: 
-            <a href="https://www.site.uottawa.ca/~lpeyton/gradproject/" target="_blank">
-            <font color="#4183c4">Professor Liam's webpage</font>
-            </a>
-            </p> 
-          </details>
-          </div>
-          {/* </a> */}
-          {/* <a
+          <a
             class="item"
             href="https://professionaldevclub.files.wordpress.com/2020/05/gng5902_proposal-template.docx"
           >
@@ -63,7 +50,7 @@ const Student = (props) => {
             href="https://professionaldevclub.files.wordpress.com/2020/05/elg5902_proposal-template.docx"
           >
             ELG5902 Project Proposal Form (Click to Download)
-          </a> */}
+          </a>
           <a class="item" href="#/resume-guidelines">
             Resume Writing Guidelines
           </a>

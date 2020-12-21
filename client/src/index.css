@@ -12,15 +12,7 @@ body {
   width: 100%;
   text-align: left;
 }
-details summary::-webkit-details-marker {
-  display:none;
-}
-/* details summary:hover summary{
-  color: "#4183c4";
-} */
-.mysummaryItem{
-  cursor: pointer;
-}
+
 .masthead {
   display: flex;
   align-items: center;

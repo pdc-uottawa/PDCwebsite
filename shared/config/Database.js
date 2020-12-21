@@ -19,5 +19,3 @@ db.on('connected', () => {
 db.on('error', () => {
   console.log('Connection Error!');
 });
-
-module.exports =  db;

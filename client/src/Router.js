@@ -21,7 +21,6 @@ import Header from "./view/Header/Header";
 import Footer from "./view/Footer/Footer";
 import Signin from "./view/Signin/Signin";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
-import ProjectSuccessStories from "./view/ProjectSuccessStories/ProjectSuccessStories";
 import ProjectDeatiledPage from "./view/ProjectDetailed/ProjectDeatiledPage";
 import Events from "./view/Events/Events";
 import CreateEvent from './view/Events/createEvent';
@@ -82,11 +81,6 @@ const Routers = () => {
               exact
               path="/project-list"
               component={ProjectListInterface}
-            />
-            <Route
-              exact
-              path="/project-success-stories"
-              component={ProjectSuccessStories}
             />
             <Route
               exact
