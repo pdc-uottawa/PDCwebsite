@@ -99,6 +99,12 @@ const Header = (props) => {
     handleSideBarClick();
   };
 
+  const handleProjectSuccessStories = (e, { name }) => {
+    history.push("/project-success-stories");
+    setActiveItem(name);
+    handleSideBarClick();
+  };
+
   const handleFeedback = (e,{name})=>{
     history.push("/feedback");
     setActiveItem(name);
@@ -235,6 +241,13 @@ const Header = (props) => {
             Project List
           </Menu.Item>
           <Menu.Item
+            name="projectSuccessStories"
+            active={activeItem === "projectSuccessStories"}
+            onClick={handleProjectSuccessStories}
+          >
+            Project Success Stories
+          </Menu.Item>
+          <Menu.Item
             name="feedback"
             active={activeItem === "feedback"}
             onClick={handleFeedback}
@@ -341,6 +354,13 @@ const Header = (props) => {
               >
                 Project List
               </Menu.Item>
+              <Menu.Item
+                  name="projectSuccessStories"
+                  active={activeItem === "projectSuccessStories"}
+                  onClick={handleProjectSuccessStories}
+                >
+                  Project Success Stories
+                </Menu.Item>
               <Menu.Item
                 name="feedback"
                 active={activeItem === "feedback"}
