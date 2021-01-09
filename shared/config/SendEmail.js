@@ -17,7 +17,10 @@ const getEmailData = (to, name, subject, applicantEmail) => {
 const sendEmail = (to, name, subject, applicantEmail) => {
 
     const smtpTransport = mailer.createTransport({
-        service: "gmail",
+        //service: "gmail",
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.GMAIL_USERID,
             pass: process.env.GMAIL_PASSWORD
