@@ -19,11 +19,11 @@ const Student = (props) => {
       <div class="ui inverted segment">
         <div class="ui inverted relaxed divided list">
         <a class="item" target="_blank" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra8TWvX0Di8dIjAEMQgqNdlpUQkoxM0ZVNU04VDM4S1ZNWjFTUkJBMEZPSi4u">
-            Join Us
+            Join as Volunteer
           </a>
-          <a class="item" href="#/program-coordinators">
+          {/* <a class="item" href="#/program-coordinators">
           PDC Student Representative for Your Program
-          </a>
+          </a> */}
           <a class="item" href="#/create-form">
             Create or Activate Association
           </a>
@@ -39,7 +39,18 @@ const Student = (props) => {
           <a class="item" href="#/useful-links">
           Useful University Resources for Newly Admitted Students
           </a>
-          <a
+          <div class="item">
+          <details>
+          <summary class="mysummaryItem">Industry Internship Project</summary>
+          <br/>
+          <p>Please find more information about ELG/GNG - 5902 
+            <a href="https://www.site.uottawa.ca/~lpeyton/gradproject/" target="_blank">
+            <font color="#4183c4"> here</font>
+            </a>
+            </p> 
+          </details>
+          </div>
+          {/* <a
             class="item"
             href="https://professionaldevclub.files.wordpress.com/2020/05/gng5902_proposal-template.docx"
           >
@@ -50,7 +61,7 @@ const Student = (props) => {
             href="https://professionaldevclub.files.wordpress.com/2020/05/elg5902_proposal-template.docx"
           >
             ELG5902 Project Proposal Form (Click to Download)
-          </a>
+          </a> */}
           <a class="item" href="#/resume-guidelines">
             Resume Writing Guidelines
           </a>

@@ -127,3 +127,13 @@ Grid {
   height: 80px !important;
   width: 80px !important;
 }
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+/* details summary:hover summary{
+  color: "#4183c4";
+} */
+.mysummaryItem{
+  cursor: pointer;
+}

@@ -45,12 +45,12 @@ const ProgramCoordinators = (props) => {
       </Card>
       <Card color='blue'>
         <Card.Content>
-        <Card.Header>Navpreet Kaur</Card.Header>
+        <Card.Header>Achyuth Krishna Chepuri</Card.Header>
         <Card.Description>
           Program: ELG
         </Card.Description>
         <Card.Description>
-          Email: nkaur051@uottawa.ca
+          Email: achep065@uottawa.ca
         </Card.Description>
         </Card.Content>
       </Card>
@@ -78,12 +78,12 @@ const ProgramCoordinators = (props) => {
       </Card>
       <Card color='blue'>
         <Card.Content>
-        <Card.Header>Farzaneh Farshad</Card.Header>
+        <Card.Header>Claudia Azigwe</Card.Header>
         <Card.Description>
           Program: Environmental and Civil Engineering 
         </Card.Description>
         <Card.Description>
-          Email: ffars046@uottawa.ca
+          Email: cazig063@uottawa.ca
         </Card.Description>
         </Card.Content>
       </Card>
@@ -95,6 +95,17 @@ const ProgramCoordinators = (props) => {
         </Card.Description>
         <Card.Description>
           Email: msidh098@uottawa.ca
+        </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card color='blue'>
+        <Card.Content>
+        <Card.Header>Phani Rohith Maganti</Card.Header>
+        <Card.Description>
+          Program: Applied ELG
+        </Card.Description>
+        <Card.Description>
+          Email: pmaga044@uottawa.ca
         </Card.Description>
         </Card.Content>
       </Card>
