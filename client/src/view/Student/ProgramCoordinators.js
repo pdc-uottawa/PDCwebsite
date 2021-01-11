@@ -23,12 +23,12 @@ const ProgramCoordinators = (props) => {
       </Card>
       <Card color='blue'>
         <Card.Content>
-        <Card.Header>Ali Vaseghnia</Card.Header>
+        <Card.Header><font color="red">Open to applications</font></Card.Header>
         <Card.Description>
           Program: Systems Science
         </Card.Description>
         <Card.Description>
-          Email: avase081@uottawa.ca
+          Email to apply: ksing108@uottawa.ca
         </Card.Description>
         </Card.Content>
       </Card>

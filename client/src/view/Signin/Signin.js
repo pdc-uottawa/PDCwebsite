@@ -25,7 +25,7 @@ const Signin = (props) => {
       {/* <Divider vertical>Or</Divider> */}
         <Grid.Column>
           <Image centered size="medium" src="/assets/student.png" />
-          <h2>If you are a student, please log in with Google</h2>
+          <h2>If you are a student, please log in with Google or Outlook</h2>
            <Button onClick={handleGoogleLogin}>
             <i className="google icon"></i>
             Sign in with Google
