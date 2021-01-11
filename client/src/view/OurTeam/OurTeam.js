@@ -79,7 +79,7 @@ const Home = (props) => {
               <p>yliu538@uottawa.ca</p>
             </Grid.Column>
             <Grid.Column>
-              <Image centered size="large" src="/assets/student.jpg" />
+              <Image centered size="large" src="/assets/shubhneet.jpeg" />
               <h3>Shubhneet Baath</h3>
               <h3>Publications Director</h3>
               <p>sbaat080@uottawa.ca</p>

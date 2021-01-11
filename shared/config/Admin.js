@@ -14,6 +14,10 @@ module.exports = {
     "pdc.uottawa@gmail.com",
     "navpreet.kaur172@gmail.com",
     "navpreetkaur172@gmail.com",
-    "nkaur051@uottawa.ca"
+    "nkaur051@uottawa.ca",
+    "rkaur050@uottawa.ca",
+    "ksing108@uottawa.ca",
+    "gsing130@uottawa.ca",
+    "sshah184@uottawa.ca"
   ],
 };

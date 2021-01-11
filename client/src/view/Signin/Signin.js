@@ -22,11 +22,11 @@ const Signin = (props) => {
     <Fragment>
       <Grid columns={2} stackable textAlign="center">
       <Grid.Row>
-      <Divider vertical>Or</Divider>
+      {/* <Divider vertical>Or</Divider> */}
         <Grid.Column>
           <Image centered size="medium" src="/assets/student.png" />
           <h2>If you are a student, please log in with Google</h2>
-          <Button onClick={handleGoogleLogin}>
+           <Button onClick={handleGoogleLogin}>
             <i className="google icon"></i>
             Sign in with Google
           </Button>
@@ -35,14 +35,14 @@ const Signin = (props) => {
             Sign in with Outlook
           </Button>
         </Grid.Column>
-        <Grid.Column>
+        {/* <Grid.Column>
           <Image centered size="medium" src="/assets/employer.png" />
           <h2>If you are a company, please log in with Linkedin</h2>
           <Button className="ui linkedin button" onClick={handleLinkedinLogin}>
             <i className="linkedin icon"></i>
             Sign in with Linkedin
           </Button>
-        </Grid.Column>
+        </Grid.Column> */}
         </Grid.Row>
         <Grid.Row>
         {/* <Grid.Column>
