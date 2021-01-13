@@ -73,7 +73,7 @@ const Home = (props) => {
           </h3>
         </Grid.Column>
         <Grid.Column>
-          <Image centered size="large" src="/assets/becomeavolunteer.JPG" />
+          <Image centered size="large" src="/assets/becomeavolunteer.jpg" />
         </Grid.Column>
           </Grid.Row>
           </Grid>
