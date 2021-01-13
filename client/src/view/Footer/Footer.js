@@ -17,11 +17,9 @@ const Footer = () => {
   const handlefacebook = () => {
     window.open("https://www.facebook.com/Professionaldevclub/");
   };
-  const handletwitter = () => {
-    window.open("https://twitter.com/PDCuOttawa");
-  };
+
   const handlelinkedin = () => {
-    window.open("https://www.linkedin.com/groups/10528074/");
+    window.open("https://www.linkedin.com/company/g-e-s-professional-development-club/");
   };
   return (
     <Fragment>
@@ -41,10 +39,6 @@ const Footer = () => {
                   >
                     <i className="facebook icon"></i>
                     Facebook
-                  </button>
-                  <button onClick={handletwitter} className="ui twitter button">
-                    <i className="twitter icon"></i>
-                    Twitter
                   </button>
                   <button
                     onClick={handlelinkedin}

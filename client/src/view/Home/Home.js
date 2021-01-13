@@ -50,19 +50,34 @@ const Home = (props) => {
           </Grid.Column>
         </Grid>
         </Segment>
-        {/* <Segment placeholder>
-          <h2 class="ui center aligned">
-          Our Collaborators and Partners
-          </h2><br/>
-        <Card.Group centered="true">
-          <Image centered size="large" size="small" src="/assets/ancwtlogo.jpg"></Image>
-          <Image centered size="large" size="small"  src="/assets/canbewell-logo.png"></Image>
-          <Image centered size="large" size="small"  src="/assets/city-of-ottawa-logo.jpg"></Image>
-          <Image centered size="large" size="small"  src="assets/create-best-logo.png"></Image>
-          <Image centered size="large" size="small"  src="/assets/FBSC-logo.png"></Image>
-          <Image centered size="large" size="small"  src="/assets/mitacs_colour.jpg"></Image>
-        </Card.Group>
-       </Segment>      */}
+        <Segment placeholder>
+        <Grid columns={2} stackable textAlign='center' >
+        <Grid.Row verticalAlign='middle'>
+        <Grid.Column>
+        <h3 class="ui center aligned">
+            <div>
+            Become a member <br/>
+            <a class="item" target="_blank" href="https://www.facebook.com/groups/gespdc">
+                 Facebook
+          </a> &nbsp;&nbsp; or  &nbsp;&nbsp;
+          <a class="item" target="_blank" href="https://www.linkedin.com/groups/10528074/">
+                 Linkedin
+          </a>
+          </div>
+          <br/>
+        <div class="ui center aligned">
+            <a class="item" target="_blank" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra8TWvX0Di8dIjAEMQgqNdlpUQkoxM0ZVNU04VDM4S1ZNWjFTUkJBMEZPSi4u">
+            Volunteer with us
+          </a>
+          </div>
+          </h3>
+        </Grid.Column>
+        <Grid.Column>
+          <Image centered size="large" src="/assets/becomeavolunteer.JPG" />
+        </Grid.Column>
+          </Grid.Row>
+          </Grid>
+       </Segment>     
     </Fragment>
     
   );
