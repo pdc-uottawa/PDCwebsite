@@ -1,30 +1,157 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Button, Form, Segment, Dropdown, Checkbox } from "semantic-ui-react";
+import Axios from "axios";
+import { UserContext } from "../../common/context/UserProvider";
+import { config } from "../../common/config/config";
+import UploadLogo from "./UploadLogo";
+import TextareaAutosize from "react-textarea-autosize";
 
-import { Button, Form, Segment } from "semantic-ui-react";
-
-// Create a new project and show on Project List page.
+/**
+ * @author @binjiasata
+ * @description Create a new project and show on Project List page.
+ *              Post the new project to server.
+ */
 const CreateProject = (props) => {
-  const { cancelCreateOpen, createProject } = props;
+  const { userInfo, setUserInfo } = useContext(UserContext);
 
+  // get state from project detail manage button
+  const { state } = props.location;
+  const { id } = props.match.params;
+  const { user } = userInfo;
+  const path = config();
+  const [isDisable, setIsDisable] = useState(true);
+  const [adminUsers, setAdminUsers] = useState([]);
+
+  // project information
   const [info, setInfo] = useState({
-    title: "",
-    date: "",
-    description: "",
-    skills: "",
-    hostedBy: "",
+    title: state ? state.title : "",
+    postedOn: state ? state.postedOn : "",
+    validUntil: state ? state.validUntil : "",
+    description: state ? state.description : "",
+    skills: state ? state.skills : "",
+    hostedBy: state
+      ? state.hostedBy
+      : user && user.admin
+      ? "GES-PDC"
+      : user.company
+      ? "Company Name"
+      : "",
+    logoUrl: state ? state.logoUrl : "",
+    category: state ? state.category : [],
+    user: state ? state.user : [user],
+    contactEmail: state ? state.contactEmail : "",
+    contactPhone: state ? state.contactPhone : "",
+    linkedinProfile: state ? state.linkedinProfile : "",
+    isDeleted: state ? state.isDeleted : false,
+    uploadStatus: "none",
   });
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    createProject(info);
+  /**
+   * Category options:
+   * include Machine Learning, Web Development, Game Development for now.
+   */
+  const categoryOptions = [
+    { key: "machinelearning", text: "Machine Learning", value: "Machine Learning"},
+    { key: "web", text: "Web Development", value: "Web Development" },
+    { key: "game", text: "Game Development", value: "Game Development" },
+    { key: "SoftwareDevelopment", text: "Software Development", value: "Software Development" },
+    { key: "BackendDevelopment", text: "Backend Development", value: "Back-end Development" },
+    { key: "Front-endDevelopment", text: "Front-end Development", value: "Front-end Development" },
+    { key: "Full-stackDevelopment", text: "Full-stack Development", value: "Full-stack Development" },
+    { key: "QualityAssurance", text: "Quality Assurance", value: "Quality Assurance" },
+    { key: "Testing", text: "Testing", value: "Testing" },
+    { key: "DataAnalytics", text: "Data Analytics", value: "Data Analytics" },
+    { key: "ProjectManagement", text: "Project Management", value: "Project Management" },
+    { key: "VirtualReality", text: "Virtual Reality", value: "Virtual Reality" },
+    { key: "ArtificialIntelligence", text: "Artificial Intelligence", value: "Artificial Intelligence" },
+    { key: "CivilProject", text: "Civil Project", value: "Civil Project" },
+    { key: "MechanicalProject", text: "Mechanical Project", value: "Mechanical Project" },
+    { key: "Infrastructure", text: "Infrastructure", value: "Infrastructure" },
+    { key: "Research-oriented", text: "Research-oriented", value: "Research-oriented" },
+    { key: "CloudComputing", text: "Cloud Computing", value: "Cloud Computing" },
+    { key: "BigData", text: "Big Data", value: "Big Data" },
+    { key: "Chatbot", text: "Chatbot", value: "Chatbot" },
+    { key: "Blockchain", text: "Blockchain", value: "Blockchain" },
+    { key: "RoboticDevelopment", text: "Robotic Development", value: "Robotic Development" },
+    { key: "GIS", text: "GIS", value: "GIS" },
+    { key: "Microservices", text: "Microservices", value: "Microservices" },
+  ];
+
+  // handle dropdown category
+  const handleCategoryChange = (e, data) => {
+    setInfo({
+      ...info,
+      category: data.value,
+    });
   };
 
+  // post project info to server
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // if does not have logoUrl, use a default one
+    if (!info.logoUrl) {
+      info.logoUrl = "https://img.icons8.com/carbon-copy/2x/company.png";
+    }
+
+    if (id) {
+      Axios.post(path + "project/manage/" + id, info).then((res) => {
+        props.history.push("/project-list");
+      });
+    } else {
+      Axios.post(path + "project", info)
+        .then((res) => {
+          props.history.push("/project-list");
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  };
+
+  // when click cancel, go back to the project list page
+  const handleFormCancel = () => {
+    props.history.push("/project-list");
+  };
+
+  // handle form field change
   const handleFormChange = ({ target: { name, value } }) => {
     setInfo({
       ...info,
       [name]: value,
     });
   };
+
+  const handleOwnerChange  = (e, data) => {
+    setInfo({
+      ...info,
+      user: data.value?data.value:user,
+    });
+  };
+
+  useEffect(() => {
+    Axios.get(path + "user/adminuserlist")
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        setAdminUsers(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },[null]);
+
+  const adminList = [
+  ];
+
+  adminUsers.map((admin)=>{
+    adminList.push(
+     {
+       key:admin._id,
+       value:admin,
+       text:admin.name
+     });
+ });
 
   return (
     <Segment>
@@ -38,17 +165,72 @@ const CreateProject = (props) => {
             placeholder="Project Title"
           />
         </Form.Field>
+
+        <Form.Group widths="equal">
+          <Form.Field>
+            <label>Contact Email</label>
+            <input
+              name="contactEmail"
+              value={info.contactEmail}
+              onChange={handleFormChange}
+              placeholder="Contact Email"
+            />
+          </Form.Field>
+
+          <Form.Field>
+            <label>Contact Phone</label>
+            <input
+              name="contactPhone"
+              value={info.contactPhone}
+              onChange={handleFormChange}
+              placeholder="Contact Phone"
+            />
+          </Form.Field>
+
+          <Form.Field>
+            <label>LinkedIn Profile</label>
+            <input
+              name="linkedinProfile"
+              value={info.linkedinProfile}
+              onChange={handleFormChange}
+              placeholder="Your LinkedIn URL"
+            />
+          </Form.Field>
+        </Form.Group>
+
         <Form.Field>
-          <label>Date</label>
-          <input
-            name="date"
-            value={info.date}
-            onChange={handleFormChange}
-            type="date"
-            placeholder="Date"
+          <Checkbox
+            onClick={() => setIsDisable(!isDisable)}
+            label="Set a expire date on project (Default is 4 weeks)"
           />
         </Form.Field>
-        <Form.Field>
+
+        <Form.Group widths="equal">
+          <Form.Field>
+            <label>Posted On</label>
+            <input
+              name="postedOn"
+              value={info.postedOn}
+              onChange={handleFormChange}
+              type="date"
+              placeholder="Posted On"
+            />
+          </Form.Field>
+
+          <Form.Field>
+            <label>Valid Until</label>
+            <input
+              name="validUntil"
+              value={info.validUntil}
+              onChange={handleFormChange}
+              disabled={isDisable}
+              type="date"
+              placeholder="Valid Until"
+            />
+          </Form.Field>
+        </Form.Group>
+
+        {/* <Form.Field>
           <label>Skills</label>
           <input
             name="skills"
@@ -56,16 +238,8 @@ const CreateProject = (props) => {
             onChange={handleFormChange}
             placeholder="Required Skills"
           />
-        </Form.Field>
-        <Form.Field>
-          <label>Desciption</label>
-          <input
-            name="description"
-            value={info.description}
-            onChange={handleFormChange}
-            placeholder="Enter the Desciption of the project"
-          />
-        </Form.Field>
+        </Form.Field> */}
+        <Form.Group widths="equal">
         <Form.Field>
           <label>Hosted By</label>
           <input
@@ -75,10 +249,50 @@ const CreateProject = (props) => {
             placeholder="Enter the name of company hosting"
           />
         </Form.Field>
+        <Form.Field>
+          <label>Project Owner</label>
+          <Dropdown
+            name="project owner"
+            placeholder="Project Owner"
+            fluid
+            selection
+            onChange={handleOwnerChange}
+            options={adminList}
+          />
+        </Form.Field>
+        </Form.Group>
+        <Form.Field>
+          <label>Category</label>
+          <Dropdown
+            name="category"
+            placeholder="Category"
+            fluid
+            multiple
+            selection
+            onChange={handleCategoryChange}
+            defaultValue={info.category}
+            options={categoryOptions}
+          />
+        </Form.Field>
+
+        <Form.Field>
+          <label>Upload your logo</label>
+          <UploadLogo info={info} setInfo={setInfo} />
+        </Form.Field>
+
+        <Form.Field
+          control={TextareaAutosize}
+          name="description"
+          label="Description"
+          placeholder="Enter the Desciption of the project"
+          onChange={handleFormChange}
+          value={info.description}
+        ></Form.Field>
+
         <Button positive type="submit">
-          Submit
+          {state ? "Update" : "Submit"}
         </Button>
-        <Button onClick={cancelCreateOpen} type="button">
+        <Button onClick={handleFormCancel} type="button">
           Cancel
         </Button>
       </Form>

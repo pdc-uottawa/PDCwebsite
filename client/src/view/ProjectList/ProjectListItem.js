@@ -1,5 +1,12 @@
 import React, { Fragment, useState } from "react";
-import { Segment, Item, Icon, List, Button } from "semantic-ui-react";
+import {
+  Segment,
+  Item,
+  Icon,
+  List,
+  Button,
+  Label,
+} from "semantic-ui-react";
 import ProjectListUser from "./ProjectListUser";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
@@ -10,19 +17,20 @@ import LinesEllipsis from "react-lines-ellipsis";
  */
 const ProjectListItem = ({ project }) => {
   const {
-    hostPhotoURL,
+    logoUrl,
     title,
-    date,
+    postedOn,
+    validUntil,
     description,
     hostedBy,
     user,
-    id,
+    category,
+    _id,
   } = project;
 
   const [readMore, setReadMore] = useState(false);
   const [ellipsisText, setEllipsisText] = useState("Read More");
   const [clamped, setClamped] = useState(false);
-
 
   // if click Read More button, show content and Collapse button.
   const handleReadMore = () => {
@@ -48,13 +56,22 @@ const ProjectListItem = ({ project }) => {
         <Segment>
           <Item.Group>
             <Item>
-              <Item.Image size="tiny" circular src={hostPhotoURL} />
+              <Item.Image size="tiny" circular src={logoUrl} />
               <Item.Content>
-                <Item.Header as={Link} to={"/projectdetail/" + id}>
+                <Item.Header as={Link} to={`/project-detail/${_id}`}>
                   {title}
                 </Item.Header>
                 <Item.Description>
                   Hosted by <a>{hostedBy}</a>
+                </Item.Description>
+                <Item.Description>
+                  {category !== []
+                    ? category.map((tag, index) => (
+                        <Label key={index} size={"mini"} tag>
+                          {tag}
+                        </Label>
+                      ))
+                    : ""}
                 </Item.Description>
               </Item.Content>
             </Item>
@@ -62,13 +79,16 @@ const ProjectListItem = ({ project }) => {
         </Segment>
         <Segment>
           <span>
-            <Icon name="clock" /> {date}
+            <Icon name="clock" /> {postedOn}
+            {validUntil ? "  To  " + validUntil : ""}
           </span>
         </Segment>
         <Segment secondary>
           <List horizontal>
             {user &&
-              user.map((user) => <ProjectListUser key={user.id} user={user} />)}
+              user.map((user, index) => (
+                <ProjectListUser key={index} user={user} />
+              ))}
           </List>
         </Segment>
         <Segment clearing>

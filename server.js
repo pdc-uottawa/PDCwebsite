@@ -6,15 +6,25 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const passportSetup = require("./shared/config/Passport");
 const passport = require("passport");
-const keys = require("./shared/config/Keys");
 const authRoutes = require("./shared/routes/Auth");
 const mainRoutes = require("./shared/routes/MainRoute");
 const imageRoutes = require("./shared/routes/Images");
 const http = require("http");
 const path = require("path");
 //const methodOverride = require('method-override');
+const projectRoutes = require("./shared/routes/ProjectRoute");
+const studentRoutes = require("./shared/routes/StudentRoute");
+const uploadRoutes = require("./shared/routes/Upload");
+const eventRoutes = require("./shared/routes/EventRoute");
+const userRoutes = require("./shared/routes/UserRoute");
+const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+require('dotenv').config()
+
 
 const app = express();
+
 const PORT = process.env.PORT || 8080; //Step 1
 
 //if (process.env.NODE_ENV === "production") {
@@ -23,8 +33,7 @@ const PORT = process.env.PORT || 8080; //Step 1
 //}
 
 app.all("*", function (req, res, next) {
-  if (process.env.NODE_ENV != "production") {
-    //for local setup
+  if (process.env.NODE_ENV !== "production") {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   }
   res.header("Access-Control-Allow-Credentials", "true");
@@ -36,7 +45,7 @@ app.all("*", function (req, res, next) {
   res.header("X-Powered-By", " 3.2.1");
 
   if (req.method == "OPTIONS") {
-    res.send(200);
+    res.sendStatus(200);
   } else {
     next();
   }
@@ -46,12 +55,26 @@ app.all("*", function (req, res, next) {
 app.use(
   cookieSession({
     name: "session",
-    keys: [keys.cookieKey],
+    keys: [process.env.cookieKey],
     maxAge: 24 * 60 * 60 * 1000,
   })
 );
 
-// initialize passport
+// use application/json to submit data
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: "SECRET",
+  })
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -68,6 +91,12 @@ app.use(bodyParser.json({limit: '50mb'}));
 // auth router
 app.use("/auth", authRoutes);
 app.use("/images", imageRoutes);
-app.use("/", mainRoutes);
+//app.use("/", mainRoutes);
+app.use("/", projectRoutes);
+app.use("/student", studentRoutes);
+app.use("/file", uploadRoutes);
+app.use("/", eventRoutes);
+app.use("/user", userRoutes);
+app.use("/email", sendEmailRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));

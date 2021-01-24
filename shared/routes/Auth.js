@@ -2,11 +2,12 @@ const router = require("express").Router();
 const passport = require("passport");
 let user = {};
 
-var path="/";
-  if (process.env.NODE_ENV != "production") {
-    //for local setup
-    path = "http://localhost:3000";
-  }
+// for deploy
+let path = "/";
+if (process.env.NODE_ENV !== "production") {
+  //for local setup
+  path = "http://localhost:3000";
+}
 
 router.get(
   "/login",
@@ -24,6 +25,7 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: "/auth/failed",
     successRedirect: path,
+    failureFlash: true,
   })
 );
 
@@ -53,5 +55,42 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.redirect(path);
 });
+
+//add linkedin login
+router.get(
+  "/linkedin",
+  passport.authenticate("linkedin", {
+    scope: ["r_emailaddress", "r_liteprofile"], //,"r_fullprofile"],
+    prompt: "select_account",
+    state: "SOME STATE",
+  }),
+  function (req, res) {
+    // The request will be redirected to LinkedIn for authentication, so this
+    // function will not be called.
+  }
+);
+
+router.get(
+  "/linkedin/callback",
+  passport.authenticate("linkedin", {
+    failureRedirect: "/auth/failed",
+    successRedirect: path,
+  })
+);
+
+//outlook
+router.get('/outlook', 
+  passport.authenticate('azuread-openidconnect', { failureRedirect: '/auth/failed' }),
+  function(req, res) {
+    console.log('Login outlook was called');
+    res.redirect(path);
+});
+ 
+router.post('/outlook/callback',
+  passport.authenticate('azuread-openidconnect', { failureRedirect: '/auth/failed' }),
+  function(req, res) { 
+    res.redirect(path);
+  });
+ 
 
 module.exports = router;

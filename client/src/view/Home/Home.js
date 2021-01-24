@@ -1,23 +1,20 @@
 import React, { Fragment } from "react";
-import { Button, Container, Image, Grid, Segment,Divider } from "semantic-ui-react";
-import useReactRouter from "use-react-router";
+import { Image, Grid, Segment, Card } from "semantic-ui-react";
 import "./Home.css";
 
 const Home = (props) => {
+  console.log(window.innerWidth);
+  console.log(window.innerHeight)
   return (
     <Fragment>
       <Segment placeholder>
-       {/* <Image centered size="large" src="/assets/logo.png"/>
-            {/* <Image centered size="large" src="/assets/logo.png" />
-             <h1>Welcome to Professional Development Club!</h1>
-             <Image centered size="large" src="/assets/pdcimage.png" /> */}
         <Grid columns={2} stackable textAlign='center' >
         <Grid.Row verticalAlign='middle'>
         <Grid.Column>
           <h1>Welcome to Professional Development Club!</h1>
         </Grid.Column>
         <Grid.Column>
-          <Image centered size="large" src="/assets/pdcimage.png" />
+          <Image centered size="large" src="/assets/pdclogo.JPG" />
         </Grid.Column>
         </Grid.Row>
         </Grid>
@@ -53,7 +50,34 @@ const Home = (props) => {
           </Grid.Column>
         </Grid>
         </Segment>
-              
+        <Segment placeholder>
+        <Grid columns={2} stackable textAlign='center' >
+        <Grid.Row verticalAlign='middle'>
+        <Grid.Column>
+        <h3 class="ui center aligned">
+            <div>
+            Become a member <br/>
+            <a class="item" target="_blank" href="https://www.facebook.com/groups/gespdc">
+                 Facebook
+          </a> &nbsp;&nbsp; or  &nbsp;&nbsp;
+          <a class="item" target="_blank" href="https://www.linkedin.com/groups/10528074/">
+                 Linkedin
+          </a>
+          </div>
+          <br/>
+        <div class="ui center aligned">
+            <a class="item" target="_blank" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra8TWvX0Di8dIjAEMQgqNdlpUQkoxM0ZVNU04VDM4S1ZNWjFTUkJBMEZPSi4u">
+            Volunteer with us
+          </a>
+          </div>
+          </h3>
+        </Grid.Column>
+        <Grid.Column>
+          <Image centered size="large" src="/assets/becomeavolunteer.jpg" />
+        </Grid.Column>
+          </Grid.Row>
+          </Grid>
+       </Segment>     
     </Fragment>
     
   );
