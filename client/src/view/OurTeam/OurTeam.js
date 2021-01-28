@@ -93,18 +93,26 @@ const Home = (props) => {
             <Grid.Column>
               <Image centered size="large" src="/assets/mansher.jpg" />
               <h3>Mansher Singh</h3>
-              <h3>Lead Program Coordinator</h3>
-              <p>rkaur050@uottawa.ca</p>
+              <h3>Program Coordinator Lead</h3>
+              <p>msidh098@uottawa.ca</p>
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
           <Grid.Column>
+              <Image centered size="large" src="/assets/Nagasudheer.jpeg" />
+              <h3>Nagasudheer Adusumilli</h3>
+              <h3>(uOzone) Navigator Manager</h3>
+              <p>ahasa085@uottawa.ca</p>
+            </Grid.Column>
+
+            <Grid.Column>
               <Image centered size="large" src="/assets/abdullah.jpg" />
               <h3>Abdullah Hassan</h3>
               <h3>Finance Manager</h3>
               <p>ahasa085@uottawa.ca</p>
             </Grid.Column>
+
           <Grid.Column>
               <Image centered size="large" src="/assets/Navpreet.jpg" />
               <h3>Navpreet Kaur</h3>
@@ -113,7 +121,7 @@ const Home = (props) => {
             </Grid.Column>
             <Grid.Column>
             <Image centered size="large" src="/assets/harman.jpg" />
-              <h3>Harmanpreet Singh</h3>
+              <h3>Harman Preet Singh</h3>
               <h3>Web Developer</h3>
               <p>hbhut065@uottawa.ca</p>
             </Grid.Column>
@@ -122,6 +130,12 @@ const Home = (props) => {
               <h3>Sourabh Aggarwal</h3>
               <h3>Web Developer</h3>
               <p>sagar044@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/abdullah.jpg" />
+              <h3>Abdullah Hassan</h3>
+              <h3>Finance Manager</h3>
+              <p>ahasa085@uottawa.ca</p>
             </Grid.Column>
             </Grid.Row>
 
@@ -138,6 +152,7 @@ const Home = (props) => {
               <h3>Quality Assurance</h3>
               <p>sshar222@uottawa.ca</p>
             </Grid.Column>
+            
             </Grid.Row>
             <Grid.Row>
             <a class="item" href="#/program-coordinators" color="blue">
