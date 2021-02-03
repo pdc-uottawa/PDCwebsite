@@ -47,7 +47,8 @@ const ProgramCoordinators = (props) => {
         <Card.Content>
         <Card.Header>Achyuth Krishna Chepuri</Card.Header>
         <Card.Description>
-          Program: ELG
+          Program: 
+Electrical and Computer(ELG)
         </Card.Description>
         <Card.Description>
           Email: achep065@uottawa.ca
@@ -102,7 +103,7 @@ const ProgramCoordinators = (props) => {
         <Card.Content>
         <Card.Header>Phani Rohith Maganti</Card.Header>
         <Card.Description>
-          Program: Applied ELG
+          Program: CS, Concentration: Applied AI and Bioinformatics
         </Card.Description>
         <Card.Description>
           Email: pmaga044@uottawa.ca

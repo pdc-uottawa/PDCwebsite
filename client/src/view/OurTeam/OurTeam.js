@@ -79,6 +79,18 @@ const Home = (props) => {
               <p>yliu538@uottawa.ca</p>
             </Grid.Column>
             <Grid.Column>
+              <Image centered size="large" src="/assets/astha.jpeg" />
+              <h3>Astha Tiwari</h3>
+              <h3>Alumni Relation Coordinator</h3>
+              <p>atiwa061@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/ajay.jpeg" />
+              <h3>Ajay Modagi</h3>
+              <h3>Alumni Relation Coordinator</h3>
+              <p>amoda040@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
               <Image centered size="large" src="/assets/shubhneet.jpeg" />
               <h3>Shubhneet Baath</h3>
               <h3>Publications Director</h3>
@@ -96,9 +108,35 @@ const Home = (props) => {
               <h3>Program Coordinator Lead</h3>
               <p>msidh098@uottawa.ca</p>
             </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/suhani.jpg" />
+              <h3>Suhani Jatheliya</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>sjath077@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/Shivani.jpg" />
+              <h3>Shivani Vermaa</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>sverm020@uottawa.ca</p>
+            </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
+          <Grid.Column>
+              <Image centered size="large" src="/assets/tayo.jpg" />
+              <h3>Olutayo Oladosu</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>oolad085@uottawa.ca</p>
+            </Grid.Column>
+
+            <Grid.Column>
+              <Image centered size="large" src="/assets/Akansha.png" />
+              <h3>Akansha Agnihotri</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>aagni073@uottawa.ca</p>
+            </Grid.Column>
+
           <Grid.Column>
               <Image centered size="large" src="/assets/Nagasudheer.jpeg" />
               <h3>Nagasudheer Adusumilli</h3>
@@ -109,7 +147,7 @@ const Home = (props) => {
             <Grid.Column>
               <Image centered size="large" src="/assets/abdullah.jpg" />
               <h3>Abdullah Hassan</h3>
-              <h3>Finance Manager</h3>
+              <h3>Finance Manager/Youtube Coordinator</h3>
               <p>ahasa085@uottawa.ca</p>
             </Grid.Column>
 
@@ -131,15 +169,6 @@ const Home = (props) => {
               <h3>Web Developer</h3>
               <p>sagar044@uottawa.ca</p>
             </Grid.Column>
-            <Grid.Column>
-              <Image centered size="large" src="/assets/abdullah.jpg" />
-              <h3>Abdullah Hassan</h3>
-              <h3>Finance Manager</h3>
-              <p>ahasa085@uottawa.ca</p>
-            </Grid.Column>
-            </Grid.Row>
-
-          <Grid.Row>
           <Grid.Column>
             <Image centered size="large" src="/assets/krishna.jpg" />
               <h3>Achyuth Krishna Chepuri</h3>
@@ -152,8 +181,9 @@ const Home = (props) => {
               <h3>Quality Assurance</h3>
               <p>sshar222@uottawa.ca</p>
             </Grid.Column>
-            
+           
             </Grid.Row>
+
             <Grid.Row>
             <a class="item" href="#/program-coordinators" color="blue">
              <h3><font color="#4183c4">PDC Student Representative for Your Program</font></h3> 
