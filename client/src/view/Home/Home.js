@@ -14,7 +14,7 @@ const Home = (props) => {
           <h1>Welcome to Professional Development Club!</h1>
         </Grid.Column>
         <Grid.Column>
-          <Image centered size="large" src="/assets/pdclogo.JPG" />
+          <Image centered size="medium" src="/assets/pdc-logo.png" />
         </Grid.Column>
         </Grid.Row>
         </Grid>
