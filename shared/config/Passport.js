@@ -211,6 +211,7 @@ passport.use(
             } else {
               // if it does not, save the new user
               newUser.save().then((newUser) => {
+                console.log("new user ....214");
                 done(null, newUser);
               });
             }
@@ -218,6 +219,8 @@ passport.use(
         );
       } else if (tid && tid == process.env.OAUTH_TID)
        {
+        
+        console.log("Redirect page 223");
         const newUser = new User({
           outlookId: outlookId,
           name: name,
@@ -236,9 +239,12 @@ passport.use(
             done(null, currentUser);
           } else {
             // if it does not, save the new user
-            newUser.save().then((newUser) => {
-              done(null, newUser);
-            });
+            // Redirect to={"/register/" + newUser}
+            console.log("actual redirect code here ...");
+            // newUser.save().then((newUser) => {
+            //   done(null, newUser);
+            // });
+            done(null,newUser);
           }
         });
       }
