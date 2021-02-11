@@ -1,22 +1,20 @@
-import React, { useState,useContext } from "react";
+import React, {useState,useContext} from "react";
 import { Segment, Form, Button, Header } from "semantic-ui-react";
-import { UserContext } from "../../../common/context/UserProvider";
-import { config } from "../../../common/config/config";
-import Axios from "axios";
+import { config } from "../../common/config/config";
+import { UserContext } from "../../common/context/UserProvider";
 import TextareaAutosize from "react-textarea-autosize";
-
+import Axios from "axios";
 /**
- * @author @navpreetkaur051
- * @description This is student profile to view and edit by student
+ * @author @harmanbhutani
+ * @description This is student profile to view by project owner
  **/
 const path = config();
 
-const StudentProfileEditView = () => {
-
+const Register = () => {
+ 
   const { userInfo, setUserInfo } = useContext(UserContext);
   const studentInfo= userInfo.user;
 
-  //need to provide some time lapse to load
   const [studentProfileInfo, setStudentInfo] = useState({
     studentId:studentInfo._id?studentInfo._id:"",
     name: studentInfo.name?studentInfo.name:"",
@@ -28,6 +26,17 @@ const StudentProfileEditView = () => {
     program:studentInfo.program?studentInfo.program:"",
   });
 
+  
+  // useEffect(() => {
+
+  //   Axios.get(path + "student/profile/" + studentId)
+  //     .then((res) => res.data)
+  //     .then((data) => setStudentInfo(data));
+    
+  // },[null]);
+ 
+  // const { data_value } = this.props.location;
+  // console.log(data_value+".......");
   const handleFormSubmit = (event) => {
     event.preventDefault();
     
@@ -55,19 +64,21 @@ const StudentProfileEditView = () => {
       [name]: value,
     });
   };
+  
   return (
     <Segment>
       <Header as="h2">
-        <Header.Content>Student Profile</Header.Content>
+        <Header.Content>Registration Form</Header.Content>
       </Header>
         <Form onSubmit={handleFormSubmit} autoComplete="off">
         <Form.Field>
           <label>Name</label>
           <input
             name="name"
-            value={studentProfileInfo.name}
-            //onChange={handleFormChange}
+            id="name"
             placeholder="Name"
+            value={studentProfileInfo.name}
+            type="text"
             disabled
           />
         </Form.Field>
@@ -76,9 +87,11 @@ const StudentProfileEditView = () => {
           <label>Student Number</label>
           <input
             name="studentNumber"
+            placeholder="Student Number"
             value={studentProfileInfo.studentNumber}
             onChange={handleFormChange}
-            placeholder="Student Number"
+            id="studentnumber"
+           
           />
         </Form.Field>
 
@@ -86,8 +99,8 @@ const StudentProfileEditView = () => {
           <label>Email</label>
           <input
             name="email"
+            id="email"
             value={studentProfileInfo.email}
-            //onChange={handleFormChange}
             placeholder="Email"
             disabled
           />
@@ -100,6 +113,7 @@ const StudentProfileEditView = () => {
             value={studentProfileInfo.phoneNumber}
             onChange={handleFormChange}
             placeholder="Phone Number"
+            id="phonenumber"
           />
         </Form.Field>
         <Form.Field>
@@ -118,9 +132,10 @@ const StudentProfileEditView = () => {
           <label>Program</label>
           <input
             name="program"
+            id="program"
+            placeholder="Program of study"
             value={studentProfileInfo.program}
             onChange={handleFormChange}
-            placeholder="Program of study"
           />
         </Form.Field>
 
@@ -128,17 +143,19 @@ const StudentProfileEditView = () => {
           control={TextareaAutosize}
           name="skills"
           label="List your skills"
+          id="skills"
           placeholder="skills"
           onChange={handleFormChange}
           value={studentProfileInfo.skills}
+         
         ></Form.Field>
 
-        <Button positive type="submit">
-          Submit
+<Button positive type="submit" >
+         Submit
         </Button>
       </Form>
     </Segment>
   );
 };
 
-export default StudentProfileEditView;
+export default Register;
