@@ -6,7 +6,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import Axios from "axios";
 /**
  * @author @harmanbhutani
- * @description This is student profile to view by project owner
+ * @description This is student registration page
  **/
 const path = config();
 
@@ -19,7 +19,7 @@ const Register = () => {
     studentId:studentInfo._id?studentInfo._id:"",
     name: studentInfo.name?studentInfo.name:"",
     email: studentInfo.email,
-    linkedin : studentInfo.linkedin,
+    linkedin : studentInfo.linkedin?studentInfo.linkedin:"",
     studentNumber: studentInfo.studentNumber?studentInfo.studentNumber:"",
     skills: studentInfo.skills?studentInfo.skills:"",
     phoneNumber:studentInfo.phoneNumber?studentInfo.phoneNumber:"",
