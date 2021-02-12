@@ -92,10 +92,21 @@ Electrical and Computer(ELG)
         <Card.Content>
         <Card.Header>Mansher Singh</Card.Header>
         <Card.Description>
-          Program: Bio-medical and Chemical Engineering
+          Program: Bio-medical Engineering
         </Card.Description>
         <Card.Description>
           Email: msidh098@uottawa.ca
+        </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card color='blue'>
+        <Card.Content>
+        <Card.Header>Alisha Chitkara</Card.Header>
+        <Card.Description>
+          Program: Chemical Engineering
+        </Card.Description>
+        <Card.Description>
+          Email: achit093@uottawa.ca
         </Card.Description>
         </Card.Content>
       </Card>
