@@ -16,19 +16,20 @@ const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const sslRedirect  = require("heroku-ssl-redirect");
+// const sslRedirect  = require("heroku-ssl-redirect");
 require('dotenv').config()
 
 
 
 
 const app = express();
+// app.use(sslRedirect());
 
 const PORT = process.env.PORT || 8080; //Step 1
 
 if (process.env.NODE_ENV === "production") {
   console.log("dir name", __dirname);
-  app.use(sslRedirect());
+  
   app.use("/", express.static(path.join(__dirname, "/client/build")));
 }
 
