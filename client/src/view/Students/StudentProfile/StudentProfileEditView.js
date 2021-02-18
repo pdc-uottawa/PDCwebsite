@@ -75,7 +75,7 @@ const StudentProfileEditView = () => {
         <Form.Field>
           <label>Student Number</label>
           <input
-            name="https://www.linkedin.com/in/iamharman/"
+            name="linkedin"
             value={studentProfileInfo.studentNumber}
             onChange={handleFormChange}
             placeholder="Student Number"
