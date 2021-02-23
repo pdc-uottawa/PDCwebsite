@@ -12,20 +12,25 @@ const uploadRoutes = require("./shared/routes/Upload");
 const eventRoutes = require("./shared/routes/EventRoute");
 const userRoutes = require("./shared/routes/UserRoute");
 const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
-const http = require("http");
+const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+// const sslRedirect  = require("heroku-ssl-redirect");
 require('dotenv').config()
 
 
+
+
 const app = express();
+// app.use(sslRedirect());
 
 const PORT = process.env.PORT || 8080; //Step 1
 
 if (process.env.NODE_ENV === "production") {
   console.log("dir name", __dirname);
   app.use("/", express.static(path.join(__dirname, "/client/build")));
+  // app.use("/",sslRedirect(), express.static(path.join(__dirname, "/client/build")));
 }
 
 app.all("*", function (req, res, next) {
