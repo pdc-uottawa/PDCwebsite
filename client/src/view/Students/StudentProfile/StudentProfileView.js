@@ -68,6 +68,16 @@ const StudentProfileView = (props) => {
         </Form.Field>
 
         <Form.Field>
+          <label>Phone Number</label>
+          <input
+            name="linkedin"
+            value={studentProfileInfo[0].linkedin}
+            placeholder="Linkedin Url"
+            disabled
+          />
+        </Form.Field>
+
+        <Form.Field>
           <label>Program</label>
           <input
             name="program"

@@ -95,8 +95,10 @@ const Home = (props) => {
               <h3>Shubhneet Baath</h3>
               <h3>Publications Director</h3>
               <p>sbaat080@uottawa.ca</p>
-            </Grid.Column>
-            <Grid.Column>
+            </Grid.Column>          
+          </Grid.Row>
+          <Grid.Row>
+          <Grid.Column>
               <Image centered size="large" src="/assets/roopleen.jpg" />
               <h3>Roopleen Kaur</h3>
               <h3>Project Manager</h3>
@@ -107,6 +109,33 @@ const Home = (props) => {
               <h3>Mansher Singh</h3>
               <h3>Program Coordinator Lead</h3>
               <p>msidh098@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/Nagasudheer.jpeg" />
+              <h3>Nagasudheer Adusumilli</h3>
+              <h3>(uOzone) Navigator Manager</h3>
+              <p>ahasa085@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/abdullah.jpg" />
+              <h3>Abdullah Hassan</h3>
+              <h3>Finance Manager/Youtube Coordinator</h3>
+              <p>ahasa085@uottawa.ca</p>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+          <Grid.Column>
+              <Image centered size="large" src="/assets/tayo.jpg" />
+              <h3>Olutayo Oladosu</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>oolad085@uottawa.ca</p>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered size="large" src="/assets/Akansha.png" />
+              <h3>Akansha Agnihotri</h3>
+              <h3>Social Media Coordinator</h3>
+              <p>aagni073@uottawa.ca</p>
             </Grid.Column>
             <Grid.Column>
               <Image centered size="large" src="/assets/suhani.jpg" />
@@ -120,43 +149,34 @@ const Home = (props) => {
               <h3>Social Media Coordinator</h3>
               <p>sverm020@uottawa.ca</p>
             </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
+            </Grid.Row>
+            <Grid.Row>
           <Grid.Column>
-              <Image centered size="large" src="/assets/tayo.jpg" />
-              <h3>Olutayo Oladosu</h3>
-              <h3>Social Media Coordinator</h3>
-              <p>oolad085@uottawa.ca</p>
+              <Image centered size="large" src="/assets/sahana.jpg" />
+              <h3>Sahana Sundar Raman</h3>
+              <h3>YouTube Coordinator</h3>
+              <p>ssaha062@uottawa.ca</p>
+              </Grid.Column>
+              <Grid.Column>
+            <Image centered size="large" src="/assets/siddi.jpg" />
+              <h3>Siddhi Deshmukh</h3>
+              <h3>YouTube Coordinator</h3>
+              <p>sdesh031@uottawa.ca</p>
             </Grid.Column>
-
             <Grid.Column>
-              <Image centered size="large" src="/assets/Akansha.png" />
-              <h3>Akansha Agnihotri</h3>
-              <h3>Social Media Coordinator</h3>
-              <p>aagni073@uottawa.ca</p>
-            </Grid.Column>
-
-          <Grid.Column>
-              <Image centered size="large" src="/assets/Nagasudheer.jpeg" />
-              <h3>Nagasudheer Adusumilli</h3>
-              <h3>(uOzone) Navigator Manager</h3>
-              <p>ahasa085@uottawa.ca</p>
-            </Grid.Column>
-
-            <Grid.Column>
-              <Image centered size="large" src="/assets/abdullah.jpg" />
-              <h3>Abdullah Hassan</h3>
-              <h3>Finance Manager/Youtube Coordinator</h3>
-              <p>ahasa085@uottawa.ca</p>
-            </Grid.Column>
-
-          <Grid.Column>
               <Image centered size="large" src="/assets/Navpreet.jpg" />
               <h3>Navpreet Kaur</h3>
-              <h3>Web Master and Developer</h3>
+              <h3>Web Master</h3>
               <p>nkaur051@uottawa.ca</p>
+              </Grid.Column>
+              <Grid.Column>
+            <Image centered size="large" src="/assets/sunakshi.jpg" />
+              <h3>Sunakshi Sharma</h3>
+              <h3>Quality Assurance</h3>
+              <p>sshar222@uottawa.ca</p>
             </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
             <Grid.Column>
             <Image centered size="large" src="/assets/harman.jpg" />
               <h3>Harman Preet Singh</h3>
@@ -174,14 +194,7 @@ const Home = (props) => {
               <h3>Achyuth Krishna Chepuri</h3>
               <h3>Web Developer</h3>
               <p>achep065@uottawa.ca</p>
-            </Grid.Column>
-            <Grid.Column>
-            <Image centered size="large" src="/assets/sunakshi.jpg" />
-              <h3>Sunakshi Sharma</h3>
-              <h3>Quality Assurance</h3>
-              <p>sshar222@uottawa.ca</p>
-            </Grid.Column>
-           
+            </Grid.Column>                   
             </Grid.Row>
 
             <Grid.Row>

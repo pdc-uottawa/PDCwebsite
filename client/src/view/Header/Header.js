@@ -154,8 +154,18 @@ const Header = (props) => {
           ...userInfo,
           user: data.user,
           authenticated: data.authenticated,
-        });
-      })
+        }   
+        );
+
+        if(data.user.checkUser)
+        {
+          console.log("new user ...... 160");
+          console.log(data.user);
+          history.push("/register", data.user);
+
+        }
+      }
+      )
       .catch((e) => {
         console.log(e);
       });

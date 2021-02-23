@@ -199,6 +199,7 @@ passport.use(
           name: name,
           email: email,
           //picture: picture,
+          checkUser:true,
           admin: true,
         });
 
@@ -211,6 +212,7 @@ passport.use(
             } else {
               // if it does not, save the new user
               newUser.save().then((newUser) => {
+                console.log("new user ....214");
                 done(null, newUser);
               });
             }
@@ -218,27 +220,51 @@ passport.use(
         );
       } else if (tid && tid == process.env.OAUTH_TID)
        {
+        
+        
         const newUser = new User({
           outlookId: outlookId,
           name: name,
           email: email,
+          checkUser:true,
          // picture: picture,
         });
 
         // Check if database has already had this user
+
+      //   User.findOne({ outlookId: outlookId })
+      // .then((newUser) => { 
+      //   console.log("To check current .......");
+      //   done(null, newUser)})
+      // .catch(
+        
+      //   (err) => {
+      //     console.log("catch console ......."+err);
+      //     done(err)});
+  // });
         User.findOneAndUpdate(
-          { outlookId: outlookId },
+          { 
+            email:email
+            // outlookId: outlookId
+           },
           { //picture: picture, 
-            name: name }
+            // name: name 
+          }
         ).then((currentUser) => {
           // if it has, don't save
+          var checkinguser=false;
           if (currentUser) {
+            console.log("Current user here ...");
             done(null, currentUser);
           } else {
+            checkinguser=true;
             // if it does not, save the new user
-            newUser.save().then((newUser) => {
-              done(null, newUser);
-            });
+            // Redirect to={"/register/" + newUser}
+            console.log("actual redirect code here ...");
+            // newUser.save().then((newUser) => {
+            //   done(null, newUser);
+            // });
+            done(null,newUser);
           }
         });
       }

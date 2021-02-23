@@ -20,6 +20,7 @@ import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
 import Footer from "./view/Footer/Footer";
 import Signin from "./view/Signin/Signin";
+import register from "./view/Register/register";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
 import ProjectDeatiledPage from "./view/ProjectDetailed/ProjectDeatiledPage";
 import Events from "./view/Events/Events";
@@ -49,6 +50,7 @@ const Routers = () => {
           <Container className="main">
             <Route exact path="/" component={Home} />
             <Route exact path="/signin" component={Signin} />
+            <Route exact path="/register" component={register} />
             <Route exact path="/OurTeam" component={OurTeam} />
             <Route exact path="/create-project" component={CreateProject} />
             <Route exact path="/download-user-list" component={DownloadUserInfo} />
