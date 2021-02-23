@@ -157,9 +157,9 @@ const Header = (props) => {
         }   
         );
 
-        if(data.user)
+        if(data.user.checkUser)
         {
-          // console.log("new user ...... 160");
+          console.log("new user ...... 160");
           console.log(data.user);
           history.push("/register", data.user);
 

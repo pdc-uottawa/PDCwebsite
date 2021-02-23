@@ -1,8 +1,10 @@
 import React, {useState,useContext} from "react";
-import { Segment, Form, Button, Header } from "semantic-ui-react";
+import { Segment, Form, Button, Header,Dropdown } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import { UserContext } from "../../common/context/UserProvider";
 import TextareaAutosize from "react-textarea-autosize";
+import useReactRouter from "use-react-router";
+
 import Axios from "axios";
 /**
  * @author @harmanbhutani
@@ -14,6 +16,7 @@ const Register = () => {
  
   const { userInfo, setUserInfo } = useContext(UserContext);
   const studentInfo= userInfo.user;
+  const { history } = useReactRouter();
 
   const [studentProfileInfo, setStudentInfo] = useState({
     studentId:studentInfo._id?studentInfo._id:"",
@@ -37,6 +40,31 @@ const Register = () => {
  
   // const { data_value } = this.props.location;
   // console.log(data_value+".......");
+
+  // handle dropdown category
+  const handleProgramChange = (e, data) => {
+    setStudentInfo({
+      ...studentProfileInfo,
+      program : data.value,
+    });
+  };
+
+  // const categoryOptions = [
+  //    text: "Machine Learning", value: "Machine Learning"
+  // ];
+
+  const categoryOptions = [
+    { key: "DTI", text: "DTI(UI/UX,Data Science)", value: "DTI(UI/UX,Data Science)"},
+    { key: "SystemSciences", text: "System Science", value: "System Science" },
+    { key: "AMM", text: "AMM and Mechanical Engineering", value: "AMM and Mechanical Engineering" },
+    { key: "ELG", text: "Electrical and Computer(ELG)", value: "Electrical and Computer(ELG)" },
+    { key: "CS", text: "Computer Science", value: "Computer Science" },
+    { key: "Engineeringmanagement", text: "Engineering Project Management", value: "Engineering Project Management" },
+    { key: "ECivil", text: "Environment and Civil Engineering", value: "Environment and Civil Engineering" },
+    { key: "BioChem", text: "Bio-Medical and Chemical Engineering", value: "Bio-Medical and Chemical Engineering" },
+    
+  ];
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     
@@ -56,6 +84,8 @@ const Register = () => {
       .catch((e) => {
         console.log(e);
       });
+
+      history.push("/");
   };
 
   const handleFormChange = ({ target: { name, value } }) => {
@@ -128,14 +158,16 @@ const Register = () => {
           />
         </Form.Field>
 
+
         <Form.Field>
           <label>Program</label>
-          <input
+          <Dropdown
             name="program"
-            id="program"
             placeholder="Program of study"
-            value={studentProfileInfo.program}
-            onChange={handleFormChange}
+            fluid
+            selection
+            onChange={handleProgramChange}
+            options={categoryOptions}
           />
         </Form.Field>
 
