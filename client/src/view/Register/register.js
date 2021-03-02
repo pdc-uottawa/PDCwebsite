@@ -43,6 +43,7 @@ const Register = () => {
 
   // handle dropdown category
   const handleProgramChange = (e, data) => {
+
     setStudentInfo({
       ...studentProfileInfo,
       program : data.value,
@@ -67,6 +68,12 @@ const Register = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    if(studentInfo.skills = "")
+    {
+      alert("hahah");
+    }
+
     
     Axios.post(path + "student/profile/edit/", studentProfileInfo)
       .then((res) => {
@@ -101,7 +108,7 @@ const Register = () => {
         <Header.Content>Registration Form</Header.Content>
       </Header>
         <Form onSubmit={handleFormSubmit} autoComplete="off">
-        <Form.Field>
+        <Form.Field required>
           <label>Name</label>
           <input
             name="name"
@@ -113,19 +120,19 @@ const Register = () => {
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Student Number</label>
-          <input
+          <input class="required field"
             name="studentNumber"
             placeholder="Student Number"
             value={studentProfileInfo.studentNumber}
             onChange={handleFormChange}
             id="studentnumber"
-           
+            required
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Email</label>
           <input
             name="email"
@@ -136,7 +143,7 @@ const Register = () => {
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Phone Number</label>
           <input
             name="phoneNumber"
@@ -144,6 +151,8 @@ const Register = () => {
             onChange={handleFormChange}
             placeholder="Phone Number"
             id="phonenumber"
+            required
+           
           />
         </Form.Field>
         <Form.Field>
@@ -158,9 +167,10 @@ const Register = () => {
           />
         </Form.Field>
 
-
-        <Form.Field>
+        
+        <Form.Field required>
           <label>Program</label>
+         
           <Dropdown
             name="program"
             placeholder="Program of study"
@@ -168,8 +178,11 @@ const Register = () => {
             selection
             onChange={handleProgramChange}
             options={categoryOptions}
+            required
+            
           />
         </Form.Field>
+       
 
         <Form.Field
           control={TextareaAutosize}
@@ -179,6 +192,7 @@ const Register = () => {
           placeholder="skills"
           onChange={handleFormChange}
           value={studentProfileInfo.skills}
+          required
          
         ></Form.Field>
 
