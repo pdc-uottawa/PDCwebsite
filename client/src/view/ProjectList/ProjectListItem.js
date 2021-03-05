@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React,  { Fragment, useState } from "react";
 import {
   Segment,
   Item,
@@ -6,15 +6,18 @@ import {
   List,
   Button,
   Label,
+  Form,
+  Grid, 
+  Header,
+  Search
 } from "semantic-ui-react";
+import _ from 'lodash';
 import ProjectListUser from "./ProjectListUser";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
+import faker from 'faker'
 
-/**
- * @author @binjiasata
- * @description This is project list item. Get project info from ProjectList.js
- */
+
 const ProjectListItem = ({ project }) => {
   const {
     logoUrl,
@@ -27,6 +30,7 @@ const ProjectListItem = ({ project }) => {
     category,
     _id,
   } = project;
+
 
   const [readMore, setReadMore] = useState(false);
   const [ellipsisText, setEllipsisText] = useState("Read More");
