@@ -1,39 +1,53 @@
 const mailer = require("nodemailer");
 require('dotenv').config()
 
-const getEmailData = (to, name, subject, applicantEmail) => {
+const getEmailData = (to, name, project, subject, applicantEmail) => {
     let data = null;
 
             data = {
-                from: "GES-PDC UOttawa <"+process.env.GMAIL_USERID+">",
+                from: "GES-PDC UOttawa <sagar044@uottawa.ca>",
                 to:to,
                 subject: subject,
-                html: `Hi ${name},<br><br> We received application from ${applicantEmail}.<br><br> Regards, <br> GES-PDC UOttawa`
+                html: `Hi ${name},<br><br> We have received an application for <br><b>Project : ${project}</b><br><b>Applied by : ${applicantEmail}</b><br><br> Regards, <br> GES-PDC UOttawa`
             }
     return data;
 }
 
 
-const sendEmail = (to, name, subject, applicantEmail) => {
+const sendEmail = (to, name, project, subject, applicantEmail) => {
 
     const smtpTransport = mailer.createTransport({
         //service: "gmail",
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure: false,
+        tls:{
+            ciphers:'SSLv3'
+        },
         auth: {
-            user: process.env.GMAIL_USERID,
-            pass: process.env.GMAIL_PASSWORD
+            user:'sagar044@uottawa.ca',
+            pass: 'Sour@bh0795'
         }
     })
 
-    const mail = getEmailData(to, name, subject, applicantEmail)
+    const mail = getEmailData(to, name, project, subject, applicantEmail)
 
-    smtpTransport.sendMail(mail, function(error, response) {
+    smtpTransport.verify(function(error1, info1){
+        if(error1)
+        {
+            console.log("Settings Error:"+error1);
+        }
+        else
+        {
+            console.log("Server is ready to take messages");
+        }
+    })
+    
+    smtpTransport.sendMail(mail, function(error, info) {
         if(error) {
-            console.log(error)
+            console.log("This is the error:"+error);
         } else {
-            console.log( " email sent successfully")
+            console.log( "Message Sent:"+info.response);
         }
         smtpTransport.close();
     })
