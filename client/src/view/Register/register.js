@@ -48,19 +48,6 @@ const Register = () => {
       ...studentProfileInfo,
       program : data.value,
     });
-
-    var studentprogram = document.getElementById("student_program").value;
-  if(studentprogram!=="")
-  {
-    document.getElementById("student_program_error_msg").style.display = "none";
-    document.getElementById("student_program").style.border = "";
-  }
-  else
-  {
-    document.getElementById("student_program").style.border = " 1px solid red";
-    document.getElementById("student_program_error_msg").style.display = "block";
-    document.getElementById("student_program_error_msg").style.color = "red";
-  } 
   };
 
   // const categoryOptions = [
@@ -84,23 +71,30 @@ const Register = () => {
     var studentnumber = document.getElementById("student_number").value;
       var tel = document.getElementById("student_phoneno").value;
       var telformat = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
-      var studentprogram = document.getElementById("student_program").value;
       var studentskills = document.getElementById("student_skills").value;
-      if((studentnumber==="")||(!tel.match(telformat))||(studentprogram==="")||(studentskills===""))
+      if((studentnumber==="")||(!tel.match(telformat))||(studentskills===""))
       {
+        if(studentnumber==="")
+        {
       document.getElementById("student_number").style.border = " 1px solid red";
       document.getElementById("student_number_error_msg").style.display = "block";
       document.getElementById("student_number_error_msg").style.color = "red";
+      event.preventDefault();
+        }
+        if(!tel.match(telformat))
+        {
       document.getElementById("student_phoneno").style.border = " 1px solid red";
       document.getElementById("student_phoneno_error_msg").style.display = "block";
       document.getElementById("student_phoneno_error_msg").style.color = "red";
-      document.getElementById("student_program").style.border = " 1px solid red";
-      document.getElementById("student_program_error_msg").style.display = "block";
-      document.getElementById("student_program_error_msg").style.color = "red";
+      event.preventDefault();
+        }
+        if(studentskills==="")
+        {
       document.getElementById("student_skills").style.border = " 1px solid red";
       document.getElementById("student_skills_error_msg").style.display = "block";
       document.getElementById("student_skills_error_msg").style.color = "red";
       event.preventDefault();
+        }
       } 
       else
       {
@@ -108,8 +102,6 @@ const Register = () => {
       document.getElementById("student_number").style.border = "";
       document.getElementById("student_phoneno_error_msg").style.display = "none";
       document.getElementById("student_phoneno").style.border = "";
-      document.getElementById("student_program_error_msg").style.display = "none";
-      document.getElementById("student_program").style.border = "";
       document.getElementById("student_skills_error_msg").style.display = "none";
       document.getElementById("student_skills").style.border = "";
       Axios.post(path + "student/profile/edit/", studentProfileInfo)

@@ -39,18 +39,26 @@ const StudentProfileEditView = () => {
       var studentskills = document.getElementById("student_skills").value;
       if((studentnumber==="")||(!tel.match(telformat))||(studentprogram==="")||(studentskills===""))
       {
+        if((studentnumber==="")){
       document.getElementById("student_number").style.border = " 1px solid red";
       document.getElementById("student_number_error_msg").style.display = "block";
       document.getElementById("student_number_error_msg").style.color = "red";
+        }
+        if((!tel.match(telformat))){
       document.getElementById("student_phoneno").style.border = " 1px solid red";
       document.getElementById("student_phoneno_error_msg").style.display = "block";
       document.getElementById("student_phoneno_error_msg").style.color = "red";
+        }
+        if((studentprogram==="")){
       document.getElementById("student_program").style.border = " 1px solid red";
       document.getElementById("student_program_error_msg").style.display = "block";
       document.getElementById("student_program_error_msg").style.color = "red";
+        }
+        if((studentskills==="")){
       document.getElementById("student_skills").style.border = " 1px solid red";
       document.getElementById("student_skills_error_msg").style.display = "block";
       document.getElementById("student_skills_error_msg").style.color = "red";
+        }
       event.preventDefault();
       } 
       else

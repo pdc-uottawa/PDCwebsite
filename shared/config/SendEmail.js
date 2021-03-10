@@ -5,7 +5,7 @@ const getEmailData = (to, name, project, subject, applicantEmail) => {
     let data = null;
 
             data = {
-                from: "GES-PDC UOttawa <sagar044@uottawa.ca>",
+                from: "GES-PDC UOttawa <"+process.env.Outlook_Id+">",
                 to:to,
                 subject: subject,
                 html: `Hi ${name},<br><br> We have received an application for <br><b>Project : ${project}</b><br><b>Applied by : ${applicantEmail}</b><br><br> Regards, <br> GES-PDC UOttawa`
@@ -25,8 +25,8 @@ const sendEmail = (to, name, project, subject, applicantEmail) => {
             ciphers:'SSLv3'
         },
         auth: {
-            user:'sagar044@uottawa.ca',
-            pass: 'Sour@bh0795'
+            user:process.env.Outlook_Id,
+            pass:process.env.Outlook_Password
         }
     })
 
