@@ -6,3 +6,9 @@ h2{
 .center{
   text-align: center;
 }
+
+#user_image
+{
+  height:250px;
+  width:250px;
+}
