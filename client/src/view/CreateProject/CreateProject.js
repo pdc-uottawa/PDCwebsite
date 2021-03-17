@@ -652,7 +652,7 @@ document.getElementById("project_host").style.border = "";
           value={info.description}
         ></Form.Field>
         <Form.Field>
-        <div id="project_description_error_msg"><p>* please provide a project host </p></div>
+        <div id="project_description_error_msg"><p>* please provide a project description </p></div>
         </Form.Field>
        
         <Button positive type="submit" onClick={handleFormValdiation}>
