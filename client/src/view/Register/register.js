@@ -44,6 +44,7 @@ const Register = () => {
 
   // handle dropdown category
   const handleProgramChange = (e, data) => {
+
     setStudentInfo({
       ...studentProfileInfo,
       program : data.value,
@@ -67,6 +68,16 @@ const Register = () => {
   ];
 
   const handleFormSubmit = (event) => {
+
+    event.preventDefault();
+
+    if(studentInfo.skills = "")
+    {
+      alert("no skills available");
+    }
+
+    
+
 
     var studentnumber = document.getElementById("student_number").value;
       var tel = document.getElementById("student_phoneno").value;
@@ -200,7 +211,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
         <Header.Content>Registration Form</Header.Content>
       </Header>
         <Form onSubmit={handleFormSubmit} autoComplete="off">
-        <Form.Field>
+        <Form.Field required>
           <label>Name</label>
           <input
             name="name"
@@ -212,19 +223,21 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Student Number</label>
+
           <input
             id="student_number"
             name="studentNumber"
             placeholder="Student Number"
             value={studentProfileInfo.studentNumber}
             onChange={StudentNumberValidation}
+
           />
           <div id="student_number_error_msg"><p>* please provide a student number</p></div>
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Email</label>
           <input
             name="email"
@@ -235,7 +248,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field required>
           <label>Phone Number</label>
           <input
             id="student_phoneno"
@@ -243,6 +256,9 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             value={studentProfileInfo.phoneNumber}
             onChange={StudentPhoneValidation}
             placeholder="Phone Number"
+            id="phonenumber"
+            required
+         
           />
           <div id="student_phoneno_error_msg"><p>* please provide a valid phone number</p></div>
         </Form.Field>
@@ -259,9 +275,10 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           />
         </Form.Field>
 
-
-        <Form.Field>
+        
+        <Form.Field required>
           <label>Program</label>
+         
           <Dropdown
             id="student_program"
             name="program"
@@ -270,9 +287,12 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             selection
             onChange={handleProgramChange}
             options={categoryOptions}
+            required
+            
           />
           <div id="student_program_error_msg"><p>* please provide a student program</p></div>
         </Form.Field>
+       
 
         <Form.Field
           id="student_skills"
@@ -282,6 +302,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           placeholder="skills"
           onChange={StudentSkillsValidation}
           value={studentProfileInfo.skills}
+          required
          
         ></Form.Field>
         <Form.Field><div id="student_skills_error_msg"><p>* please provide student skills</p></div></Form.Field>
