@@ -15,7 +15,6 @@ import _ from 'lodash';
 import ProjectListUser from "./ProjectListUser";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
-import faker from 'faker'
 
 
 const ProjectListItem = ({ project }) => {
