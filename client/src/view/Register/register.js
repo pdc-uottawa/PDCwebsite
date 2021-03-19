@@ -256,7 +256,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             value={studentProfileInfo.phoneNumber}
             onChange={StudentPhoneValidation}
             placeholder="Phone Number"
-            id="phonenumber"
+            // id="phonenumber"
             required
          
           />
