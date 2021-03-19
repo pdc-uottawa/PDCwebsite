@@ -35,14 +35,14 @@ const Signin = (props) => {
             Sign in with Outlook
           </Button>
         </Grid.Column>
-        {/* <Grid.Column>
+        { <Grid.Column>
           <Image centered size="medium" src="/assets/employer.png" />
           <h2>If you are a company, please log in with Linkedin</h2>
           <Button className="ui linkedin button" onClick={handleLinkedinLogin}>
             <i className="linkedin icon"></i>
             Sign in with Linkedin
           </Button>
-        </Grid.Column> */}
+        </Grid.Column> }
         </Grid.Row>
         <Grid.Row>
         {/* <Grid.Column>
