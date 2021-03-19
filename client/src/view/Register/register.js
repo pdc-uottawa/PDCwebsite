@@ -151,7 +151,7 @@ const Register = () => {
     var studentnumber = document.getElementById("student_number").value;
     if(studentnumber==="")
     {
-    document.getElementById("student_number").style.border = " 1px solid red";
+    document.getElementById("student_number").style.border = "1px solid red";
     document.getElementById("student_number_error_msg").style.display = "block";
     document.getElementById("student_number_error_msg").style.color = "red";
     } 
