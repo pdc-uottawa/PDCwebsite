@@ -1,0 +1,8 @@
+#project_title_error_msg,#project_email_error_msg,#project_tel_error_msg,
+#project_frm_date_error_msg,#project_frm_date_blank_error_msg,
+#project_to_date_error_msg,#project_to_date_blank_error_msg,#prjct_owner_blank_error_msg,
+#project_host_error_msg,#project_description_error_msg
+{
+    color:black;
+    display: none;
+}

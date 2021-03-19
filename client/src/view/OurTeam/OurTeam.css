@@ -1,8 +1,14 @@
-h2{
+/* h2{
   background-color: black;
   color: whitesmoke;
-}
+} */
 
 .center{
   text-align: center;
+}
+
+#user_image
+{
+  height:250px;
+  width:250px;
 }

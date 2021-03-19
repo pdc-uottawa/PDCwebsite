@@ -66,7 +66,7 @@ const Home = (props) => {
           </div>
           <br/>
         <div class="ui center aligned">
-            <a class="item" target="_blank" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra8TWvX0Di8dIjAEMQgqNdlpUQkoxM0ZVNU04VDM4S1ZNWjFTUkJBMEZPSi4u">
+            <a class="item" target="_blank" href="https://cutt.ly/pdcvolunteer">
             Volunteer with us
           </a>
           </div>

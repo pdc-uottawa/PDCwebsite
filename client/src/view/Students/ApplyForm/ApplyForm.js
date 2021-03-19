@@ -5,6 +5,7 @@ import { config } from "../../../common/config/config";
 import UploadResume from "./UploadResume";
 import { UserContext } from "../../../common/context/UserProvider";
 import TextareaAutosize from "react-textarea-autosize";
+import "./Applyform.css"
 
 const ApplyForm = (props) => {
   const path = config();
@@ -25,9 +26,21 @@ const ApplyForm = (props) => {
   });
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
-
-    Axios.post(path + "student/apply", applyInfo)
+    
+    var desc = document.getElementById("studentapplydesciption").value;
+    var desclen = desc.length;
+    if((desc==="")||(desclen<50))
+    {
+      document.getElementById("studentapplydesciption").style.border = " 1px solid red";
+      document.getElementById("studentapplydesciption_error_msg").style.display = "block";
+      document.getElementById("studentapplydesciption_error_msg").style.color = "red";
+      event.preventDefault();
+    }
+    else
+    {
+      document.getElementById("studentapplydesciption_error_msg").style.display = "none";
+      document.getElementById("studentapplydesciption").style.border = "";
+      Axios.post(path + "student/apply", applyInfo)
       .then((res) => {
         if (res.data === "You have already applied") {
           alert("You have already applied for this project!");
@@ -40,12 +53,14 @@ const ApplyForm = (props) => {
         console.log(e);
       });
     props.history.push("/project-list");
+    }
   };
 
   const sendEmailToProjectOwner = () =>{
       const emailOptions={
         emailToAddress:projectDetails.user[0].email,
         emailToName:projectDetails.user[0].name,
+        emailForProject:projectDetails.title,
         emailSubject:"Application Received for Project:"+ projectDetails.title,
         emailApplicant:userInfo.user.email
       }
@@ -56,11 +71,31 @@ const ApplyForm = (props) => {
       });
   }
 
-  const handleFormChange = ({ target: { name, value } }) => {
+  // const handleFormChange = ({ target: { name, value } }) => {
+  //   setApplyInfo({
+  //     ...applyInfo,
+  //     [name]: value,
+  //   });
+  // };
+
+  const StudentApplyDescription = ({ target: { name, value } }) => {
     setApplyInfo({
       ...applyInfo,
       [name]: value,
     });
+    var desc = document.getElementById("studentapplydesciption").value;
+    var desclen = desc.length;
+    if((desc==="")||(desclen<50))
+    {
+      document.getElementById("studentapplydesciption").style.border = " 1px solid red";
+      document.getElementById("studentapplydesciption_error_msg").style.display = "block";
+      document.getElementById("studentapplydesciption_error_msg").style.color = "red";
+    }
+    else
+    {
+      document.getElementById("studentapplydesciption_error_msg").style.display = "none";
+      document.getElementById("studentapplydesciption").style.border = "";
+    }
   };
   useEffect(()=>{
     Axios.get(path + "project/" + applyInfo.projectId)
@@ -102,20 +137,21 @@ const ApplyForm = (props) => {
           <input
             name="email"
             value={applyInfo.email}
-            //onChange={handleFormChange}
             placeholder="Your email"
             disabled
           />
         </Form.Field>
 
         <Form.Field
+          id="studentapplydesciption"
           control={TextareaAutosize}
           name="description"
           label="Description explaining why you're interested in this project"
           placeholder="Enter your description"
-          onChange={handleFormChange}
+          onChange={StudentApplyDescription}
           value={applyInfo.description}
         ></Form.Field>
+        <Form.Field><div id="studentapplydesciption_error_msg"><p>* please provide a brief description of atleast 50 characters</p></div></Form.Field>
 
         <Form.Field>
           <label>Upload your resume</label>

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { Component, PropTypes } from 'react';
 import { Segment, Grid, Icon } from "semantic-ui-react";
+import "./projectdetail.css";
+import "./ProjectDeatiledPage";
+import LinesEllipsis from "react-lines-ellipsis";
 
-/**
- * @author @binjiasata
- * @description project details included date, description, skills
- *
- */
+class ProjectDetailedInfo extends Component {
 
-const ProjectDetailedInfo = ({ project }) => {
-  return (
+  constructor(props) {
+    super(props);
+  }
+  render()
+  {
+return(
     <Segment.Group>
       <Segment attached="top">
         <Grid verticalAlign="middle">
@@ -17,8 +20,8 @@ const ProjectDetailedInfo = ({ project }) => {
           </Grid.Column>
           <Grid.Column width={15}>
             <span>
-              {project.postedOn}
-              {project.postedOn ? "  To  " + project.validUntil : ""}
+              {this.props.project.postedOn}
+              {this.props.project.postedOn ? "  To  " + this.props.project.validUntil : ""}
             </span>
           </Grid.Column>
         </Grid>
@@ -29,7 +32,15 @@ const ProjectDetailedInfo = ({ project }) => {
             <Icon size="large" color="teal" name="info" />
           </Grid.Column>
           <Grid.Column width={15}>
-            <p>{project.description}</p>
+            <LinesEllipsis
+            id="project_description"
+            style={{ whiteSpace: "pre-wrap" }}
+            text={this.props.project.description}
+            ellipsis=""
+            maxLine={30}
+            trimRight
+            basedOn="letters">
+            </LinesEllipsis>
           </Grid.Column>
         </Grid>
       </Segment>
@@ -39,12 +50,17 @@ const ProjectDetailedInfo = ({ project }) => {
             <Icon size="large" color="teal" name="code branch" />
           </Grid.Column>
           <Grid.Column width={15}>
-            <p>{project.skills}</p>
+            <p>{this.props.project.skills}</p>
           </Grid.Column>
         </Grid>
       </Segment>
     </Segment.Group>
-  );
-};
+)
+  };
+}
+
+
+
 
 export default ProjectDetailedInfo;
+

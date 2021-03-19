@@ -18,7 +18,7 @@ const Student = (props) => {
       </Segment>
       <div class="ui inverted segment">
         <div class="ui inverted relaxed divided list">
-        <a class="item" target="_blank" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra8TWvX0Di8dIjAEMQgqNdlpUQkoxM0ZVNU04VDM4S1ZNWjFTUkJBMEZPSi4u">
+        <a class="item" target="_blank" href="https://cutt.ly/pdcvolunteer">
             Join as Volunteer
           </a>
           {/* <a class="item" href="#/program-coordinators">
@@ -50,20 +50,11 @@ const Student = (props) => {
             </p> 
           </details>
           </div>
-          {/* <a
-            class="item"
-            href="https://professionaldevclub.files.wordpress.com/2020/05/gng5902_proposal-template.docx"
-          >
-            GNG5902 Project Proposal Form (Click to Download)
-          </a>
-          <a
-            class="item"
-            href="https://professionaldevclub.files.wordpress.com/2020/05/elg5902_proposal-template.docx"
-          >
-            ELG5902 Project Proposal Form (Click to Download)
-          </a> */}
           <a class="item" href="#/resume-guidelines">
             Resume Writing Guidelines
+          </a>
+          <a class="item" href="https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra21LUdPDoDZJjwyjqRZEOIZUM1Y3U1cwMlBRUTVKVkpPRFVRTDBTQ1ZTNi4u">
+            Ask for Resume review session with us
           </a>
         </div>
       </div>
