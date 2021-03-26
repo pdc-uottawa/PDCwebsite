@@ -57,9 +57,17 @@ const ApplyForm = (props) => {
   };
 
   const sendEmailToProjectOwner = () =>{
+    
+    var emails = []
+    var names = []
+    for(var i=0;i<projectDetails.user.length;i++)
+    {
+      emails.push(projectDetails.user[i].email)
+      names.push(projectDetails.user[i].name)
+    }
       const emailOptions={
-        emailToAddress:projectDetails.user[0].email,
-        emailToName:projectDetails.user[0].name,
+        emailToAddress:emails,
+        emailToName:names,
         emailForProject:projectDetails.title,
         emailSubject:"Application Received for Project:"+ projectDetails.title,
         emailApplicant:userInfo.user.email
