@@ -134,7 +134,32 @@ passport.use(
         });
       }
       else {
-        done(new Error("Invalid user"));
+
+        const newUser = new User({
+          linkedinId: linkedinId,
+          email: ipEmail, //emails[0].value,
+          name: displayName,
+          picture: photos.length>0 ? photos[0].value:'',
+          company: true,
+        });
+
+        // Check if database has already had this user
+        User.findOneAndUpdate(
+          { linkedinId: linkedinId },
+          { picture: photos.length>0 ? photos[0].value:'', name: displayName }
+        ).then((currentUser) => {
+          // if it has, don't save
+          if (currentUser) {
+            done(null, currentUser);
+          } else {
+            // if it does not, save the new user
+            newUser.save().then((newUser) => {
+              done(null, newUser);
+            });
+          }
+        });
+        console.log(newUser.name+"........."+newUser.email);
+        // done(new Error("Invalid user"));
       }
     }
   )
