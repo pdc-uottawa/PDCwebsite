@@ -617,6 +617,7 @@ document.getElementById("project_host").style.border = "";
             name="project owner"
             placeholder="Project Owner"
             fluid
+            multiple
             selection
             onChange={handleOwnerChange}
             options={adminList}

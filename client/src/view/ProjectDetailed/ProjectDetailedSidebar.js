@@ -26,21 +26,19 @@ const ProjectDetailedSidebar = ({ project }) => {
             <Label
               style={{ position: "absolute" }}
               color="orange"
-              ribbon="right"
-            >
+              ribbon="right">
               Host
             </Label>
-            <Item.Image
-              size="tiny"
-              rounded
-              src={project.user && project.user.map((user) => user.picture)}
-            />
+            </Item>
+            {project.user && project.user.map((user) =>
+            <Item>
+            <Item.Image size="tiny" rounded src={user.picture}/>
             <Item.Content verticalAlign="middle">
-              <Item.Header as="h3">
-                {project.user && project.user.map((user) => user.name)}
-              </Item.Header>
+            <Item.Header as="h3">{user.name}</Item.Header>
+            <Item.Meta>{user.email}</Item.Meta>
             </Item.Content>
-          </Item>
+            </Item>
+            )} 
         </Item.Group>
       </Segment>
     </Fragment>
