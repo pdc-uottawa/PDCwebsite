@@ -44,22 +44,6 @@ const initialState = {
 
 }
 
-// function exampleReducer(state, action) {
-//   switch (action.type) {
-//     case 'CLEAN_QUERY':
-//       return initialState
-//     case 'START_SEARCH':
-//       return { ...state, loading: true, value: action.query }
-//     case 'FINISH_SEARCH':
-//       return { ...state, loading: false, results: action.results }
-//     case 'UPDATE_SELECTION':
-//       return { ...state, value: action.selection }
-
-//     default:
-//       throw new Error()
-//   }
-// }
-
 
 const ProjectList = ({ projectsInfo }) => {
 
@@ -79,7 +63,8 @@ const ProjectList = ({ projectsInfo }) => {
 
   }
 
-  const source = _.times(5, () => ({
+
+  const source = _.times(1, () => ({
 
   
   
@@ -110,6 +95,7 @@ function exampleReducer(state, action) {
       throw new Error()
   }
 }
+
 
   // when click create new project, jump to create-project page
   // const handleCreateNewProject = () => {
@@ -232,8 +218,11 @@ function exampleReducer(state, action) {
     }
   ];
 
+  
+  const results_data =[{"name":"java"},{"name":"ML"}];
+
   return (
-    
+
     <Fragment>
 <Grid>
 <Grid.Column width={6}>
@@ -243,9 +232,11 @@ function exampleReducer(state, action) {
             dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
           }
           onSearchChange={handleSearchChange}
-          results={results}
+          results={results_data}
           value={value}
         />
+
+
           <Dropdown
         placeholder="Select Projects"
         fluid
@@ -284,7 +275,7 @@ function exampleReducer(state, action) {
           return <ProjectListItem key={project._id} project={project} />;
         } 
         else if(project_filter_state==3) {
-          console.log("all"+project_filter_state);
+         
           return <ProjectListItem key={project._id} project={project} />;
         
         }
@@ -294,3 +285,4 @@ function exampleReducer(state, action) {
 };
 
 export default ProjectList;
+
