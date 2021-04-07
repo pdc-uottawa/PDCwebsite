@@ -10,6 +10,7 @@ const applySchema = new Schema({
   description: String,
   resume: String,
   isApplied: Boolean,
+  AppliedDate: String
 });
 
 const ApplyForm = mongoose.model("studentapplies", applySchema);

@@ -12,6 +12,8 @@ const ApplyForm = (props) => {
   const projectId = props.match.params.id;
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [projectDetails, setProjectDetails] = useState({});
+  var applieddate =new Date();
+  var applieddate_string=applieddate.toString();
 
   //need to insert some time lapse for loading
   const [applyInfo, setApplyInfo] = useState({
@@ -23,10 +25,10 @@ const ApplyForm = (props) => {
     description: "",
     resume: "",
     isApplied: true, // isApplied do not use for now
+    AppliedDate: applieddate_string
   });
 
   const handleFormSubmit = (event) => {
-    
     var desc = document.getElementById("studentapplydesciption").value;
     var desclen = desc.length;
     if((desc==="")||(desclen<50))
