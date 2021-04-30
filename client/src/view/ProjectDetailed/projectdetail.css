@@ -1,9 +1,5 @@
-#prjct_desc,#prjct_type,#prjct_domain,#prjct_skill
+#project_description
 {
     text-align: justify;
     margin-right: 30px;
-}
-#prjct_type,#prjct_domain,#prjct_skill
-{
-    display:none;
 }

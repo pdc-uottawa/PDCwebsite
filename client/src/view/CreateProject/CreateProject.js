@@ -617,6 +617,7 @@ document.getElementById("project_host").style.border = "";
             name="project owner"
             placeholder="Project Owner"
             fluid
+            multiple
             selection
             onChange={handleOwnerChange}
             options={adminList}
@@ -652,7 +653,7 @@ document.getElementById("project_host").style.border = "";
           value={info.description}
         ></Form.Field>
         <Form.Field>
-        <div id="project_description_error_msg"><p>* please provide a project host </p></div>
+        <div id="project_description_error_msg"><p>* please provide a project description </p></div>
         </Form.Field>
        
         <Button positive type="submit" onClick={handleFormValdiation}>

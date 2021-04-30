@@ -49,6 +49,8 @@ const ProjectDetailedHeader = ({
     //remove this later after fixing bug# try returning data with latest project status changed.
    window.location.reload(false);
   };
+
+ 
   // pass state to Creat Project, state includes Project Details
   const handleManage = () => {
     let path = {
@@ -66,6 +68,11 @@ const ProjectDetailedHeader = ({
       history.push("/signin");
     }
   };
+
+  function chckadmin(ad)
+  {
+    return ad.email === userInfo.user.email
+  }
 
   return (
     <Segment.Group>
@@ -92,8 +99,7 @@ const ProjectDetailedHeader = ({
       {/* For student, only show Apply button. For company and admin, show Manage and Delete button */}
       {userInfo.user &&
       (userInfo.user.company || userInfo.user.admin) &&
-      project.user &&
-      project.user[0].email === userInfo.user.email ? (
+      project.user && project.user.findIndex(chckadmin) !== -1 ? (
         <Segment attached="bottom" clearing>
           <Button color="orange" onClick={handleManage}>
             Edit Project Details
@@ -102,7 +108,7 @@ const ProjectDetailedHeader = ({
             size="tiny"
             closeIcon
             open={modalOpen}
-            trigger={project.isDeleted == true? (
+            trigger={project.isDeleted === true? (
                   <Button floated="right" color="green" content="Activate"/>
                 ) : (
                   <Button floated="right" color="red">

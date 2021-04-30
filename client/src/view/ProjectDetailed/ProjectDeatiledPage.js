@@ -42,6 +42,11 @@ const ProjectDeatiledPage = (props) => {
       });
   }, [setProjectDetails, id]);
 
+  function chckadmin(ad)
+  {
+    return ad.email === userInfo.user.email
+  }
+
   return (
     <Grid>
       <Grid.Column width={10}>
@@ -59,7 +64,7 @@ const ProjectDeatiledPage = (props) => {
         {userInfo.user &&
         (userInfo.user.company || userInfo.user.admin) &&
         projectDetails.user &&
-        projectDetails.user[0].email === userInfo.user.email ? (
+        projectDetails.user.findIndex(chckadmin) !== -1 ? (
           <ProjectDetailedAppliedStudents
             appliedStudentsList={appliedStudentsList}
           />
