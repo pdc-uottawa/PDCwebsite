@@ -1,68 +1,17 @@
-import React from "react";
+import React, { Component, PropTypes } from 'react';
 import { Segment, Grid, Icon } from "semantic-ui-react";
-import "./projectdetail.css"
+import "./projectdetail.css";
+import "./ProjectDeatiledPage";
+import LinesEllipsis from "react-lines-ellipsis";
 
-/**
- * @author @binjiasata
- * @description project details included date, description, skills
- *
- */
+class ProjectDetailedInfo extends Component {
 
-
-const ProjectDetailedInfo = ({ project }) => {
- 
-  
-
-//   window.onload = (event) => {
-//   var nlprojectdesc = project.description;  
-//   var projectdesc = nlprojectdesc.toLowerCase();
-//   var lenofdesc = projectdesc.length;
-//   var indexofskills = projectdesc.indexOf("skills:");
-//   var indexofprojecttype = projectdesc.indexOf("project type:");
-//   var indexofdomain = projectdesc.indexOf("domains:");
-//   var prjct;
-//   if(indexofprojecttype!==-1&&indexofdomain!==-1&&indexofskills!==-1)
-//   {
-//   prjct = nlprojectdesc.slice(0,indexofprojecttype);
-//   var prjct_type = nlprojectdesc.slice(indexofprojecttype,indexofdomain);
-//   var prjct_domain = nlprojectdesc.slice(indexofdomain,indexofskills);
-//   var prjct_skill = nlprojectdesc.slice(indexofskills,lenofdesc);
-//   }
-//   else
-//   {
-//   prjct= nlprojectdesc;
-//   }
-//   document.getElementById("prjct_desc").innerHTML="<p>"+prjct+"</p>";
-//   if(indexofprojecttype===-1)
-//   {
-//     document.getElementById("prjct_type").style.display="none";
-//   }
-//   else
-//   {
-//     document.getElementById("prjct_type").style.display="block";
-//     document.getElementById("prjct_type").innerHTML="<hr><p>"+prjct_type+"</p>";
-//   }
-//   if(indexofdomain===-1)
-//   {
-//     document.getElementById("prjct_domain").style.display="none";
-//   }
-//   else
-//   {
-//     document.getElementById("prjct_domain").style.display="block";
-//     document.getElementById("prjct_domain").innerHTML="<hr><p>"+prjct_domain+"</p>";
-//   }
-//   if(indexofskills===-1)
-//   {
-//     document.getElementById("prjct_skill").style.display="none";
-//   }
-//   else
-//   {
-//     document.getElementById("prjct_skill").style.display="block";
-//     document.getElementById("prjct_skill").innerHTML="<hr><p>"+prjct_skill+"</p>";
-//   }
-// };
-
-  return (
+  constructor(props) {
+    super(props);
+  }
+  render()
+  {
+return(
     <Segment.Group>
       <Segment attached="top">
         <Grid verticalAlign="middle">
@@ -71,8 +20,8 @@ const ProjectDetailedInfo = ({ project }) => {
           </Grid.Column>
           <Grid.Column width={15}>
             <span>
-              {project.postedOn}
-              {project.postedOn ? "  To  " + project.validUntil : ""}
+              {this.props.project.postedOn}
+              {this.props.project.postedOn ? "  To  " + this.props.project.validUntil : ""}
             </span>
           </Grid.Column>
         </Grid>
@@ -83,11 +32,15 @@ const ProjectDetailedInfo = ({ project }) => {
             <Icon size="large" color="teal" name="info" />
           </Grid.Column>
           <Grid.Column width={15}>
-            <p>{project.description}</p>
-            {/* <div id="prjct_desc"></div>
-            <div id="prjct_type"></div>
-            <div id="prjct_domain"></div>
-            <div id="prjct_skill"></div> */}
+            <LinesEllipsis
+            id="project_description"
+            style={{ whiteSpace: "pre-wrap" }}
+            text={this.props.project.description}
+            ellipsis=""
+            maxLine={30}
+            trimRight
+            basedOn="letters">
+            </LinesEllipsis>
           </Grid.Column>
         </Grid>
       </Segment>
@@ -97,12 +50,16 @@ const ProjectDetailedInfo = ({ project }) => {
             <Icon size="large" color="teal" name="code branch" />
           </Grid.Column>
           <Grid.Column width={15}>
-            <p>{project.skills}</p>
+            <p>{this.props.project.skills}</p>
           </Grid.Column>
         </Grid>
       </Segment>
     </Segment.Group>
-  );
-};
+)
+  };
+}
+
+
+
 
 export default ProjectDetailedInfo;
