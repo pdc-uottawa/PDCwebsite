@@ -26,15 +26,6 @@ function data_value(projectsInfo) {
 }
 
 
-// const source = _.times(5, () => ({
-
-//    title:this.state.title,
-//   description:description,
-  
-//   // image: faker.internet.avatar(),
-//   // price: faker.finance.amount(0, 100, 2, '$'),
-// }))
-
 
 
 const initialState = {
@@ -50,9 +41,10 @@ const ProjectList = ({ projectsInfo }) => {
   const path = config();
  var source_copy = {};
 
+
   const [projectsInfos, setProjectsInfo] = useState([]);
 
-  console.log(projectsInfos[0]);
+
 
 
   if(projectsInfos[0])
@@ -63,22 +55,14 @@ const ProjectList = ({ projectsInfo }) => {
 
   }
 
-
-  const source = _.times(1, () => ({
+var source =  ({
 
   
   
-    title: source_copy.title,
-    description: source_copy.description,
-    // description:projectsInfos[0].description,
-  
+  title: source_copy.title,
+  description: source_copy.description,
+})
 
-//   title:projectsInfos[0].title,
-//  description:projectsInfos[0].description,
- 
- // image: faker.internet.avatar(),
- // price: faker.finance.amount(0, 100, 2, '$'),
-}))
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -87,7 +71,8 @@ function exampleReducer(state, action) {
     case 'START_SEARCH':
       return { ...state, loading: true, value: action.query }
     case 'FINISH_SEARCH':
-      return { ...state, loading: false, results: action.results }
+      console.log(action.results+"finish search");
+      return { ...state, loading: false, results: action.results }   
     case 'UPDATE_SELECTION':
       return { ...state, value: action.selection }
 
@@ -95,12 +80,6 @@ function exampleReducer(state, action) {
       throw new Error()
   }
 }
-
-
-  // when click create new project, jump to create-project page
-  // const handleCreateNewProject = () => {
-  //   props.history.push("/create-project");
-  // };
 
   useEffect(() => {
     Axios.get(path + "project", {})
@@ -120,22 +99,13 @@ function exampleReducer(state, action) {
 
   project_data = projectsInfo;
 
-
-  // const [filteredEvents, setFilteredEvents] = useState([]);
-
-  // const [project_filter_state, setproject_filter] = useState([]);
-
   const [project_filter_state, setproject_filter] = useState(3)
 
   const [project_data_valuess, setproject_data] = useState(projectsInfo)
   
 
   const showPastEvent = () => {
-    // let currentTime = moment().format().slice(0,10);
-   
-    // setFilteredEvents(projectsInfo.filter((project) => project.expireDate < currentTime));
-    // project_filter=true;
-    // this.hooks[1].value.project_filter = true;
+  
    
     project_filter_future=false;
     setproject_filter(4);
@@ -145,23 +115,19 @@ function exampleReducer(state, action) {
 
 
   const showAllEvent = () => {
-    // let currentTime = moment().format().slice(0,10);
-    // setFilteredEvents(projectsInfo.filter((project) => project.expireDate < currentTime));
+  
     setproject_filter(3);
 
     
-    // return { ...state,  project_filter_future:true, project_filter:false }
+   
   };
 
   const showFutureEvent = () => {
-    // let currentTime = moment().format().slice(0,10);
-    // setFilteredEvents(projectsInfo.filter((project) => project.expireDate < currentTime));
-
+    
     setproject_filter(5);
-    // return { ...state,  project_filter_future:true, project_filter:false }
+    
   };
-  // data_value(projectsInfo);
-  // setproject_data(projectsInfo);
+
 
   const currentDate = moment().format("YYYY-MM-DD");
   const currentDateFourWeeksAgo = moment()
@@ -172,30 +138,90 @@ function exampleReducer(state, action) {
     const { loading, results, value } = state
 
     const timeoutRef = React.useRef()
-  const handleSearchChange = React.useCallback((e, data) => {
-    clearTimeout(timeoutRef.current)
-    dispatch({ type: 'START_SEARCH', query: data.value })
 
-    timeoutRef.current = setTimeout(() => {
-      if (data.value.length === 0) {
-        dispatch({ type: 'CLEAN_QUERY' })
-        return
+    const handleSearchChange = React.useCallback((e, data) => {
+      clearTimeout(timeoutRef.current)
+      dispatch({ type: 'START_SEARCH', query: data.value })
+  
+      timeoutRef.current = setTimeout(() => {
+        if (data.value.length === 0) {
+          dispatch({ type: 'CLEAN_QUERY' })
+          return
+        }
+  
+
+      const value_projects = [
+        {
+          title: "Food Deserts",
+          text: "Data Analytics,",
+          value: "Past Projects",
+         
+        },
+        {
+          title: "Mitigating traffic related air pollution through trees and shrubs",
+          text: "Data Engineering",
+          value: "Ongoing Projects",
+          
+        },
+        {
+          title: "Quality of connections",
+          text: ",Machine Learning Models",
+          value: "All Projects",
+          
+        },
+        {
+          title: "Identify wind tunnels that affect pedestrian comfort",
+          text: "AI Models",
+          value: "All Projects",
+          
+        },
+        {
+          title: "Buildings and Parks Assets (BPA) Unit",
+          text: "Data Analytics",
+          value: "All Projects",
+          
+        },
+      ]
+
+    
+
+    
+        var re = new RegExp(_.escapeRegExp(data.value), 'i')
+        for(var i = 0; i<value_projects.length;i++)
+        {
+        var isMatch =  re.test(value_projects[i].text)
+
+        console.log(value_projects[i].text+"value projectss");
+        console.log(isMatch+"isMatch value");
+
+
+        if(isMatch == true)
+        {
+          dispatch({
+            type: 'FINISH_SEARCH',
+            results: value_projects[i].title,
+          }
+          )
+
+       
+        }
+        else{
+          console.log("no match found");
+        }
+        console.log(value_projects[i].title+"isMatch data");
+
       }
 
-      const re = new RegExp(_.escapeRegExp(data.value), 'i')
-      const isMatch = (result) => re.test(result.title)
+      }, 300)
+    }, [])
 
-      dispatch({
-        type: 'FINISH_SEARCH',
-        results: _.filter(source, isMatch),
-      })
-    }, 300)
-  }, [])
-  React.useEffect(() => {
-    return () => {
-      clearTimeout(timeoutRef.current)
-    }
-  }, [])
+  var source =  ({
+
+  
+  
+    title: source_copy.title,
+    description: source_copy.description,
+  })
 
   const eventsOptions = [
     {
@@ -218,24 +244,36 @@ function exampleReducer(state, action) {
     }
   ];
 
-  
-  const results_data =[{"name":"java"},{"name":"ML"}];
+  var data_results = JSON.stringify({results});
+ 
 
   return (
 
     <Fragment>
 <Grid>
+<Grid.Row columns={2}>
 <Grid.Column width={6}>
-        <Search
+
+<Search
           loading={loading}
-          onResultSelect={(e, data) =>
-            dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
-          }
+          // onResultSelect={(e, data) =>
+          //   dispatch({ type: 'UPDATE_SELECTION', selection: data.results.title })
+          // }
           onSearchChange={handleSearchChange}
-          results={results_data}
+          // results={JSON.stringify({results}, null, 2)}
           value={value}
         />
-
+          </Grid.Column>
+<Grid.Column width={50}>
+        <Segment>
+          <Header>Project Results</Header>
+          <pre style={{ overflowX: 'auto' }}>
+            { results}
+          </pre>
+        </Segment>
+      </Grid.Column>
+    
+      </Grid.Row>
 
           <Dropdown
         placeholder="Select Projects"
@@ -243,7 +281,8 @@ function exampleReducer(state, action) {
         selection
         options={eventsOptions}
       />
-      </Grid.Column>
+   
+   
       </Grid>
 
       {projectsInfo.map((project) => {
