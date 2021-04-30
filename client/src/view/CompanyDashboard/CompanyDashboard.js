@@ -32,32 +32,32 @@ const CompanyDashboard = () => {
   console.log(projectList);
 
   // This should be the function for the applied student list... (currently not working)
-  useEffect(() => {
-    let projid = []
-    Axios.get(path + "project/user/" + userId)
-      .then((res) => {
-       let projdetail = res.data
-       projdetail.forEach(project => {
-        let projId = project._id;
-        projid.push(projId);
-      });
-      console.log(projid);
-      })
-    for(var i=0;projid.length;i++)
-    {
-    Axios.get(path + "student/apply" +projid[i])
-      .then((res) => {
-        console.log(res.data);
-        return res.data;
-      })
-      .then((data) => {
-        setStudentAppliedProjectsInfo(data);
-        studentlist.push(data);
-      });
-    }
-  }, [null]);
+  // useEffect(() => {
+  //   let projid = []
+  //   Axios.get(path + "project/user/" + userId)
+  //     .then((res) => {
+  //      let projdetail = res.data
+  //      projdetail.forEach(project => {
+  //       let projId = project._id;
+  //       projid.push(projId);
+  //     });
+  //     console.log(projid);
+  //     })
+  //   for(var i=0;projid.length;i++)
+  //   {
+  //   Axios.get(path + "student/apply" +projid[i])
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       return res.data;
+  //     })
+  //     .then((data) => {
+  //       setStudentAppliedProjectsInfo(data);
+  //       studentlist.push(data);
+  //     });
+  //   }
+  // }, [null]);
   
-  console.log(studentlist);
+  // console.log(studentlist);
   return (
     <Fragment>
       <Header as="h1">
@@ -66,26 +66,6 @@ const CompanyDashboard = () => {
       </Header>
       <Grid>
         <Grid.Column width={12}>
-        <Grid container columns={2}>
-            <Grid.Row columns={2}>
-            <Grid.Column>  
-            <Segment padded="very" inverted textAlign='center' raised>
-            <Statistic inverted size="huge">
-            <Statistic.Label>Applied Students For Projects</Statistic.Label>
-            <Statistic.Value>{studentAppliedProjectsInfo.length}</Statistic.Value>
-            </Statistic>
-            </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            <Segment padded="very" inverted textAlign='center' raised>
-            <Statistic inverted size="huge">
-            <Statistic.Label>Active Projects</Statistic.Label>
-            <Statistic.Value>{projectList.length}</Statistic.Value>
-            </Statistic>
-            </Segment>
-            </Grid.Column>
-            </Grid.Row>
-          </Grid>
           {projectList &&
             activeItem === "Projects" &&
             projectList.map((project) => {
