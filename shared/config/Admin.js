@@ -28,6 +28,7 @@ module.exports = {
     "sverm020@uottawa.ca",
     "ksing108@uottawa.ca",
 	"psing119@uottawa.ca",
+	"paramps4@outlook.ca",
 	"asarn058@uottawa.ca"
   ],
 };
