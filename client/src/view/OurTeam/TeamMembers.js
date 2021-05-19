@@ -1,7 +1,7 @@
 export const TeamMembers=[
     {name: "Mohammed Fahim",
         position:"President",
-        mailId:"mfahi009@uotttawa.ca",
+        mailId:"mfahi009@uottawa.ca",
         imagePath:"/assets/fahim.png"
     },
     {name: "Roopleen Kaur",
@@ -10,17 +10,17 @@ export const TeamMembers=[
         imagePath:"/assets/roopleen.jpeg"
     },
     {name: "Chinmayee Mahagaonkar",
-        position:"Vice President - Industry Relations",
+        position:"VP - Industry Relations",
         mailId:"cmaha026@uottawa.ca",
         imagePath:"/assets/chinmaye.jpg"
     },
     {name: "Abdullah-Al-Mehedi Hasan",
-        position:"Finance/Youtube",
+        position:"Finance & Youtube Manager",
         mailId:"ahasa085@uottawa.ca",
         imagePath:"/assets/abdullah.jpg"
     },
     {name: "Shivani Verma",
-        position:"Volunteering Management Executive",
+        position:"Volunteer Manager",
         mailId:"sverm020@uottawa.ca",
         imagePath:"/assets/shivani.jpg"
     },
@@ -39,23 +39,28 @@ export const TeamMembers=[
         mailId:"oolad085@uottawa.ca",
         imagePath:"/assets/tayo.jpeg"
     },
-    {name: "Akansha Agnihotri",
-        position:"Web Master & Social Media Manager",
-        mailId:"aagni073@uottawa.ca",
-        imagePath:"/assets/akansha.jpg"
-    },
     {name: "Shubhneet Baath",
         position:"Publications Director",
         mailId:"sbaat080@uottawa.ca",
         imagePath:"/assets/shubhneet.jpeg"
     },
     {name: "Abhiraj Singh Sarna",
-        position:"Website Team Lead",
+        position:"Website Team Manager",
         mailId:"asarn058@uottawa.ca",
         imagePath:"/assets/abhiraj.jpeg"
     },
+    {name: "Akansha Agnihotri",
+        position:"Web Master & Social Media Manager",
+        mailId:"aagni073@uottawa.ca",
+        imagePath:"/assets/akansha.jpg"
+    },
+    {name: "Parampreet Singh",
+        position:"Quality Assurance Manager",
+        mailId:"psing119@uottawa.ca",
+        imagePath:"/assets/param.jpeg"
+    },
     {name: "Mansher Sidhu",
-        position:"Lead Program Coordinator",
+        position:"Program Manager",
         mailId:"msidh098@uottawa.ca",
         imagePath:"/assets/mansher.jpg"
     },
@@ -65,24 +70,8 @@ export const TeamMembers=[
         imagePath:"/assets/hind.jpg"
     },
     {name: "Karamvir Singh",
-        position:"Alumni Coordinator",
+        position:"Alumni Relations Manager",
         mailId:"ksing108@uottawa.ca",
         imagePath:"/assets/karam.jpg"
     },
-    {name: "Siddhi Deshmukh",
-        position:"Youtube Coordinator",
-        mailId:"sdesh031@uottawa.ca",
-        imagePath:"/assets/siddhi.jpg"
-    },
-    {name: "Sahana Sundar Raman",
-        position:"Youtube Coordinator",
-        mailId:"ssaha062@uottawa.ca",
-        imagePath:"/assets/sahana.jpg"
-    },
-    {name: "Carvi Jain",
-        position:"Content & Graphics Team Volunteer",
-        mailId:"cjain034@uottawa.ca",
-        imagePath:"/assets/carvi.png"
-    },
-
 ]
