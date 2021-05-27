@@ -44,6 +44,11 @@ const Home = (props) => {
              <h3><font color="#4183c4">PDC Student Representative for Your Program</font></h3>
             </a>
             </Grid.Row>
+          <Grid.Row>
+            <a class="item" href="#/volunteers" color="blue">
+              <h3><font color="#4183c4">Meet Our Volunteers </font></h3>
+            </a>
+          </Grid.Row>
         </Grid>
       </Segment>
     </Fragment>
