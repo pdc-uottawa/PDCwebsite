@@ -3,6 +3,38 @@ import {
     Card
   } from "semantic-ui-react";
 
+
+const ProgramCoordinatorsList=[
+    {   name: "Abdullah-Al-Mehedi",
+        program:"DTI (UI/UX, Data Science)",
+        mail:"ahasa085@uottawa.ca"
+    },
+    {   name: "Yuting Cao",
+        program:"Systems Science (SYS)",
+        mail:"ycao053@uottawa.ca"
+    },
+    {   name: "Shaniasadat Shojaee",
+        program:"Mechanical Engineering",
+        mail:"sshoj065@uottawa.ca"
+    },
+    {   name: "Samhita Kuili",
+        program:"Electrical and Computer (ELG)",
+        mail:"skuil016@uottawa.ca"
+    },
+    {   name: "Piumantha Gunasekara",
+        program:"Engineering Management",
+        mail:"pguna066@uottawa.ca"
+    },
+    {   name: "Claudia Azigwe",
+        program:"Civil and Environmental Engineering",
+        mail:"cazig063@uottawa.ca"
+    },
+    {   name: "Mansher Singh",
+        program:"Bio-medical Engineering",
+        mail:"msidh098@uottawa.ca"
+    },
+];
+
 const ProgramCoordinators = (props) => {
   return (
     <Fragment>
@@ -10,117 +42,19 @@ const ProgramCoordinators = (props) => {
         Information about PDC Student Representative for various disciplines
       </h1>
       <Card.Group centered="true">
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Abdullah-Al-Mehedi</Card.Header>
-        <Card.Description>
-          Program: DTI (UI/UX, Data Science)
-        </Card.Description>
-        <Card.Description>
-          Email: ahasa085@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Soroush Salehi</Card.Header>
-        <Card.Description>
-          Program: Systems Science
-        </Card.Description>
-        <Card.Description>
-          Email: ssale066@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Akashdeep Singh</Card.Header>
-        <Card.Description>
-          Program: AMM and Mechanical Engineering
-        </Card.Description>
-        <Card.Description>
-          Email: asing255@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Achyuth Krishna Chepuri</Card.Header>
-        <Card.Description>
-          Program: 
-Electrical and Computer(ELG)
-        </Card.Description>
-        <Card.Description>
-          Email: achep065@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Yunzao Ma</Card.Header>
-        <Card.Description>
-          Program: Computer Science
-        </Card.Description>
-        <Card.Description>
-          Email: yma122@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Roopleen Kaur</Card.Header>
-        <Card.Description>
-          Program: Engineering Project Management
-        </Card.Description>
-        <Card.Description>
-          Email: rkaur050@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Claudia Azigwe</Card.Header>
-        <Card.Description>
-          Program: Environmental and Civil Engineering 
-        </Card.Description>
-        <Card.Description>
-          Email: cazig063@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Mansher Singh</Card.Header>
-        <Card.Description>
-          Program: Bio-medical Engineering
-        </Card.Description>
-        <Card.Description>
-          Email: msidh098@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Alisha Chitkara</Card.Header>
-        <Card.Description>
-          Program: Chemical Engineering
-        </Card.Description>
-        <Card.Description>
-          Email: achit093@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card color='blue'>
-        <Card.Content>
-        <Card.Header>Phani Rohith Maganti</Card.Header>
-        <Card.Description>
-          Program: CS, Concentration: Applied AI and Bioinformatics
-        </Card.Description>
-        <Card.Description>
-          Email: pmaga044@uottawa.ca
-        </Card.Description>
-        </Card.Content>
-      </Card>
+          {ProgramCoordinatorsList.map((programCoordinator)=>(
+              <Card color='blue'>
+                  <Card.Content>
+                      <Card.Header>{programCoordinator.name}</Card.Header>
+                      <Card.Description>
+                          Program: {programCoordinator.program}
+                      </Card.Description>
+                      <Card.Description>
+                          Email: {programCoordinator.mail}
+                      </Card.Description>
+                  </Card.Content>
+              </Card>
+          ))}
       </Card.Group>
       </Fragment>
   );
