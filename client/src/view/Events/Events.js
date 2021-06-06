@@ -24,6 +24,8 @@ const Events = (props) => {
 
   const [filteredEvents, setFilteredEvents] = useState([]);
 
+  const [filterType,setFilterType] =useState({});
+
   // var fileteredEvents = eventInfo;
 
   const handleMobileView = (device) => {
@@ -53,6 +55,7 @@ const Events = (props) => {
       });
   }, [setEventInfo, setFilteredEvents]);
 
+
   const showPastEvent = () => {
     let currentTime = moment().format().slice(0,10);
     setFilteredEvents(eventInfo.events.filter((event) => event.start.local.slice(0,10) < currentTime));
@@ -67,24 +70,38 @@ const Events = (props) => {
     setFilteredEvents(eventInfo.events)
   }
 
+  useEffect(()=>{
+
+    switch (filterType.value){
+      case "past": showPastEvent();
+        break;
+      case "future": showFutureEvent();
+        break;
+      case "all": showAllEvent();
+        break;
+      default: break;
+    }
+  },[filterType])
+
+
   const eventsOptions = [
     {
       key: "Past Events",
       text: "Past Events",
-      value: "Past Events",
-      onClick: showPastEvent
+      value: "past",
+      onClick: ((e, data)=>setFilterType(data))
     },
     {
       key: "Future Events",
       text: "Future Events",
-      value: "Future Events",
-      onClick: showFutureEvent
+      value: "future",
+      onClick:((e, data)=> setFilterType(data))
     },
     {
       key: "All Events",
       text: "All Events",
-      value: "All Events",
-      onClick: showAllEvent
+      value: "all",
+      onClick:((e,data)=> setFilterType(data))
     }
   ];
   return (
@@ -95,6 +112,8 @@ const Events = (props) => {
         selection
         options={eventsOptions}
         id="dropdown"
+        value={filterType.value}
+        text={filterType.text}
       />
       <Card.Group itemsPerRow={columnNumber}>
         {filteredEvents === undefined

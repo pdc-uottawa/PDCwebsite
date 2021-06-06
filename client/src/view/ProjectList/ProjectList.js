@@ -102,7 +102,9 @@ function exampleReducer(state, action) {
   const [project_filter_state, setproject_filter] = useState(3)
 
   const [project_data_valuess, setproject_data] = useState(projectsInfo)
-  
+
+  const [filterType,setFilterType] =useState({});
+
 
   const showPastEvent = () => {
   
@@ -127,6 +129,19 @@ function exampleReducer(state, action) {
     setproject_filter(5);
     
   };
+
+  useEffect(()=>{
+
+    switch (filterType.value){
+      case "past": showPastEvent();
+        break;
+      case "future": showFutureEvent();
+        break;
+      case "all": showAllEvent();
+        break;
+      default: break;
+    }
+  },[filterType])
 
 
   const currentDate = moment().format("YYYY-MM-DD");
@@ -227,20 +242,20 @@ function exampleReducer(state, action) {
     {
       key: "Past Projects",
       text: "Past Projects",
-      value: "Past Projects",
-      onClick: showPastEvent,
+      value: "past",
+      onClick:((e, data)=>setFilterType(data)),
     },
     {
       key: "Ongoing Projects",
       text: "Ongoing Projects",
-      value: "Ongoing Projects",
-      onClick: showFutureEvent,
+      value: "future",
+      onClick: ((e, data)=>setFilterType(data)),
     },
     {
       key: "All Projects",
       text: "All Projects",
-      value: "All Projects",
-      onClick: showAllEvent,
+      value: "all",
+      onClick: ((e, data)=>setFilterType(data)),
     }
   ];
 
@@ -253,8 +268,8 @@ function exampleReducer(state, action) {
 <Grid>
 <Grid.Row columns={2}>
 <Grid.Column>
-          <h1>Project Results</h1>
-      </Grid.Column>
+  <h1>Project Results</h1>
+</Grid.Column>
     
       </Grid.Row>
   <Grid.Row columns={1}>
@@ -265,6 +280,8 @@ function exampleReducer(state, action) {
         fluid
         selection
         options={eventsOptions}
+        value={filterType.value}
+        text={filterType.text}
       />
 
     </Grid.Column>
