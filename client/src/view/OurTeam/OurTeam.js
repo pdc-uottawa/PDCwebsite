@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Image, Grid, Segment } from "semantic-ui-react";
+import {Image, Grid, Segment, Button} from "semantic-ui-react";
 import './OurTeam.css';
 import {TeamMembers} from './TeamMembers'
 
@@ -39,15 +39,33 @@ const Home = (props) => {
               <p>{teamMember.mailId}</p>
             </Grid.Column>)}
           </Grid.Row>
-            <Grid.Row>
-            <a class="item" href="#/program-coordinators" color="blue">
-             <h3><font color="#4183c4">PDC Student Representative for Your Program</font></h3>
-            </a>
+            <Grid.Row id="contentContainer">
+              <h1>PDC STUDENT REPRESENTATIVES</h1>
+              <p>
+                Student Reps primarily represent matters relating to the academic experience of their cohort and relating to the impact of the more comprehensive student experience on academic issues and make sure that the voice and feedback of the University and the Students Union are taken and utilized, thus creating a real difference at the course level, but also have many wins across their departments and beyond!
+              </p>
+              <div id="buttons-container">
+              <Button primary color="blue" onClick={()=>window.location.href='#/program-coordinators'}>
+                Meet Your PDC Student Representative
+              </Button>
+              </div>
             </Grid.Row>
-          <Grid.Row>
-            <a class="item" href="#/volunteers" color="blue">
-              <h3><font color="#4183c4">Meet Our Volunteers </font></h3>
-            </a>
+            <Grid.Row id="contentContainer">
+              <h1>PDC VOLUNTEERS</h1>
+              <p>
+                Whether you want to learn a new skill, meet new people, experience something meaningful, or help where help is needed, volunteer opportunities at PDC,uOttawa is as diverse as people who fill them. Donating your time, energy, and possibly resources can be just as rewarding for you as for those you are helping. Get to connect with the student community, make it a better place, expand your network, and boost your social skills.
+                <b>There's no better time than now to join the team!</b>
+              </p>
+              <div id="buttons-container">
+              <Button primary color="blue" onClick={()=>window.location.href='#/volunteers'} id="meetVolunteersButton">
+                Meet Our Volunteers
+              </Button>
+              <Button primary color="blue" onClick={()=>window.open('https://forms.office.com/r/R7kBcQbnvX','_blank')} >
+                Join the team
+              </Button>
+              </div>
+            </Grid.Row>
+            <Grid.Row>
           </Grid.Row>
         </Grid>
       </Segment>
