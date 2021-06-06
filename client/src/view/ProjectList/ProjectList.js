@@ -252,28 +252,13 @@ function exampleReducer(state, action) {
     <Fragment>
 <Grid>
 <Grid.Row columns={2}>
-<Grid.Column width={6}>
-
-<Search
-          loading={loading}
-          // onResultSelect={(e, data) =>
-          //   dispatch({ type: 'UPDATE_SELECTION', selection: data.results.title })
-          // }
-          onSearchChange={handleSearchChange}
-          // results={JSON.stringify({results}, null, 2)}
-          value={value}
-        />
-          </Grid.Column>
-<Grid.Column width={50}>
-        <Segment>
-          <Header>Project Results</Header>
-          <pre style={{ overflowX: 'auto' }}>
-            { results}
-          </pre>
-        </Segment>
+<Grid.Column>
+          <h1>Project Results</h1>
       </Grid.Column>
     
       </Grid.Row>
+  <Grid.Row columns={1}>
+    <Grid.Column>
 
           <Dropdown
         placeholder="Select Projects"
@@ -281,8 +266,10 @@ function exampleReducer(state, action) {
         selection
         options={eventsOptions}
       />
-   
-   
+
+    </Grid.Column>
+
+  </Grid.Row>
       </Grid>
 
       {projectsInfo.map((project) => {
@@ -305,9 +292,10 @@ function exampleReducer(state, action) {
           return <ProjectListItem key={project._id} project={project} />;
         
         } else if (
-          !project.isDeleted &&
+         ( !project.isDeleted &&
           project.validUntil && (project_filter_state==5) &&
-          (currentDate<project.validUntil)
+          (currentDate<project.validUntil))|| (!project.isDeleted && (project_filter_state==5)
+          && !project.validUntil)
         
         ) {
           

@@ -12,6 +12,7 @@ import Axios from "axios";
 import { deviceType } from "react-device-detect";
 import { set } from "mongoose";
 import moment from 'moment';
+import "./Event.css"
 
 const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
@@ -43,10 +44,9 @@ const Events = (props) => {
         return res.data;
       })
       .then((data) => {
-        console.log(data);
         setEventInfo(data);
-        console.log(data.events)
-        setFilteredEvents(data.events);
+        let eventsInReverseOrder = data.events.reverse();
+        setFilteredEvents(eventsInReverseOrder);
       })
       .catch((e) => {
         console.log(e);
@@ -94,6 +94,7 @@ const Events = (props) => {
         fluid
         selection
         options={eventsOptions}
+        id="dropdown"
       />
       <Card.Group itemsPerRow={columnNumber}>
         {filteredEvents === undefined
