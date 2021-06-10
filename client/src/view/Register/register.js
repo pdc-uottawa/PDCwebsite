@@ -61,7 +61,7 @@ const Register = () => {
     { key: "AMM", text: "AMM and Mechanical Engineering", value: "AMM and Mechanical Engineering" },
     { key: "ELG", text: "Electrical and Computer(ELG)", value: "Electrical and Computer(ELG)" },
     { key: "CS", text: "Computer Science", value: "Computer Science" },
-    { key: "Engineeringmanagement", text: "Engineering Project Management", value: "Engineering Project Management" },
+    { key: "Engineeringmanagement", text: "Engineering Management", value: "Engineering Management" },
     { key: "ECivil", text: "Environment and Civil Engineering", value: "Environment and Civil Engineering" },
     { key: "BioChem", text: "Bio-Medical and Chemical Engineering", value: "Bio-Medical and Chemical Engineering" },
     
@@ -118,7 +118,7 @@ const Register = () => {
       Axios.post(path + "student/profile/edit/", studentProfileInfo)
       .then((res) => {
         if (res.data.message === "updated successfully") {
-            alert("Your Registeration Is Successful");
+            alert("Your registration is successful.");
             return res.data;
         }
       })
