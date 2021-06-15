@@ -12,6 +12,7 @@ import Axios from "axios";
 import { deviceType } from "react-device-detect";
 import { set } from "mongoose";
 import moment from 'moment';
+import "./Event.css"
 
 const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
@@ -22,6 +23,8 @@ const Events = (props) => {
   const [columnNumber, setColumnNumber] = useState(3);
 
   const [filteredEvents, setFilteredEvents] = useState([]);
+
+  const [filterType,setFilterType] =useState({});
 
   // var fileteredEvents = eventInfo;
 
@@ -43,15 +46,15 @@ const Events = (props) => {
         return res.data;
       })
       .then((data) => {
-        console.log(data);
         setEventInfo(data);
-        console.log(data.events)
-        setFilteredEvents(data.events);
+        let eventsInReverseOrder = data.events.reverse();
+        setFilteredEvents(eventsInReverseOrder);
       })
       .catch((e) => {
         console.log(e);
       });
   }, [setEventInfo, setFilteredEvents]);
+
 
   const showPastEvent = () => {
     let currentTime = moment().format().slice(0,10);
@@ -67,24 +70,38 @@ const Events = (props) => {
     setFilteredEvents(eventInfo.events)
   }
 
+  useEffect(()=>{
+
+    switch (filterType.value){
+      case "past": showPastEvent();
+        break;
+      case "future": showFutureEvent();
+        break;
+      case "all": showAllEvent();
+        break;
+      default: break;
+    }
+  },[filterType])
+
+
   const eventsOptions = [
     {
       key: "Past Events",
       text: "Past Events",
-      value: "Past Events",
-      onClick: showPastEvent
+      value: "past",
+      onClick: ((e, data)=>setFilterType(data))
     },
     {
       key: "Future Events",
       text: "Future Events",
-      value: "Future Events",
-      onClick: showFutureEvent
+      value: "future",
+      onClick:((e, data)=> setFilterType(data))
     },
     {
       key: "All Events",
       text: "All Events",
-      value: "All Events",
-      onClick: showAllEvent
+      value: "all",
+      onClick:((e,data)=> setFilterType(data))
     }
   ];
   return (
@@ -94,6 +111,9 @@ const Events = (props) => {
         fluid
         selection
         options={eventsOptions}
+        id="dropdown"
+        value={filterType.value}
+        text={filterType.text}
       />
       <Card.Group itemsPerRow={columnNumber}>
         {filteredEvents === undefined

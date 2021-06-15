@@ -102,7 +102,9 @@ function exampleReducer(state, action) {
   const [project_filter_state, setproject_filter] = useState(3)
 
   const [project_data_valuess, setproject_data] = useState(projectsInfo)
-  
+
+  const [filterType,setFilterType] =useState({});
+
 
   const showPastEvent = () => {
   
@@ -127,6 +129,19 @@ function exampleReducer(state, action) {
     setproject_filter(5);
     
   };
+
+  useEffect(()=>{
+
+    switch (filterType.value){
+      case "past": showPastEvent();
+        break;
+      case "future": showFutureEvent();
+        break;
+      case "all": showAllEvent();
+        break;
+      default: break;
+    }
+  },[filterType])
 
 
   const currentDate = moment().format("YYYY-MM-DD");
@@ -227,20 +242,20 @@ function exampleReducer(state, action) {
     {
       key: "Past Projects",
       text: "Past Projects",
-      value: "Past Projects",
-      onClick: showPastEvent,
+      value: "past",
+      onClick:((e, data)=>setFilterType(data)),
     },
     {
       key: "Ongoing Projects",
       text: "Ongoing Projects",
-      value: "Ongoing Projects",
-      onClick: showFutureEvent,
+      value: "future",
+      onClick: ((e, data)=>setFilterType(data)),
     },
     {
       key: "All Projects",
       text: "All Projects",
-      value: "All Projects",
-      onClick: showAllEvent,
+      value: "all",
+      onClick: ((e, data)=>setFilterType(data)),
     }
   ];
 
@@ -252,37 +267,26 @@ function exampleReducer(state, action) {
     <Fragment>
 <Grid>
 <Grid.Row columns={2}>
-<Grid.Column width={6}>
-
-<Search
-          loading={loading}
-          // onResultSelect={(e, data) =>
-          //   dispatch({ type: 'UPDATE_SELECTION', selection: data.results.title })
-          // }
-          onSearchChange={handleSearchChange}
-          // results={JSON.stringify({results}, null, 2)}
-          value={value}
-        />
-          </Grid.Column>
-<Grid.Column width={50}>
-        <Segment>
-          <Header>Project Results</Header>
-          <pre style={{ overflowX: 'auto' }}>
-            { results}
-          </pre>
-        </Segment>
-      </Grid.Column>
+<Grid.Column>
+  <h1>Project Results</h1>
+</Grid.Column>
     
       </Grid.Row>
+  <Grid.Row columns={1}>
+    <Grid.Column>
 
           <Dropdown
         placeholder="Select Projects"
         fluid
         selection
         options={eventsOptions}
+        value={filterType.value}
+        text={filterType.text}
       />
-   
-   
+
+    </Grid.Column>
+
+  </Grid.Row>
       </Grid>
 
       {projectsInfo.map((project) => {
@@ -305,9 +309,10 @@ function exampleReducer(state, action) {
           return <ProjectListItem key={project._id} project={project} />;
         
         } else if (
-          !project.isDeleted &&
+         ( !project.isDeleted &&
           project.validUntil && (project_filter_state==5) &&
-          (currentDate<project.validUntil)
+          (currentDate<project.validUntil))|| (!project.isDeleted && (project_filter_state==5)
+          && !project.validUntil)
         
         ) {
           
