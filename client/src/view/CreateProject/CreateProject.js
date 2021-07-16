@@ -648,7 +648,7 @@ document.getElementById("project_host").style.border = "";
           control={TextareaAutosize}
           name="description"
           label="Description"
-          placeholder="Enter the Desciption of the project"
+          placeholder="Enter description of the project"
           onChange={handleFormValidationdesc}
           value={info.description}
         ></Form.Field>
