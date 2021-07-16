@@ -87,7 +87,7 @@ passport.use(
           }
         });
       } else {
-        done(new Error("Invaild host domain!"));
+        done(new Error("Invalid host domain!"));
       }
     }
   )
@@ -245,8 +245,6 @@ passport.use(
         );
       } else if (tid && tid == process.env.OAUTH_TID)
        {
-        
-        
         const newUser = new User({
           outlookId: outlookId,
           name: name,
@@ -294,7 +292,7 @@ passport.use(
         });
       }
        else {
-        done(new Error("Invaild host domain!"));
+        done(new Error("Invalid host domain!"));
       }
     } catch (err) {
       return done(err);

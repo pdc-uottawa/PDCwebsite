@@ -198,12 +198,12 @@ const CreateEvent = (props) => {
     <Segment>
       <Form onSubmit={handleFormSubmit} autoComplete="off">
         <Form.Field>
-          <label>Event Title</label>
+          <label>Event title</label>
           <input
             name="name"
             value={event.name.html}
             onChange={handleFormChange}
-            placeholder="Event Title"
+            placeholder="Event title"
             required
           />
         </Form.Field>
@@ -211,7 +211,7 @@ const CreateEvent = (props) => {
         <Form.Field>
           <Grid style={{ paddindBottom: "10px" }}>
             <Grid.Column width={8}>
-              <label>Events Starts</label>
+              <label>Event start date</label>
               <input
                 name="startDate"
                 value={time.startDate}
@@ -222,11 +222,11 @@ const CreateEvent = (props) => {
               />
             </Grid.Column>
             <Grid.Column width={8}>
-              <label>Start Time</label>
+              <label>Start time</label>
               <Dropdown
                 id="selectStart"
                 onChange={handleStartTimeChange}
-                placeholder="select end time"
+                placeholder="select start time"
                 fluid
                 selection
                 options={timeOptions}
@@ -236,7 +236,7 @@ const CreateEvent = (props) => {
           </Grid>
           <Grid>
             <Grid.Column width={8}>
-              <label>Events Ends</label>
+              <label>Event end date</label>
               <input
                 name="endDate"
                 value={time.endDate}
@@ -247,7 +247,7 @@ const CreateEvent = (props) => {
               />
             </Grid.Column>
             <Grid.Column width={8}>
-              <label>End Time</label>
+              <label>End time</label>
               <Dropdown
                 name={"endTime"}
                 onChange={handleEndTimeChange}
@@ -285,7 +285,7 @@ const CreateEvent = (props) => {
             rows={3}
             value={event.description.html}
             onChange={handleFormChange}
-            placeholder="Enter the Desciption of the event"
+            placeholder="Enter description of the event"
           />
         </Form.Field>
 

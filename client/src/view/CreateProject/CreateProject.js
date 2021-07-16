@@ -180,7 +180,7 @@ const handleFormValidationtel = ({ target: { name, value } }) =>
   });
   //phone validation
   var tel = document.getElementById("contact_tel").value;
-  var telformat = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
+    var telformat = /^\d{10}$/;
   if(tel.match(telformat))
   {
     document.getElementById("project_tel_error_msg").style.display = "none";
@@ -361,7 +361,7 @@ document.getElementById("project_description").style.border = "";
     }
     //phone validation
     var tel = document.getElementById("contact_tel").value;
-    var telformat = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
+    var telformat = /^\d{10}$/;
     if(tel.match(telformat))
     {
     document.getElementById("project_tel_error_msg").style.display = "none";
@@ -373,7 +373,7 @@ document.getElementById("project_description").style.border = "";
     document.getElementById("project_tel_error_msg").style.display = "block";
     document.getElementById("project_tel_error_msg").style.color = "red";
     e.preventDefault();
-    } 
+    }
      //from date validation
   var date = new Date(); 
   var today_date_date = date.getUTCDate();
@@ -536,7 +536,7 @@ document.getElementById("project_host").style.border = "";
               onChange={handleFormValidationtel}
               placeholder="Contact Phone"
             />
-            <div id="project_tel_error_msg"><p>* please provide a proper telephone number </p></div>
+            <div id="project_tel_error_msg"><p>*should be a 10-digit number only</p></div>
           </Form.Field>
 
           <Form.Field>

@@ -81,25 +81,33 @@ const Register = () => {
 
     var studentnumber = document.getElementById("student_number").value;
       var tel = document.getElementById("student_phoneno").value;
-      var telformat = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
+      var telformat = /^\d{10}$/;
+      var stuNumFormat = /^\d{9}$/;
       var studentskills = document.getElementById("student_skills").value;
-      if((studentnumber==="")||(!tel.match(telformat))||(studentskills===""))
+      var student_program = document.getElementById("student_program").value;
+      if((!studentnumber.match(stuNumFormat))||(!tel.match(telformat))||(studentskills==="")||(student_program===""))
       {
-        if(studentnumber==="")
+        if(!studentnumber.match(stuNumFormat))
         {
       document.getElementById("student_number").style.border = " 1px solid red";
       document.getElementById("student_number_error_msg").style.display = "block";
       document.getElementById("student_number_error_msg").style.color = "red";
       event.preventDefault();
         }
-        if(!tel.match(telformat))
+        else if(!tel.match(telformat))
         {
       document.getElementById("student_phoneno").style.border = " 1px solid red";
       document.getElementById("student_phoneno_error_msg").style.display = "block";
       document.getElementById("student_phoneno_error_msg").style.color = "red";
       event.preventDefault();
         }
-        if(studentskills==="")
+        else if(student_program==="")
+        {
+      document.getElementById("student_program").style.border = " 1px solid red";
+      document.getElementById("student_program_error_msg").style.display = "block";
+      document.getElementById("student_program_error_msg").style.color = "red";
+        }
+        else if(studentskills==="")
         {
       document.getElementById("student_skills").style.border = " 1px solid red";
       document.getElementById("student_skills_error_msg").style.display = "block";
@@ -115,6 +123,8 @@ const Register = () => {
       document.getElementById("student_phoneno").style.border = "";
       document.getElementById("student_skills_error_msg").style.display = "none";
       document.getElementById("student_skills").style.border = "";
+      document.getElementById("student_program_error_msg").style.display = "none";
+      document.getElementById("student_program").style.border = "";
       Axios.post(path + "student/profile/edit/", studentProfileInfo)
       .then((res) => {
         if (res.data.message === "updated successfully") {
@@ -149,16 +159,17 @@ const Register = () => {
       [name]: value,
     });
     var studentnumber = document.getElementById("student_number").value;
-    if(studentnumber==="")
+    var stuNumFormat = /^\d{9}$/;
+    if(studentnumber.match(stuNumFormat))
     {
-    document.getElementById("student_number").style.border = "1px solid red";
-    document.getElementById("student_number_error_msg").style.display = "block";
-    document.getElementById("student_number_error_msg").style.color = "red";
+        document.getElementById("student_number_error_msg").style.display = "none";
+        document.getElementById("student_number").style.border = "";
     } 
     else
     {
-    document.getElementById("student_number_error_msg").style.display = "none";
-    document.getElementById("student_number").style.border = "";
+        document.getElementById("student_number").style.border = "1px solid red";
+        document.getElementById("student_number_error_msg").style.display = "block";
+        document.getElementById("student_number_error_msg").style.color = "red";
     }
   };
 
@@ -170,7 +181,7 @@ const Register = () => {
   });
   
   var tel = document.getElementById("student_phoneno").value;
-  var telformat = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
+  var telformat = /^\d{10}$/;
   if(tel.match(telformat))
   {
     document.getElementById("student_phoneno_error_msg").style.display = "none";
@@ -234,7 +245,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             onChange={StudentNumberValidation}
 
           />
-          <div id="student_number_error_msg"><p>* please provide a student number</p></div>
+          <div id="student_number_error_msg"><p>*should be a 9-digit number only</p></div>
         </Form.Field>
 
         <Form.Field required>
@@ -260,7 +271,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             required
          
           />
-          <div id="student_phoneno_error_msg"><p>* please provide a valid phone number</p></div>
+          <div id="student_phoneno_error_msg"><p>*should be a 10-digit number only</p></div>
         </Form.Field>
        
         <Form.Field>
@@ -290,7 +301,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
             required
             
           />
-          <div id="student_program_error_msg"><p>* please provide a student program</p></div>
+          <div id="student_program_error_msg"><p>* please select a student program</p></div>
         </Form.Field>
        
 
