@@ -216,20 +216,20 @@ const Header = (props) => {
           ) : (
             ""
           )}
-          {/* <Menu.Item
+           <Menu.Item
             name="Alumni"
             active={activeItem === "Alumni"}
             onClick={handleAlumni}
           >
-            For Alumni
+            Our Alumni
           </Menu.Item>
-          <Menu.Item
-            name="Covid19"
-            active={activeItem === "Covid19"}
-            onClick={handleCovid19}
-          >
-            Updates on COVID-19
-          </Menu.Item> */}
+          {/*<Menu.Item*/}
+          {/*  name="Covid19"*/}
+          {/*  active={activeItem === "Covid19"}*/}
+          {/*  onClick={handleCovid19}*/}
+          {/*>*/}
+          {/*  Updates on COVID-19*/}
+          {/*</Menu.Item> *!/*/}
           <Menu.Item
             name="Events"
             active={activeItem === "Events"}

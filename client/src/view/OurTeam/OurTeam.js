@@ -3,7 +3,7 @@ import {Image, Grid, Segment, Button} from "semantic-ui-react";
 import './OurTeam.css';
 import {TeamMembers} from './TeamMembers'
 
-const Home = (props) => {
+const OurTeam = (props) => {
   const InitialArray = new Array([10]);
   for (let i = 0; i < 10; i++) {
     InitialArray[i] = "Show bios";
@@ -33,7 +33,7 @@ const Home = (props) => {
         <Grid columns={4} stackable textAlign="center">
           <Grid.Row>
             {TeamMembers.map((teamMember,index)=><Grid.Column  id="column">
-              <Image id={index} centered src={teamMember.imagePath} />
+              <Image id={index} centered src={teamMember.imagePath} id="image"/>
               <h3>{teamMember.name}</h3>
               <h3>{teamMember.position}</h3>
               <div  id="socialMediaIconsContainer">
@@ -76,4 +76,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default OurTeam;
