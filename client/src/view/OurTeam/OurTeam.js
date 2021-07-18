@@ -36,7 +36,10 @@ const Home = (props) => {
               <Image id={index} centered src={teamMember.imagePath} />
               <h3>{teamMember.name}</h3>
               <h3>{teamMember.position}</h3>
-              <p>{teamMember.mailId}</p>
+              <div  id="socialMediaIconsContainer">
+              <a href={teamMember.linkedinId } target="_blank"><Image src={"/assets/linkedin.png"}  id="socialMediaIcon"/></a>
+              <a href={"mailto:"+ teamMember.mailId} target="_blank"> <Image src={"/assets/outlook.png"}  id="socialMediaIcon"/></a>
+              </div>
             </Grid.Column>)}
           </Grid.Row>
             <Grid.Row id="contentContainer">

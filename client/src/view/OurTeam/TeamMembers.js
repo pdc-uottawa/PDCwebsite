@@ -2,76 +2,91 @@ export const TeamMembers=[
     {name: "Mohammed Fahim",
         position:"President",
         mailId:"mfahi009@uottawa.ca",
-        imagePath:"/assets/fahim.png"
+        imagePath:"/assets/fahim.png",
+        linkedinId:"https://www.linkedin.com/in/mohammadfaheem/",
     },
     {name: "Roopleen Kaur",
         position:"Vice President",
         mailId:"rkaur050@uottawa.ca",
-        imagePath:"/assets/roopleen.jpeg"
+        imagePath:"/assets/roopleen.jpeg",
+        linkedinId: "https://www.linkedin.com/in/roopleen-kaur/"
     },
     {name: "Chinmayee Mahagaonkar",
         position:"VP - Industry Relations",
         mailId:"cmaha026@uottawa.ca",
-        imagePath:"/assets/chinmaye.jpg"
+        imagePath:"/assets/chinmaye.jpg",
+        linkedinId: "https://www.linkedin.com/in/chinmayee-mahagaonkar/"
     },
     {name: "Abdullah-Al-Mehedi Hasan",
         position:"Finance & Youtube Manager",
         mailId:"ahasa085@uottawa.ca",
-        imagePath:"/assets/abdullah.jpg"
+        imagePath:"/assets/abdullah.jpg",
+        linkedinId: "https://www.linkedin.com/in/a-a-m-h/"
     },
     {name: "Shivani Verma",
         position:"Volunteer Manager",
         mailId:"sverm020@uottawa.ca",
-        imagePath:"/assets/shivani.jpg"
+        imagePath:"/assets/shivani.jpg",
+        linkedinId: "https://www.linkedin.com/in/shivaniverma88/",
     },
     {name: "Muhammad Atif",
         position:"Event Manager",
         mailId:"matif062@uottawa.ca",
-        imagePath:"/assets/atif.jpeg"
+        imagePath:"/assets/atif.jpeg",
+        linkedinId: "https://www.linkedin.com/in/muhammad-atif-046b96127/"
     },
     {name: "Samhita Kuili",
         position:"Event Manager",
         mailId:"skuil016@uottawa.ca",
-        imagePath:"/assets/samhita.jpeg"
+        imagePath:"/assets/samhita.jpeg",
+        linkedinId: "https://www.linkedin.com/in/samhitakuili/"
     },
     {name: "Olutayo Oladosu",
         position:"Social Media Manager",
         mailId:"oolad085@uottawa.ca",
-        imagePath:"/assets/tayo.jpeg"
+        imagePath:"/assets/tayo.jpeg",
+        linkedinId: "https://www.linkedin.com/in/olutayo-oladosu-28a3201a6/"
     },
     {name: "Shubhneet Baath",
         position:"Publications Director",
         mailId:"sbaat080@uottawa.ca",
-        imagePath:"/assets/shubhneet.jpeg"
+        imagePath:"/assets/shubhneet.jpeg",
+        linkedinId: "https://www.linkedin.com/in/shubhneetbaath/"
     },
     {name: "Abhiraj Singh Sarna",
         position:"Website Team Manager",
         mailId:"asarn058@uottawa.ca",
-        imagePath:"/assets/abhiraj.jpeg"
+        imagePath:"/assets/abhiraj.jpeg",
+        linkedinId: "https://www.linkedin.com/in/abhirajsinghsarna/"
     },
     {name: "Akansha Agnihotri",
         position:"Web Master & Social Media Manager",
         mailId:"aagni073@uottawa.ca",
-        imagePath:"/assets/akansha.jpg"
+        imagePath:"/assets/akansha.jpg",
+        linkedinId: "https://www.linkedin.com/in/agnihotriakansha/"
     },
     {name: "Parampreet Singh",
         position:"Quality Assurance Manager",
         mailId:"psing119@uottawa.ca",
-        imagePath:"/assets/param.jpeg"
+        imagePath:"/assets/param.jpeg",
+        linkedinId: "https://www.linkedin.com/in/paramps44/",
     },
     {name: "Mansher Sidhu",
         position:"Program Manager",
         mailId:"msidh098@uottawa.ca",
-        imagePath:"/assets/mansher.jpg"
+        imagePath:"/assets/mansher.jpg",
+        linkedinId: "https://www.linkedin.com/in/mansher-singh-sidhu-140a15122/"
     },
     {name: "Hind Tlassellal",
         position:"Bilingual Initiative Manager",
         mailId:"htlas006@uottawa.ca",
-        imagePath:"/assets/hind.jpg"
+        imagePath:"/assets/hind.jpg",
+        linkedinId: "https://www.linkedin.com/in/hind-tlassellal-056398152/"
     },
     {name: "Karamvir Singh",
         position:"Alumni Relations Manager",
         mailId:"ksing108@uottawa.ca",
-        imagePath:"/assets/karam.jpg"
+        imagePath:"/assets/karam.jpg",
+        linkedinId: "https://www.linkedin.com/in/-karam/"
     },
 ]

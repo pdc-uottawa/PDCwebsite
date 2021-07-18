@@ -31,3 +31,14 @@
 #buttons-container{
   display: flex;
 }
+
+#socialMediaIcon{
+  width:32px;
+  height:32px;
+  margin-right: 5px;
+}
+
+#socialMediaIconsContainer{
+  display: flex;
+  justify-content: center;
+}
