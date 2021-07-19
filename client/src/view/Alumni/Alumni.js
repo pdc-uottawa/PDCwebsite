@@ -1,21 +1,30 @@
-import React, {Fragment} from "react";
-import {Grid, Segment, Image} from "semantic-ui-react";
+import React, { Fragment, useState } from "react";
+import {Image, Grid, Segment} from "semantic-ui-react";
+import './Alumni.css';
+import {AlumniMembers} from './AlumniMembers'
+
 const Alumni = (props) => {
-    return(
+    return (
         <Fragment>
-        <Segment placeholder>
-          <Grid columns={2} stackable textAlign='center' >
-          <Grid.Row verticalAlign='middle'>
-          <Grid.Column>
-            <h1>For Alumni</h1>
-          </Grid.Column>
-          <Grid.Column>
-            <Image centered size="large" src="/assets/comingsoon.jpg" />
-          </Grid.Column>
-          </Grid.Row>
-          </Grid>
-          </Segment>
-          </Fragment>
-    )
-}
+            <Segment placeholder>
+                <Grid columns={4} stackable textAlign="center">
+                    <Grid.Row>
+                        {AlumniMembers.map((alumni,index)=><Grid.Column  id="column">
+                            <Image id={index} centered src={alumni.imagePath} id="image" />
+                            <h3>{alumni.name}</h3>
+                            <h3>{alumni.position}</h3>
+                            <div  id="socialMediaIconsContainer">
+                                <a href={alumni.linkedinId } target="_blank"><Image src={"/assets/linkedin.png"}  id="socialMediaIcon"/></a>
+                                <a href={"mailto:"+ alumni.mailId} target="_blank"> <Image src={"/assets/outlook.png"}  id="socialMediaIcon"/></a>
+                            </div>
+                        </Grid.Column>)}
+                    </Grid.Row>
+                    <Grid.Row>
+                    </Grid.Row>
+                </Grid>
+            </Segment>
+        </Fragment>
+    );
+};
+
 export default Alumni;
