@@ -3,7 +3,7 @@ export const AlumniMembers=[
         position:"Graduated from University of Ottawa",
         mailId:"asing255@uottawa.ca",
         imagePath:"/assets/akashdeep.jpg",
-        linkedinId:"www.linkedin.com/in/akashdeep-singh1997",
+        linkedinId:"https://www.linkedin.com/in/akashdeep-singh1997",
     },
     {name: "Ajay Modagi",
         position:"Dissemination Officer at Statistics Canada",
