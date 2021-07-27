@@ -69,7 +69,7 @@ export const TeamMembers=[
         position:"Quality Assurance Manager",
         mailId:"psing119@uottawa.ca",
         imagePath:"/assets/param.jpeg",
-        linkedinId: "https://www.linkedin.com/in/paramps44/",
+        linkedinId: "https://www.linkedin.com/in/paramps4/",
     },
     {name: "Mansher Sidhu",
         position:"Program Manager",
