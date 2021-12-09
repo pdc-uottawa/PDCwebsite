@@ -34,10 +34,10 @@ const CreateProject = (props) => {
     hostedBy: state
       ? state.hostedBy
       : user && user.admin
-      ? "GES-PDC"
-      : user.company
-      ? "Company Name"
-      : "",
+        ? "GES-PDC"
+        : user && user.company
+          ? "Company Name"
+          : "",
     logoUrl: state ? state.logoUrl : "",
     category: state ? state.category : [],
     user: state ? state.user : [user],
@@ -53,7 +53,7 @@ const CreateProject = (props) => {
    * include Machine Learning, Web Development, Game Development for now.
    */
   const categoryOptions = [
-    { key: "machinelearning", text: "Machine Learning", value: "Machine Learning"},
+    { key: "machinelearning", text: "Machine Learning", value: "Machine Learning" },
     { key: "web", text: "Web Development", value: "Web Development" },
     { key: "game", text: "Game Development", value: "Game Development" },
     { key: "SoftwareDevelopment", text: "Software Development", value: "Software Development" },
@@ -115,10 +115,10 @@ const CreateProject = (props) => {
     props.history.push("/project-list");
   };
 
-  
+
 
   // handle form field change
-  const handleFormChange = ({ target: { name, value } }) => { 
+  const handleFormChange = ({ target: { name, value } }) => {
     setInfo({
       ...info,
       [name]: value,
@@ -126,234 +126,204 @@ const CreateProject = (props) => {
   };
 
 
-//handle form title validation
-   const handleFormValidationTitle = ({ target: { name, value } }) =>
-     {
-      setInfo({
-        ...info,
-        [name]: value,
-      });
-      //title validation
-    var title = document.getElementById("project_title").value;
-    if (title==="")
-     {
-    document.getElementById("project_title").style.border = " 1px solid red";
-    document.getElementById("project_title_error_msg").style.display = "block";
-    document.getElementById("project_title_error_msg").style.color = "red";
-     }
-    else
-     {
-    document.getElementById("project_title_error_msg").style.display = "none";
-    document.getElementById("project_title").style.border = "";
-     }
-  };
-
-//handle form email validation
-const handleFormValidationEmail = ({ target: { name, value } }) =>
-{
-  setInfo({
-    ...info,
-    [name]: value,
-  });
-  //email validation
-  var email_id = document.getElementById("email_id").value;
-  var mailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  if(email_id.match(mailformat))
-  {
-    document.getElementById("project_email_error_msg").style.display = "none";
-    document.getElementById("email_id").style.border = "";
-  }
-  else
-  {
-    document.getElementById("email_id").style.border = " 1px solid red";
-    document.getElementById("project_email_error_msg").style.display = "block";
-    document.getElementById("project_email_error_msg").style.color = "red";
-  } 
-};
-
-//handle form phone validation
-const handleFormValidationtel = ({ target: { name, value } }) =>
-{
-  setInfo({
-    ...info,
-    [name]: value,
-  });
-  //phone validation
-  var tel = document.getElementById("contact_tel").value;
-    var telformat = /^\d{10}$/;
-  if(tel.match(telformat))
-  {
-    document.getElementById("project_tel_error_msg").style.display = "none";
-    document.getElementById("contact_tel").style.border = "";
-  }
-  else
-  {
-    document.getElementById("contact_tel").style.border = " 1px solid red";
-    document.getElementById("project_tel_error_msg").style.display = "block";
-    document.getElementById("project_tel_error_msg").style.color = "red";
-  } 
-};
-
-//handle form date validation
-const handleFormValidationdate = ({ target: { name, value } }) =>
-{
-  setInfo({
-    ...info,
-    [name]: value,
-  });
-  //from date validation
-  var date = new Date(); 
-  var today_date_date = date.getUTCDate();
-  var today_date_month = date.getMonth();
-  var today_date_year = date.getFullYear();
-  var frm_date = document.getElementById("from_date").value;
-  var date1 = new Date(frm_date);
-  var frm_date_date = (date1.getUTCDate())+1;
-  var frm_date_month = date1.getMonth();
-  var frm_date_year = date1.getFullYear();
-  if(frm_date!=="")
-  {
-    document.getElementById("project_frm_date_blank_error_msg").style.display = "none";
-    if((frm_date_date>=today_date_date)&&(frm_date_month>=today_date_month)&&(frm_date_year>=today_date_year))
-  {
-    document.getElementById("project_frm_date_error_msg").style.display = "none";
-    document.getElementById("from_date").style.border = "";
-  }
-  else
-  {
-    document.getElementById("from_date").style.border = " 1px solid red";
-    document.getElementById("project_frm_date_error_msg").style.display = "block";
-    document.getElementById("project_frm_date_error_msg").style.color = "red";
-  } 
-  }
-  else{
-    document.getElementById("from_date").style.border = " 1px solid red";
-    document.getElementById("project_frm_date_blank_error_msg").style.display = "block";
-    document.getElementById("project_frm_date_blank_error_msg").style.color = "red";
-  }
-};
-
-
-//handle To date validation
-const handleFormValidationtodate = ({ target: { name, value } }) =>
-{
-  setInfo({
-    ...info,
-    [name]: value,
-  });
-  //To date validation
-  var frm_date = document.getElementById("from_date").value;
-  var date1 = new Date(frm_date);
-  var frm_date_date = date1.getUTCDate();
-  var frm_date_month = date1.getMonth();
-  var frm_date_year = date1.getFullYear();
-  var to_date = document.getElementById("to_date").value;
-  var date2 = new Date(to_date);
-  var to_date_date = date2.getUTCDate();
-  var to_date_month = date2.getMonth();
-  var to_date_year = date2.getFullYear();
-  if(document.getElementById("to_date_check").checked === true)
-  {
-  if(to_date!=="")
-  {
-    document.getElementById("project_to_date_blank_error_msg").style.display = "none";
-    if((to_date_date>=frm_date_date)&&(to_date_month>=frm_date_month)&&(to_date_year>=frm_date_year))
-  {
-    document.getElementById("project_to_date_error_msg").style.display = "none";
-    document.getElementById("to_date").style.border = "";
-  }
-  else
-  {
-    document.getElementById("to_date").style.border = " 1px solid red";
-    document.getElementById("project_to_date_error_msg").style.display = "block";
-    document.getElementById("project_to_date_error_msg").style.color = "red";
-  } 
-  }
-  else{
-    document.getElementById("to_date").style.border = " 1px solid red";
-    document.getElementById("project_to_date_blank_error_msg").style.display = "block";
-    document.getElementById("project_to_date_blank_error_msg").style.color = "red";
-  }
-}
-else
-  {
-    document.getElementById("project_to_date_blank_error_msg").style.display = "none";
-    document.getElementById("to_date").style.border = "";
-  }
-};
-
-//handle form host validation
-const handleFormValidationhost = ({ target: { name, value } }) =>
-{
- setInfo({
-   ...info,
-   [name]: value,
- });
- //form host validation
-var host = document.getElementById("project_host").value;
-if (host==="")
-{
-document.getElementById("project_host").style.border = " 1px solid red";
-document.getElementById("project_host_error_msg").style.display = "block";
-document.getElementById("project_host_error_msg").style.color = "red";
-}
-else
-{
-document.getElementById("project_host_error_msg").style.display = "none";
-document.getElementById("project_host").style.border = "";
-}
-};
-
-//handle form host validation
-const handleFormValidationdesc = ({ target: { name, value } }) =>
-{
- setInfo({
-   ...info,
-   [name]: value,
- });
- //desc host validation
-var desc = document.getElementById("project_description").value;
-if (desc==="")
-{
-document.getElementById("project_description").style.border = " 1px solid red";
-document.getElementById("project_description_error_msg").style.display = "block";
-document.getElementById("project_description_error_msg").style.color = "red";
-}
-else
-{
-document.getElementById("project_description_error_msg").style.display = "none";
-document.getElementById("project_description").style.border = "";
-}
-};
-
-
-  //handle form validations
-  const handleFormValdiation = (e) =>
-  {
+  //handle form title validation
+  const handleFormValidationTitle = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
     //title validation
     var title = document.getElementById("project_title").value;
-    if (title==="")
-     {
-    document.getElementById("project_title").style.border = " 1px solid red";
-    document.getElementById("project_title_error_msg").style.display = "block";
-    document.getElementById("project_title_error_msg").style.color = "red";
-    e.preventDefault();
-     }
-    else
-     {
-    document.getElementById("project_title_error_msg").style.display = "none";
-    document.getElementById("project_title").style.border = "";
-     }
+    if (title === "") {
+      document.getElementById("project_title").style.border = " 1px solid red";
+      document.getElementById("project_title_error_msg").style.display = "block";
+      document.getElementById("project_title_error_msg").style.color = "red";
+    }
+    else {
+      document.getElementById("project_title_error_msg").style.display = "none";
+      document.getElementById("project_title").style.border = "";
+    }
+  };
+
+  //handle form email validation
+  const handleFormValidationEmail = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
     //email validation
     var email_id = document.getElementById("email_id").value;
     var mailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if(email_id.match(mailformat))
-    {
+    if (email_id.match(mailformat)) {
       document.getElementById("project_email_error_msg").style.display = "none";
       document.getElementById("email_id").style.border = "";
     }
-    else
-    {
+    else {
+      document.getElementById("email_id").style.border = " 1px solid red";
+      document.getElementById("project_email_error_msg").style.display = "block";
+      document.getElementById("project_email_error_msg").style.color = "red";
+    }
+  };
+
+  //handle form phone validation
+  const handleFormValidationtel = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    //phone validation
+    var tel = document.getElementById("contact_tel").value;
+    var telformat = /^\d{10}$/;
+    if (tel.match(telformat)) {
+      document.getElementById("project_tel_error_msg").style.display = "none";
+      document.getElementById("contact_tel").style.border = "";
+    }
+    else {
+      document.getElementById("contact_tel").style.border = " 1px solid red";
+      document.getElementById("project_tel_error_msg").style.display = "block";
+      document.getElementById("project_tel_error_msg").style.color = "red";
+    }
+  };
+
+  //handle form date validation
+  const handleFormValidationdate = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    //from date validation
+    var date = new Date();
+    var today_date_date = date.getUTCDate();
+    var today_date_month = date.getMonth();
+    var today_date_year = date.getFullYear();
+    var frm_date = document.getElementById("from_date").value;
+    var date1 = new Date(frm_date);
+    var frm_date_date = (date1.getUTCDate()) + 1;
+    var frm_date_month = date1.getMonth();
+    var frm_date_year = date1.getFullYear();
+    if (frm_date !== "") {
+      document.getElementById("project_frm_date_blank_error_msg").style.display = "none";
+      if ((frm_date_date >= today_date_date) && (frm_date_month >= today_date_month) && (frm_date_year >= today_date_year)) {
+        document.getElementById("project_frm_date_error_msg").style.display = "none";
+        document.getElementById("from_date").style.border = "";
+      }
+      else {
+        document.getElementById("from_date").style.border = " 1px solid red";
+        document.getElementById("project_frm_date_error_msg").style.display = "block";
+        document.getElementById("project_frm_date_error_msg").style.color = "red";
+      }
+    }
+    else {
+      document.getElementById("from_date").style.border = " 1px solid red";
+      document.getElementById("project_frm_date_blank_error_msg").style.display = "block";
+      document.getElementById("project_frm_date_blank_error_msg").style.color = "red";
+    }
+  };
+
+
+  //handle To date validation
+  const handleFormValidationtodate = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    //To date validation
+    var frm_date = document.getElementById("from_date").value;
+    var date1 = new Date(frm_date);
+    var frm_date_date = date1.getUTCDate();
+    var frm_date_month = date1.getMonth();
+    var frm_date_year = date1.getFullYear();
+    var to_date = document.getElementById("to_date").value;
+    var date2 = new Date(to_date);
+    var to_date_date = date2.getUTCDate();
+    var to_date_month = date2.getMonth();
+    var to_date_year = date2.getFullYear();
+    if (document.getElementById("to_date_check").checked === true) {
+      if (to_date !== "") {
+        document.getElementById("project_to_date_blank_error_msg").style.display = "none";
+        if ((to_date_date >= frm_date_date) && (to_date_month >= frm_date_month) && (to_date_year >= frm_date_year)) {
+          document.getElementById("project_to_date_error_msg").style.display = "none";
+          document.getElementById("to_date").style.border = "";
+        }
+        else {
+          document.getElementById("to_date").style.border = " 1px solid red";
+          document.getElementById("project_to_date_error_msg").style.display = "block";
+          document.getElementById("project_to_date_error_msg").style.color = "red";
+        }
+      }
+      else {
+        document.getElementById("to_date").style.border = " 1px solid red";
+        document.getElementById("project_to_date_blank_error_msg").style.display = "block";
+        document.getElementById("project_to_date_blank_error_msg").style.color = "red";
+      }
+    }
+    else {
+      document.getElementById("project_to_date_blank_error_msg").style.display = "none";
+      document.getElementById("to_date").style.border = "";
+    }
+  };
+
+  //handle form host validation
+  const handleFormValidationhost = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    //form host validation
+    var host = document.getElementById("project_host").value;
+    if (host === "") {
+      document.getElementById("project_host").style.border = " 1px solid red";
+      document.getElementById("project_host_error_msg").style.display = "block";
+      document.getElementById("project_host_error_msg").style.color = "red";
+    }
+    else {
+      document.getElementById("project_host_error_msg").style.display = "none";
+      document.getElementById("project_host").style.border = "";
+    }
+  };
+
+  //handle form host validation
+  const handleFormValidationdesc = ({ target: { name, value } }) => {
+    setInfo({
+      ...info,
+      [name]: value,
+    });
+    //desc host validation
+    var desc = document.getElementById("project_description").value;
+    if (desc === "") {
+      document.getElementById("project_description").style.border = " 1px solid red";
+      document.getElementById("project_description_error_msg").style.display = "block";
+      document.getElementById("project_description_error_msg").style.color = "red";
+    }
+    else {
+      document.getElementById("project_description_error_msg").style.display = "none";
+      document.getElementById("project_description").style.border = "";
+    }
+  };
+
+
+  //handle form validations
+  const handleFormValdiation = (e) => {
+    //title validation
+    var title = document.getElementById("project_title").value;
+    if (title === "") {
+      document.getElementById("project_title").style.border = " 1px solid red";
+      document.getElementById("project_title_error_msg").style.display = "block";
+      document.getElementById("project_title_error_msg").style.color = "red";
+      e.preventDefault();
+    }
+    else {
+      document.getElementById("project_title_error_msg").style.display = "none";
+      document.getElementById("project_title").style.border = "";
+    }
+    //email validation
+    var email_id = document.getElementById("email_id").value;
+    var mailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (email_id.match(mailformat)) {
+      document.getElementById("project_email_error_msg").style.display = "none";
+      document.getElementById("email_id").style.border = "";
+    }
+    else {
       document.getElementById("email_id").style.border = " 1px solid red";
       document.getElementById("project_email_error_msg").style.display = "block";
       document.getElementById("project_email_error_msg").style.color = "red";
@@ -362,115 +332,102 @@ document.getElementById("project_description").style.border = "";
     //phone validation
     var tel = document.getElementById("contact_tel").value;
     var telformat = /^\d{10}$/;
-    if(tel.match(telformat))
-    {
-    document.getElementById("project_tel_error_msg").style.display = "none";
-    document.getElementById("contact_tel").style.border = "";
+    if (tel.match(telformat)) {
+      document.getElementById("project_tel_error_msg").style.display = "none";
+      document.getElementById("contact_tel").style.border = "";
     }
-    else
-    {
-    document.getElementById("contact_tel").style.border = " 1px solid red";
-    document.getElementById("project_tel_error_msg").style.display = "block";
-    document.getElementById("project_tel_error_msg").style.color = "red";
-    e.preventDefault();
+    else {
+      document.getElementById("contact_tel").style.border = " 1px solid red";
+      document.getElementById("project_tel_error_msg").style.display = "block";
+      document.getElementById("project_tel_error_msg").style.color = "red";
+      e.preventDefault();
     }
-     //from date validation
-  var date = new Date(); 
-  var today_date_date = date.getUTCDate();
-  var today_date_month = date.getMonth();
-  var today_date_year = date.getFullYear();
-  var frm_date = document.getElementById("from_date").value;
-  var date1 = new Date(frm_date);
-  var frm_date_date = (date1.getUTCDate())+1;
-  var frm_date_month = date1.getMonth();
-  var frm_date_year = date1.getFullYear();
-  if(frm_date!=="")
-  {
-    document.getElementById("project_frm_date_blank_error_msg").style.display = "none";
-    if((frm_date_date>=today_date_date)&&(frm_date_month>=today_date_month)&&(frm_date_year>=today_date_year))
-  {
-    document.getElementById("project_frm_date_error_msg").style.display = "none";
-    document.getElementById("from_date").style.border = "";
-  }
-  else
-  {
-    document.getElementById("from_date").style.border = " 1px solid red";
-    document.getElementById("project_frm_date_error_msg").style.display = "block";
-    document.getElementById("project_frm_date_error_msg").style.color = "red";
-    e.preventDefault();
-  } 
-  }
-  else{
-    document.getElementById("from_date").style.border = " 1px solid red";
-    document.getElementById("project_frm_date_blank_error_msg").style.display = "block";
-    document.getElementById("project_frm_date_blank_error_msg").style.color = "red";
-    e.preventDefault();
-  }
-  //To date validation
-  var to_date = document.getElementById("to_date").value;
-  var date2 = new Date(to_date);
-  var to_date_date = date2.getUTCDate();
-  var to_date_month = date2.getMonth();
-  var to_date_year = date2.getFullYear();
-  if(document.getElementById("to_date_check").checked === true)
-  {
-  if(to_date!=="")
-  {
-    document.getElementById("project_to_date_blank_error_msg").style.display = "none";
-    if((to_date_date>=frm_date_date)&&(to_date_month>=frm_date_month)&&(to_date_year>=frm_date_year))
-  {
-    document.getElementById("project_to_date_error_msg").style.display = "none";
-    document.getElementById("to_date").style.border = "";
-  }
-  else
-  {
-    document.getElementById("to_date").style.border = " 1px solid red";
-    document.getElementById("project_to_date_error_msg").style.display = "block";
-    document.getElementById("project_to_date_error_msg").style.color = "red";
-    e.preventDefault();
-  } 
-  }
-  else{
-    document.getElementById("to_date").style.border = " 1px solid red";
-    document.getElementById("project_to_date_blank_error_msg").style.display = "block";
-    document.getElementById("project_to_date_blank_error_msg").style.color = "red";
-    e.preventDefault();
-  }
-  }
-  //form host validation
-var host = document.getElementById("project_host").value;
-if (host==="")
-{
-document.getElementById("project_host").style.border = " 1px solid red";
-document.getElementById("project_host_error_msg").style.display = "block";
-document.getElementById("project_host_error_msg").style.color = "red";
-e.preventDefault();
-}
-else
-{
-document.getElementById("project_host_error_msg").style.display = "none";
-document.getElementById("project_host").style.border = "";
-}
- //desc host validation
- var desc = document.getElementById("project_description").value;
- if (desc==="")
- {
- document.getElementById("project_description").style.border = " 1px solid red";
- document.getElementById("project_description_error_msg").style.display = "block";
- document.getElementById("project_description_error_msg").style.color = "red";
- e.preventDefault();
- }
- else
- {
- document.getElementById("project_description_error_msg").style.display = "none";
- document.getElementById("project_description").style.border = "";
- }
+    //from date validation
+    var date = new Date();
+    var today_date_date = date.getUTCDate();
+    var today_date_month = date.getMonth();
+    var today_date_year = date.getFullYear();
+    var frm_date = document.getElementById("from_date").value;
+    var date1 = new Date(frm_date);
+    var frm_date_date = (date1.getUTCDate()) + 1;
+    var frm_date_month = date1.getMonth();
+    var frm_date_year = date1.getFullYear();
+    if (frm_date !== "") {
+      document.getElementById("project_frm_date_blank_error_msg").style.display = "none";
+      if ((frm_date_date >= today_date_date) && (frm_date_month >= today_date_month) && (frm_date_year >= today_date_year)) {
+        document.getElementById("project_frm_date_error_msg").style.display = "none";
+        document.getElementById("from_date").style.border = "";
+      }
+      else {
+        document.getElementById("from_date").style.border = " 1px solid red";
+        document.getElementById("project_frm_date_error_msg").style.display = "block";
+        document.getElementById("project_frm_date_error_msg").style.color = "red";
+        e.preventDefault();
+      }
+    }
+    else {
+      document.getElementById("from_date").style.border = " 1px solid red";
+      document.getElementById("project_frm_date_blank_error_msg").style.display = "block";
+      document.getElementById("project_frm_date_blank_error_msg").style.color = "red";
+      e.preventDefault();
+    }
+    //To date validation
+    var to_date = document.getElementById("to_date").value;
+    var date2 = new Date(to_date);
+    var to_date_date = date2.getUTCDate();
+    var to_date_month = date2.getMonth();
+    var to_date_year = date2.getFullYear();
+    if (document.getElementById("to_date_check").checked === true) {
+      if (to_date !== "") {
+        document.getElementById("project_to_date_blank_error_msg").style.display = "none";
+        if ((to_date_date >= frm_date_date) && (to_date_month >= frm_date_month) && (to_date_year >= frm_date_year)) {
+          document.getElementById("project_to_date_error_msg").style.display = "none";
+          document.getElementById("to_date").style.border = "";
+        }
+        else {
+          document.getElementById("to_date").style.border = " 1px solid red";
+          document.getElementById("project_to_date_error_msg").style.display = "block";
+          document.getElementById("project_to_date_error_msg").style.color = "red";
+          e.preventDefault();
+        }
+      }
+      else {
+        document.getElementById("to_date").style.border = " 1px solid red";
+        document.getElementById("project_to_date_blank_error_msg").style.display = "block";
+        document.getElementById("project_to_date_blank_error_msg").style.color = "red";
+        e.preventDefault();
+      }
+    }
+    //form host validation
+    var host = document.getElementById("project_host").value;
+    if (host === "") {
+      document.getElementById("project_host").style.border = " 1px solid red";
+      document.getElementById("project_host_error_msg").style.display = "block";
+      document.getElementById("project_host_error_msg").style.color = "red";
+      e.preventDefault();
+    }
+    else {
+      document.getElementById("project_host_error_msg").style.display = "none";
+      document.getElementById("project_host").style.border = "";
+    }
+    //desc host validation
+    var desc = document.getElementById("project_description").value;
+    if (desc === "") {
+      document.getElementById("project_description").style.border = " 1px solid red";
+      document.getElementById("project_description_error_msg").style.display = "block";
+      document.getElementById("project_description_error_msg").style.color = "red";
+      e.preventDefault();
+    }
+    else {
+      document.getElementById("project_description_error_msg").style.display = "none";
+      document.getElementById("project_description").style.border = "";
+    }
   };
 
-  const handleOwnerChange  = (e, data) => {
+  const handleOwnerChange = (e, data) => {
     setInfo({
       ...info,
-      user: data.value?data.value:user,
+      user: data.value ? data.value : user,
     });
   };
 
@@ -485,23 +442,25 @@ document.getElementById("project_host").style.border = "";
       .catch((e) => {
         console.log(e);
       });
-  },[null]);
+  }, [null]);
 
   const adminList = [
   ];
 
-  adminUsers.map((admin)=>{
+  adminUsers.map((admin) => {
     adminList.push(
-     {
-       key:admin._id,
-       value:admin,
-       text:admin.name
-     });
- });
+      {
+        key: admin._id,
+        value: admin,
+        text: admin.name
+      });
+  });
 
   return (
-    <Segment>
-      <Form onSubmit={handleFormSubmit} autoComplete="off">
+    <>
+      {
+        user.admin ? 
+        <Form onSubmit={handleFormSubmit} autoComplete="off">
         <Form.Field>
           <label>Project Title</label>
           <Input
@@ -600,29 +559,29 @@ document.getElementById("project_host").style.border = "";
           />
         </Form.Field> */}
         <Form.Group widths="equal">
-        <Form.Field>
-          <label>Hosted By</label>
-          <input
-            id="project_host"
-            name="hostedBy"
-            value={info.hostedBy}
-            onChange={handleFormValidationhost}
-            placeholder="Enter the name of company hosting"
-          />
-          <div id="project_host_error_msg"><p>* please provide a project host </p></div>
-        </Form.Field>
-        <Form.Field>
-          <label>Project Owner</label>
-          <Dropdown
-            name="project owner"
-            placeholder="Project Owner"
-            fluid
-            multiple
-            selection
-            onChange={handleOwnerChange}
-            options={adminList}
-          />
-        </Form.Field>
+          <Form.Field>
+            <label>Hosted By</label>
+            <input
+              id="project_host"
+              name="hostedBy"
+              value={info.hostedBy}
+              onChange={handleFormValidationhost}
+              placeholder="Enter the name of company hosting"
+            />
+            <div id="project_host_error_msg"><p>* please provide a project host </p></div>
+          </Form.Field>
+          <Form.Field>
+            <label>Project Owner</label>
+            <Dropdown
+              name="project owner"
+              placeholder="Project Owner"
+              fluid
+              multiple
+              selection
+              onChange={handleOwnerChange}
+              options={adminList}
+            />
+          </Form.Field>
         </Form.Group>
         <Form.Field>
           <label>Category</label>
@@ -653,17 +612,26 @@ document.getElementById("project_host").style.border = "";
           value={info.description}
         ></Form.Field>
         <Form.Field>
-        <div id="project_description_error_msg"><p>* please provide a project description </p></div>
+          <div id="project_description_error_msg"><p>* please provide a project description </p></div>
         </Form.Field>
-       
+
         <Button positive type="submit" onClick={handleFormValdiation}>
           {state ? "Update" : "Submit"}
         </Button>
         <Button onClick={handleFormCancel} type="button">
           Cancel
         </Button>
-      </Form>
-    </Segment>
+      </Form> 
+        : 
+        <>
+          <center>
+            <h1>Oops, Page Not Found!</h1> 
+            <h3>Please login as an admin to create a project!</h3> 
+          </center>
+        </>
+      }
+      
+    </>
   );
 };
 export default CreateProject;
