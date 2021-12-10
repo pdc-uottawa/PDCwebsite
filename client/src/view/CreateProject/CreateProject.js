@@ -459,7 +459,7 @@ const CreateProject = (props) => {
   return (
     <>
       {
-        user.admin ? 
+        user && user.admin ? 
         <Form onSubmit={handleFormSubmit} autoComplete="off">
         <Form.Field>
           <label>Project Title</label>
