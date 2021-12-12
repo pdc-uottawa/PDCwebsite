@@ -256,7 +256,7 @@ const Header = (props) => {
             <LogedInMenu
               logOut={handleLogout}
               username={userInfo.user.name}
-              userPicture={userInfo.user.picture}
+              userPicture={userInfo.user.picture ? userInfo.user.picture : defIcon}
             />
           ) : (
             <LogedOutMenu logIn={handleLogin} />
