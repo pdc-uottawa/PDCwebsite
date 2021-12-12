@@ -14,6 +14,7 @@ import LogedOutMenu from "./Menus/LogedOutMenu";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
+import defIcon from '../../assets/defIcon.png'
 
 import { useWindowDimensions } from '../../common/context/WindowDimensionsProvider'
 
@@ -255,7 +256,7 @@ const Header = (props) => {
             <LogedInMenu
               logOut={handleLogout}
               username={userInfo.user.name}
-              userPicture={userInfo.user.picture}
+              userPicture={userInfo.user.picture ? userInfo.user.picture : defIcon}
             />
           ) : (
             <LogedOutMenu logIn={handleLogin} />
@@ -362,7 +363,7 @@ const Header = (props) => {
                 <LogedInMenu
                   logOut={handleLogout}
                   username={userInfo.user.name}
-                  userPicture={userInfo.user.picture}
+                  userPicture={userInfo.user.picture ? userInfo.user.picture : defIcon}
                 />
               ) : (
                 <LogedOutMenu logIn={handleLogin} />
