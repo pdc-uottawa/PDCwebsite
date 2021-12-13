@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Segment, Item, Label } from "semantic-ui-react";
+const image = require ('../../assets/default.png')
 
 /**
  * @author @binjiasata
@@ -32,7 +33,12 @@ const ProjectDetailedSidebar = ({ project }) => {
             </Item>
             {project.user && project.user.map((user) =>
             <Item>
-            <Item.Image size="tiny" rounded src={user.picture}/>
+                {
+                  user.picture ?
+                  <Item.Image size="mini" circular src={user.picture} />
+                  :
+                  <Item.Image size="mini" circular src={image} />
+                }
             <Item.Content verticalAlign="middle">
             <Item.Header as="h3">{user.name}</Item.Header>
             <Item.Meta>{user.email}</Item.Meta>
