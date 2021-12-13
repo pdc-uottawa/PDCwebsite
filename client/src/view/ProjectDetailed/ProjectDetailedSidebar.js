@@ -35,9 +35,9 @@ const ProjectDetailedSidebar = ({ project }) => {
             <Item>
                 {
                   user.picture ?
-                  <Item.Image size="mini" circular src={user.picture} />
+                  <Item.Image size="tiny" circular src={user.picture} />
                   :
-                  <Item.Image size="mini" circular src={image} />
+                  <Item.Image size="tiny" circular src={image} />
                 }
             <Item.Content verticalAlign="middle">
             <Item.Header as="h3">{user.name}</Item.Header>
