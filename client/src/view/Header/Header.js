@@ -5,6 +5,7 @@ import {
   Button,
   Icon,
   Segment,
+  Image,
 } from "semantic-ui-react";
 import React, { useEffect, useState, Fragment, useContext } from "react";
 import useReactRouter from "use-react-router";
@@ -15,8 +16,8 @@ import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
 import defIcon from '../../assets/defIcon.png'
-
 import { useWindowDimensions } from '../../common/context/WindowDimensionsProvider'
+const img = require('../../assets/pdc_logo.png')
 
 /**
  * @author @binjiasata @yiyinzhang
@@ -181,10 +182,20 @@ const Header = (props) => {
             active={activeItem === "home"}
             as="a"
             onClick={handleHome}
+            header 
+          >
+        <Image avatar size="mini" circular src={img}/>&nbsp;&nbsp;&nbsp;
+        Professional Development Club
+          </Menu.Item>
+          {/* <Menu.Item
+            name="home"
+            active={activeItem === "home"}
+            as="a"
+            onClick={handleHome}
             header
           >
-            Professional Development Club
-          </Menu.Item>
+            
+          </Menu.Item> */}
           <Menu.Item
             name="OurTeam"
             active={activeItem === "OurTeam"}
