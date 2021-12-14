@@ -82,8 +82,9 @@ const ProjectListItem = ({ project }) => {
         </Segment>
         <Segment>
           <span>
-            <Icon name="clock" /> {postedOn}
-            {validUntil ? "  To  " + validUntil : ""}
+            <Icon name="clock" /> Posted on: {postedOn}
+            &nbsp; &nbsp;
+            {validUntil ? "Valid Until: " + validUntil : ""}
           </span>
         </Segment>
         <Segment secondary>
@@ -96,9 +97,9 @@ const ProjectListItem = ({ project }) => {
         </Segment>
         <Segment clearing>
           <LinesEllipsis
-            style={{ whiteSpace: "pre-wrap" }}
+            style={{ whiteSpace: "pre-wrap"}}
             text={description}
-            ellipsis=""
+            ellipsis="..."
             maxLine={readMore ? "50" : "3"}
             trimRight
             basedOn="letters"
