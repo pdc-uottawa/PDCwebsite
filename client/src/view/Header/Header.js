@@ -163,7 +163,7 @@ const Header = (props) => {
         {
           console.log("new user ...... 160");
           console.log(data.user);
-          history.push("/register", data.user);
+          history.push("/");
 
         }
       }
