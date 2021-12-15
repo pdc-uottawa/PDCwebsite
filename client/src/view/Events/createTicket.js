@@ -100,12 +100,14 @@ const CreateTicket = (props) => {
       <Segment>
         <Form onSubmit={handleFormSubmit} autoComplete="off">
           <Form.Field>
-            <label>Number of tickets</label>
+            <h3>Number of Tickets</h3>
             <input
               name="quantity_total"
               value={ticket.quantity_total}
               onChange={handleFormChange}
-              placeholder="number of tickets"
+              placeholder="Please Enter Number Of Tickets"
+              type="number"
+              style={{borderColor: '#000'}}
             />
           </Form.Field>
           <Button positive type="submit">
