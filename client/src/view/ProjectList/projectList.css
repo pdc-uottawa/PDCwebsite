@@ -1,0 +1,23 @@
+.loadingState {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+
+@media screen and (max-width: 450px) {
+
+    .loadingState {
+        display: flex;
+        justify-content: center;
+        margin-top: 100%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 1025px) {
+
+    .loadingState {
+        display: flex;
+        justify-content: center;
+        margin-top: 100%;
+    }
+}

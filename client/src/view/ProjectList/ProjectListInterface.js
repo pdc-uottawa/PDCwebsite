@@ -4,6 +4,9 @@ import ProjectList from "./ProjectList";
 import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
+import { Spinner } from "react-activity";
+import "react-activity/dist/Spinner.css";
+import './projectList.css'
 
 /**
  * @author @binjiasata
@@ -17,6 +20,7 @@ const ProjectListInterface = (props) => {
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   const [projectsInfo, setProjectsInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // when click create new project, jump to create-project page
   // const handleCreateNewProject = () => {
@@ -30,6 +34,7 @@ const ProjectListInterface = (props) => {
       })
       .then((data) => {
         setProjectsInfo(data);
+        setLoading(false)
       })
       .catch((e) => {
         console.log(e);
@@ -38,21 +43,28 @@ const ProjectListInterface = (props) => {
 
   return (
     <Fragment>
-      <Grid>
-        <Grid.Column width={12}>
-          {/* Pass project info to project list and children component */}
-          <ProjectList projectsInfo={projectsInfo} />
-        </Grid.Column>
-        {/* <Grid.Column width={6}>
-          {userInfo.user && userInfo.user.admin && (
-            <Button
-              onClick={handleCreateNewProject}
-              positive
-              content="Create New Project"
-            />
-          )}
-        </Grid.Column> */}
-      </Grid>
+      {
+        loading ?
+        <div className="loadingState">
+          <Spinner color="#727981" size={35} speed={1} animating={true} />
+        </div>
+        :
+        <Grid>
+          <Grid.Column width={12}>
+            {/* Pass project info to project list and children component */}
+            <ProjectList projectsInfo={projectsInfo} />
+          </Grid.Column>
+          {/* <Grid.Column width={6}>
+            {userInfo.user && userInfo.user.admin && (
+              <Button
+                onClick={handleCreateNewProject}
+                positive
+                content="Create New Project"
+              />
+            )}
+          </Grid.Column> */}
+        </Grid>
+      }
     </Fragment>
   );
 };

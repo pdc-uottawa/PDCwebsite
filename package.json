@@ -43,6 +43,7 @@
     "passport-outlook": "^2.2.1",
     "path": "^0.12.7",
     "react": "^16.14.0",
+    "react-activity": "^2.1.1",
     "react-charts": "^2.0.0-beta.7",
     "react-csv": "^2.0.3",
     "react-device-detect": "^1.15.0",
