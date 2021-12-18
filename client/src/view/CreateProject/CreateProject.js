@@ -95,19 +95,25 @@ const CreateProject = (props) => {
       info.logoUrl = "https://img.icons8.com/carbon-copy/2x/company.png";
     }
 
-    if (id) {
-      Axios.post(path + "project/manage/" + id, info).then((res) => {
-        props.history.push("/project-list");
-      });
-    } else {
-      Axios.post(path + "project", info)
-        .then((res) => {
-          props.history.push("/project-list");
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    if (info.category.length < 3) {
+      alert('Please Add Atleast 3 Categories.')
     }
+    else {
+      if (id) {
+        Axios.post(path + "project/manage/" + id, info).then((res) => {
+          props.history.push("/project-list");
+        });
+      } else {
+        Axios.post(path + "project", info)
+          .then((res) => {
+            props.history.push("/project-list");
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }
+    }
+
   };
 
   // when click cancel, go back to the project list page
@@ -447,6 +453,19 @@ const CreateProject = (props) => {
   const adminList = [
   ];
 
+  const validateCategory = (e, data) => {
+    if (data.defaultValue.length < 3) {
+      document.getElementById("project_category").style.color = "red"
+      document.getElementById("project_category_error_msg").style.display = "block";
+      document.getElementById("project_category_error_msg").style.color = "red";
+      e.preventDefault();
+    }
+    else {
+      document.getElementById("project_category_error_msg").style.display = "none";
+      document.getElementById("project_category").style.border = "";
+    }
+  }
+
   adminUsers.map((admin) => {
     adminList.push(
       {
@@ -467,6 +486,7 @@ const CreateProject = (props) => {
             id="project_title"
             name="title"
             value={info.title}
+            maxLength={50}
             onChange={handleFormValidationTitle}
             placeholder="Project Title"
           />
@@ -585,16 +605,20 @@ const CreateProject = (props) => {
         </Form.Group>
         <Form.Field>
           <label>Category</label>
-          <Dropdown
-            name="category"
-            placeholder="Category"
-            fluid
-            multiple
-            selection
-            onChange={handleCategoryChange}
-            defaultValue={info.category}
-            options={categoryOptions}
-          />
+          <div id="project_category">
+            <Dropdown
+              name="category"
+              placeholder="Category"
+              fluid
+              multiple
+              selection
+              onChange={handleCategoryChange}
+              defaultValue={info.category}
+              options={categoryOptions}
+              onBlur={validateCategory}
+            />
+          </div>
+          <div id="project_category_error_msg"><p>* Please Select a Minimum of Three Categories</p></div>
         </Form.Field>
 
         <Form.Field>
