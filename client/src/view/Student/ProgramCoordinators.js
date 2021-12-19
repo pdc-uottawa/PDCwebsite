@@ -9,6 +9,10 @@ const ProgramCoordinatorsList=[
         program:"DTI (UI/UX, Data Science)",
         mail:"ahasa085@uottawa.ca"
     },
+    {   name: "Gursimrat Singh",
+        program:"Computer Science (CSI)",
+        mail:"gsing152@uottawa.ca"
+    },
     {   name: "Yuting Cao",
         program:"Systems Science (SYS)",
         mail:"ycao053@uottawa.ca"

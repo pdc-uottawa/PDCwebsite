@@ -75,6 +75,30 @@ const VolunteerManagementTeam=[
     {   name: "Rahul",
         mail:"rgand061@uottawa.ca"
     },
+    {
+        name:"Naurin Hussain",
+        mail:"nhusa095@uottawa.ca"
+    },
+    {
+        name:"Anushree Raghunath Kulai",
+        mail:"akula045@uottawa.ca"
+    },
+    {
+        name:"Abhishek Singh Chouhan",
+        mail:"achou085@uottawa.ca"
+    },
+    {
+        name:"Georges Abou Gebrayel",
+        mail:"gabou045@uottawa.ca"
+    },
+    {
+        name:"Harshitha KV",
+        mail:"fhars091@uottawa.ca"
+    },
+    {
+        name:"Gurjot Singh",
+        mail:"gsing163@uottawa.ca"
+    },
 ];
 
 

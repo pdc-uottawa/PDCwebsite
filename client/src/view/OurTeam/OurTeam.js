@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import {Image, Grid, Segment, Button} from "semantic-ui-react";
 import './OurTeam.css';
 import {TeamMembers} from './TeamMembers'
+import Volunteers from "../Volunteers/Volunteers";
 
 const OurTeam = (props) => {
   const InitialArray = new Array([10]);
@@ -40,9 +41,19 @@ const OurTeam = (props) => {
               <a href={teamMember.linkedinId } target="_blank"><Image src={"/assets/linkedin.png"}  id="socialMediaIcon"/></a>
               <a href={"mailto:"+ teamMember.mailId} target="_blank"> <Image src={"/assets/outlook.png"}  id="socialMediaIcon"/></a>
               </div>
+              
             </Grid.Column>)}
+            
           </Grid.Row>
+          
+          <Volunteers />
+          
+
+            
             <Grid.Row id="contentContainer">
+
+              
+
               <h1>PDC STUDENT REPRESENTATIVES</h1>
               <p>
                 Student Reps primarily represent matters relating to the academic experience of their cohort and relating to the impact of the more comprehensive student experience on academic issues and make sure that the voice and feedback of the University and the Students Union are taken and utilized, thus creating a real difference at the course level, but also have many wins across their departments and beyond!
@@ -72,6 +83,7 @@ const OurTeam = (props) => {
           </Grid.Row>
         </Grid>
       </Segment>
+      
     </Fragment>
   );
 };

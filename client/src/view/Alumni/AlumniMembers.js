@@ -17,4 +17,11 @@ export const AlumniMembers=[
         imagePath:"/assets/akashdeep.jpg",
         linkedinId:"https://www.linkedin.com/in/akashdeep-singh1997",
     },
+    {name: "Abhiraj Singh Sarna",
+        position:"Project Manager at Lixar Fuelled by BDO",
+        mailId:"asarn058@uottawa.ca",
+        imagePath:"/assets/abhiraj.jpeg",
+        linkedinId: "https://www.linkedin.com/in/abhirajsinghsarna/"
+    },
+    
 ]
