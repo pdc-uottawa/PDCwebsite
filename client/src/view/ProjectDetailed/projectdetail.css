@@ -1,5 +1,18 @@
 #project_description
 {
     text-align: justify;
+    margin-top: 15px;
+    margin-left: 30px;
     margin-right: 30px;
 }
+
+.heading {
+    font-size: 17px !important;
+    font-weight: bold;
+}
+
+.project_name{
+    padding-left: 50px !important;
+    padding-top: 60px !important;
+}
+
