@@ -22,7 +22,7 @@ import Footer from "./view/Footer/Footer";
 import Signin from "./view/Signin/Signin";
 import register from "./view/Register/register";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
-import ProjectDeatiledPage from "./view/ProjectDetailed/ProjectDeatiledPage";
+import ProjectDeatiledPageV2 from "./view/ProjectDetailed/ProjectDetailedPageV2";
 import Events from "./view/Events/Events";
 import CreateEvent from './view/Events/createEvent';
 import CreateTicket from './view/Events/createTicket';
@@ -89,7 +89,7 @@ const Routers = () => {
             <Route
               exact
               path="/project-detail/:id"
-              component={ProjectDeatiledPage}
+              component={ProjectDeatiledPageV2}
             />
             <Route
               path="/company-dashboard"
