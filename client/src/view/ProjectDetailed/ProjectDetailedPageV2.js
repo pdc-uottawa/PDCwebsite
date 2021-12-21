@@ -21,8 +21,13 @@ const ProjectDeatiledPageNeww = (props) => {
     const { userInfo, setUserInfo } = useContext(UserContext);
     const [projectDetails, setProjectDetails] = useState({});
     const [appliedStudentsList, setAppliedStudentsList] = useState([]);
+    const [width, setWidth] = useState(null);
 
     const { id } = props.match.params;
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
     // get project details according to project id
     useEffect(() => {
@@ -58,12 +63,21 @@ const ProjectDeatiledPageNeww = (props) => {
                 appliedStudentsList={appliedStudentsList}
             />
             <ProjectInfo
-                project={projectDetails} />
-            <Grid.Column width={7}>
-                <ProjectDates project={projectDetails} />
-                <ProjectHost project={projectDetails} />
-            </Grid.Column>
-            <Grid.Column>
+                project={projectDetails} 
+            />
+            {
+                width < 768 ?
+                <>
+                    <ProjectDates project={projectDetails} />
+                    <ProjectHost project={projectDetails} />
+                </>
+                :
+                <Grid.Column width={7}>
+                    <ProjectDates project={projectDetails} />
+                    <ProjectHost project={projectDetails} />
+                </Grid.Column>
+            }
+            <Grid.Row>
                 {userInfo.user &&
                     (userInfo.user.company || userInfo.user.admin) &&
                     projectDetails.user &&
@@ -74,7 +88,7 @@ const ProjectDeatiledPageNeww = (props) => {
                 ) : (
                     ""
                 )}
-            </Grid.Column>
+            </Grid.Row>
         </Grid>
     );
 };
