@@ -1,4 +1,4 @@
-import React,  { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
   Segment,
   Item,
@@ -7,15 +7,14 @@ import {
   Button,
   Label,
   Form,
-  Grid, 
+  Grid,
   Header,
-  Search
+  Search,
 } from "semantic-ui-react";
-import _ from 'lodash';
+import _ from "lodash";
 import ProjectListUser from "./ProjectListUser";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
-
 
 const ProjectListItem = ({ project }) => {
   const {
@@ -30,10 +29,11 @@ const ProjectListItem = ({ project }) => {
     _id,
   } = project;
 
-
   const [readMore, setReadMore] = useState(false);
   const [ellipsisText, setEllipsisText] = useState("Read More");
   const [clamped, setClamped] = useState(false);
+
+  const cnt = category.length - 2;
 
   // if click Read More button, show content and Collapse button.
   const handleReadMore = () => {
@@ -54,39 +54,60 @@ const ProjectListItem = ({ project }) => {
   };
 
   return (
-    <Fragment>
-      <Segment.Group>
+    <div className="marginBottom">
+      {/*Logo + Name + Hosted By Section*/}
+      <Segment.Group className="cursor">
+        <div className="heightSetting">
+          <Segment className="HeaderHeight">
+            <Item.Group>
+              <Item>
+                <Item.Image rounded size="tiny" src={logoUrl} />
+                <Item.Content>
+                  <Item.Header
+                    className="nameHeader"
+                    as={Link}
+                    to={`/project-detail/${_id}`}
+                  >
+                    {title}
+                  </Item.Header>
+                  <Item.Description className="hostedByHeader">
+                    Hosted By: <strong>{hostedBy}</strong>
+                  </Item.Description>
+                </Item.Content>
+              </Item>
+            </Item.Group>
+          </Segment>
+
+          <div className="mobTagsHeight">
+            {/*Tags Section*/}
+            {category !== []
+              ? category.map((cate, index) => {
+                  return (
+                    <ul>
+                      {index <= 1 ? (
+                        <li>{cate}</li>
+                      ) : index === 2 ? (
+                        `And ${cnt} More...`
+                      ) : null}
+                    </ul>
+                  );
+                })
+              : null}
+          </div>
+        </div>
+        
+        {/*Posted On and Valid Until Section*/}
         <Segment>
-          <Item.Group>
-            <Item>
-              <Item.Image size="tiny" circular src={logoUrl} />
-              <Item.Content>
-                <Item.Header as={Link} to={`/project-detail/${_id}`}>
-                  {title}
-                </Item.Header>
-                <Item.Description>
-                  Hosted by <a>{hostedBy}</a>
-                </Item.Description>
-                <Item.Description>
-                  {category !== []
-                    ? category.map((tag, index) => (
-                        <Label key={index} size={"mini"} tag>
-                          {tag}
-                        </Label>
-                      ))
-                    : ""}
-                </Item.Description>
-              </Item.Content>
-            </Item>
-          </Item.Group>
+          <p className="mobTextSmall">
+            <b>
+              <Icon name="clock" /> Posted: {postedOn}
+              &nbsp;
+              {validUntil ? "| Valid Till: " + validUntil : ""}
+            </b>
+          </p>
         </Segment>
-        <Segment>
-          <span>
-            <Icon name="clock" /> Posted on: {postedOn}
-            &nbsp; &nbsp;
-            {validUntil ? "Valid Until: " + validUntil : ""}
-          </span>
-        </Segment>
+
+        {/*User Section*/}
         <Segment secondary>
           <List horizontal>
             {user &&
@@ -95,22 +116,22 @@ const ProjectListItem = ({ project }) => {
               ))}
           </List>
         </Segment>
+
+        {/*Description Section*/}
         <Segment clearing>
           <LinesEllipsis
-            style={{ whiteSpace: "pre-wrap"}}
+            style={{ whiteSpace: "pre-wrap", padding: "2%" }}
             text={description}
             ellipsis="..."
-            maxLine={readMore ? "50" : "3"}
+            maxLine={3}
             trimRight
             basedOn="letters"
             onReflow={handleReflow}
-          ></LinesEllipsis>
-          {/* <a href="#" onClick={handleReadMore}>
-            {ellipsisText}
-          </a> */}
+          />
           {clamped || ellipsisText === "Collapse" ? (
             <Button
-              onClick={handleReadMore}
+              as={Link}
+              to={`/project-detail/${_id}`}
               basic
               floated="right"
               content={ellipsisText}
@@ -120,7 +141,7 @@ const ProjectListItem = ({ project }) => {
           )}
         </Segment>
       </Segment.Group>
-    </Fragment>
+    </div>
   );
 };
 
