@@ -4,6 +4,9 @@ import moment from "moment";
 import _ from "lodash";
 import Axios from "axios";
 import { config } from "../../common/config/config";
+import { FaSearch } from "react-icons/fa";
+import "./projectList.css";
+import Select from "react-select";
 
 const ProjectList = ({ projectsInfo }) => {
   var project_data;
