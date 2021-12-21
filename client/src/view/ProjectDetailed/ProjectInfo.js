@@ -7,11 +7,16 @@ const image = require("../../assets/default.png");
 class ProjectInfo extends Component {
   constructor(props) {
     super(props);
+    this.state = { width: null };
+  }
+
+  componentWillMount() {
+    this.setState({ width: window.innerWidth });
   }
 
   render() {
     return (
-      <Grid.Column>
+      <Grid.Column width={this.state.width < 768 ? 16 : 9}>
         <Segment
           textAlign="center"
           className="heading"
