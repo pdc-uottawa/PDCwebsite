@@ -42,30 +42,18 @@ const ProjectListInterface = (props) => {
   }, [setProjectsInfo, path]);
 
   return (
-    <Fragment>
+    <>
       {
         loading ?
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
         :
-        <Grid>
-          <Grid.Column width={12}>
-            {/* Pass project info to project list and children component */}
-            <ProjectList projectsInfo={projectsInfo} />
-          </Grid.Column>
-          {/* <Grid.Column width={6}>
-            {userInfo.user && userInfo.user.admin && (
-              <Button
-                onClick={handleCreateNewProject}
-                positive
-                content="Create New Project"
-              />
-            )}
-          </Grid.Column> */}
-        </Grid>
+        <div className="container">
+          <ProjectList projectsInfo={projectsInfo} />        
+        </div>
       }
-    </Fragment>
+    </>
   );
 };
 

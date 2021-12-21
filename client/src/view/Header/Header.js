@@ -15,9 +15,9 @@ import LogedOutMenu from "./Menus/LogedOutMenu";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
-import defIcon from '../../assets/defIcon.png'
-import { useWindowDimensions } from '../../common/context/WindowDimensionsProvider'
-const img = require('../../assets/pdc_logo.png')
+import defIcon from "../../assets/defIcon.png";
+import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
+const img = require("../../assets/pdc_logo.png");
 
 /**
  * @author @binjiasata @yiyinzhang
@@ -28,8 +28,8 @@ const img = require('../../assets/pdc_logo.png')
 const Header = (props) => {
   // const { width } = useWindowDimensions();
   // const [width, setWidth] = useState(window.innerWidth)
-  
-  const { width } = useWindowDimensions()
+
+  const { width } = useWindowDimensions();
   const breakpoint = 730;
 
   const { history } = useReactRouter();
@@ -101,26 +101,24 @@ const Header = (props) => {
     handleSideBarClick();
   };
 
-  const handleFeedback = (e,{name})=>{
+  const handleFeedback = (e, { name }) => {
     history.push("/feedback");
     setActiveItem(name);
     handleSideBarClick();
   };
   console.log(width);
 
-
   const handlemobileDesktopView = (width) => {
     //console.log("device::", device);
 
-
-    if(width < breakpoint) {
+    if (width < breakpoint) {
       setMenuBarVisibility(true);
       setSideBarVisibility(false);
     } else {
       setMenuBarVisibility(false);
       setSideBarVisibility(true);
     }
-    
+
     // if (device === "mobile" || device === "tablet") {
     //   setMenuBarVisibility(true);
     //   setSideBarVisibility(false);
@@ -130,15 +128,14 @@ const Header = (props) => {
     // }
   };
 
-
   const handleSideBarClick = () => {
     //console.log("sideBarContentVisible::", sideBarContentVisible);
     setSideBarContentVisibility(!sideBarContentVisible);
   };
   // Get logged user info from backend
   useEffect(() => {
-    let device = deviceType; 
-    
+    let device = deviceType;
+
     // setWidth(window.innerWidth)
 
     handlemobileDesktopView(width);
@@ -156,18 +153,14 @@ const Header = (props) => {
           ...userInfo,
           user: data.user,
           authenticated: data.authenticated,
-        }   
-        );
+        });
 
-        if(data.user.checkUser)
-        {
+        if (data.user.checkUser) {
           console.log("new user ...... 160");
           console.log(data.user);
           history.push("/");
-
         }
-      }
-      )
+      })
       .catch((e) => {
         console.log(e);
       });
@@ -182,10 +175,10 @@ const Header = (props) => {
             active={activeItem === "home"}
             as="a"
             onClick={handleHome}
-            header 
+            header
           >
-        <Image avatar size="mini" circular src={img}/>&nbsp;&nbsp;&nbsp;
-        Professional Development Club
+            <Image avatar size="mini" circular src={img} />
+            &nbsp;&nbsp;&nbsp; Professional Development Club
           </Menu.Item>
           {/* <Menu.Item
             name="home"
@@ -228,7 +221,7 @@ const Header = (props) => {
           ) : (
             ""
           )}
-           <Menu.Item
+          <Menu.Item
             name="Alumni"
             active={activeItem === "Alumni"}
             onClick={handleAlumni}
@@ -267,7 +260,9 @@ const Header = (props) => {
             <LogedInMenu
               logOut={handleLogout}
               username={userInfo.user.name}
-              userPicture={userInfo.user.picture ? userInfo.user.picture : defIcon}
+              userPicture={
+                userInfo.user.picture ? userInfo.user.picture : defIcon
+              }
             />
           ) : (
             <LogedOutMenu logIn={handleLogin} />
@@ -374,7 +369,9 @@ const Header = (props) => {
                 <LogedInMenu
                   logOut={handleLogout}
                   username={userInfo.user.name}
-                  userPicture={userInfo.user.picture ? userInfo.user.picture : defIcon}
+                  userPicture={
+                    userInfo.user.picture ? userInfo.user.picture : defIcon
+                  }
                 />
               ) : (
                 <LogedOutMenu logIn={handleLogin} />
