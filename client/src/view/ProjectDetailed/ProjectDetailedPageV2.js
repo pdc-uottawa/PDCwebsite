@@ -55,40 +55,64 @@ const ProjectDeatiledPageNeww = (props) => {
 
     return (
         <Grid>
-            <ProjectName
-                id={id}
-                path={path}
-                project={projectDetails}
-                userInfo={userInfo}
-                appliedStudentsList={appliedStudentsList}
-            />
-            <ProjectInfo
-                project={projectDetails} 
-            />
             {
                 width < 768 ?
                 <>
-                    <ProjectDates project={projectDetails} />
-                    <ProjectHost project={projectDetails} />
-                </>
-                :
-                <Grid.Column width={7}>
-                    <ProjectDates project={projectDetails} />
-                    <ProjectHost project={projectDetails} />
-                </Grid.Column>
-            }
-            <Grid.Row>
-                {userInfo.user &&
-                    (userInfo.user.company || userInfo.user.admin) &&
-                    projectDetails.user &&
-                    projectDetails.user.findIndex(chckadmin) !== -1 ? (
-                    <ProjectDetailedAppliedStudents
+                    <ProjectName
+                        id={id}
+                        path={path}
+                        project={projectDetails}
+                        userInfo={userInfo}
                         appliedStudentsList={appliedStudentsList}
                     />
-                ) : (
-                    ""
-                )}
-            </Grid.Row>
+                    <ProjectInfo
+                        project={projectDetails} 
+                    />
+                    <ProjectDates project={projectDetails} />
+                    <ProjectHost project={projectDetails} />
+                    <>
+                        {userInfo.user &&
+                            (userInfo.user.company || userInfo.user.admin) &&
+                            projectDetails.user &&
+                            projectDetails.user.findIndex(chckadmin) !== -1 ? (
+                            <ProjectDetailedAppliedStudents
+                                appliedStudentsList={appliedStudentsList}
+                            />
+                        ) : (
+                            ""
+                        )}
+                    </>
+                </>
+                :
+                <Grid>
+                    <ProjectName
+                        id={id}
+                        path={path}
+                        project={projectDetails}
+                        userInfo={userInfo}
+                        appliedStudentsList={appliedStudentsList}
+                    />
+                    <ProjectInfo
+                        project={projectDetails} 
+                    />
+                    <Grid.Column width={7}>
+                        <ProjectDates project={projectDetails} />
+                        <ProjectHost project={projectDetails} />
+                    </Grid.Column>
+                    <Grid.Row>
+                        {userInfo.user &&
+                            (userInfo.user.company || userInfo.user.admin) &&
+                            projectDetails.user &&
+                            projectDetails.user.findIndex(chckadmin) !== -1 ? (
+                            <ProjectDetailedAppliedStudents
+                                appliedStudentsList={appliedStudentsList}
+                            />
+                        ) : (
+                            ""
+                        )}
+                    </Grid.Row>
+                </Grid>
+            }
         </Grid>
     );
 };
