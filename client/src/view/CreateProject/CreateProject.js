@@ -77,6 +77,17 @@ const CreateProject = (props) => {
     { key: "RoboticDevelopment", text: "Robotic Development", value: "Robotic Development" },
     { key: "GIS", text: "GIS", value: "GIS" },
     { key: "Microservices", text: "Microservices", value: "Microservices" },
+    { key: "CriticalThinking", text: "Critical Thinking", value: "Critical Thinking" },
+    { key: "DataAnalysis", text: "Data Analysis", value: "Data Analysis" },
+    { key: "FormalWriting", text: "Formal Writing", value: "Formal Writing" },
+    { key: "ObservationalStudy", text: "Observational Study", value: "Observational Study" },
+    { key: "StatisticalAnalysis", text: "Statistical Analysis", value: "Statistical Analysis" },
+    { key: "DataGathering", text: "Data Gathering", value: "Data Gathering" },
+    { key: "StatisticalAnalysis", text: "Statistical Analysis", value: "Statistical Analysis" },
+    { key: "EvaluationOfCredibility", text: "Evaluation Of Credibility", value: "Evaluation Of Credibility" },
+    { key: "ExperimentDesign", text: "Experiment Design", value: "Experiment Design" },
+    { key: "BuildingTypes", text: "Building Types/Ages", value: "Building Types/Ages" },
+    { key: "AIModels", text: "AI Models", value: "AI Models" },
   ];
 
   // handle dropdown category
