@@ -12,6 +12,8 @@ const uploadRoutes = require("./shared/routes/Upload");
 const eventRoutes = require("./shared/routes/EventRoute");
 const userRoutes = require("./shared/routes/UserRoute");
 const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
+// const cdcRoutes = require("./shared/routes/cdcRoute");
+const ProgramCoordinatorRoutes = require("./shared/routes/programCoordinatorRoute");
 const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -90,5 +92,7 @@ app.use("/file", uploadRoutes);
 app.use("/", eventRoutes);
 app.use("/user", userRoutes);
 app.use("/email", sendEmailRoutes);
+// app.use("/", cdcRoutes);
+app.use("/", ProgramCoordinatorRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));
