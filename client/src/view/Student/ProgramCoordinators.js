@@ -1,63 +1,61 @@
-import React, { Fragment } from "react";
-import {
-    Card
-  } from "semantic-ui-react";
-
-
-const ProgramCoordinatorsList=[
-    {   name: "Abdullah-Al-Mehedi",
-        program:"DTI (UI/UX, Data Science)",
-        mail:"ahasa085@uottawa.ca"
-    },
-    {   name: "Yuting Cao",
-        program:"Systems Science (SYS)",
-        mail:"ycao053@uottawa.ca"
-    },
-    {   name: "Shaniasadat Shojaee",
-        program:"Mechanical Engineering",
-        mail:"sshoj065@uottawa.ca"
-    },
-    {   name: "Samhita Kuili",
-        program:"Electrical and Computer (ELG)",
-        mail:"skuil016@uottawa.ca"
-    },
-    {   name: "Piumantha Gunasekara",
-        program:"Engineering Management",
-        mail:"pguna066@uottawa.ca"
-    },
-    {   name: "Claudia Azigwe",
-        program:"Civil and Environmental Engineering",
-        mail:"cazig063@uottawa.ca"
-    },
-    {   name: "Mansher Singh",
-        program:"Bio-medical Engineering",
-        mail:"msidh098@uottawa.ca"
-    },
-];
+import React, { Fragment, useState, useEffect } from "react";
+import { Segment, Card, Icon } from "semantic-ui-react";
+import { config } from "../../common/config/config";
+import Axios from "axios";
+import { Spinner } from "react-activity";
 
 const ProgramCoordinators = (props) => {
-  return (
-    <Fragment>
-      <h1 class="ui center aligned huge header">
-        Information about PDC Student Representative for various disciplines
-      </h1>
-      <Card.Group centered="true">
-          {ProgramCoordinatorsList.map((programCoordinator)=>(
-              <Card color='blue'>
-                  <Card.Content>
-                      <Card.Header>{programCoordinator.name}</Card.Header>
-                      <Card.Description>
-                          Program: {programCoordinator.program}
-                      </Card.Description>
-                      <Card.Description>
-                          Email: {programCoordinator.mail}
-                      </Card.Description>
-                  </Card.Content>
-              </Card>
-          ))}
-      </Card.Group>
-      </Fragment>
-  );
+    const path = config();
+    const [ProgramCoordinatorsList, setProgramCoordinatorsList] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        Axios.get(path + "program-coordinators", {})
+            .then((res) => {
+                return res.data;
+            })
+            .then((data) => {
+                setProgramCoordinatorsList(data);
+                setLoading(false)
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    }, [setProgramCoordinatorsList, path]);
+
+    return (
+        <>
+            {
+                loading ?
+                    <div className="loadingState">
+                        <Spinner color="#727981" size={35} speed={1} animating={true} />
+                    </div>
+                    :
+                    <>
+                    <Segment centered inverted color="black" style={{borderRadius: '10px'}}>
+                        <h1 class="ui center aligned huge header">
+                            PROGRAM &nbsp; CO-ORDINATORS    
+                        </h1>
+                        </Segment>
+                        <Card.Group centered="true" textAlign="center">
+                            {ProgramCoordinatorsList.map((programCoordinator) => (
+                                <Card color='black'>
+                                    <Card.Content>
+                                        <Card.Header><u>{programCoordinator.program}</u></Card.Header>
+                                        <Card.Description>
+                                            <h4>{programCoordinator.name}</h4>  
+                                        </Card.Description>
+                                        <Card.Description>
+                                        <a href={"mailto:"+ programCoordinator.mail}><Icon name ="mail" />{programCoordinator.mail}</a>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card>
+                            ))}
+                        </Card.Group>
+                    </>
+            }
+        </>
+    );
 };
 
 export default ProgramCoordinators;
