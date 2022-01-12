@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react"
-import { Segment, Item, Label, Icon } from "semantic-ui-react"
+import { Segment, Item, Label, Icon, ListItem } from "semantic-ui-react"
 const image = require('../../assets/default.png')
 
 const ProjectHost = ({ project }) => {
@@ -9,9 +9,6 @@ const ProjectHost = ({ project }) => {
                 textAlign="center"
                 className="heading"
                 attached="top"
-                secondary
-
-                color="teal"
             ><Icon name='user outline' />
                 Organizer
             </Segment>
@@ -31,7 +28,14 @@ const ProjectHost = ({ project }) => {
                             }
                             <Item.Content verticalAlign="middle">
                                 <Item.Header as="h3">{user.name}</Item.Header>
-                                <Item.Meta>{user.email}</Item.Meta>
+                                <Item.Meta>
+                                    <ListItem>
+                                        <div>
+                                <a href={"mailto:"+ user.email}><Icon name="mail"/> &nbsp; {user.email}</a>
+                                </div>
+                                
+                                </ListItem>
+                                </Item.Meta>
                             </Item.Content>
                         </Item>
                     )}

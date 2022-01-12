@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from "react"
 import { Segment, Icon } from "semantic-ui-react"
 
-
 class ProjectDates extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +12,22 @@ class ProjectDates extends Component {
                     textAlign="center"
                     className="heading"
                     attached="top"
-                    secondary
-
-                    color="teal"
+                ><Icon name='tag' />
+                    Tags
+                </Segment>
+                <Segment>
+                    <ul>
+                        {this.props.project.category ? this.props.project.category.map((cate) => {
+                            return (
+                                <li>{cate}</li>
+                            )
+                        }) : null}
+                    </ul>
+                </Segment>
+                <Segment
+                    textAlign="center"
+                    className="heading"
+                    attached="top"
                 ><Icon name='calendar alternate outline' />
                     Important Dates
                 </Segment>
