@@ -21,8 +21,6 @@ class ProjectInfo extends Component {
           textAlign="center"
           className="heading"
           attached="top"
-          secondary
-          color="teal"
         >
           <Icon name="file alternate" />
           Description
