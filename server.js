@@ -12,7 +12,7 @@ const uploadRoutes = require("./shared/routes/Upload");
 const eventRoutes = require("./shared/routes/EventRoute");
 const userRoutes = require("./shared/routes/UserRoute");
 const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
-const cdcRoutes = require("./shared/routes/cdcRoute");
+const CDCRoutes = require("./shared/routes/cdcRoute");
 const ProgramCoordinatorRoutes = require("./shared/routes/programCoordinatorRoute");
 const volunteerRoutes = require("./shared/routes/volunteersRoute");
 const http = require("https");
@@ -93,7 +93,7 @@ app.use("/file", uploadRoutes);
 app.use("/", eventRoutes);
 app.use("/user", userRoutes);
 app.use("/email", sendEmailRoutes);
-app.use("/", cdcRoutes);
+app.use("/cdc", CDCRoutes);
 app.use("/volunteers", volunteerRoutes);
 app.use("/coordinators", ProgramCoordinatorRoutes);
 

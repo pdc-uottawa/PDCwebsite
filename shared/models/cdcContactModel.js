@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const cdcContactModel = new Schema({
   name: String,
-  mail: String
+  email: String
 })
 
 const Link = mongoose.model("cdc-contact-us", cdcContactModel);
