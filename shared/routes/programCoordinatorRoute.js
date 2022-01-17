@@ -1,26 +1,11 @@
-const ProgramCoordinator = require("../models/coordinatorsModel");
+const express = require('express');
+const coordinatorController = require('../controllers/coordinatorController');
 
-const router = require("express").Router();
+const router = express.Router();
 
-// get all coordinators
-router.get("/program-coordinators", (req, res) => {
-    ProgramCoordinator.find((error, data) => {
-    if (error) {
-      console.log(error);
-    }
-    res.send(data);
-  });
-});
-
-//add new coordinator
-router.post("/program-coordinators/add", (req, res) => {
-    let name = req.body.name;
-    let program = req.body.program;
-    let mail = req.body.mail;
-
-    let newPC = new ProgramCoordinator({name, program, mail}).save()
-
-    res.send('Added Successfully');
-});
+router.get('/all', coordinatorController.getAllCoordinators);
+router.post('/add', coordinatorController.addCoordinators);
+router.post('/update', coordinatorController.updateCoordinator);
+router.post('/remove', coordinatorController.deleteCoordinator);
 
 module.exports = router;
