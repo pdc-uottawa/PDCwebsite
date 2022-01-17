@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const programCoordinatorsSchema = new Schema({
   name: String,
   program: String,
-  mail: String
+  email: String
 })
 
 const Link = mongoose.model("program-coordinators", programCoordinatorsSchema);

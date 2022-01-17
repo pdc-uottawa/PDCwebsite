@@ -93,6 +93,6 @@ app.use("/", eventRoutes);
 app.use("/user", userRoutes);
 app.use("/email", sendEmailRoutes);
 // app.use("/", cdcRoutes);
-app.use("/", ProgramCoordinatorRoutes);
+app.use("/coordinators", ProgramCoordinatorRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));
