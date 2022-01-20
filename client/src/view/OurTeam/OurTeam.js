@@ -63,7 +63,7 @@ const OurTeam = (props) => {
               <Button primary color="blue" onClick={()=>window.location.href='#/volunteers'} id="meetVolunteersButton">
                 Meet Our Volunteers
               </Button>
-              <Button primary color="blue" onClick={()=>window.open('https://forms.office.com/r/R7kBcQbnvX','_blank')} >
+              <Button primary color="blue" onClick={()=>window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u','_blank')} >
                 Join the team
               </Button>
               </div>
