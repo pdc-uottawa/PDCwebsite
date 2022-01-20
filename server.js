@@ -14,6 +14,7 @@ const userRoutes = require("./shared/routes/UserRoute");
 const sendEmailRoutes = require("./shared/routes/SendEmailRoute");
 // const cdcRoutes = require("./shared/routes/cdcRoute");
 const ProgramCoordinatorRoutes = require("./shared/routes/programCoordinatorRoute");
+const joinOurTeamFormRoutes = require("./shared/routes/joinOurTeamFormRoute");
 const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -94,5 +95,6 @@ app.use("/user", userRoutes);
 app.use("/email", sendEmailRoutes);
 // app.use("/", cdcRoutes);
 app.use("/coordinators", ProgramCoordinatorRoutes);
+app.use("/form", joinOurTeamFormRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));
