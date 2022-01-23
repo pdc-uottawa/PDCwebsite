@@ -1,31 +1,240 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import {Image, Grid, Segment, Button} from "semantic-ui-react";
+import Axios from "axios";
+import { UserContext } from "../../common/context/UserProvider";
+import { config } from "../../common/config/config";
+import { Spinner } from "react-activity";
 import './OurTeam.css';
 import {TeamMembers} from './TeamMembers'
 
-const OurTeam = (props) => {
-  const InitialArray = new Array([10]);
-  for (let i = 0; i < 10; i++) {
-    InitialArray[i] = "Show bios";
-  }
-  const [bios, setbios] = useState(InitialArray);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [index, setIndex] = useState(-1);
 
-  const handleClick = (e, titleProps) => {
-    // setIndex(titleProps.index);
-    const { index } = titleProps;
-    let newIndex;
-    if (activeIndex === index) {
-      newIndex = -1;
-      bios[index] = "Show bios";
-    } else {
-      newIndex = index;
-      bios[activeIndex] = "Show bios";
-      bios[newIndex] = "Hide bios";
-    }
-    setActiveIndex(newIndex);
-  };
+
+const OurTeam = (props) => {
+
+  const path = config();
+  //const { userInfo, setUserInfo } = useContext(UserContext);
+
+  
+  const [loading, setLoading] = useState(true);
+  const [users, setUsers ] = useState([])
+
+  // when click create new project, jump to create-project page
+  // const handleCreateNewProject = () => {
+  //   props.history.push("/create-project");
+  // };
+
+  useEffect(() => {
+
+
+
+Axios.get(path + "ourTeam/all", {})
+
+
+
+.then((res) => {
+
+
+
+console.log(res.data);
+
+
+
+return res.data;
+
+
+
+
+
+})
+
+
+
+.then((data) => {
+
+
+
+setUsers(data);
+
+
+
+setLoading(false);
+
+
+
+})
+
+
+
+.catch((e) => {
+
+
+
+console.log(e);
+
+
+
+});
+
+
+
+}, []);
+
+  return (
+     <>
+
+
+
+      {
+
+
+
+        loading ?
+
+
+
+        <div className="loadingState">
+
+
+
+          <Spinner color="#727981" size={35} speed={1} animating={true} />
+
+
+
+        </div>
+
+
+
+        :
+
+
+      <div>
+        <h1>Welcome to OUR TEAM Page of Professional Development Club, uOttawa</h1>
+      
+        <div className='wrapper'>
+
+          
+
+          {
+
+              users.map((user) => {
+
+
+
+            return (
+              
+                <div key={user._id} className="card">
+                  <div className="body">
+                    <img src={"/assets/pdcimage.png"} alt={user.name} className='photo' />
+                    <h2 className="title">
+                      {user.name}</h2>
+                      <h2 className="description">
+                        {user.position}
+                      </h2>
+                  </div> 
+                  <button className="btn">
+                    <a href={user.linkedIn } target="_blank"><Image src={"/assets/linkedin.png"}  id="socialMediaIcon"/></a>
+              <a href={"mailto:"+ user.email} target="_blank"> <Image src={"/assets/outlook.png"}  id="socialMediaIcon"/></a>
+                  </button>
+
+                  
+                </div>
+                 
+            //  <article key={user._id} className='menu-item'>
+            //     <img src={user.image} alt={user.name} className='photo' /> 
+              
+            //   <div className='item-info'>
+            //     <header>
+            //       <h4>{user.name}</h4>
+            //     </header>
+                
+
+            //     <h3>{user.position}</h3>
+
+            //     <h4>{user.linkedIn}</h4>
+
+            //    </div>  
+            //   </article> 
+
+            )
+
+
+
+          })}
+
+
+
+                
+
+
+
+        </div>
+       </div> 
+
+
+
+      }
+
+
+    </>
+  );
+  // const [loading, setLoading] = useState(true);
+  // const [isError, setError] = useState(false);
+  // const [user, setUser] = useState('default user');
+
+  // useEffect(()=> {
+  //   fetch(url)
+  //       .then((resp) => resp.json())
+  //       .then((user) => console.log(user))
+  //       .catch((error) => console.log(error));
+  // }, [])
+
+  // if (loading) {
+  //   return (
+  //     <div>
+  //        <h2>Loading...</h2>;
+  //     </div>
+  //   );  
+  // }
+  // if (isError) {
+  //   return (
+  //     <div>
+  //        <h2>Error...</h2>;
+  //     </div>
+  //   );
+  // }
+  // return <div>
+  //   <h1>{user}</h1>
+  // </div> 
+
+  //return <h2>multiple returns</h2>
+  //const InitialArray = new Array([10]);
+  // const getUsers = async () => {
+  //   const response = await fetch(url);
+  //   const users = await response.json();
+  //   console.log(users);
+  // }
+  //   for (let i = 0; i < 10; i++) {
+  //   InitialArray[i] = "Show bios";
+  // }
+  // const [bios, setbios] = useState(InitialArray);
+  // const [activeIndex, setActiveIndex] = useState(0);
+  // const [index, setIndex] = useState(-1);
+
+  // const handleClick = (e, titleProps) => {
+  //   // setIndex(titleProps.index);
+  //   const { index } = titleProps;
+  //   let newIndex;
+  //   if (activeIndex === index) {
+  //     newIndex = -1;
+  //     bios[index] = "Show bios";
+  //   } else {
+  //     newIndex = index;
+  //     bios[activeIndex] = "Show bios";
+  //     bios[newIndex] = "Hide bios";
+  //   }
+  //   setActiveIndex(newIndex);
+  // };
+  
 
   return (
     <Fragment>
