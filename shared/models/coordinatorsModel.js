@@ -1,12 +1,9 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-const programCoordinatorsSchema = new Schema({
-  name: String,
-  program: String,
-  mail: String
-})
+const programCoordinatorsSchema = new mongoose.Schema({
+    name: {type: String, required: true},
+    program: {type: String, required: true},
+    email: {type: String, required: true}
+});
 
-const Link = mongoose.model("program-coordinators", programCoordinatorsSchema);
-
-module.exports = Link;
+module.exports = mongoose.model("program-coordinators", programCoordinatorsSchema);
