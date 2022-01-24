@@ -48,6 +48,13 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
                 text="Dashboard"
                 icon="dashboard"
               />
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/update-coordinators");
+                }}
+                text="Update Coordinator Details"
+                icon="dashboard"
+              />
             </Fragment>
           )}
           {userInfo.user && (userInfo.user.company) && (
