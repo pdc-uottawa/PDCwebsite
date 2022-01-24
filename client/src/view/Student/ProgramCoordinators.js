@@ -10,7 +10,7 @@ const ProgramCoordinators = (props) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        Axios.get(path + "program-coordinators", {})
+        Axios.get(path + "coordinators/all", {})
             .then((res) => {
                 return res.data;
             })
