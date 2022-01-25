@@ -14,7 +14,13 @@ Best wishes,
 PDC Website`;
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    tls:{
+        ciphers:'SSLv3'
+    },
     auth: {
       user: `${process.env.EMAIL_USER}`,
       pass: `${process.env.EMAIL_USER_PASSWORD}`,
