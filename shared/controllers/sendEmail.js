@@ -2,12 +2,8 @@ const nodemailer = require("nodemailer");
 const utf8 = require("utf8");
 require('dotenv').config()
 
-const EMAIL_USER = process.env.EMAIL_USER;
-const EMAIL_USER_PASSWORD = process.env.EMAIL_USER_PASSWORD; 
-
 const sendEmail = (email_to_mail, email_to_name, project_name, applicant_email) => {
 
-    const from_mail = 'PDC Website <uottawa.pdc@gmail.com>';
     const subject = `Application Received for Project: ${project_name}`;
   
   var emailText = `Hello ${email_to_name},
@@ -18,15 +14,21 @@ Best wishes,
 PDC Website`;
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    tls:{
+        ciphers:'SSLv3'
+    },
     auth: {
-      user: EMAIL_USER,
-      pass: EMAIL_USER_PASSWORD,
+      user: `${process.env.EMAIL_USER}`,
+      pass: `${process.env.EMAIL_USER_PASSWORD}`,
     },
   });
 
   let mailOptions = {
-    from: from_mail,
+    from: `${process.env.EMAIL_USER}`,
     to: email_to_mail,
     subject: subject,
     text: emailText,
