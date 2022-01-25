@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const utf8 = require("utf8");
+require('dotenv').config()
 
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_USER_PASSWORD = process.env.EMAIL_USER_PASSWORD; 
