@@ -4,7 +4,6 @@ require('dotenv').config()
 
 const sendEmail = (email_to_mail, email_to_name, project_name, applicant_email) => {
 
-    const from_mail = 'PDC Website <uottawa.pdc@gmail.com>';
     const subject = `Application Received for Project: ${project_name}`;
   
   var emailText = `Hello ${email_to_name},
@@ -23,7 +22,7 @@ PDC Website`;
   });
 
   let mailOptions = {
-    from: from_mail,
+    from: `${process.env.EMAIL_USER}`,
     to: email_to_mail,
     subject: subject,
     text: emailText,
