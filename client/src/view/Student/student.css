@@ -1,0 +1,62 @@
+.buttonss{
+    background-color: transparent !important
+}
+
+.submitButton {
+    background-color: rgb(72, 180, 72);
+    padding: 1%;
+    margin-top: 2%;
+    border-radius: 20%;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.marginLeft{
+    margin-left:3%;
+}
+
+.red {
+    color: red;
+    margin-bottom: 2%;
+}
+
+.resetButton {
+    background-color: red;
+    padding: 1%;
+    margin-top: 2%;
+    border-radius: 20%;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.backButtonBlue {
+    background-color: #2185d0;
+    padding: 1%;
+    margin-top: 2%;
+    border-radius: 20%;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.marginTop {
+    margin-top: 5% !important;
+}
+
+.backButton {
+    background-color: #2185d0;
+    padding: 2%;
+    margin-top: 2%;
+    border-radius: 20%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+}
