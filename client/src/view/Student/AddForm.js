@@ -14,14 +14,12 @@ const AddForm = (props) => {
         
         
         if(name && program && email){
-            // (console.log(name, program, email))
             Axios.post(path + "coordinators/add", {
                 name,
                 program,
                 email
             })
                 .then((res) => {
-                    // console.log(res.data);
                     setThankYou(true)
                 })
                 .catch((e) => {
@@ -63,7 +61,7 @@ return(
                     id='email'
                     control={Input}
                     label='Email'
-                    placeholder='khushpreet@uottawa.ca'
+                    placeholder='test012@uottawa.ca'
                     
                 />
                 <Button type='submit' color="teal" onClick={handleSubmit}>Submit</Button>
