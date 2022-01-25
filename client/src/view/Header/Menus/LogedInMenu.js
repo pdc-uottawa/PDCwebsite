@@ -35,6 +35,13 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
               />
               <Dropdown.Item
                 onClick={() => {
+                  history.push("/update-coordinators");
+                }}
+                text="Manage Coordinators"
+                icon="settings"
+              />
+              <Dropdown.Item
+                onClick={() => {
                   history.push("/download-user-list");
                 }}
                 text="Download User Information"
@@ -46,6 +53,13 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
                   history.push("/company-dashboard");
                 }}
                 text="Dashboard"
+                icon="dashboard"
+              />
+              <Dropdown.Item
+                onClick={() => {
+                  history.push("/update-coordinators");
+                }}
+                text="Update Coordinator Details"
                 icon="dashboard"
               />
             </Fragment>
