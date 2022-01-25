@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Form,Input,Button} from 'semantic-ui-react'
 import Axios from 'axios'
 import { config } from "../../common/config/config";
+import { Link } from 'react-router-dom'
 
 const AddForm = (props) => {
     const path = config();
@@ -37,7 +38,10 @@ return(
     thankYou ?
         <>
             <div>
-                <h1>Thank You. Coordinator has been added!</h1>
+                <h1 className='center marginTop'>Thank You. Coordinator has been added!</h1>
+                <Link to='/update-coordinators'>
+                    <input type='submit' className='backButton marginLeft marginTop' value='Back' />
+                </Link>
             </div>
         </>
         :

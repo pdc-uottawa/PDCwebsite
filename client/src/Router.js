@@ -81,7 +81,7 @@ const Routers = () => {
             <Route exact path="/student/profile/:id" component={StudentProfileView}/>
             <Route exact path="/students/apply/:id" component={ApplyForm} />
             <Route exact path="/AddForm" component={AddForm} />
-            <Route exact path="/UpdateForm" component={UpdateForm} />
+            <Route exact path="/UpdateForm/:id" component={UpdateForm} />
             <Route
               exact
               path="/students/list"

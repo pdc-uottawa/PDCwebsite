@@ -25,19 +25,10 @@ const UpdateCoordinators = (props) => {
                 console.log(e);
             });
 
-    }, [setProgramCoordinatorsList, path]);
+    }, [setProgramCoordinatorsList, path, ProgramCoordinatorsList]);
 
 
     function removeCoordinator(_id) {
-
-        // console.log(id);
-        // console.log(programCoordinator);
-
-        // let index= ProgramCoordinatorsList.indexOf(programCoordinator);
-        // console.log(index);
-        // if (index>-1)
-        // {
-        // ProgramCoordinatorsList.splice(index, 1)
         if (window.confirm('Are you sure?')) {
             setLoading(true)
             Axios.post(path + "coordinators/remove", { _id })
@@ -48,8 +39,6 @@ const UpdateCoordinators = (props) => {
                 .catch((e) => {
                     console.log(e);
                 });
-            //}
-            console.log(ProgramCoordinatorsList);
         }
 
     }
@@ -65,8 +54,7 @@ const UpdateCoordinators = (props) => {
                     <Link to='/AddForm'>
                         <Button color="teal" floated='right'> Add coordinator</Button>
                     </Link>
-                </h1>
-
+                </h1>   
                 <div>
                     <Table >
                         <Table.Header>
@@ -83,13 +71,13 @@ const UpdateCoordinators = (props) => {
                                     <Table.Cell>{programCoordinator.name}</Table.Cell>
                                     <Table.Cell>{programCoordinator.program}</Table.Cell>
                                     <Table.Cell>{programCoordinator.email}</Table.Cell>
-                                    {/* <Link to ='/UpdateForm'> */}
-                                    <Button className=".button" onClick={() => <UpdateForm/>}>
+                                    <Link to={`/UpdateForm/${programCoordinator._id}`}>
+                                    {/* <Button className="button" onClick={() => <UpdateForm/>}> */}
                                         <Icon name="edit" color="blue" />
-                                    </Button>
-                                    {/* </Link> */}
+                                    {/* </Button> */}
+                                    </Link>
                                     {/* <Link to = {removeCoordinator()}> */}
-                                    <Button onClick={() => removeCoordinator(programCoordinator._id)}>
+                                    <Button className="buttonss" onClick={() => removeCoordinator(programCoordinator._id)}>
                                         <Icon name='delete'  color="red" />
                                     </Button>
                                     {/* </Link> */}
