@@ -12,6 +12,7 @@ import Fswep from "./view/Student/Fswep";
 import StudentForm from "./view/Student/StudentForm";
 import ResumeGuidelines from "./view/Student/ResumeGuidelines";
 import GNG5299 from "./view/Student/GNG5299";
+import UpdateCoordinators from "./view/Student/UpdateCoordinators";
 import HireStudent from "./view/HireStudent/HireStudent";
 import Covid19 from "./view/Covid19/Covid19";
 import OurTeam from "./view/OurTeam/OurTeam";
@@ -35,6 +36,8 @@ import CompanyDashboard from "./view/CompanyDashboard/CompanyDashboard";
 import ApplyForm from "./view/Students/ApplyForm/ApplyForm";
 import StudentAppliedList from "./view/Students/StudentAppliedList/StudentAppliedList";
 import Volunteers from "./view/Volunteers/Volunteers";
+import AddForm from "./view/Student/AddForm";
+import UpdateForm from "./view/Student/UpdateForm";
 
 /**
  * This is routers for the website.
@@ -68,6 +71,7 @@ const Routers = () => {
             <Route  exact path="/student-form" component={StudentForm}/>
             <Route  exact path="/resume-guidelines" component={ResumeGuidelines}/>
             <Route  exact path="/useful-links" component={GNG5299}/>
+            <Route  exact path="/update-coordinators" component={UpdateCoordinators}/>   
             <Route exact path="/hirestudent" component={HireStudent} />
             <Route exact path="/alumni" component={Alumni} />
             <Route exact path="/covid" component={Covid19}/>
@@ -76,6 +80,8 @@ const Routers = () => {
             <Route exact path="/student-profile" component={StudentProfileDashboard}/>
             <Route exact path="/student/profile/:id" component={StudentProfileView}/>
             <Route exact path="/students/apply/:id" component={ApplyForm} />
+            <Route exact path="/AddForm" component={AddForm} />
+            <Route exact path="/UpdateForm/:id" component={UpdateForm} />
             <Route
               exact
               path="/students/list"
