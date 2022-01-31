@@ -100,6 +100,11 @@ const Header = (props) => {
     setActiveItem(name);
     handleSideBarClick();
   };
+  const handleVolunteers = (e, { name }) => {
+    history.push("/Volunteers");
+    setActiveItem(name);
+    handleSideBarClick();
+  };
 
   const handleFeedback = (e, { name }) => {
     history.push("/feedback");
@@ -196,6 +201,7 @@ const Header = (props) => {
           >
             Our Team
           </Menu.Item>
+
           {/* {!userInfo.authenticated ||
           (userInfo.user && (userInfo.user.company || userInfo.user.admin)) ? (
             <Menu.Item
@@ -221,6 +227,17 @@ const Header = (props) => {
           ) : (
             ""
           )}
+
+          <Menu.Item>
+            <Menu.Item
+              name="Volunteers"
+              active={activeItem === "Volunteers"}
+              onClick={handleVolunteers}
+            >
+              {" "}
+              Volunteers
+            </Menu.Item>
+          </Menu.Item>
           <Menu.Item
             name="Alumni"
             active={activeItem === "Alumni"}
@@ -235,6 +252,7 @@ const Header = (props) => {
           {/*>*/}
           {/*  Updates on COVID-19*/}
           {/*</Menu.Item> *!/*/}
+
           <Menu.Item
             name="Events"
             active={activeItem === "Events"}
@@ -242,13 +260,15 @@ const Header = (props) => {
           >
             Events
           </Menu.Item>
+
           <Menu.Item
-            name="projectList"
-            active={activeItem === "projectList"}
+            name="ProjectList"
+            active={activeItem === "ProjectList"}
             onClick={handleProjectList}
           >
             Project List
           </Menu.Item>
+
           <Menu.Item
             name="feedback"
             active={activeItem === "feedback"}
