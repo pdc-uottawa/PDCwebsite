@@ -59,7 +59,7 @@ export const AlumniMembers = [
     name: "Muhammad Atif",
     position: "Data Analyst (Burning Glass Technologies)",
     mailId: "matif062@uottawa.ca",
-    imagePath: "/assets/akashdeep.jpg",
+    imagePath: "/assets/atif.jpeg",
     linkedinId: "https://www.linkedin.com/in/muhammad-atif-046b96127/",
   },
   {
