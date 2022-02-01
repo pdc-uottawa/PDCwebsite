@@ -5,9 +5,8 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
-
+import { Segment, Card, Icon } from "semantic-ui-react";
 import "react-activity/dist/Spinner.css";
-import "./projectList.css";
 
 /**
  * @author @binjiasata
@@ -15,45 +14,23 @@ import "./projectList.css";
  *              The project list is got from server.
  *
  */
-const VolunteersListInterface = (props) => {
-=======
-import { Segment, Card, Icon } from "semantic-ui-react";
 
 const VoulnteerListInterface = (props) => {
-
   // path config http://localhost:8080/
   const path = config();
   const { userInfo, setUserInfo } = useContext(UserContext);
 
-
   const [VolunteersInfo, setVolunteersInfo] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // when click create new project, jump to create-project page
-  // const handleCreateNewProject = () => {
-  //   props.history.push("/create-project");
-  // };
-
   useEffect(() => {
     Axios.get(path + "volunteers/all", {})
       .then((res) => {
-        console.log(res.data);
-
-  const [VoulnteersInfo, setVolunteersInfo] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    Axios.get(path + "volunteers/all", {})
-      .then((res) => {
-
         return res.data;
       })
       .then((data) => {
         setVolunteersInfo(data);
-
         setLoading(false);
-
-
       })
       .catch((e) => {
         console.log(e);
@@ -67,11 +44,6 @@ const VoulnteerListInterface = (props) => {
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
-
-        <div className="container">
-          <Volunteers VolunteersInfo={VolunteersInfo} />
-        </div>
-
         <>
           <Segment
             centered
@@ -84,7 +56,7 @@ const VoulnteerListInterface = (props) => {
             </h1>
           </Segment>
           <Card.Group centered="true" textAlign="center">
-            {VoulnteersInfo.map((programCoordinator) => (
+            {VolunteersInfo.map((programCoordinator) => (
               <Card color="black">
                 <Card.Content>
                   <Card.Header>
@@ -104,14 +76,9 @@ const VoulnteerListInterface = (props) => {
             ))}
           </Card.Group>
         </>
-
       )}
     </>
   );
 };
 
-
-export default VolunteersListInterface;
-
 export default VoulnteerListInterface;
-

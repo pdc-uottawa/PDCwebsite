@@ -35,7 +35,7 @@ import { Container } from "semantic-ui-react";
 import CompanyDashboard from "./view/CompanyDashboard/CompanyDashboard";
 import ApplyForm from "./view/Students/ApplyForm/ApplyForm";
 import StudentAppliedList from "./view/Students/StudentAppliedList/StudentAppliedList";
-import VoulnteerListInterface from "./view/Volunteers/VoulnteerListInterface";
+import VoulnteerListInterface from "./view/Volunteers/VolunteerListInterface";
 import AddForm from "./view/Student/AddForm";
 import UpdateForm from "./view/Student/UpdateForm";
 import Volunteers from "./view/Volunteers/Volunteers";
@@ -58,72 +58,35 @@ const Routers = () => {
             <Route exact path="/register" component={register} />
             <Route exact path="/OurTeam" component={OurTeam} />
             <Route exact path="/create-project" component={CreateProject} />
-            <Route
-              exact
-              path="/download-user-list"
-              component={DownloadUserInfo}
-            />
+            <Route exact path="/download-user-list" component={DownloadUserInfo} />
             <Route exact path="/project/manage/:id" component={CreateProject} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/student" component={Student} />
             <Route exact path="/create-form" component={CreateForm} />
-            <Route
-              exact
-              path="/program-coordinators"
-              component={ProgramCoordinators}
-            />
-
+            <Route exact path="/program-coordinators" component={ProgramCoordinators} />
             <Route exact path="/our-partners" component={OurPartners} />
             <Route exact path="/programs" component={Programs} />
             <Route exact path="/fswep" component={Fswep} />
             <Route exact path="/student-form" component={StudentForm} />
-            <Route
-              exact
-              path="/resume-guidelines"
-              component={ResumeGuidelines}
-            />
+            <Route exact path="/resume-guidelines" component={ResumeGuidelines} />
             <Route exact path="/useful-links" component={GNG5299} />
-            <Route
-              exact
-              path="/update-coordinators"
-              component={UpdateCoordinators}
-            />
-            <Route exact path="/volunteers" component={Volunteers} />
+            <Route exact path="/update-coordinators" component={UpdateCoordinators} />
+            <Route exact path="/Volunteers" component={Volunteers} />
             <Route exact path="/hirestudent" component={HireStudent} />
             <Route exact path="/alumni" component={Alumni} />
             <Route exact path="/covid" component={Covid19} />
             <Route exact path="/upload" component={UploadLogo} />
             <Route exact path="/feedback" component={Feedback} />
-            <Route
-              exact
-              path="/student-profile"
-              component={StudentProfileDashboard}
-            />
-            <Route
-              exact
-              path="/student/profile/:id"
-              component={StudentProfileView}
-            />
+            <Route exact path="/student-profile" component={StudentProfileDashboard} />
+            <Route exact path="/student/profile/:id" component={StudentProfileView} />
             <Route exact path="/students/apply/:id" component={ApplyForm} />
             <Route exact path="/AddForm" component={AddForm} />
             <Route exact path="/UpdateForm/:id" component={UpdateForm} />
             <Route exact path="/students/list" component={StudentAppliedList} />
-            <Route
-              exact
-              path="/project-list"
-              component={ProjectListInterface}
-            />
-            <Route
-              exact
-              path="/Volunteers"
-              component={VoulnteerListInterface}
-            />
-            <Route
-              exact
-              path="/project-detail/:id"
-              component={ProjectDeatiledPageV2}
-            />
+            <Route exact path="/project-list" component={ProjectListInterface} />
+            {/* <Route exact path="/Volunteers" component={VoulnteerListInterface} /> */}
+            <Route exact path="/project-detail/:id" component={ProjectDeatiledPageV2} />
             <Route path="/company-dashboard" component={CompanyDashboard} />
             <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/create-ticket" component={CreateTicket} />
