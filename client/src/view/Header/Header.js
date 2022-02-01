@@ -227,8 +227,6 @@ const Header = (props) => {
           ) : (
             ""
           )}
-
-          <Menu.Item>
             <Menu.Item
               name="Volunteers"
               active={activeItem === "Volunteers"}
@@ -237,7 +235,6 @@ const Header = (props) => {
               {" "}
               Volunteers
             </Menu.Item>
-          </Menu.Item>
           <Menu.Item
             name="Alumni"
             active={activeItem === "Alumni"}
