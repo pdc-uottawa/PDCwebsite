@@ -276,7 +276,7 @@ const Header = (props) => {
           <Menu.Item name="joinTeam" position="left"
             active={activeItem === "joinTeam"} >
                 <Button onClick={() =>
-                window.open("https://forms.office.com/r/R7kBcQbnvX", "_blank")
+                window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u", "_blank")
               }  basic inverted content="Join the Team" />
               </Menu.Item>
           {userInfo.authenticated ? (
@@ -392,7 +392,7 @@ const Header = (props) => {
               <Menu.Item name="joinTeam" position="left"
             active={activeItem === "joinTeam"} >
                 <Button onClick={() =>
-                window.open("https://forms.office.com/r/R7kBcQbnvX", "_blank")
+                window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u", "_blank")
               }  basic inverted content="Join the Team" />
               </Menu.Item>
 
