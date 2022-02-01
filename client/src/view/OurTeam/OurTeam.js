@@ -130,15 +130,7 @@ const OurTeam = (props) => {
               >
                 Meet Our Volunteers
               </Button>
-              <Button
-                primary
-                color="blue"
-                onClick={() =>
-                  window.open("https://forms.office.com/r/R7kBcQbnvX", "_blank")
-                }
-              >
-                Join the team
-              </Button>
+              
             </div>
           </div>
         </div>

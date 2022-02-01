@@ -216,7 +216,7 @@ const Header = (props) => {
           )} */}
 
           {!userInfo.authenticated ||
-          (userInfo.user && !userInfo.user.company) ? (
+            (userInfo.user && !userInfo.user.company) ? (
             <Menu.Item
               name="Student"
               active={activeItem === "Student"}
@@ -273,6 +273,12 @@ const Header = (props) => {
           >
             Feedback
           </Menu.Item>
+          <Menu.Item name="joinTeam" position="left"
+            active={activeItem === "joinTeam"} >
+                <Button onClick={() =>
+                window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u", "_blank")
+              }  basic inverted content="Join the Team" />
+              </Menu.Item>
           {userInfo.authenticated ? (
             <LogedInMenu
               logOut={handleLogout}
@@ -285,6 +291,7 @@ const Header = (props) => {
             <LogedOutMenu logIn={handleLogin} />
           )}
         </Container>
+        
         {/* Sidebar */}
         <Container hidden={sidebarHidden}>
           <Button onClick={handleSideBarClick} color="blue">
@@ -336,7 +343,7 @@ const Header = (props) => {
               )} */}
 
               {!userInfo.authenticated ||
-              (userInfo.user && !userInfo.user.company) ? (
+                (userInfo.user && !userInfo.user.company) ? (
                 <Menu.Item
                   name="Student"
                   active={activeItem === "Student"}
@@ -382,6 +389,13 @@ const Header = (props) => {
               >
                 Feedback
               </Menu.Item>
+              <Menu.Item name="joinTeam" position="left"
+            active={activeItem === "joinTeam"} >
+                <Button onClick={() =>
+                window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u", "_blank")
+              }  basic inverted content="Join the Team" />
+              </Menu.Item>
+
               {userInfo.authenticated ? (
                 <LogedInMenu
                   logOut={handleLogout}
@@ -390,9 +404,11 @@ const Header = (props) => {
                     userInfo.user.picture ? userInfo.user.picture : defIcon
                   }
                 />
+
               ) : (
                 <LogedOutMenu logIn={handleLogin} />
               )}
+              
             </Container>
           </Sidebar>
         </Container>
