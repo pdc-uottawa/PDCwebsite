@@ -38,6 +38,10 @@ import StudentAppliedList from "./view/Students/StudentAppliedList/StudentApplie
 import Volunteers from "./view/Volunteers/Volunteers";
 import AddForm from "./view/Student/AddForm";
 import UpdateForm from "./view/Student/UpdateForm";
+import OurAlumni from "./view/Alumni/OurAlumni";
+import ManageAlumni from "./view/Alumni/ManageAlumni";
+import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
+import AddAlumni from "./view/Alumni/AddAlumniForm";
 
 /**
  * This is routers for the website.
@@ -72,6 +76,10 @@ const Routers = () => {
               path="/program-coordinators"
               component={ProgramCoordinators}
             />
+            <Route exact path="/our-alumni" component={OurAlumni} />
+            <Route exact path="/manage-alumni" component={ManageAlumni} />
+            <Route exact path="/add-alumni" component={AddAlumni} />
+            <Route exact path="/update-alumni" component={UpdateAlumni} />
             <Route exact path="/volunteers" component={Volunteers} />
             <Route exact path="/our-partners" component={OurPartners} />
             <Route exact path="/programs" component={Programs} />
