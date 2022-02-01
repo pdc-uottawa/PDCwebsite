@@ -35,7 +35,7 @@ import { Container } from "semantic-ui-react";
 import CompanyDashboard from "./view/CompanyDashboard/CompanyDashboard";
 import ApplyForm from "./view/Students/ApplyForm/ApplyForm";
 import StudentAppliedList from "./view/Students/StudentAppliedList/StudentAppliedList";
-import VoulnteerListInterface from "./view/Volunteers/VoulnteerListInterface";
+import VoulnteerListInterface from "./view/Volunteers/VolunteerListInterface";
 import AddForm from "./view/Student/AddForm";
 import UpdateForm from "./view/Student/UpdateForm";
 import Volunteers from "./view/Volunteers/Volunteers";
