@@ -40,7 +40,7 @@ const OurAlumni = (props) => {
                                         <div className="body">
                                             <Image
                                                 circular
-                                                src={"https://drive.google.com/file/d/1kIo_HFTk03SdVHjYGy58Z7sNQT3OaqIW/view"}
+                                                src={`https://drive.google.com/thumbnail?id=${user.image}`}
                                                 alt={alumni.name}
                                                 className="photo"
                                             />
