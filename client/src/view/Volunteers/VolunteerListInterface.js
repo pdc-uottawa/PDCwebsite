@@ -7,7 +7,6 @@ import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import { Segment, Card, Icon } from "semantic-ui-react";
 import "react-activity/dist/Spinner.css";
-import "./projectList.css";
 
 /**
  * @author @binjiasata
