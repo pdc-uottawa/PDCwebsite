@@ -13,6 +13,15 @@
     margin-bottom: 20px;
 }
 
+.buttonn {
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+.paddingLeft {
+    padding-left: 20px !important;
+}
+
 #contentContainer{
     text-align: left;
     margin: 20px 40px;

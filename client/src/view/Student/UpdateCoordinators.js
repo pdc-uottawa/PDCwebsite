@@ -71,6 +71,7 @@ const UpdateCoordinators = (props) => {
                                     <Table.Cell>{programCoordinator.name}</Table.Cell>
                                     <Table.Cell>{programCoordinator.program}</Table.Cell>
                                     <Table.Cell>{programCoordinator.email}</Table.Cell>
+                                    <Table.Cell>
                                     <Link to={`/UpdateForm/${programCoordinator._id}`}>
                                     {/* <Button className="button" onClick={() => <UpdateForm/>}> */}
                                         <Icon name="edit" color="blue" />
@@ -81,6 +82,7 @@ const UpdateCoordinators = (props) => {
                                         <Icon name='delete'  color="red" />
                                     </Button>
                                     {/* </Link> */}
+                                    </Table.Cell>
                                 </Table.Row>
                             ))}
                         </Table.Body>

@@ -5,6 +5,7 @@ import { config } from "../../common/config/config";
 import { Link } from 'react-router-dom'
 import { Spinner } from "react-activity";
 import UpdateAlumniForm from './UpdateAlumniForm'
+import './Alumni.css'
 
 const ManageAlumni = (props) => {
     const path = config();
@@ -24,7 +25,7 @@ const ManageAlumni = (props) => {
                 console.log(e);
             });
 
-    }, [setAlumniList, path, AlumniList]);
+    }, [setAlumniList, path]);
 
 
     function removeAlumni(_id) {
@@ -50,36 +51,43 @@ const ManageAlumni = (props) => {
             :
             <>
                 <h1>Update Alumni Details
-                    <Link to='/AddAlumniForm'>
-                        <Button color="teal" floated='right'> Add coordinator</Button>
+                    <Link to='/add-alumni'>
+                        <Button color="teal" floated='right'> Add Alumni</Button>
                     </Link>
-                </h1>   
+                </h1>
                 <div>
                     <Table >
                         <Table.Header>
                             <Table.Row>
-                                <Table.HeaderCell>Image</Table.HeaderCell>
                                 <Table.HeaderCell>Name</Table.HeaderCell>
                                 <Table.HeaderCell>Current Position</Table.HeaderCell>
                                 <Table.HeaderCell>Email</Table.HeaderCell>
-                                <Table.HeaderCell>LinkedIn</Table.HeaderCell>   
+                                <Table.HeaderCell>LinkedIn</Table.HeaderCell>
+                                <Table.HeaderCell>Action</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
                         <Table.Body>
-                            {AlumniList.map((alumni) => (
+                            {AlumniList
+                            .map((alumni) => (
                                 <Table.Row>
-                                    <Table.Cell>{alumni.image}</Table.Cell>
                                     <Table.Cell>{alumni.name}</Table.Cell>
-                                    <Table.Cell>{alumni.currentPostion}</Table.Cell>
-                                    <Link to={`/UpdateAlumniForm/${alumni._id}`}>
-                                    {/* <Button className="button" onClick={() => <UpdateForm/>}> */}
-                                        <Icon name="edit" color="blue" />
-                                    {/* </Button> */}
-                                    </Link>
-                                    {/* <Link to = {removeCoordinator()}> */}
-                                    <Button className="buttonss" onClick={() => removeAlumni(alumni._id)}>
-                                        <Icon name='delete'  color="red" />
-                                    </Button>
+                                    <Table.Cell>{alumni.currentPosition}</Table.Cell>
+                                    <Table.Cell>{alumni.email}</Table.Cell>
+                                    <Table.Cell>{alumni.linkedIn}</Table.Cell>
+                                    <Table.Cell>
+                                        <div className="row">
+                                            <div classname="col-md-6">
+                                                <Link to={`/update-alumni/${alumni._id}`}>
+                                                    <Icon name="edit" color="blue" />
+                                                </Link>
+                                            </div>
+                                            <div className="col-md-6">
+                                                    <Button className="buttonn" onClick={() => removeAlumni(alumni._id)}>
+                                                        <Icon name='delete' color="red" />
+                                                    </Button>
+                                            </div>
+                                        </div>
+                                    </Table.Cell>
                                     {/* </Link> */}
                                 </Table.Row>
                             ))}

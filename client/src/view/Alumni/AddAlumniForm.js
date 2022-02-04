@@ -3,25 +3,28 @@ import {Form,Input,Button} from 'semantic-ui-react'
 import Axios from 'axios'
 import { config } from "../../common/config/config";
 import { Link } from 'react-router-dom'
+import img from './../../assets/default.png'
 
 const AddAlumni = (props) => {
     const path = config();
     const [thankYou, setThankYou] = useState(false)
+
     function handleSubmit() {
+        const image = 'default';
         const name = document.getElementById('name').value;
-        const image = document.getElementById('image').value;
-        const currentPostion = document.getElementById('currentPostion').value;
-        const email = document.getElementById('email').value;
+        const currentPosition = document.getElementById('currentPosition').value;
         const linkedIn = document.getElementById('linkedIn').value;
+        const email = document.getElementById('email').value;
+        const founder = false;
         
-        
-        if(name && email){
+        if(image && name && currentPosition && email && linkedIn){
             Axios.post(path + "alumni/add", {
-                name,
                 image,
-                currentPostion,
+                name,
+                currentPosition,
+                linkedIn,
                 email,
-                linkedIn
+                founder
             })
                 .then((res) => {
                     setThankYou(true)
@@ -41,13 +44,15 @@ return(
         <>
             <div>
                 <h1 className='center marginTop'>Thank You. Coordinator has been added!</h1>
-                <Link to='/update-alumni'>
+                <Link to='/manage-alumni'>
                     <input type='submit' className='backButton marginLeft marginTop' value='Back' />
                 </Link>
             </div>
         </>
         :
-<><h1>Add New Coordinator</h1>
+<>
+<h1>Add New Alumni </h1>
+<h4 className='red'>Contact Website Team to add the picture.</h4>
             <Form>
                 <Form.Field
                     control={Input}
@@ -59,7 +64,7 @@ return(
                     control={Input}
                     label='Current Position'
                     placeholder='Developer at AedoAI Inc.'
-                    id='currentPostion'
+                    id='currentPosition'
                 />
                 <Form.Field
                     id='email'
@@ -74,7 +79,10 @@ return(
                     label='LinkedIn'
                     placeholder='https://www.linkedin.com/in/test012' 
                 />
-                <Button type='submit' color="teal" onClick={handleSubmit}>Submit</Button>
+                <Button type='submit' color="green" onClick={handleSubmit}>Submit</Button>
+                <Link to='/manage-alumni'>
+                <Button type='submit' color="blue" >Back </Button>
+                </Link>
             </Form>
             </>
 )

@@ -76,10 +76,10 @@ const Routers = () => {
               path="/program-coordinators"
               component={ProgramCoordinators}
             />
-            <Route exact path="/our-alumni" component={OurAlumni} />
+            <Route exact path="/alumni" component={OurAlumni} />
             <Route exact path="/manage-alumni" component={ManageAlumni} />
             <Route exact path="/add-alumni" component={AddAlumni} />
-            <Route exact path="/update-alumni" component={UpdateAlumni} />
+            <Route exact path="/update-alumni/:id" component={UpdateAlumni} />
             <Route exact path="/volunteers" component={Volunteers} />
             <Route exact path="/our-partners" component={OurPartners} />
             <Route exact path="/programs" component={Programs} />
@@ -97,7 +97,7 @@ const Routers = () => {
               component={UpdateCoordinators}
             />
             <Route exact path="/hirestudent" component={HireStudent} />
-            <Route exact path="/alumni" component={Alumni} />
+            {/* <Route exact path="/alumni" component={Alumni} /> */}
             <Route exact path="/covid" component={Covid19} />
             <Route exact path="/upload" component={UploadLogo} />
             <Route exact path="/feedback" component={Feedback} />

@@ -6,7 +6,7 @@ const alumniSchema = new mongoose.Schema({
     currentPosition: {type: String, required: true},
     linkedIn: {type: String, required: true},
     email: {type: String, required: true},
-    founder: {type: Boolean, required: true}
+    founder: {type: Boolean}
 });
 
 module.exports = mongoose.model('alumni-infos', alumniSchema);

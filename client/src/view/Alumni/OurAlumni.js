@@ -3,11 +3,13 @@ import { Image } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import { Spinner } from "react-activity";
+import defimg from './../../assets/default.png'
 
 const OurAlumni = (props) => {
     const path = config();
     const [AlumniList, setAlumniList] = useState([]);
     const [loading, setLoading] = useState(true);
+    const defaultImage = defimg;
 
     useEffect(() => {
         Axios.get(path + "alumni/all", {})
@@ -16,6 +18,7 @@ const OurAlumni = (props) => {
             })
             .then((data) => {
                 setAlumniList(data);
+                console.log(data)
                 setLoading(false)
             })
             .catch((e) => {
@@ -32,49 +35,112 @@ const OurAlumni = (props) => {
                     </div>
                     :
                     <>
-                        <h1 className="center ourTeamHead">OUR ALUMNI</h1>
-                        <div className="row cardsCenter">
-                            {AlumniList.map((alumni) => {
-                                return (
-                                    <div key={alumni._id} className="cursor col-md-3">
-                                        <div className="body">
-                                            <Image
-                                                circular
-                                                src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
-                                                alt={alumni.name}
-                                                className="photo"
-                                            />
-                                            <h2 className="titleName">{alumni.name}</h2>
-                                            <h4 className="titlePosition">{alumni.currentPostion}</h4>
-                                            <div className="btn">
-                                                <a
-                                                    href={alumni.linkedIn}
-                                                    target="_blank"
-                                                >
+                        <div>
+                            <h1 className="center ourTeamHead">FOUNDER ALUMNI</h1>
+                            <div className="row cardsCenter">
+
+
+                                {AlumniList
+                                    .filter((alumnus) => alumnus.founder === true)
+                                    .map((alumni) => {
+                                        return (
+                                            <div key={alumni._id} className="cursor col-md-3">
+                                                <div className="body">
                                                     <Image
-                                                        src={"/assets/linkedin.png"}
-                                                        id="socialMediaIcon"
+                                                        circular
+                                                        src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
+                                                        alt={alumni.name}
+                                                        className="photo"
                                                     />
-                                                </a>
-                                                <a
-                                                    href={"mailto:" + alumni.email}
-                                                    target="_blank"
-                                                >
-                                                    <Image
-                                                        src={"/assets/outlook.png"}
-                                                        id="socialMediaIcon"
-                                                    />
-                                                </a>
+                                                    <h2 className="titleName">{alumni.name}</h2>
+
+                                                    <h4 className="titlePosition">{alumni.currentPosition}</h4>
+                                                    <div className="btn">
+                                                        <a
+                                                            href={alumni.linkedIn}
+                                                            target="_blank"
+                                                        >
+                                                            <Image
+                                                                src={"/assets/linkedin.png"}
+                                                                id="socialMediaIcon"
+                                                            />
+                                                        </a>
+                                                        <a
+                                                            href={"mailto:" + alumni.email}
+                                                            target="_blank"
+                                                        >
+                                                            <Image
+                                                                src={"/assets/outlook.png"}
+                                                                id="socialMediaIcon"
+                                                            />
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
+                                        )
+                                    })}
                             </div>
+                        </div>
+                        <div>
+                            <h1 className="center ourTeamHead">OTHER ALUMNI</h1>
+                            <div className="row cardsCenter">
+
+
+                                {AlumniList
+                                    .filter((alumnus) => alumnus.founder === false)
+                                    .map((alumni) => {
+                                        return (
+                                            <div key={alumni._id} className="cursor col-md-3">
+                                                <div className="body">
+                                                    {
+                                                        alumni.image === 'default' ?
+                                                        <Image
+                                                            circular
+                                                            src={defimg}
+                                                            alt={alumni.name}
+                                                            className="photo"
+                                                        />
+                                                        :
+                                                        <Image
+                                                            circular
+                                                            src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
+                                                            alt={alumni.name}
+                                                            className="photo"
+                                                        />
+                                                    }
+                                                    <h2 className="titleName">{alumni.name}</h2>
+
+                                                    <h4 className="titlePosition">{alumni.currentPosition}</h4>
+                                                    <div className="btn">
+                                                        <a
+                                                            href={alumni.linkedIn}
+                                                            target="_blank"
+                                                        >
+                                                            <Image
+                                                                src={"/assets/linkedin.png"}
+                                                                id="socialMediaIcon"
+                                                            />
+                                                        </a>
+                                                        <a
+                                                            href={"mailto:" + alumni.email}
+                                                            target="_blank"
+                                                        >
+                                                            <Image
+                                                                src={"/assets/outlook.png"}
+                                                                id="socialMediaIcon"
+                                                            />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                            </div>
+                        </div>
                     </>
             }
         </>
     );
 };
 
-            export default OurAlumni;
+export default OurAlumni;
