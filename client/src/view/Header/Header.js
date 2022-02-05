@@ -17,7 +17,6 @@ import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
 import defIcon from "../../assets/defIcon.png";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
-
 const img = require("../../assets/pdc_logo.png");
 
 /**
@@ -63,11 +62,6 @@ const Header = (props) => {
 
   const handleOurTeam = (e, { name }) => {
     history.push("/OurTeam");
-    setActiveItem(name);
-    handleSideBarClick();
-  };
-  const handleVolunteers = (e, { name }) => {
-    history.push("/Volunteers");
     setActiveItem(name);
     handleSideBarClick();
   };
@@ -220,13 +214,6 @@ const Header = (props) => {
           ) : (
             ""
           )} */}
-          <Menu.Item
-            name="Volunteers"
-            active={activeItem === "Volunteers"}
-            onClick={handleVolunteers}
-          >
-            Volunteers
-          </Menu.Item>
 
           {!userInfo.authenticated ||
             (userInfo.user && !userInfo.user.company) ? (
