@@ -65,15 +65,6 @@ const OurAlumni = (props) => {
                                                                 id="socialMediaIcon"
                                                             />
                                                         </a>
-                                                        <a
-                                                            href={"mailto:" + alumni.email}
-                                                            target="_blank"
-                                                        >
-                                                            <Image
-                                                                src={"/assets/outlook.png"}
-                                                                id="socialMediaIcon"
-                                                            />
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,7 +73,7 @@ const OurAlumni = (props) => {
                             </div>
                         </div>
                         <div>
-                            <h1 className="center ourTeamHead">OTHER ALUMNI</h1>
+                            <h1 className="center ourTeamHead">OUR ACTIVE ALUMNI</h1>
                             <div className="row cardsCenter">
 
 

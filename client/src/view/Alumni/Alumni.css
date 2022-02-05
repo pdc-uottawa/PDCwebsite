@@ -18,6 +18,10 @@
     padding: 0 !important;
 }
 
+.titlePosition {
+    min-height: 40px;
+}
+
 .paddingLeft {
     padding-left: 20px !important;
 }
