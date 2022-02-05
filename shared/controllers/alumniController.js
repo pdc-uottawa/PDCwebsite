@@ -13,6 +13,7 @@ const addAlumni = async (req, res, next) => {
         currentPosition: req.body.currentPosition,
         linkedIn: req.body.linkedIn,
         email: req.body.email,
+        founder: req.body.founder
     });
     const result = await newAlumni.save();
     res.json(result);
@@ -25,9 +26,10 @@ const updateAlumni = async (req, res, next) => {
     const currentPosition = req.body.currentPosition;
     const linkedIn = req.body.linkedIn;
     const email = req.body.email;
+    const founder = req.body.founder;
     const doc = await Alumni.findOneAndUpdate(
         {_id: id},
-        { $set: {image, name, currentPosition, linkedIn, email}},
+        { $set: {image, name, currentPosition, linkedIn, email, founder}},
         { upsert: true, new: true },
         (error, data) => {
             if (error) {
