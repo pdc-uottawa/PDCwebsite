@@ -117,13 +117,16 @@ return(
                     placeholder={AlumniList.currentPosition}
                     id='currentPosition'
                 />
-                <Form.Field
-                    id='email'
-                    control={Input}
-                    label={AlumniList.email}
-                    placeholder='test012@uottawa.ca'
-                    
-                />
+                {
+                    AlumniList.founder ? null :
+                    <Form.Field
+                        id='email'
+                        control={Input}
+                        label="Email"
+                        placeholder={AlumniList.email}
+                        
+                    />
+                }
                 <Form.Field
                     id='linkedIn'
                     control={Input}
