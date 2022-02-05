@@ -44,7 +44,7 @@ const Student = (props) => {
           <summary class="mysummaryItem">Industry Internship Project</summary>
           <br/>
           <p>Please find more information about ELG/GNG - 5902 
-            <a href="https://www.site.uottawa.ca/~lpeyton/gradproject/" target="_blank">
+            <a href="https://catalogue.uottawa.ca/en/courses/gng/" target="_blank">
             <font color="#4183c4"> here</font>
             </a>
             </p> 
