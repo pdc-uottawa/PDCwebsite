@@ -73,7 +73,7 @@ const OurAlumni = (props) => {
                             </div>
                         </div>
                         <div>
-                            <h1 className="center ourTeamHead">OUR ACTIVE ALUMNI</h1>
+                            <h1 className="center ourTeamHead">OUR NOTABLE ALUMNI</h1>
                             <div className="row cardsCenter">
 
 
