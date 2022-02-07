@@ -74,9 +74,41 @@ const ApplyForm = (props) => {
       emailApplicant: userInfo.user.email,
     };
     //send email to owner
-    Axios.post(path + "email/send", emailOptions).catch((e) => {
-      console.log(e);
-    });
+    // Axios.post(path + "email/send", emailOptions).catch((e) => {
+    //   console.log(e);
+    // });
+
+    let params = {
+      user_id: process.env.REACT_APP_userID,
+      service_id: process.env.REACT_APP_serviceID,
+      template_id: process.env.REACT_APP_templateID,
+      template_params: {
+        project_name: emailOptions.emailForProject,
+        email_to_name: emailOptions.emailToName,
+        applicant_email: emailOptions.emailApplicant,
+        email_to_address: emailOptions.emailToAddress,
+      },
+    };
+
+    let options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(params),
+    };
+
+    fetch(process.env.REACT_APP_SENDURL, options)
+      .then((httpResponse) => {
+        if (httpResponse.ok) {
+          console.log("Your mail is sent!");
+        } else {
+          return httpResponse.text().then((text) => Promise.reject(text));
+        }
+      })
+      .catch((error) => {
+        console.log("Oops... " + error);
+      });
   };
 
   // const handleFormChange = ({ target: { name, value } }) => {
