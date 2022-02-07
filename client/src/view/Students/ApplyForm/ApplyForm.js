@@ -100,6 +100,7 @@ const ApplyForm = (props) => {
 
     fetch(process.env.REACT_APP_SENDURL, options)
       .then((httpResponse) => {
+        console.log('Inside Fetch: ', process.env.REACT_APP_SENDURL)
         if (httpResponse.ok) {
           console.log("Your mail is sent!");
         } else {
