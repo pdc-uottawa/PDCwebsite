@@ -4,38 +4,38 @@ require('dotenv').config()
 
 const sendEmail = async (email_to_mail, email_to_name, project_name, applicant_email) => {
 
-    let params = {
-        user_id: process.env.userID,
-        service_id: process.env.serviceID,
-        template_id: process.env.templateID,
-        template_params: {
-          'project_name': project_name,
-          'email_to_name': email_to_name,
-          'applicant_email': applicant_email,
-          'email_to_address': email_to_mail
-        }
-    };
+    // let params = {
+    //     user_id: process.env.userID,
+    //     service_id: process.env.serviceID,
+    //     template_id: process.env.templateID,
+    //     template_params: {
+    //       'project_name': project_name,
+    //       'email_to_name': email_to_name,
+    //       'applicant_email': applicant_email,
+    //       'email_to_address': email_to_mail
+    //     }
+    // };
 
-    let options = {
-        method: 'POST',
-        headers: {
-            "Content-Type": "Application/json"
-        },
-        body: JSON.stringify(params)
-    };
+    // let options = {
+    //     method: 'POST',
+    //     headers: {
+    //         "Content-Type": "Application/json"
+    //     },
+    //     body: JSON.stringify(params)
+    // };
 
-    fetch(process.env.urlSend, options)
-    .then((httpResponse) => {
-        if (httpResponse.ok) {
-            console.log('Your mail is sent!');
-        } else {
-            return httpResponse.text()
-              .then(text => Promise.reject(text));
-        }
-    })
-    .catch((error) => {
-        console.log('Oops... ' + error);
-    });
+    // fetch(process.env.urlSend, options)
+    // .then((httpResponse) => {
+    //     if (httpResponse.ok) {
+    //         console.log('Your mail is sent!');
+    //     } else {
+    //         return httpResponse.text()
+    //           .then(text => Promise.reject(text));
+    //     }
+    // })
+    // .catch((error) => {
+    //     console.log('Oops... ' + error);
+    // });
 
 //     const subject = `Application Received for Project: ${project_name}`;
   
