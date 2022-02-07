@@ -42,6 +42,13 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
               />
               <Dropdown.Item
                 onClick={() => {
+                  history.push("/manage-alumni");
+                }}
+                text="Manage Alumni"
+                icon="settings"
+              />
+              <Dropdown.Item
+                onClick={() => {
                   history.push("/download-user-list");
                 }}
                 text="Download User Information"

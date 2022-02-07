@@ -6,6 +6,7 @@ import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
+import { OurAdvisors } from "./OurAdvisors";
 
 const OurTeam = (props) => {
   const path = config();
@@ -44,7 +45,40 @@ const OurTeam = (props) => {
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
+        
         <div>
+          <h1 className="center ourTeamHead">OUR ADVISORS</h1>
+          <div className="row cardsCenter">
+            
+              {OurAdvisors.map((ourAdvisor, index)=> {
+                return (
+                  <div className="cursor col-md-3">
+                   <div className="body">
+                     <Image circular id ={index} centered src={ourAdvisor.imagePath} className="photo" />
+                     <h2 className="titleName">{ourAdvisor.name}</h2>
+                     <div className="btn">
+                      <a
+                        href={ourAdvisor.linkedIn}
+                        target="_blank"
+                      >
+                        <Image
+                          src={"/assets/linkedin.png"}
+                          id="socialMediaIcon"
+                        />
+                      </a>
+                      
+                    </div>
+                   </div>
+                  </div>
+                )
+              }
+              
+               
+              )}
+          
+          </div>
+          <hr />
+          <div className="marginTop">
           <h1 className="center ourTeamHead">OUR TEAM</h1>
           <div className="row cardsCenter">
             {users.map((user) => {
@@ -83,6 +117,7 @@ const OurTeam = (props) => {
                 </div>
               );
             })}
+          </div>
           </div>
           <hr />
           <div className="marginTop">
@@ -130,15 +165,7 @@ const OurTeam = (props) => {
               >
                 Meet Our Volunteers
               </Button>
-              <Button
-                primary
-                color="blue"
-                onClick={() =>
-                  window.open("https://forms.office.com/r/R7kBcQbnvX", "_blank")
-                }
-              >
-                Join the team
-              </Button>
+              
             </div>
           </div>
         </div>
