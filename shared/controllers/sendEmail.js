@@ -17,12 +17,14 @@ const sendEmail = async (email_to_mail, email_to_name, project_name, applicant_e
     };
 
     let options = {
-        method: postMethod,
-        headers: header,
+        method: 'POST',
+        headers: {
+            "Content-Type": "Application/json"
+        },
         body: JSON.stringify(params)
     };
 
-    fetch(urlSend, options)
+    fetch(process.env.urlSend, options)
     .then((httpResponse) => {
         if (httpResponse.ok) {
             console.log('Your mail is sent!');
@@ -32,7 +34,7 @@ const sendEmail = async (email_to_mail, email_to_name, project_name, applicant_e
         }
     })
     .catch((error) => {
-        // console.log('Oops... ' + error);
+        console.log('Oops... ' + error);
     });
 
 //     const subject = `Application Received for Project: ${project_name}`;
