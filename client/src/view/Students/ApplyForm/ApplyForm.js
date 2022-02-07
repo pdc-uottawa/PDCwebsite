@@ -100,7 +100,7 @@ const ApplyForm = (props) => {
 
     fetch(process.env.REACT_APP_SENDURL, options)
       .then((httpResponse) => {
-        console.log('Inside Fetch: ', process.env.REACT_APP_SENDURL)
+        console.log("Inside Fetch: ", process.env.REACT_APP_SENDURL);
         if (httpResponse.ok) {
           console.log("Your mail is sent!");
         } else {
@@ -154,6 +154,7 @@ const ApplyForm = (props) => {
   return (
     <Segment>
       <Form onSubmit={handleFormSubmit} autoComplete="off">
+        {console.log("IN APPLY FORM: ", process.env.REACT_APP_SENDURL)}
         <Form.Field>
           <label>Your Name</label>
           <input
