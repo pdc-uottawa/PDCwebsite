@@ -5,10 +5,13 @@ const sendEmail = (email_to_address, email_to_name, project_name, applicant_emai
     var subject = `Application Received for Project: ${project_name}`;
   var textTwo = `Hello ${email_to_name},
 
-We have received an application for - ${project_name}, applied by ${applicant_email}.
+We have received an application for a project.
+
+PROJECT NAME - ${project_name}
+APPLIED BY -  ${applicant_email}
             
 Best wishes,
-PDC WEBSITE.`;
+PDC Website`;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
