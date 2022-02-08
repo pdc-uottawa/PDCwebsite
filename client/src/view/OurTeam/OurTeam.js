@@ -47,7 +47,7 @@ const OurTeam = (props) => {
       ) : (
         
         <div>
-          <h1 className="center ourTeamHead">OUR ADVISORS</h1>
+          <h1 className="center ourTeamHead">OUR FACULTY ADVISORS</h1>
           <div className="row cardsCenter">
             
               {OurAdvisors.map((ourAdvisor, index)=> {
@@ -56,9 +56,10 @@ const OurTeam = (props) => {
                    <div className="body">
                      <Image circular id ={index} centered src={ourAdvisor.imagePath} className="photo" />
                      <h2 className="titleName">{ourAdvisor.name}</h2>
+                     <h4 className="titlePosition">{ourAdvisor.position}</h4>
                      <div className="btn">
                       <a
-                        href={ourAdvisor.linkedIn}
+                        href={ourAdvisor.linkedinId}
                         target="_blank"
                       >
                         <Image
