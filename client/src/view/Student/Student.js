@@ -18,7 +18,7 @@ const Student = (props) => {
       </Segment>
       <div class="ui inverted segment">
         <div class="ui inverted relaxed divided list">
-        <a class="item" target="_blank" href="https://cutt.ly/pdcvolunteer">
+        <a class="item" target="_blank" href="https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u">
             Join as Volunteer
           </a>
           {/* <a class="item" href="#/program-coordinators">
