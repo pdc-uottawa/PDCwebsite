@@ -8,9 +8,9 @@ import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Card, Dropdown } from "semantic-ui-react";
 import { EventsContext } from "../../common/context/EventContext";
 import EventCard from "./EventCard";
+import { Spinner } from "react-activity";
 import Axios from "axios";
 import { deviceType } from "react-device-detect";
-import { set } from "mongoose";
 import moment from 'moment';
 import "./Event.css"
 
@@ -25,6 +25,8 @@ const Events = (props) => {
   const [filteredEvents, setFilteredEvents] = useState([]);
 
   const [filterType,setFilterType] =useState({});
+
+  const [loading, setLoading] = useState(true);
 
   // var fileteredEvents = eventInfo;
 
@@ -49,6 +51,7 @@ const Events = (props) => {
         setEventInfo(data);
         let eventsInReverseOrder = data.events.reverse();
         setFilteredEvents(eventsInReverseOrder);
+        setLoading(false)
       })
       .catch((e) => {
         console.log(e);
@@ -106,6 +109,14 @@ const Events = (props) => {
   ];
   return (
     <div>
+       {
+        loading ?
+        <div className="loadingState">
+          
+          <Spinner color="#727981" size={35} speed={1} animating={true} />
+        </div>
+        :
+        <>
       <Dropdown
         placeholder="Select Events"
         fluid
@@ -129,8 +140,12 @@ const Events = (props) => {
               <EventCard key={event.id} event={event} />
             ))}
       </Card.Group> */}
-    </div>
+   
+    </>
+}
+</div>
   );
+
 };
 
 export default Events;
