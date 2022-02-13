@@ -25,15 +25,16 @@ const Signin = (props) => {
       {/* <Divider vertical>Or</Divider> */}
         <Grid.Column>
           <Image centered size={20} src="/assets/student.png" />
-          <h2>Students, Please Log In using Google or Outlook</h2>
-          <Button onClick={handleGoogleLogin} style={{margin: '25px'}} color="google plus">
+          {/*TODO - Google login isn't working, check it-fix it and then uncomment it!*/}
+          <h2>Students, Please Log In using <br/> University's Microsoft Account</h2>
+          {/* <Button onClick={handleGoogleLogin} style={{margin: '25px'}} color="google plus">
             <i className="google icon" />
             Sign In with Google
           </Button>
-          Or
+          Or */}
           <Button onClick={handleOutlookLogin} style={{margin: '25px'}} color="vk">
-          <i className="mail icon" />
-            Sign In with Outlook
+          <i className="microsoft icon" />
+            Sign In with Microsoft
           </Button>
         </Grid.Column>
         { <Grid.Column>
