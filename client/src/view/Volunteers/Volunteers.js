@@ -3,8 +3,17 @@ import { Card } from "semantic-ui-react";
 import "./Volunteers.css";
 
 const EventManagementTeam = [
-  { name: "Piumantha Gunasekara", mail: "pguna066@uottawa.ca" },
-  { name: "Naurin Husain", mail: "nhusa095@uottawa.ca" },
+  { name: "Monika Gwalani", mail: "mgwal097@uottawa.ca" },
+  { name: "Nimish Aggarwal", mail: "nagga078@uottawa.ca" },
+  { name: "Tarini Sood", mail: "tsood097@uottawa.ca" },
+  { name: "Kajari Talukdar", mail: "ktalu006@uottawa.ca" },
+  { name: "Sai Supraja Nemmani", mail: "snemm013@uottawa.ca" },
+  { name: "Georges Abou Gebrayel", mail: "gabou045@uottawa.ca" },
+  { name: "Jiafeng Li", mail: "jli740@uottawa.ca" },
+  { name: "Rishi Kumar Pandey", mail: "rpand104@uottawa.ca" },
+  { name: "Simranjeet Singh", mail: "ssing327@uottawa.ca" },
+  { name: "Gurjot Singh", mail: "gsing163@uottawa.ca " },
+  { name: "Binit Pati", mail: "bpati033@uottawa.ca  " },
 ];
 
 const MarketingTeam = [
@@ -13,104 +22,115 @@ const MarketingTeam = [
     mail: "rkirb063@uottawa.ca",
   },
   {
-    name: "Zahra Rajaeitabar",
-    mail: "zraja091@uottawa.ca",
-  },
-  {
-    name: "Thahany Sabeera",
-    mail: "tsabe049@uottawa.ca",
-  },
-  {
     name: "Rishi Kumar Pandey",
     mail: "rpand104@uottawa.ca",
   },
-  {
-    name: "Subah Chawla",
-    mail: "schaw095@uottawa.ca",
-  },
-  {
-    name: "Taha Quadri Syed",
-    mail: "tsyed081@uottawa.ca",
-  },
-  {
-    name: "Tanya",
-    mail: "ttany051@uottawa.ca",
-  },
-  {
-    name: "Razieh Rezasoltani",
-    mail: "rreza062@uottawa.ca",
-  },
-  {
-    name: "Aman Hyder",
-    mail: "ahyde087@uottawa.ca",
-  },
+  
+ 
 ];
-
+const ProjectManagementTeam = [
+  {
+    name: "Chinmayee Mahagaonkar",
+    mail: "cmaha026@uottawa.ca",
+  },
+  {
+    name: "Chirag Virmani",
+    mail: "cvirm042@uottawa.ca",
+  },
+  {
+    name: "Shubhneet",
+    mail: "sbaat080@uottawa.ca",
+  },
+  {
+    name: "Roopleen",
+    mail: "rkaur050@uottawa.ca",
+  },
+  {
+    name: "Fahim",
+    mail: "mfahi009@uottawa.ca",
+  },
+  {
+    name: "Farzaneh",
+    mail: "",
+  },
+    {
+    name: "Akansha",
+    mail: "",
+  },
+  {
+    name: "Rahul",
+    mail: "rgand061@uottawa.ca",
+  },
+  {
+    name: "Roshni Prakash",
+    mail: "rdesa045@uottawa.ca",
+  },
+  {
+    name: "Alfa Budiman",
+    mail: "abudi097@uottawa.ca",
+  },
+  {
+    name: "Yueyang Liu",
+    mail: "yliu661@uottawa.ca",
+  },
+   {
+    name: "Zahra Lotfi",
+    mail: "zlotf035@uottawa.ca",
+  },
+  {
+    name: "Claudia Azigwe",
+    mail: "cazig063@uottawa.ca",
+  },
+  
+ 
+];
 const SocialMediaTeam = [
-  { name: "Sahana", mail: "ssaha062@uottawa.ca" },
-  { name: "Roopinder Singh", mail: "rsingh155@uottawa.ca" },
-  { name: "Subah Chawla", mail: "schaw095@uottawa.ca" },
-  { name: "Satya Subhakar reddy Chirla", mail: "credd091@uottawa.ca" },
-  { name: "Jyotin Gokli", mail: "jgokl049@uottawa.ca" },
+  { name: "Abhishek Xavier", mail: "axavi032@uottawa.ca" },
+  { name: "Sapana Kharod", mail: "skhar1010@uottawa.ca" },
+  { name: "Krishna raviteja Maddali", mail: "kmadd080@uottawa..ca" },
+  
 ];
 
-const ContentAndGraphicsTeam = [
-  { name: "Carvi Jain", mail: "cjain034@uottawa.ca" },
-  {
-    name: "Sai Supraja NEemmani",
-    mail: "snemm013@uottawa.ca",
-  },
-  {
-    name: "Monika Gwalani",
-    mail: "mgwal097@uottawa.ca",
-  },
-  {
-    name: "Tarini Sood",
-    mail: "tsood097@uottawa.ca",
-  },
-  {
-    name: "Akhil Vinayak Ajaya Kumar",
-    mail: "aajay006@uottawa.ca",
-  },
-  {
-    name: "Jiafeng Li",
-    mail: "jli740@uottawa.ca",
-  },
-  {
-    name: "Simranjeet Singh",
-    mail: "ssing327@uottawa.ca",
-  },
-  { name: "Roshanak Ahmadi", mail: "rahma102@uottawa.ca" },
-  { name: "Tulika", mail: "tshuk055@uottawa.ca" },
-  { name: "Azin Rezaeiangharagozlou", mail: "areza030@uottawa.ca" },
-  { name: "Rhema Kirby", mail: "rkirb063@uottawa.ca" },
-  { name: "Patrick Akkad", mail: "pakka041@uottawa.ca" },
-];
 
-const InitiativeManagementTeam = [
-  { name: "Abhijith Kumar", mail: "akuma006@uottawa.ca" },
-  { name: "Piyush Prashant Nikhade", mail: "pnikh049@uottawa.ca" },
+const CareerDevelopmentTeam = [
+  { name: "Twinkle Rane", mail: "trane011@uottwa.ca" },
+  { name: "Melika Ataebi", mail: "matae007@uottwa.ca" },
+  { name: "Raja Vignesh Srinivasan", mail: "rsrin014@uottawa.ca" },
+  { name: "Sreeja Guttala", mail: "sgutt043@uottawa.ca" },
+  { name: "Likhit Nagaraju", mail: "lnaga072@uottawa.ca" },
+  { name: "Hamidreza Salaripoor", mail: "hsala098@uottawa.ca" },
+  { name: "Heena Savaliya", mail: "hsava019@uottawa.ca" },
+  { name: "Ajender Dhillon", mail: "adhil030@uottawa.ca" },
+  { name: "Subash Kashyap", mail: "skash016@uottawa.ca" },
+  { name: "Shraddha Tupe", mail: "stupe025@uottawa.ca " },
+  { name: "Anahad Pandey", mail: "apand074@uottawa.ca " },
+  { name: "Karthik Panyam", mail: "kpany032@uottawa.ca" },
+
+];
+const ProgramCoordinatorTeam = [
+  { name: "Syed Zain Ul Abideen", mail: "szain018@uottawa.ca" },
+  { name: "Akshay Agrawal", mail: "aagra069@uottawa.ca" },
   { name: "Yuting Cao", mail: "ycao053@uottawa.ca" },
-  { name: "Yash", mail: "yseng083@uottawa.ca" },
+  { name: "Shivani Deshmukh", mail: "sdesh024@uottawa.ca" },
+  { name: "Shaniasadat Shojaee", mail: "sshoj065@uottawa.ca" },
+  { name: "Samhita Kuili", mail: "skuil016@uottawa.ca" },
+  { name: "Simranjeet Singh", mail: "ssing327@uottawa.ca" },
+  { name: "Gursimrat Singh", mail: "gsing152@uottawa.ca" },
+  { name: "Jiafeng Li", mail: "jli740@uottawa.ca" },
+  { name: "Nimish Aggarwal", mail: "nagga078@uottawa.ca" },
+  { name: "Avneet Kaur", mail: "akaur039@uottawa.ca" },
+  { name: "Abhishek Singh Chauhan", mail: "achou085@uottawa.ca" },
+  { name: "Golnoosh Babajamaaty", mail: "gbaba030@uottawa.ca " },
+  { name: "Elnaz Majidian", mail: "elnaz.majidian@uottawa.ca" },
+
 ];
+
 
 const VolunteerManagementTeam = [
-  { name: "Rahul", mail: "rgand061@uottawa.ca" },
+  
   {
-    name: "Naurin Hussain",
-    mail: "nhusa095@uottawa.ca",
-  },
-  {
-    name: "Anushree Raghunath Kulai",
-    mail: "akula045@uottawa.ca",
-  },
-  {
-    name: "Abhishek Singh Chouhan",
-    mail: "achou085@uottawa.ca",
-  },
-  {
-    name: "Georges Abou Gebrayel",
-    mail: "gabou045@uottawa.ca",
+    name: "Mostafa Bigdeli",
+    mail: "mbigd068@uottawa.ca",
   },
   {
     name: "Harshitha KV",
@@ -120,6 +140,15 @@ const VolunteerManagementTeam = [
     name: "Gurjot Singh",
     mail: "gsing163@uottawa.ca",
   },
+  {
+    name: "Sakshi",
+    mail: "ssaks071@uottawa.ca",
+  },
+  {
+    name: "Sahil Kapoor",
+    mail: "skapo058@uottawa.ca",
+  },
+  
 ];
 const WebsiteTeam = [
   { name: "Anahad Pandey", mail: "apand074@uottawa.ca" },
@@ -148,6 +177,51 @@ const Volunteers = (props) => {
           </Card>
         ))}
       </Card.Group>
+      <h1 class="ui center aligned huge header teams-section">
+        Career Development Team
+      </h1>
+      <Card.Group centered="true">
+        {CareerDevelopmentTeam.map((programCoordinator) => (
+          <Card color="blue">
+            <Card.Content>
+              <Card.Header>{programCoordinator.name}</Card.Header>
+              <Card.Description>
+                Email: {programCoordinator.mail}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        ))}
+        </Card.Group>
+        <h1 class="ui center aligned huge header teams-section">
+        Program Coordinator Team
+      </h1>
+      <Card.Group centered="true">
+        {ProgramCoordinatorTeam.map((programCoordinator) => (
+          <Card color="blue">
+            <Card.Content>
+              <Card.Header>{programCoordinator.name}</Card.Header>
+              <Card.Description>
+                Email: {programCoordinator.mail}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        ))}
+        </Card.Group>
+      <h1 class="ui center aligned huge header teams-section">
+        Project Management Team
+      </h1>
+      <Card.Group centered="true">
+        {ProjectManagementTeam.map((programCoordinator) => (
+          <Card color="blue">
+            <Card.Content>
+              <Card.Header>{programCoordinator.name}</Card.Header>
+              <Card.Description>
+                Email: {programCoordinator.mail}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        ))}
+      </Card.Group>
       <h1 className="ui center aligned huge header teams-section">
         Marketing Team
       </h1>
@@ -162,6 +236,8 @@ const Volunteers = (props) => {
             </Card.Content>
           </Card>
         ))}
+        
+        
       </Card.Group>
       <h1 className="ui center aligned huge header teams-section">
         Social Media Team
@@ -178,36 +254,7 @@ const Volunteers = (props) => {
           </Card>
         ))}
       </Card.Group>
-      <h1 className="ui center aligned huge header teams-section">
-        Content and Graphics Team
-      </h1>
-      <Card.Group centered="true">
-        {ContentAndGraphicsTeam.map((programCoordinator) => (
-          <Card color="blue">
-            <Card.Content>
-              <Card.Header>{programCoordinator.name}</Card.Header>
-              <Card.Description>
-                Email: {programCoordinator.mail}
-              </Card.Description>
-            </Card.Content>
-          </Card>
-        ))}
-      </Card.Group>
-      <h1 className="ui center aligned huge header teams-section">
-        Initiative Management Team
-      </h1>
-      <Card.Group centered="true">
-        {InitiativeManagementTeam.map((programCoordinator) => (
-          <Card color="blue">
-            <Card.Content>
-              <Card.Header>{programCoordinator.name}</Card.Header>
-              <Card.Description>
-                Email: {programCoordinator.mail}
-              </Card.Description>
-            </Card.Content>
-          </Card>
-        ))}
-      </Card.Group>
+      
       <h1 className="ui center aligned huge header teams-section">
         Volunteer Management Team
       </h1>
