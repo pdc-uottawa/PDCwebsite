@@ -43,6 +43,7 @@ import OurAlumni from "./view/Alumni/OurAlumni";
 import ManageAlumni from "./view/Alumni/ManageAlumni";
 import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
+import CDCMainPage from "./view/CDC/CDCMainPage";
 
 /**
  * This is routers for the website.
@@ -62,6 +63,7 @@ const Routers = () => {
             <Route exact path="/register" component={register} />
             <Route exact path="/OurTeam" component={OurTeam} />
             <Route exact path="/create-project" component={CreateProject} />
+            <Route exact path="/cdc" component={CDCMainPage} />
             <Route
               exact
               path="/download-user-list"
