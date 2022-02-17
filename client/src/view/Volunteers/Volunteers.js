@@ -153,7 +153,6 @@ const VolunteerManagementTeam = [
 const WebsiteTeam = [
   { name: "Anahad Pandey", mail: "apand074@uottawa.ca" },
   { name: "Amneet Singh", mail: "asing288@uottawa.ca" },
-  { name: "Siddhi Deshmukh", mail: "sdesh031@uottawa.ca" },
   { name: "Khushpreet Kaur", mail: "kkaur025@uottawa.ca" },
   { name: "Ripple Deep Singh", mail: "rkale087@uottawa.ca" },
   { name: "Gursimrat Singh", mail: "gsing152@uottawa.ca" },
