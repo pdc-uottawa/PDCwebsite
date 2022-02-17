@@ -3,9 +3,11 @@ import Axios from "axios";
 import CDCButtons from "./CDCButtons";
 import ContactUs from "./ContactUs";
 import TipsAndTricks from "./TipsAndTricks";
+import AboutUs from "./AboutUs";
 import { Spinner } from "react-activity";
 import "react-activity/dist/Spinner.css";
 import { config } from "../../common/config/config";
+import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
 
 const CDCMainPage = (props) => {
   const path = config();
@@ -16,6 +18,7 @@ const CDCMainPage = (props) => {
   const [interviewTips, setInterviewTips] = useState([]);
   const [buttonLinks, setButtonLinks] = useState([]);
 
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     Axios.all([
@@ -75,12 +78,23 @@ const CDCMainPage = (props) => {
 
   return (
     <>
-      {loading ? (
+      {
+        width <=450 ? 
+        <>
+          <div className="container textCenter">
+            <h1>Oops! Mobile View Coming Soon.</h1>
+          </div>
+        </>
+        :
+      loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
-      ) : (
+      ) 
+      :
+      (
         <div className="container">
+          <AboutUs />
           <CDCButtons buttonLinks={buttonLinks} />
           <TipsAndTricks resumeTips={resumeTips} linkedInTips={linkedInTips} interviewTips={interviewTips} />
           <ContactUs contactDetails={contactDetails} />
