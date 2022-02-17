@@ -31,7 +31,9 @@ passport.use(
     {
       clientID: process.env.googleClientID,
       clientSecret: process.env.googleClientSecret,
-      callbackURL: path + "auth/login/callback",
+      // callbackURL: path + "auth/login/callback",
+      // the URL was taking http by default which was breaking google login
+      callbackURL: "https://www.gespdc.com/auth/login/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       const { sub: googleId, name, email, picture, hd } = profile._json;

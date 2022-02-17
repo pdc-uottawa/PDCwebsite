@@ -18,7 +18,7 @@ const Student = (props) => {
       </Segment>
       <div class="ui inverted segment">
         <div class="ui inverted relaxed divided list">
-        <a class="item" target="_blank" href="https://cutt.ly/pdcvolunteer">
+        <a class="item" target="_blank" href="https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u">
             Join as Volunteer
           </a>
           {/* <a class="item" href="#/program-coordinators">
@@ -44,7 +44,7 @@ const Student = (props) => {
           <summary class="mysummaryItem">Industry Internship Project</summary>
           <br/>
           <p>Please find more information about ELG/GNG - 5902 
-            <a href="https://www.site.uottawa.ca/~lpeyton/gradproject/" target="_blank">
+            <a href="https://catalogue.uottawa.ca/en/courses/gng/" target="_blank">
             <font color="#4183c4"> here</font>
             </a>
             </p> 

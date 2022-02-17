@@ -80,7 +80,7 @@ const StudentAppliedProjectList = () => {
                     {/* <Table.Cell>{project.status}</Table.Cell> */}
                   </Table.Row>
                 );
-              })):<div>No projects to show.</div>}
+              })):<div style="padding: 25px 0px 0px 25px">No projects to show.</div>}
           </Table.Body>
         </Table>)
       }

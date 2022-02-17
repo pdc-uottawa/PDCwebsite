@@ -71,7 +71,7 @@ const ApplyForm = (props) => {
         emailToAddress:emails,
         emailToName:names,
         emailForProject:projectDetails.title,
-        emailSubject:"Application Received for Project:"+ projectDetails.title,
+        // emailSubject:"Application Received for Project:"+ projectDetails.title,
         emailApplicant:userInfo.user.email
       }
       //send email to owner

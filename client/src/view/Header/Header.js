@@ -5,6 +5,7 @@ import {
   Button,
   Icon,
   Segment,
+  Dropdown,
   Image,
 } from "semantic-ui-react";
 import React, { useEffect, useState, Fragment, useContext } from "react";
@@ -100,6 +101,11 @@ const Header = (props) => {
     setActiveItem(name);
     handleSideBarClick();
   };
+  const handleVolunteers = (e, { name }) => {
+    history.push("/Volunteers");
+    setActiveItem(name);
+    handleSideBarClick();
+  };
 
   const handleFeedback = (e, { name }) => {
     history.push("/feedback");
@@ -189,13 +195,27 @@ const Header = (props) => {
           >
             
           </Menu.Item> */}
-          <Menu.Item
+          {/* <Menu.Item
             name="OurTeam"
             active={activeItem === "OurTeam"}
             onClick={handleOurTeam}
           >
             Our Team
-          </Menu.Item>
+          </Menu.Item> */}
+          <Dropdown item text="The Team">
+            <Dropdown.Menu>
+              <Dropdown.Item className="bg" onClick={handleOurTeam} name="OurTeam">
+                Our Team
+              </Dropdown.Item>
+              <Dropdown.Item onClick={handleAlumni} name="OurAlumni">
+                Our Alumni
+              </Dropdown.Item>
+              <Dropdown.Item onClick={handleVolunteers} name="OurVolunteers">
+                Our Volunteers
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
           {/* {!userInfo.authenticated ||
           (userInfo.user && (userInfo.user.company || userInfo.user.admin)) ? (
             <Menu.Item
@@ -221,13 +241,21 @@ const Header = (props) => {
           ) : (
             ""
           )}
-          <Menu.Item
+          {/* <Menu.Item
+              name="Volunteers"
+              active={activeItem === "Volunteers"}
+              onClick={handleVolunteers}
+            >
+              {" "}
+              Volunteers
+            </Menu.Item> */}
+          {/* <Menu.Item
             name="Alumni"
             active={activeItem === "Alumni"}
             onClick={handleAlumni}
           >
             Our Alumni
-          </Menu.Item>
+          </Menu.Item> */}
           {/*<Menu.Item*/}
           {/*  name="Covid19"*/}
           {/*  active={activeItem === "Covid19"}*/}
@@ -235,6 +263,7 @@ const Header = (props) => {
           {/*>*/}
           {/*  Updates on COVID-19*/}
           {/*</Menu.Item> *!/*/}
+
           <Menu.Item
             name="Events"
             active={activeItem === "Events"}
@@ -242,19 +271,38 @@ const Header = (props) => {
           >
             Events
           </Menu.Item>
+
           <Menu.Item
-            name="projectList"
-            active={activeItem === "projectList"}
+            name="ProjectList"
+            active={activeItem === "ProjectList"}
             onClick={handleProjectList}
           >
             Project List
           </Menu.Item>
+
           <Menu.Item
             name="feedback"
             active={activeItem === "feedback"}
             onClick={handleFeedback}
           >
             Feedback
+          </Menu.Item>
+          <Menu.Item
+            name="joinTeam"
+            position="left"
+            active={activeItem === "joinTeam"}
+          >
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                  "_blank"
+                )
+              }
+              basic
+              inverted
+              content="Join the Team"
+            />
           </Menu.Item>
           {userInfo.authenticated ? (
             <LogedInMenu
@@ -268,6 +316,7 @@ const Header = (props) => {
             <LogedOutMenu logIn={handleLogin} />
           )}
         </Container>
+
         {/* Sidebar */}
         <Container hidden={sidebarHidden}>
           <Button onClick={handleSideBarClick} color="blue">
@@ -297,13 +346,26 @@ const Header = (props) => {
               >
                 Professional Development Club
               </Menu.Item>
-              <Menu.Item
+              {/* <Menu.Item
                 name="OurTeam"
                 active={activeItem === "OurTeam"}
                 onClick={handleOurTeam}
               >
                 Our Team
-              </Menu.Item>
+              </Menu.Item> */}
+              <Dropdown item text="The Team">
+                <Dropdown.Menu>
+                  <Dropdown.Item className="bg" onClick={handleOurTeam} name="OurTeam">
+                    Our Team
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={handleAlumni} name="OurAlumni">
+                    Our Alumni
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={handleVolunteers} name="OurVolunteers">
+                    Our Volunteers
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               {/* {!userInfo.authenticated ||
               (userInfo.user &&
                 (userInfo.user.company || userInfo.user.admin)) ? (
@@ -365,6 +427,24 @@ const Header = (props) => {
               >
                 Feedback
               </Menu.Item>
+              <Menu.Item
+                name="joinTeam"
+                position="left"
+                active={activeItem === "joinTeam"}
+              >
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                      "_blank"
+                    )
+                  }
+                  basic
+                  inverted
+                  content="Join the Team"
+                />
+              </Menu.Item>
+
               {userInfo.authenticated ? (
                 <LogedInMenu
                   logOut={handleLogout}

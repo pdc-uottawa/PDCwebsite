@@ -1,3 +1,10 @@
 #dropdown{
     margin-bottom: 20px;
 }
+
+.loadingState {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+

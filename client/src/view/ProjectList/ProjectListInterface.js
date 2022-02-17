@@ -30,6 +30,7 @@ const ProjectListInterface = (props) => {
   useEffect(() => {
     Axios.get(path + "project", {})
       .then((res) => {
+        console.log(res.data)
         return res.data;
       })
       .then((data) => {
