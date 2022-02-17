@@ -71,6 +71,11 @@ const Header = (props) => {
     setActiveItem(name);
     handleSideBarClick();
   };
+  const handleCDC = (e, { name }) => {
+    history.push("/cdc");
+    setActiveItem(name);
+    handleSideBarClick();
+  };
 
   const handleStudent = (e, { name }) => {
     history.push("/student");
@@ -184,7 +189,6 @@ const Header = (props) => {
             header
           >
             <Image avatar size="mini" circular src={img} />
-            &nbsp;&nbsp;&nbsp; Professional Development Club
           </Menu.Item>
           {/* <Menu.Item
             name="home"
@@ -264,6 +268,13 @@ const Header = (props) => {
           {/*  Updates on COVID-19*/}
           {/*</Menu.Item> *!/*/}
 
+          <Menu.Item
+            name="CDC"
+            active={activeItem === "CDC"}
+            onClick={handleCDC}
+          >
+            Career Development Centre
+          </Menu.Item>
           <Menu.Item
             name="Events"
             active={activeItem === "Events"}

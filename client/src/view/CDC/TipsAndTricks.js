@@ -2,9 +2,8 @@ import React, { Fragment, useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
-import { Spinner } from "react-activity";
 import "react-activity/dist/Spinner.css";
-import { Button, Form, Input, Table, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import './style.css'
 import {
     Accordion,
@@ -18,72 +17,25 @@ import {
 const TipsAndTricks = (props) => {
   const path = config();
   const { userInfo, setUserInfo } = useContext(UserContext);
-
-  const [resumeTips, setResumeTips] = useState([]);
-  const [linkedInTips, setLinkedInTips] = useState([]);
-  const [interviewTips, setInterviewTips] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-      Axios.all([
-          Axios.get(path + "cdc/resumetips/all", {})
-          .then((res) => {
-            console.log(res.data)
-            return res.data;
-          })
-          .then((data) => {
-            setResumeTips(data);
-          })
-          .catch((e) => {
-            console.log(e);
-          }),
-          Axios.get(path + "cdc/linkedintips/all", {})
-          .then((res) => {
-            console.log(res.data)
-            return res.data;
-          })
-          .then((data) => {
-            setLinkedInTips(data);
-          })
-          .catch((e) => {
-            console.log(e);
-          }),
-          Axios.get(path + "cdc/interviewques/all", {})
-          .then((res) => {
-            console.log(res.data)
-            return res.data;
-          })
-          .then((data) => {
-            setInterviewTips(data);
-            setLoading(false)
-          })
-          .catch((e) => {
-            console.log(e);
-          })
-      ])
-  }, [setResumeTips, setLinkedInTips, setInterviewTips, path]);
-
+  const resumeTips = props.resumeTips;
+  const linkedInTips = props.linkedInTips;
+  const interviewTips = props.interviewTips;
+  
   return (
     <>
-      {
-        loading ?
-        <div className="loadingState">
-          <Spinner color="#727981" size={35} speed={1} animating={true} />
-        </div>
-        :
         <div className="container">
-          <div>
-              <h1 className="head">TIPS AND TRICKS FOR GROOMING YOUR PROFILE</h1>
-          </div>
-          <div className="accordionDiv">
+            <div>
+                <h1 className="head">TIPS AND TRICKS FOR GROOMING YOUR PROFILE</h1>
+            </div>
+            <div className="accordionDiv">
             <Accordion allowZeroExpanded state>
                 <AccordionItem className="accordionItem">
-                    <AccordionItemHeading className="accordionHead">
+                    <AccordionItemHeading className="accordionHeadResume">
                         <AccordionItemButton className="padding">
                             RESUME TIPS
                             <AccordionItemState>
                                 {
-                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="black" size="large" className="down" /> : <Icon name="angle down" color="black" size="large" className="down" />)
+                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="white" size="large" className="down" /> : <Icon name="angle down" color="white" size="large" className="down" />)
                                 }
                             </AccordionItemState>
                         </AccordionItemButton>
@@ -154,12 +106,12 @@ const TipsAndTricks = (props) => {
                     </AccordionItemPanel>
                 </AccordionItem>
                 <AccordionItem className="accordionItem">
-                    <AccordionItemHeading className="accordionHead">
+                    <AccordionItemHeading className="accordionHeadLinkedIn">
                         <AccordionItemButton className="padding">
                             LINKEDIN TIPS
                             <AccordionItemState>
                                 {
-                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="black" size="large" className="down" /> : <Icon name="angle down" color="black" size="large" className="down" />)
+                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="white" size="large" className="down" /> : <Icon name="angle down" color="white" size="large" className="down" />)
                                 }
                             </AccordionItemState>
                         </AccordionItemButton>
@@ -168,7 +120,7 @@ const TipsAndTricks = (props) => {
                         <div className="row centerItems">
                             <div className="linkedinDesc">
                                 <p>Almost <a href="https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-filled-via-networking-lou-adler/">65-85 per cent of the jobs are not posted online</a>. This is why building your network is crucial and <a href="https://www.linkedin.com/">LinkedIn</a> is 
-an excellent tool to get you started on your job search journey in Canada.</p>
+    an excellent tool to get you started on your job search journey in Canada.</p>
                             </div>
                             <div className="col-md borderItem">
                                 <div>
@@ -180,6 +132,7 @@ an excellent tool to get you started on your job search journey in Canada.</p>
                                                     <li>
                                                         <h4>{tip.heading}</h4>
                                                         <p>{tip.description}</p>
+                                                        <br />
                                                     </li>
                                                 )
                                             })
@@ -191,12 +144,12 @@ an excellent tool to get you started on your job search journey in Canada.</p>
                     </AccordionItemPanel>
                 </AccordionItem>
                 <AccordionItem className="accordionItem">
-                    <AccordionItemHeading className="accordionHead">
+                    <AccordionItemHeading className="accordionHeadInterview">
                         <AccordionItemButton className="padding">
                             INTERVIEW TIPS
                             <AccordionItemState>
                                 {
-                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="black" size="large" className="down" /> : <Icon name="angle down" color="black" size="large" className="down" />)
+                                    ({ expanded }) => (expanded ? <Icon name="angle up" color="white" size="large" className="down" /> : <Icon name="angle down" color="white" size="large" className="down" />)
                                 }
                             </AccordionItemState>
                         </AccordionItemButton>
@@ -296,24 +249,22 @@ an excellent tool to get you started on your job search journey in Canada.</p>
                             </div>
                             <div className="interviewDesc">
                                 <p>You should practice answering general interview questions, behavioural interview questions and questions that are 
-specific to the position you are applying for. Even if you are practicing alone, you should practice answering 
-questions out loud to help you prepare for the real interview. You can also take notes while you answer each 
-question of ways to improve your answer. <br />
-Finally, you should ask the person who is practicing with you to provide you with feedback. Hopefully, this person 
-will be able to find areas in which you can continue to practice improving before your real interview. If you are 
-practicing alone, you can watch yourself in a mirror or record yourself and provide yourself with honest feedback as 
-you go through your practice interview.</p>
+    specific to the position you are applying for. Even if you are practicing alone, you should practice answering 
+    questions out loud to help you prepare for the real interview. You can also take notes while you answer each 
+    question of ways to improve your answer. <br />
+    Finally, you should ask the person who is practicing with you to provide you with feedback. Hopefully, this person 
+    will be able to find areas in which you can continue to practice improving before your real interview. If you are 
+    practicing alone, you can watch yourself in a mirror or record yourself and provide yourself with honest feedback as 
+    you go through your practice interview.</p>
                             </div>                          
                         </div>
                     </AccordionItemPanel>
                 </AccordionItem>
             </Accordion>
-          </div>
-          <br />
-          <br />
-          <hr />
+            </div>
+            <br />
+            <hr />
         </div>
-      }
     </>
   );
 };
