@@ -17,7 +17,7 @@ const ContactUS = (props) => {
         <div>
           <h1 className="head">CONTACT US</h1>
         </div>
-        <div className="marginTop">
+        <div className="marginTopContactUs">
           <Card.Group centered="true">
             {contactDetails.map((contact) => (
               <Card color="blue">
