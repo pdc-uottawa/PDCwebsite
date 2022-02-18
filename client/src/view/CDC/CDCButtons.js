@@ -20,7 +20,7 @@ const CDCButtons = (props) => {
                     return (
                         link.name === 'book_appointment' && link.active === true ?
                         <div className="col-md centerItems">
-                            <Button href={link.link} target="blank" size="large" className="padding5" color='orange' content='Book Appointment for Mock Interviews' />
+                            <Button href={link.link} target="blank" size="large" className="padding5" color='blue' content='Book Appointment for Mock Interviews' />
                         </div>
                         :
                         link.name === 'submit_resume_linkedin' && link.active === true ?
