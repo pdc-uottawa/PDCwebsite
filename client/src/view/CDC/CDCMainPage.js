@@ -18,8 +18,6 @@ const CDCMainPage = (props) => {
   const [interviewTips, setInterviewTips] = useState([]);
   const [buttonLinks, setButtonLinks] = useState([]);
 
-  const { width } = useWindowDimensions();
-
   useEffect(() => {
     Axios.all([
       Axios.get(path + "cdc/resumetips/all", {})
@@ -79,13 +77,6 @@ const CDCMainPage = (props) => {
   return (
     <>
       {
-        width <=450 ? 
-        <>
-          <div className="container textCenter">
-            <h1>Oops! Mobile View Coming Soon.</h1>
-          </div>
-        </>
-        :
       loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />

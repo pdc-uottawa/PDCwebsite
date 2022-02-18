@@ -418,6 +418,13 @@ const Header = (props) => {
                 Updates on COVID-19
               </Menu.Item> */}
               <Menu.Item
+                name="CDC"
+                active={activeItem === "CDC"}
+                onClick={handleCDC}
+              >
+                Career Development Centre
+              </Menu.Item>
+              <Menu.Item
                 name="Events"
                 active={activeItem === "Events"}
                 onClick={handleEvents}
