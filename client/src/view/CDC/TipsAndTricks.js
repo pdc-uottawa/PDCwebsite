@@ -214,7 +214,7 @@ const TipsAndTricks = (props) => {
                                 <div>
                                     <ul>
                                         {
-                                            resumeTips
+                                            interviewTips
                                             .filter((cat) => cat.category == "situational")
                                             .map((tip) => {
                                                 return(
@@ -234,7 +234,7 @@ const TipsAndTricks = (props) => {
                                 <div>
                                     <ul>
                                         {
-                                            resumeTips
+                                            interviewTips
                                             .filter((cat) => cat.category == "behavioural")
                                             .map((tip) => {
                                                 return(
