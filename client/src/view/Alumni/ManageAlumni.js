@@ -1,16 +1,21 @@
 import Axios from "axios";
-import React, { useEffect, useState, Component } from "react";
+import React, { useEffect, useState, useContext, Component } from "react";
 import { Button, Form, Input, Table, Icon } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import { Link } from 'react-router-dom'
 import { Spinner } from "react-activity";
 import UpdateAlumniForm from './UpdateAlumniForm'
 import './Alumni.css'
+import { UserContext } from "../../common/context/UserProvider";
 
 const ManageAlumni = (props) => {
     const path = config();
     const [AlumniList, setAlumniList] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { userInfo, setUserInfo } = useContext(UserContext);
+    const [adminUsers, setAdminUsers] = useState([]);
+    const adminList = [];
+    const { user } = userInfo;
 
     useEffect(() => {
         Axios.get(path + "alumni/all", {})
@@ -27,6 +32,18 @@ const ManageAlumni = (props) => {
 
     }, [setAlumniList, path]);
 
+    useEffect(() => {
+        Axios.get(path + "user/adminuserlist")
+          .then((res) => {
+            return res.data;
+          })
+          .then((data) => {
+            setAdminUsers(data);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }, [null]);
 
     function removeAlumni(_id) {
         if (window.confirm('Are you sure?')) {
@@ -43,7 +60,17 @@ const ManageAlumni = (props) => {
 
     }
 
+    adminUsers.map((admin) => {
+        adminList.push(
+          {
+            key: admin._id,
+            value: admin,
+            text: admin.name
+          });
+      });
+
     return (
+        user && user.admin ? 
         loading ?
             <div className="loadingState">
                 <Spinner color="#727981" size={35} speed={1} animating={true} />
@@ -95,6 +122,14 @@ const ManageAlumni = (props) => {
                     </Table>
                 </div>
             </>
+            :
+            <>
+          <center>
+            <h1>Oops, Page Not Found!</h1> 
+            <h3>Please login as an admin to manage alumni details!</h3> 
+          </center>
+        </>
+      
     )
 };
 
