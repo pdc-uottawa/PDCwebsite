@@ -84,7 +84,7 @@ const TipsAndTricks = (props) => {
                             </div>
                             <div className="col-md borderItem">
                                 <div>
-                                    <h1 className="marginTop">Top 6 Interview Mistakes</h1>
+                                    <h1 className="marginTop">Top 6 Resume Mistakes</h1>
                                 </div>
                                 <div>
                                     <ul>
