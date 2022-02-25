@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const passportSetup = require("./shared/config/Passport");
 const passport = require("passport");
+const homeRoutes = require("./shared/routes/HomeRoute");
 const authRoutes = require("./shared/routes/Auth");
 const projectRoutes = require("./shared/routes/ProjectRoute");
 const studentRoutes = require("./shared/routes/StudentRoute");
@@ -89,6 +90,7 @@ app.use(passport.session());
 app.use(morgan("tiny"));
 
 // auth router
+app.use("/home", homeRoutes);
 app.use("/auth", authRoutes);
 app.use("/", projectRoutes);
 app.use("/student", studentRoutes);
