@@ -57,10 +57,10 @@ const Routers = () => {
     <Fragment>
       <Header />
       <Switch>
+          <Route exact path="/" component={HomePage} />
         <Fragment>
           <Container className="main">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/HomePage" component={HomePage} />
+            {/* <Route exact path="/" component={Home} /> */}
             <Route exact path="/signin" component={Signin} />
             <Route exact path="/register" component={register} />
             <Route exact path="/OurTeam" component={OurTeam} />
