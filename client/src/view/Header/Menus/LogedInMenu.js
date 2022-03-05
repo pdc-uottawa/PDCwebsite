@@ -49,7 +49,7 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
               />
               <Dropdown.Item
                 onClick={() => {
-                  history.push("/manage-ourTeam");
+                  history.push("/manage-ourteam");
                 }}
                 text="Manage Team"
                 icon="settings"
