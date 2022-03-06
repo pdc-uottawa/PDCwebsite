@@ -3,6 +3,7 @@ import { Segment, Form, Grid, Input, Button, Icon, Dropdown, Select } from "sema
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css"
+const img = require("../../assets/pdc_logo.png");
 
 function ContactUs() {
   const path = config();
@@ -13,9 +14,16 @@ function ContactUs() {
     { key: '4', text: 'Other', value: 'other' },
   ];
   const [selectedOption, setSelectedOption] = useState("")
+  const [other, setOther] = useState(false)
 
   function handleOptionChange (e, val) {
     setSelectedOption(val)
+    if (val === 'other') {
+      setOther(true)
+    }
+    else {
+      setOther(false)
+    }
   }
 
   function handleSubmit() {
@@ -52,12 +60,10 @@ function ContactUs() {
       <div>
         <Grid className="grid-col-1" columns={2}>
           <Grid.Column>
-            <h3 className="cont-hd">Professional Development Club, uOttawa</h3>
-            <Segment className="pdc-add">
-              <Icon name='marker' />Address <br></br>
-              <Icon name='phone' />Contact<br></br>
-              <Icon name='envelope' /> Email Id
-            </Segment>
+            <div className="row">
+              <img className="col-md-4 logo" src={img} />
+              <h3 className="cont-hd col-md-6">Professional Development Club, uOttawa</h3>
+            </div>
           </Grid.Column>
           <Grid.Column>
             <Form>
@@ -82,10 +88,21 @@ function ContactUs() {
                 onChange={(e, {value}) => handleOptionChange(e, value?.toString())}
                 required={true}
               />
+              {
+                other ?
+                <Form.Field
+                  id='other'
+                  control={Input}
+                  placeholder='Enter Subject'
+                  required={true}
+                />
+                :
+                null
+              }
               <Form.Field
                 id='email'
                 control={Input}
-                placeholder='test012@uottawa.ca'
+                placeholder='Enter Email'
                 required={true}
               />
               <Form.TextArea
