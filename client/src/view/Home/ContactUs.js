@@ -15,7 +15,7 @@ function ContactUs() {
     { key: '4', text: 'Other', value: 'other' },
   ];
   const [selectedOption, setSelectedOption] = useState("")
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [other, setOther] = useState(false)
 
   function handleOptionChange (e, val) {
