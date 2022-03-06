@@ -19,7 +19,6 @@ import OurTeam from "./view/OurTeam/OurTeam";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
-import Footer from "./view/Footer/Footer";
 import Signin from "./view/Signin/Signin";
 import register from "./view/Register/register";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
@@ -129,7 +128,6 @@ const Routers = () => {
           </Container>
         </Fragment>
       </Switch>
-      <Footer />
     </Fragment>
   );
 };

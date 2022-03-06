@@ -7,22 +7,8 @@ import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-function Testimonials() {
-    const path = config();
-    const [TestimonialData, setTestimonialData] = useState([]);
-
-    useEffect(() => {
-        Axios.get(path + "home/testimonials", {})
-            .then((res) => {
-                return res.data;
-            })
-            .then((data) => {
-                setTestimonialData(data);
-            })
-            .catch((e) => {
-                console.log(e);
-            });
-    }, [setTestimonialData, path]);
+function Testimonials(props) {
+    const testimonialData = props.testimonialData;
 
     return (
         <>
@@ -34,7 +20,7 @@ function Testimonials() {
                 showStatus={false}
                 autoPlay={true}
                 interval={6100}>
-                {TestimonialData.map((data) =>
+                {testimonialData.map((data) =>
                     <Segment className="testi" secondary >
                         <img src={data.image} />
                         <div className="myCarousel">

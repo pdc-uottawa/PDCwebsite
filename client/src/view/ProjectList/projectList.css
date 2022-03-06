@@ -17,7 +17,8 @@
 .loadingState {
     display: flex;
     justify-content: center;
-    margin-top: 30%;
+    margin-top: 15%;
+    margin-bottom: 15%;
 }
 
 .padding10 {

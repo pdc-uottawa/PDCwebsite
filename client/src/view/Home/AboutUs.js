@@ -12,22 +12,8 @@ import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css";
 
-function AboutUs() {
-  const path = config();
-  const [aboutUsData, setAboutUsData] = useState([]);
-
-  useEffect(() => {
-    Axios.get(path + "home/about", {})
-      .then((res) => {
-        return res.data;
-      })
-      .then((data) => {
-        setAboutUsData(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setAboutUsData, path]);
+function AboutUs(props) {
+  const aboutUsData = props.aboutUsData;
 
   return (
     <>

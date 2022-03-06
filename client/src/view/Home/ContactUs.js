@@ -3,6 +3,7 @@ import { Segment, Form, Grid, Input, Button, Icon, Dropdown, Select } from "sema
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css"
+import { Spinner } from "react-activity";
 const img = require("../../assets/pdc_logo.png");
 
 function ContactUs() {
@@ -14,6 +15,7 @@ function ContactUs() {
     { key: '4', text: 'Other', value: 'other' },
   ];
   const [selectedOption, setSelectedOption] = useState("")
+  const [loading, setLoading] = useState(true);
   const [other, setOther] = useState(false)
 
   function handleOptionChange (e, val) {
@@ -27,7 +29,7 @@ function ContactUs() {
   }
 
   function handleSubmit() {
-    console.log(selectedOption)
+    setLoading(true)
     const fname = document.getElementById('fname').value;
     const lname = document.getElementById('lname').value;
     const category = selectedOption;
@@ -43,7 +45,8 @@ function ContactUs() {
           message
         })
           .then((res) => {
-            console.log('Your query has been sent successfully.');
+            setLoading(false)
+            alert('Your query has been sent successfully!');
           })
           .catch((e) => {
             console.log(e);
@@ -51,6 +54,7 @@ function ContactUs() {
     } 
     else {
       alert('Please Enter all Details!')
+      setLoading(false)
     }
   }
 
@@ -111,7 +115,16 @@ function ContactUs() {
                 placeholder='Enter Message'
                 required={true}
               />
-              <Form.Button className="bt-sq" size="large" color="linkedin" onClick={handleSubmit}>Send Query</Form.Button>
+              {
+                loading ?
+                <Form.Button className="bt-sq" size="large" color="linkedin" disabled>
+                  <Spinner color="white" size={15} speed={1} animating={true} />
+                </Form.Button>
+                :
+                <Form.Button className="bt-sq" size="large" color="linkedin" onClick={handleSubmit}>
+                  Send Query
+                </Form.Button>
+              }
             </Form>
           </Grid.Column>
         </Grid>
