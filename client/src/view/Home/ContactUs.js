@@ -4,7 +4,7 @@ import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css"
 import { Spinner } from "react-activity";
-const img = require("../../assets/pdc_logo.png");
+const img = require("../../assets/logo1.png");
 
 function ContactUs() {
   const path = config();
@@ -59,7 +59,7 @@ function ContactUs() {
   }
 
   return (
-    <div className="frag2">
+    <div className="frag1">
       <h1 className="header">CONTACT US</h1>
       <div>
         <Grid className="grid-col-1" columns={2}>

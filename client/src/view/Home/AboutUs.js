@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { config } from "../../common/config/config";
 import Axios from "axios";
+import parse from 'html-react-parser';
 import "./Home.css";
 
 function AboutUs(props) {
@@ -26,7 +27,7 @@ function AboutUs(props) {
                 <img className="ab-img" src={abdata.image} />
               </Grid.Column>
               <Grid.Column>
-                <p className="ab-desc">{abdata.description}</p>
+                <p className="ab-desc">{parse(abdata.description)}</p>
               </Grid.Column>
             </Grid>
           ))}

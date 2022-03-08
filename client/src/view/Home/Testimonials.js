@@ -12,27 +12,29 @@ function Testimonials(props) {
 
     return (
         <>
-            <h1 className="hd-2">TESTIMONIALS</h1>
-            <Carousel
-                showArrows={true}
-                infiniteLoop={true}
-                showThumbs={false}
-                showStatus={false}
-                autoPlay={true}
-                interval={6100}>
-                {testimonialData.map((data) =>
-                    <Segment className="testi" secondary >
-                        <img src={data.image} />
-                        <div className="myCarousel">
-                            <h3>{data.name}</h3>
-                            <h4>{data.designation}</h4>
-                            <p>
-                                {data.description}
-                            </p>
-                        </div>
-                    </Segment>
-                )}
-            </Carousel>
+            <div className="frag3">
+                <h1 className="hd-2">TESTIMONIALS</h1>
+                <Carousel
+                    showArrows={true}
+                    infiniteLoop={true}
+                    showThumbs={false}
+                    showStatus={false}
+                    autoPlay={true}
+                    interval={6100}>
+                    {testimonialData.map((data) =>
+                        <Segment className="testi" secondary >
+                            <img src={data.image} />
+                            <div className="myCarousel">
+                                <h3>{data.name}</h3>
+                                <h4>{data.designation}</h4>
+                                <p>
+                                    {data.description}
+                                </p>
+                            </div>
+                        </Segment>
+                    )}
+                </Carousel>
+            </div>
         </>
     )
 };

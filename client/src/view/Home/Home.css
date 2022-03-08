@@ -72,19 +72,40 @@
   max-width: 30% !important;
 }
 
+.JTTButton {
+  position: absolute;
+  bottom: 20%;
+  left: 48%;
+}
+
 .ScrollDownButton {
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   padding: 10px;
   left: 49%;
   cursor: pointer;
 }
 
-.frag2{
-  background-color:#8f001a !important ;
+.frag3{
+  border: 10px solid white !important;
+  border-radius: 15px !important;
+  background-color:#999 !important ;
   color: white;
 }
 
+.frag2{
+  border: 10px solid white !important;
+  border-radius: 15px !important;
+  background-color:#040243 !important ;
+  color: white;
+}
+
+.frag1{
+  border: 10px solid white !important;
+  border-radius: 15px !important;
+  background-color:#8f001a !important ;
+  color: white;
+}
 
 .grid-col-1{
   margin: 25px !important;
@@ -103,6 +124,8 @@
 .hd-2{
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 2% !important;
+  margin-bottom: -2% !important;
 }
 
 .home-buttons{
@@ -131,7 +154,7 @@
 .testi{
   border: 0px !important;
   color: #787878;
-  background-color: #fff !important;
+  background-color: #999 !important;
 }
 
 .but-m-o-t{
@@ -149,23 +172,26 @@ color: rgb(2, 126, 209) !important;
   color: rgb(2, 126, 209);
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
 .ab-img{
-  margin: 0px;
   margin-bottom: 20px !important;
   width: 100%;
-  border: black !important;
-  border-width: 5px !important;
+  height: auto;
+  border: 3px solid white !important;
   border-radius: 10px !important;
-  height: 270px !important;
-  
 }
 
 .ab-desc{
-  margin-left: 25% !important;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
   text-align: justify;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  font-size: 18pt;
+  font-size: 13pt;
 }
 
 .card-img{
@@ -190,7 +216,7 @@ color: rgb(2, 126, 209) !important;
 }
 
 .myCarousel {
-  background: #fafafa;
+  background: #cdcdcd;
   margin-top: -6%;
   width: 54%;
   margin-left: auto;
@@ -199,8 +225,12 @@ color: rgb(2, 126, 209) !important;
   padding-bottom: 8%;
   padding-left: 5%;
   padding-right: 5%;
-  border: 1px solid #ddd;
-  height: 286px;
+  /* border: 1px solid #ddd; */
+  height: auto;
+}
+
+.bottom10 {
+  margin-bottom: 1% !important;
 }
 
 .carousel .control-dots {
