@@ -122,7 +122,7 @@ function ContactUs() {
                 </Form.Button>
                 :
                 <Form.Button className="bt-sq" size="large" color="linkedin" onClick={handleSubmit}>
-                  Send Query
+                  Send Message
                 </Form.Button>
               }
             </Form>

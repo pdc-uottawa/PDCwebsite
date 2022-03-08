@@ -18,7 +18,7 @@ function ImageCarousel(props) {
 
   return (
     <>
-      <Carousel disableDotsControls autoPlay autoPlayInterval={"50000"} infinite>
+      <Carousel disableDotsControls autoPlay autoPlayInterval={"500000"} infinite>
         {
           carouselData.map((car, index) => {
             return (
