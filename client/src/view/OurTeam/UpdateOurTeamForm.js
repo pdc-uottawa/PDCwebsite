@@ -94,7 +94,7 @@ return(
         <>
             <div>
                 <h1 className='center marginTop'>Thank You. Details has been updated!</h1>
-                <Link to='/manage-ourTeam'>
+                <Link to='/manage-ourteam'>
                     <input type='submit' className='backButton marginLeft marginTop' value='Back' />
                 </Link>
             </div>
@@ -135,7 +135,7 @@ return(
                 />
                 <input type='submit' className='submitButton' onClick={handleSubmit} />
                 <input type='reset' className='resetButton marginLeft' onClick={handleReset} />
-                <Link to='/manage-ourTeam'>
+                <Link to='/manage-ourteam'>
                     <input type='submit' className='backButtonBlue marginLeft' value='Back' />
                 </Link>
             </Form>

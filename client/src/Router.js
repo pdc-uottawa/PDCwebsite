@@ -16,6 +16,8 @@ import UpdateCoordinators from "./view/Student/UpdateCoordinators";
 import HireStudent from "./view/HireStudent/HireStudent";
 import Covid19 from "./view/Covid19/Covid19";
 import OurTeam from "./view/OurTeam/OurTeam";
+import ManageTeam from "./view/OurTeam/ManageTeam";
+import UpdateOurTeam from "./view/OurTeam/UpdateOurTeamForm";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
@@ -51,7 +53,7 @@ import CDCMainPage from "./view/CDC/CDCMainPage";
  * Need to solve login authentication, user can input url directly to go to the page.
  */
 
-const Routers = () => {
+consRouters = () => {
   return (
     <Fragment>
       <Header />
@@ -81,8 +83,10 @@ const Routers = () => {
             />
             <Route exact path="/alumni" component={OurAlumni} />
             <Route exact path="/manage-alumni" component={ManageAlumni} />
+            <Route exact path="/manage-ourteam" component={ManageTeam} />
             <Route exact path="/add-alumni" component={AddAlumni} />
             <Route exact path="/update-alumni/:id" component={UpdateAlumni} />
+            <Route exact path="/update-ourTeam/:id" component={UpdateOurTeam} />
             <Route exact path="/volunteers" component={Volunteers} />
             <Route exact path="/our-partners" component={OurPartners} />
             <Route exact path="/programs" component={Programs} />
