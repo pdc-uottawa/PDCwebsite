@@ -53,7 +53,7 @@ import CDCMainPage from "./view/CDC/CDCMainPage";
  * Need to solve login authentication, user can input url directly to go to the page.
  */
 
-consRouters = () => {
+const Routers = () => {
   return (
     <Fragment>
       <Header />

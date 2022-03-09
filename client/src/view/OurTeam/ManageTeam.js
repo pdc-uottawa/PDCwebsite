@@ -4,7 +4,7 @@ import { Button, Form, Input, Table, Icon } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import { Link } from 'react-router-dom'
 import { Spinner } from "react-activity";
-import UpdateAlumniForm from './UpdateAlumniForm'
+import UpdateOurTeamForm from './UpdateOurTeamForm'
 import './OurTeam.css'
 import { UserContext } from "../../common/context/UserProvider";
 
