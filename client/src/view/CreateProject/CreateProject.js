@@ -30,7 +30,7 @@ const CreateProject = (props) => {
     postedOn: state ? state.postedOn : "",
     validUntil: state ? state.validUntil : "",
     description: state ? state.description : "",
-    skills: state ? state.skills : "",
+    //skills: state ? state.skills : "",
     hostedBy: state
       ? state.hostedBy
       : user && user.admin

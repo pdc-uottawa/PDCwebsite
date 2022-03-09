@@ -3,7 +3,7 @@
  * @description Create a new event and push it to eventbrite.
  */
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Button,
   Form,
@@ -19,6 +19,7 @@ import { config } from "../../common/config/config";
 import CreateTicket from "./createTicket";
 import useReactRouter from "use-react-router";
 import moment from "moment";
+import { UserContext } from "../../common/context/UserProvider";
 
 // import UploadFile from "./UploadFile";
 
@@ -30,8 +31,10 @@ const CreateEvent = (props) => {
     endDate: "",
     startTime: "",
   });
+  const { userInfo, setUserInfo } = useContext(UserContext);
 
   const [isOnline, setOnline] = useState(false);
+  const { user } = userInfo;
 
   // project information
   const [event, setEvent] = useState({
@@ -195,7 +198,9 @@ const CreateEvent = (props) => {
   };
 
   return (
-    <Segment>
+    user && user.admin ?
+    <>
+    
       <Form onSubmit={handleFormSubmit} autoComplete="off">
         <Form.Field>
           <label>Event title</label>
@@ -297,7 +302,15 @@ const CreateEvent = (props) => {
           Cancel
         </Button>
       </Form>
-    </Segment>
+    
+    </>
+     :
+            <>
+          <center>
+            <h1>Oops, Page Not Found!</h1> 
+            <h3>Please login as an admin to manage events!</h3> 
+          </center>
+        </>
   );
 };
 export default CreateEvent;
