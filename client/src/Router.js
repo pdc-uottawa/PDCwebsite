@@ -18,6 +18,7 @@ import Covid19 from "./view/Covid19/Covid19";
 import OurTeam from "./view/OurTeam/OurTeam";
 import ManageTeam from "./view/OurTeam/ManageTeam";
 import UpdateOurTeam from "./view/OurTeam/UpdateOurTeamForm";
+import AddTeam from "./view/OurTeam/AddTeamForm";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
@@ -85,6 +86,7 @@ const Routers = () => {
             <Route exact path="/manage-alumni" component={ManageAlumni} />
             <Route exact path="/manage-ourteam" component={ManageTeam} />
             <Route exact path="/add-alumni" component={AddAlumni} />
+            <Route exact path="/add-ourteam" component={AddTeam} />
             <Route exact path="/update-alumni/:id" component={UpdateAlumni} />
             <Route exact path="/update-ourTeam/:id" component={UpdateOurTeam} />
             <Route exact path="/volunteers" component={Volunteers} />
