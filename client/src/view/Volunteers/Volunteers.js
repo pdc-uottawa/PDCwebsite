@@ -1,6 +1,28 @@
 import React, { Fragment } from "react";
 import { Card } from "semantic-ui-react";
 import "./Volunteers.css";
+import Axios from "axios";
+import { UserContext } from "../../common/context/UserProvider";
+import { config } from "../../common/config/config";
+import { Spinner } from "react-activity"
+
+  useEffect(() => {
+    Axios.get(path + "ourTeam/all", {})
+
+      .then((res) => {
+        return res.data;
+      })
+
+      .then((data) => {
+        setUsers(data);
+
+        setLoading(false);
+      })
+
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
 const EventManagementTeam = [
   { name: "Monika Gwalani", mail: "mgwal097@uottawa.ca" },
