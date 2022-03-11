@@ -7,7 +7,7 @@ import { config } from "../../common/config/config";
 import { Spinner } from "react-activity"
 
   useEffect(() => {
-    Axios.get(path + "ourTeam/all", {})
+    Axios.get(path + "volunteers/all", {})
 
       .then((res) => {
         return res.data;
