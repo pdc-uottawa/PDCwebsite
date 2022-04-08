@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-alice-carousel";
+import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { config } from "../../common/config/config";
 import Axios from "axios";
@@ -18,12 +19,14 @@ function ImageCarousel(props) {
 
   return (
     <>
-      <Carousel disableDotsControls autoPlay autoPlayInterval={"500000"} infinite>
+      <AliceCarousel disableDotsControls autoPlay controlsStrategy="alternate" autoPlayInterval={"500000"} infinite >
         {
           carouselData.map((car, index) => {
             return (
               <>
-                <img className="car-img" src={car.image} />
+                <div className="center">
+                  <img className="car-img" src={car.image} />
+                </div>
                 <div className="ScrollDownButton" onClick={handleDownScroll}>
                   <Icon name="angle down" color="white" size="huge" />
                 </div>
@@ -43,7 +46,7 @@ function ImageCarousel(props) {
             )
           })
         }
-      </Carousel>
+      </AliceCarousel>
     </>
   );
 }

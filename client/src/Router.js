@@ -45,6 +45,8 @@ import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
 import HomePage from "./view/Home/HomePage";
 
+import { useWindowDimensions } from '../src/common/context/WindowDimensionsProvider'
+
 /**
  * This is routers for the website.
  *
@@ -52,11 +54,17 @@ import HomePage from "./view/Home/HomePage";
  */
 
 const Routers = () => {
+  const { width } = useWindowDimensions();
   return (
     <Fragment>
       <Header />
       <Switch>
+        {
+          width > 1280 ? 
           <Route exact path="/" component={HomePage} />
+          :
+          <Route exact path="/" component={Home} />
+        }
         <Fragment>
           <Container className="main">
             {/* <Route exact path="/" component={Home} /> */}

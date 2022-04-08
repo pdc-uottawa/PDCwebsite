@@ -34,9 +34,9 @@ function AboutUs(props) {
         </div>
         <div className="home-buttons">
           <Link to="/OurTeam">
-              <Button size="large" className="but-m-o-t">Meet Our Team</Button>
+              <Button size="large" color="#ccc" className="but-m-o-t">Meet Our Team</Button>
           </Link>
-          <Button size="large" className="but-b-o-v"
+          <Button size="large" color="#ccc" className="but-b-o-v"
               onClick={() =>
                   window.open(
                       "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",

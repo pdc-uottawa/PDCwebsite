@@ -4,7 +4,7 @@ import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css"
 import { Spinner } from "react-activity";
-const img = require("../../assets/logo1.png");
+const img = require("../../assets/logo.png");
 
 function ContactUs() {
   const path = config();
@@ -121,7 +121,7 @@ function ContactUs() {
                   <Spinner color="white" size={15} speed={1} animating={true} />
                 </Form.Button>
                 :
-                <Form.Button className="bt-sq" size="large" color="linkedin" onClick={handleSubmit}>
+                <Form.Button className="bt-sq" size="large" color="#ccc" onClick={handleSubmit}>
                   Send Message
                 </Form.Button>
               }
