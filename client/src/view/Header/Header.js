@@ -18,7 +18,8 @@ import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
 import defIcon from "../../assets/defIcon.png";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
-const img = require("../../assets/pdc_logo.png");
+
+const img = require("../../assets/logo.png");
 
 /**
  * @author @binjiasata @yiyinzhang
@@ -188,7 +189,7 @@ const Header = (props) => {
             onClick={handleHome}
             header
           >
-            <Image avatar size="mini" circular src={img} />
+            <Image size="mini" src={img} />
           </Menu.Item>
           {/* <Menu.Item
             name="home"
@@ -330,7 +331,7 @@ const Header = (props) => {
 
         {/* Sidebar */}
         <Container hidden={sidebarHidden}>
-          <Button onClick={handleSideBarClick} color="blue">
+          <Button onClick={handleSideBarClick} color="grey">
             <Icon name="bars" />
           </Button>
           <Sidebar
@@ -342,9 +343,9 @@ const Header = (props) => {
             vertical
             width="thin"
             inverted
-            color="blue"
+            color="grey"
           >
-            <Button onClick={handleSideBarClick} color="blue">
+            <Button onClick={handleSideBarClick} color="grey">
               <Icon name="close" />
             </Button>
             <Container>

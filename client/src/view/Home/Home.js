@@ -11,7 +11,7 @@ const Home = (props) => {
         <Grid columns={2} stackable textAlign='center' >
         <Grid.Row verticalAlign='middle'>
         <Grid.Column>
-          <h1>Welcome to Professional Development Club!</h1>
+          <h1 style={{marginTop: "30px"}}>Welcome to Professional Development Club!</h1>
         </Grid.Column>
         <Grid.Column>
           <Image centered size="medium" src="/assets/pdc-logo.png" />
