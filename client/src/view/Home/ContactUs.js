@@ -46,6 +46,11 @@ function ContactUs() {
         })
           .then((res) => {
             setLoading(false)
+            document.getElementById('fname').value = null;
+            document.getElementById('lname').value = null;
+            document.getElementById('category').innerHTML = null;
+            document.getElementById('email').value = null;
+            document.getElementById('message').value = null;
             alert('Your query has been sent successfully!');
           })
           .catch((e) => {

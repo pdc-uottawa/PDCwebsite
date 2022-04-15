@@ -21,8 +21,10 @@ function Testimonials(props) {
                     showStatus={false}
                     autoPlay={true}
                     interval={6100}
+                    showIndicators={false}
                 >
-                    {testimonialData.map((data) =>
+                    {testimonialData
+                    .map((data) =>
                         <Segment className="testi" secondary >
                             <img src={data.image} />
                             <div className="myCarousel">
