@@ -54,6 +54,8 @@ function ContactUs() {
             alert('Your query has been sent successfully!');
           })
           .catch((e) => {
+            setLoading(false);
+            alert('Something went wrong! Please try again after some time.')
             console.log(e);
           });
     } 
