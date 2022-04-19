@@ -12,7 +12,7 @@ function ImageCarousel(props) {
 
   function handleDownScroll() {
     window.scrollTo({
-      top: window.innerHeight - 61,
+      top: window.innerHeight - 70,
       behavior: 'smooth'
     });
   }
