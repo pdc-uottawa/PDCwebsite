@@ -22,7 +22,6 @@ import AddTeam from "./view/OurTeam/AddTeamForm";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
-import Footer from "./view/Footer/Footer";
 import Signin from "./view/Signin/Signin";
 import register from "./view/Register/register";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
@@ -47,6 +46,9 @@ import ManageAlumni from "./view/Alumni/ManageAlumni";
 import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
+import HomePage from "./view/Home/HomePage";
+
+import { useWindowDimensions } from '../src/common/context/WindowDimensionsProvider'
 
 /**
  * This is routers for the website.
@@ -55,13 +57,20 @@ import CDCMainPage from "./view/CDC/CDCMainPage";
  */
 
 const Routers = () => {
+  const { width } = useWindowDimensions();
   return (
     <Fragment>
       <Header />
       <Switch>
+        {
+          width > 1280 ? 
+          <Route exact path="/" component={HomePage} />
+          :
+          <Route exact path="/" component={Home} />
+        }
         <Fragment>
           <Container className="main">
-            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/" component={Home} /> */}
             <Route exact path="/signin" component={Signin} />
             <Route exact path="/register" component={register} />
             <Route exact path="/OurTeam" component={OurTeam} />
@@ -133,7 +142,6 @@ const Routers = () => {
           </Container>
         </Fragment>
       </Switch>
-      <Footer />
     </Fragment>
   );
 };

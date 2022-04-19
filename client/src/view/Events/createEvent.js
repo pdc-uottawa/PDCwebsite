@@ -31,6 +31,11 @@ const CreateEvent = (props) => {
     endDate: "",
     startTime: "",
   });
+  
+  const [dates, setDates] = useState({
+    startDate: "",
+    endDate: "",
+  })
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   const [isOnline, setOnline] = useState(false);
@@ -122,6 +127,19 @@ const CreateEvent = (props) => {
     });
   };
 
+  const handleEndDateChange = (e, data) => {
+    if (
+      dates.endDate < dates.startDate 
+      
+    ) {
+      alert("End Date cannot be before the start Date!!");
+      setDates({
+        ...dates,
+        endDate: "",
+      });
+  };
+};
+
   const { history } = useReactRouter();
   // post project info to server
   const handleFormSubmit = async (e) => {
@@ -188,7 +206,7 @@ const CreateEvent = (props) => {
           value.slice(5, 7) == currentDate.getMonth() + 1 &&
           value.slice(8, 10) < currentDate.getUTCDate())
       ) {
-        alert("start Date cannot before current Date!!");
+        alert("End Time cannot be before the Start Time!!");
         setTime({
           ...time,
           [name]: "",
@@ -245,7 +263,7 @@ const CreateEvent = (props) => {
               <input
                 name="endDate"
                 value={time.endDate}
-                onChange={handleTimeChange}
+                onChange={handleEndDateChange}
                 type="date"
                 placeholder="End Date"
                 required
@@ -313,5 +331,6 @@ const CreateEvent = (props) => {
         </>
   );
 };
+
 export default CreateEvent;
-// export {event_id};
+
