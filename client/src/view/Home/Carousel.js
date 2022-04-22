@@ -19,7 +19,7 @@ function ImageCarousel(props) {
 
   return (
     <>
-      <AliceCarousel disableDotsControls autoPlay controlsStrategy="alternate" autoPlayInterval={"500000"} infinite >
+      <AliceCarousel disableDotsControls autoPlay controlsStrategy="alternate" autoPlayInterval={"10000"} infinite >
         {
           carouselData.map((car, index) => {
             return (

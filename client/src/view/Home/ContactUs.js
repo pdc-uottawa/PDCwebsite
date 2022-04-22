@@ -50,6 +50,7 @@ function ContactUs() {
             document.getElementById('lname').value = null;
             document.getElementById('category').innerHTML = null;
             document.getElementById('email').value = null;
+            document.getElementById('other').value = null;
             document.getElementById('message').value = null;
             alert('Your query has been sent successfully!');
           })
