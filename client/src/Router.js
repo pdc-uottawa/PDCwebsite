@@ -63,7 +63,7 @@ const Routers = () => {
       <Header />
       <Switch>
         {
-          width > 1280 ? 
+          width > 1024 ? 
           <Route exact path="/" component={HomePage} />
           :
           <Route exact path="/" component={Home} />
