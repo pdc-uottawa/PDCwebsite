@@ -3,10 +3,16 @@ const ContactUs = require('../models/homePageContactUsModel');
 const Testimonials = require('../models/homePageTestimonialsModel');
 const Carousel = require('../models/homePageCarouselModel');
 const AboutUs = require('../models/homePageAboutUsModel');
+const QueryExecutives = require('../models/homePageQueryExecutivesModel');
 
 const aboutUsData = async (req, res, next) => {
     const allAboutUs = await AboutUs.find().exec();
     res.json(allAboutUs);
+}
+
+const queryexecutivesData = async (req, res, next) => {
+    const allExecutives = await QueryExecutives.find().exec();
+    res.json(allExecutives);
 }
 
 const carouselData = async (req, res, next) => {
@@ -35,3 +41,4 @@ exports.aboutUsData = aboutUsData;
 exports.carouselData = carouselData;
 exports.testimonialData = testimonialData;
 exports.contactUsData = contactUsData;
+exports.queryexecutivesData = queryexecutivesData;
