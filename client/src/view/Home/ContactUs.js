@@ -54,7 +54,6 @@ function ContactUs() {
   const queryEmailer = (fname, lname, category, email, message) => {
     var queryExec = queryEx.find(exec => exec.category === category)
     var toEmail = queryExec.email;
-    console.log(toEmail)
     var toName = queryExec.name;
     
     const emailOptions = {
