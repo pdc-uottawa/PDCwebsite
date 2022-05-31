@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import { Image, Grid, Segment, Card } from "semantic-ui-react";
 import "./Home.css";
-
+import ScrollToTop from "../../common/utils/ScrollToTop";
 const Home = (props) => {
   console.log(window.innerWidth);
   console.log(window.innerHeight)
   return (
+    <ScrollToTop>
     <Fragment>
       <Segment placeholder>
         <Grid columns={2} stackable textAlign='center' >
@@ -79,6 +80,7 @@ const Home = (props) => {
           </Grid>
        </Segment>     
     </Fragment>
+    </ScrollToTop>
     
   );
 };

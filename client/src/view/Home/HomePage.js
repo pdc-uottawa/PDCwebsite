@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 import Footer from "../Footer/Footer";
 import { Spinner } from "react-activity";
 import Axios from "axios";
+import ScrollToTop from "../../common/utils/ScrollToTop";
 
 function HomePage() {
     const path = config();
@@ -62,11 +63,14 @@ function HomePage() {
             :
             (
                 <>
+               <ScrollToTop/>
                     <ImageCarousel carouselData = {carouselData} />
                     <AboutUs aboutUsData = {aboutUsData} />
                     <Testimonials testimonialData = {testimonialData} />
                     <ContactUs />
                     <Footer />
+                    
+
                 </>
             )
         }
