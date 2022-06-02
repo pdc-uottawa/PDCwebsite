@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { config } from "../../common/config/config";
 import {Divider,  Button, Image, Grid, GridRow } from "semantic-ui-react";
+import { Helmet } from "react-helmet";
 
 const Signin = (props) => {
   let path = config();
@@ -20,6 +21,9 @@ const Signin = (props) => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Sign In | Professional Development Club</title>
+      </Helmet>
       <Grid columns={2} stackable textAlign="center">
       <Grid.Row>
       {/* <Divider vertical>Or</Divider> */}

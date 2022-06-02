@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Image, Grid } from "semantic-ui-react";
 import { config } from "../../common/config/config";
+import { Helmet } from "react-helmet";
 
 const Admin = (props) => {
   let path = config();
@@ -12,15 +13,18 @@ const Admin = (props) => {
 
   return (
     <Fragment>
-        <Grid columns={1} stackable textAlign='center' >
+      <Helmet>
+        <title>Admin | Professional Development Club</title>
+      </Helmet>
+      <Grid columns={1} stackable textAlign="center">
         <Grid.Column>
-      <Image centered size="medium" src="/assets/employer.png" />
-      <h2>Are you an Admin?</h2>
-      <Button onClick={handleGoogleLogin}>
-        <i className="google icon"></i>
-        Sign in with Google
-      </Button>
-      </Grid.Column>
+          <Image centered size="medium" src="/assets/employer.png" />
+          <h2>Are you an Admin?</h2>
+          <Button onClick={handleGoogleLogin}>
+            <i className="google icon"></i>
+            Sign in with Google
+          </Button>
+        </Grid.Column>
       </Grid>
     </Fragment>
   );

@@ -1,8 +1,3 @@
-/**
- * @author @yiyinzhang
- * @description Create a new event and push it to eventbrite.
- */
-
 import React, { useState, useContext } from "react";
 import {
   Button,
@@ -14,6 +9,7 @@ import {
   Grid,
 } from "semantic-ui-react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 import { EventsContext } from "../../common/context/EventContext";
 import { config } from "../../common/config/config";
 import CreateTicket from "./createTicket";
@@ -216,75 +212,78 @@ const CreateEvent = (props) => {
   };
 
   return (
-    user && user.admin ?
     <>
-    
-      <Form onSubmit={handleFormSubmit} autoComplete="off">
-        <Form.Field>
-          <label>Event title</label>
-          <input
-            name="name"
-            value={event.name.html}
-            onChange={handleFormChange}
-            placeholder="Event title"
-            required
-          />
-        </Form.Field>
-
-        <Form.Field>
-          <Grid style={{ paddindBottom: "10px" }}>
-            <Grid.Column width={8}>
-              <label>Event start date</label>
+      <Helmet>
+        <title>Create Event | Professional Development Club</title>
+      </Helmet>
+      {user && user.admin ? (
+        <>
+          <Form onSubmit={handleFormSubmit} autoComplete="off">
+            <Form.Field>
+              <label>Event title</label>
               <input
-                name="startDate"
-                value={time.startDate}
-                onChange={handleTimeChange}
-                type="date"
-                placeholder="Start Date"
+                name="name"
+                value={event.name.html}
+                onChange={handleFormChange}
+                placeholder="Event title"
                 required
               />
-            </Grid.Column>
-            <Grid.Column width={8}>
-              <label>Start time</label>
-              <Dropdown
-                id="selectStart"
-                onChange={handleStartTimeChange}
-                placeholder="select start time"
-                fluid
-                selection
-                options={timeOptions}
-                required
-              />
-            </Grid.Column>
-          </Grid>
-          <Grid>
-            <Grid.Column width={8}>
-              <label>Event end date</label>
-              <input
-                name="endDate"
-                value={time.endDate}
-                onChange={handleEndDateChange}
-                type="date"
-                placeholder="End Date"
-                required
-              />
-            </Grid.Column>
-            <Grid.Column width={8}>
-              <label>End time</label>
-              <Dropdown
-                name={"endTime"}
-                onChange={handleEndTimeChange}
-                placeholder="select end time"
-                fluid
-                selection
-                options={timeOptions}
-                required
-              />
-            </Grid.Column>
-          </Grid>
-        </Form.Field>
+            </Form.Field>
 
-        {/* <Form.Field>
+            <Form.Field>
+              <Grid style={{ paddindBottom: "10px" }}>
+                <Grid.Column width={8}>
+                  <label>Event start date</label>
+                  <input
+                    name="startDate"
+                    value={time.startDate}
+                    onChange={handleTimeChange}
+                    type="date"
+                    placeholder="Start Date"
+                    required
+                  />
+                </Grid.Column>
+                <Grid.Column width={8}>
+                  <label>Start time</label>
+                  <Dropdown
+                    id="selectStart"
+                    onChange={handleStartTimeChange}
+                    placeholder="select start time"
+                    fluid
+                    selection
+                    options={timeOptions}
+                    required
+                  />
+                </Grid.Column>
+              </Grid>
+              <Grid>
+                <Grid.Column width={8}>
+                  <label>Event end date</label>
+                  <input
+                    name="endDate"
+                    value={time.endDate}
+                    onChange={handleEndDateChange}
+                    type="date"
+                    placeholder="End Date"
+                    required
+                  />
+                </Grid.Column>
+                <Grid.Column width={8}>
+                  <label>End time</label>
+                  <Dropdown
+                    name={"endTime"}
+                    onChange={handleEndTimeChange}
+                    placeholder="select end time"
+                    fluid
+                    selection
+                    options={timeOptions}
+                    required
+                  />
+                </Grid.Column>
+              </Grid>
+            </Form.Field>
+
+            {/* <Form.Field>
           <label>Summary</label>
           <input
             name="summary"
@@ -294,41 +293,42 @@ const CreateEvent = (props) => {
           />
         </Form.Field> */}
 
-        <Form.Field>
-          <Checkbox
-            onClick={() => setOnline(!isOnline)}
-            label="Set it as an online event"
-          />
-        </Form.Field>
+            <Form.Field>
+              <Checkbox
+                onClick={() => setOnline(!isOnline)}
+                label="Set it as an online event"
+              />
+            </Form.Field>
 
-        <Form.Field>
-          <label>Description</label>
-          <TextArea
-            name="description"
-            rows={3}
-            value={event.description.html}
-            onChange={handleFormChange}
-            placeholder="Enter description of the event"
-          />
-        </Form.Field>
+            <Form.Field>
+              <label>Description</label>
+              <TextArea
+                name="description"
+                rows={3}
+                value={event.description.html}
+                onChange={handleFormChange}
+                placeholder="Enter description of the event"
+              />
+            </Form.Field>
 
-        <Button positive type="submit">
-          Save and continue
-          {/* {state ? "Update" : "Submit"} */}
-        </Button>
-        <Button onClick={handleFormCancel} type="button">
-          Cancel
-        </Button>
-      </Form>
-    
-    </>
-     :
-            <>
+            <Button positive type="submit">
+              Save and continue
+              {/* {state ? "Update" : "Submit"} */}
+            </Button>
+            <Button onClick={handleFormCancel} type="button">
+              Cancel
+            </Button>
+          </Form>
+        </>
+      ) : (
+        <>
           <center>
-            <h1>Oops, Page Not Found!</h1> 
-            <h3>Please login as an admin to manage events!</h3> 
+            <h1>Oops, Page Not Found!</h1>
+            <h3>Please login as an admin to manage events!</h3>
           </center>
         </>
+      )}
+    </>
   );
 };
 

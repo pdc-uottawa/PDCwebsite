@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Table, Header, Button } from "semantic-ui-react";
+import { Helmet } from "react-helmet";
 
 const StudentAppliedList = (props) => {
   const studentList = props.location.state;
@@ -39,6 +40,9 @@ const StudentAppliedList = (props) => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Students Applied List | Professional Development Club</title>
+      </Helmet>
       <Header as="h2">Applied Student List</Header>
       <Table celled padded>
         <Table.Header>
@@ -56,8 +60,15 @@ const StudentAppliedList = (props) => {
             studentList.map((student) => {
               return (
                 <Table.Row key={student._id}>
-                  <Table.Cell><a onClick={()=>props.history.push("/student/profile/" + student.studentId)}>
-                    <Header color="blue">{student.name}</Header>
+                  <Table.Cell>
+                    <a
+                      onClick={() =>
+                        props.history.push(
+                          "/student/profile/" + student.studentId
+                        )
+                      }
+                    >
+                      <Header color="blue">{student.name}</Header>
                     </a>
                   </Table.Cell>
                   {/* <Table.Cell singleLine>{student.user[0].studentNumber}</Table.Cell> */}

@@ -1,8 +1,12 @@
 import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const StudentForm = (props) => {
   return (
     <Fragment>
+      <Helmet>
+        <title>Student Form | Professional Development Club</title>
+      </Helmet>
       <h1 class="ui center aligned huge header">
         Student Associations in uOttawa
       </h1>

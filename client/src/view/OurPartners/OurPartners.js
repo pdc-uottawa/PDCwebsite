@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 import {
     Card, CardContent
   } from "semantic-ui-react";
@@ -6,6 +7,9 @@ import {
 const OurPartners = (props) => {
   return (
     <Fragment>
+      <Helmet>
+        <title>Our Partners | Professional Development Club</title>
+      </Helmet>
       <h1 class="ui center aligned huge header">
         Our Partners
       </h1>

@@ -1,8 +1,12 @@
 import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const Fswep = (props) => {
   return (
     <Fragment>
+      <Helmet>
+        <title>FSWEP | Professional Development Club</title>
+      </Helmet>
       <h1 class="ui center aligned huge header">
         Programs Recognized by FSWEP
       </h1>

@@ -3,6 +3,7 @@ import { Grid } from "semantic-ui-react";
 import ProjectName from "./ProjectName";
 import ProjectInfo from "./ProjectInfo";
 import ProjectDates from "./ProjectDates";
+import { Helmet } from "react-helmet";
 import ProjectHost from "./ProjectHost";
 import Axios from "axios";
 import { config } from "../../common/config/config";
@@ -55,6 +56,9 @@ const ProjectDeatiledPageNeww = (props) => {
 
     return (
         <Grid>
+            <Helmet>
+        <title>Project Detail | Professional Development Club</title>
+      </Helmet>
             {
                 width < 768 ?
                 <>

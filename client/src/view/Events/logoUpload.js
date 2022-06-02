@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Icon, Label } from "semantic-ui-react";
 import { Upload, Button } from "antd";
 import "antd/dist/antd.css";
+import { Helmet } from "react-helmet";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import request from 'request';
@@ -118,6 +119,9 @@ const UploadLogo = () => {
 
 //   return (
 //     <Fragment>
+        // <Helmet>
+        //     <title>Upload Logo | Professional Development Club</title>
+        // </Helmet>
 //       <Upload
 //         // customRequest={customRequest}
 //         name="logoUrl"
