@@ -7,6 +7,7 @@ import AboutUs from "./AboutUs";
 import { Spinner } from "react-activity";
 import "react-activity/dist/Spinner.css";
 import { config } from "../../common/config/config";
+import { Helmet } from "react-helmet";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
 
 const CDCMainPage = (props) => {
@@ -25,7 +26,7 @@ const CDCMainPage = (props) => {
           return res.data;
         })
         .then((data) => {
-          setResumeTips(data)
+          setResumeTips(data);
         })
         .catch((e) => {
           console.log(e);
@@ -35,7 +36,7 @@ const CDCMainPage = (props) => {
           return res.data;
         })
         .then((data) => {
-          setLinkedInTips(data)
+          setLinkedInTips(data);
         })
         .catch((e) => {
           console.log(e);
@@ -45,7 +46,7 @@ const CDCMainPage = (props) => {
           return res.data;
         })
         .then((data) => {
-          setInterviewTips(data)
+          setInterviewTips(data);
         })
         .catch((e) => {
           console.log(e);
@@ -76,18 +77,22 @@ const CDCMainPage = (props) => {
 
   return (
     <>
-      {
-      loading ? (
+      <Helmet>
+        <title>CDC | Professional Development Club</title>
+      </Helmet>
+      {loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
-      ) 
-      :
-      (
+      ) : (
         <div className="container">
           <AboutUs />
           <CDCButtons buttonLinks={buttonLinks} />
-          <TipsAndTricks resumeTips={resumeTips} linkedInTips={linkedInTips} interviewTips={interviewTips} />
+          <TipsAndTricks
+            resumeTips={resumeTips}
+            linkedInTips={linkedInTips}
+            interviewTips={interviewTips}
+          />
           <ContactUs contactDetails={contactDetails} />
         </div>
       )}
