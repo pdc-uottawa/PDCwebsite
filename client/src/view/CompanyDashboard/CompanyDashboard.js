@@ -8,6 +8,7 @@ import { config } from "../../common/config/config";
 import CompanyDashboardProfile from "./CompanyDashboardProfile";
 import CompanyDashboardSetting from "./CompanyDashboardSetting";
 import useReactRouter from "use-react-router";
+import { Helmet } from "react-helmet";
 
 const path = config();
 
@@ -60,6 +61,9 @@ const CompanyDashboard = () => {
   // console.log(studentlist);
   return (
     <Fragment>
+      <Helmet>
+        <title>Company Dashboard | Professional Development Club</title>
+      </Helmet>
       <Header as="h1">
         <Icon name="dashboard" />
         <Header.Content>Dashboard</Header.Content>

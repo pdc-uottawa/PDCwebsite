@@ -1,9 +1,13 @@
 import React, { Fragment } from "react";
 import { Segment, Grid, Image, Button } from "semantic-ui-react";
+import { Helmet } from "react-helmet";
 
 const HireStudent = (props) => {
   return (
     <Fragment>
+      <Helmet>
+        <title>Hire Student | Professional Development Club</title>
+      </Helmet>
       <Segment placeholder>
         <Grid columns={2} stackable textAlign="center">
           <Grid.Row verticalAlign="middle">

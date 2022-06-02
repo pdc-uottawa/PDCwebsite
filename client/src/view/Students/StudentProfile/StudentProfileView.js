@@ -1,8 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Segment, Form, Button, Header } from "semantic-ui-react";
 import { config } from "../../../common/config/config";
 import TextareaAutosize from "react-textarea-autosize";
 import Axios from "axios";
+import { Helmet } from "react-helmet";
+
 /**
  * @author @navpreetkaur051
  * @description This is student profile to view by project owner
@@ -12,21 +14,22 @@ const path = config();
 const StudentProfileView = (props) => {
   const studentId = props.match.params.id;
   const [studentProfileInfo, setStudentInfo] = useState([{}]);
- 
-  useEffect(() => {
 
+  useEffect(() => {
     Axios.get(path + "student/profile/" + studentId)
       .then((res) => res.data)
       .then((data) => setStudentInfo(data));
-    
-  },[null]);
+  }, [null]);
 
   return (
     <Segment>
+      <Helmet>
+        <title>Student Profile View | Professional Development Club</title>
+      </Helmet>
       <Header as="h2">
         <Header.Content>Student Profile</Header.Content>
       </Header>
-        <Form>
+      <Form>
         <Form.Field>
           <label>Name</label>
           <input
