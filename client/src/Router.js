@@ -47,7 +47,7 @@ import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
 import HomePage from "./view/Home/HomePage";
-import { Helmet } from "react-helmet";
+
 import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
 
 /**
@@ -61,9 +61,6 @@ const Routers = () => {
   return (
     <Fragment>
       <Header />
-      <Helmet>
-        <title>Home | Professional Development Club</title>
-      </Helmet>
       <Switch>
         {width > 1024 ? (
           <Route exact path="/" component={HomePage} />

@@ -6,6 +6,7 @@ import ContactUs from "./ContactUs";
 import Testimonials from "./Testimonials";
 import Footer from "../Footer/Footer";
 import { Spinner } from "react-activity";
+import { Helmet } from "react-helmet";
 import Axios from "axios";
 import ScrollToTop from "../../common/utils/ScrollToTop";
 
@@ -54,6 +55,9 @@ function HomePage() {
 
     return (
         <>
+        <Helmet>
+          <title>Home | Professional Development Club</title>
+        </Helmet>
         {
             loading ? (
                 <div className="loadingState">
