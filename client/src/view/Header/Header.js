@@ -108,7 +108,7 @@ const Header = (props) => {
     handleSideBarClick();
   };
   const handleVolunteers = (e, { name }) => {
-    history.push("/Volunteers");
+    history.push("/our-volunteers");
     setActiveItem(name);
     handleSideBarClick();
   };
