@@ -47,6 +47,7 @@ import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
 import HomePage from "./view/Home/HomePage";
+import OurVolunteers from "./view/Volunteers/OurVolunteers";
 
 import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
 
@@ -114,6 +115,7 @@ const Routers = () => {
             <Route path="/company-dashboard" component={CompanyDashboard} />
             <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/create-ticket" component={CreateTicket} />
+            <Route exact path="/our-volunteers" component={OurVolunteers} />
           </Container>
         </Fragment>
       </Switch>
