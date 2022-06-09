@@ -5,6 +5,7 @@ import { config } from "../../common/config/config";
 import Axios from "axios";
 import { Spinner } from "react-activity";
 import "./Volunteers.css";
+import { Helmet } from "react-helmet";
 
 const OurVolunteers = (props) => {
     const path = config();
@@ -30,6 +31,9 @@ const OurVolunteers = (props) => {
 
     return (
         <>
+        <Helmet>
+        <title>Our Volunteer | Professional Development Club</title>
+      </Helmet>
             {loading ? (
                 <div className="loadingState">
                     <Spinner color="#727981" size={35} speed={1} animating={true} />
