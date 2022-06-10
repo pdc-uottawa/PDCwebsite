@@ -6,7 +6,9 @@ import ContactUs from "./ContactUs";
 import Testimonials from "./Testimonials";
 import Footer from "../Footer/Footer";
 import { Spinner } from "react-activity";
+import { Helmet } from "react-helmet";
 import Axios from "axios";
+import ScrollToTop from "../../common/utils/ScrollToTop";
 
 function HomePage() {
     const path = config();
@@ -53,6 +55,9 @@ function HomePage() {
 
     return (
         <>
+        <Helmet>
+          <title>Home | Professional Development Club</title>
+        </Helmet>
         {
             loading ? (
                 <div className="loadingState">
@@ -62,11 +67,14 @@ function HomePage() {
             :
             (
                 <>
+               <ScrollToTop/>
                     <ImageCarousel carouselData = {carouselData} />
                     <AboutUs aboutUsData = {aboutUsData} />
                     <Testimonials testimonialData = {testimonialData} />
                     <ContactUs />
                     <Footer />
+                    
+
                 </>
             )
         }

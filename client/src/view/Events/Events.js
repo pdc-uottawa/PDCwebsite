@@ -1,18 +1,13 @@
-/**
- * @author @yiyinzhang
- * @description Create a new event and push it to eventbrite.
- */
-
 import React, { Fragment, useState, useEffect, useContext } from "react";
-
+import { Helmet } from "react-helmet";
 import { Card, Dropdown } from "semantic-ui-react";
 import { EventsContext } from "../../common/context/EventContext";
 import EventCard from "./EventCard";
 import { Spinner } from "react-activity";
 import Axios from "axios";
 import { deviceType } from "react-device-detect";
-import moment from 'moment';
-import "./Event.css"
+import moment from "moment";
+import "./Event.css";
 
 const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
@@ -24,7 +19,7 @@ const Events = (props) => {
 
   const [filteredEvents, setFilteredEvents] = useState([]);
 
-  const [filterType,setFilterType] =useState({});
+  const [filterType, setFilterType] = useState({});
 
   const [loading, setLoading] = useState(true);
 
@@ -51,101 +46,109 @@ const Events = (props) => {
         setEventInfo(data);
         let eventsInReverseOrder = data.events.reverse();
         setFilteredEvents(eventsInReverseOrder);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((e) => {
         console.log(e);
       });
   }, [setEventInfo, setFilteredEvents]);
 
-
   const showPastEvent = () => {
-    let currentTime = moment().format().slice(0,10);
-    setFilteredEvents(eventInfo.events.filter((event) => event.start.local.slice(0,10) < currentTime));
+    let currentTime = moment().format().slice(0, 10);
+    setFilteredEvents(
+      eventInfo.events.filter(
+        (event) => event.start.local.slice(0, 10) < currentTime
+      )
+    );
   };
 
   const showFutureEvent = () => {
-    let currentTime = moment().format().slice(0,10);
-    setFilteredEvents(eventInfo.events.filter((event) => event.start.local.slice(0,10) > currentTime));
+    let currentTime = moment().format().slice(0, 10);
+    setFilteredEvents(
+      eventInfo.events.filter(
+        (event) => event.start.local.slice(0, 10) > currentTime
+      )
+    );
   };
 
   const showAllEvent = () => {
-    setFilteredEvents(eventInfo.events)
-  }
+    setFilteredEvents(eventInfo.events);
+  };
 
-  useEffect(()=>{
-
-    switch (filterType.value){
-      case "past": showPastEvent();
+  useEffect(() => {
+    switch (filterType.value) {
+      case "past":
+        showPastEvent();
         break;
-      case "future": showFutureEvent();
+      case "future":
+        showFutureEvent();
         break;
-      case "all": showAllEvent();
+      case "all":
+        showAllEvent();
         break;
-      default: break;
+      default:
+        break;
     }
-  },[filterType])
-
+  }, [filterType]);
 
   const eventsOptions = [
     {
       key: "Past Events",
       text: "Past Events",
       value: "past",
-      onClick: ((e, data)=>setFilterType(data))
+      onClick: (e, data) => setFilterType(data),
     },
     {
       key: "Future Events",
       text: "Future Events",
       value: "future",
-      onClick:((e, data)=> setFilterType(data))
+      onClick: (e, data) => setFilterType(data),
     },
     {
       key: "All Events",
       text: "All Events",
       value: "all",
-      onClick:((e,data)=> setFilterType(data))
-    }
+      onClick: (e, data) => setFilterType(data),
+    },
   ];
   return (
     <div>
-       {
-        loading ?
+      <Helmet>
+        <title>Events | Professional Development Club</title>
+      </Helmet>
+      {loading ? (
         <div className="loadingState">
-          
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
-        :
+      ) : (
         <>
-      <Dropdown
-        placeholder="Select Events"
-        fluid
-        selection
-        options={eventsOptions}
-        id="dropdown"
-        value={filterType.value}
-        text={filterType.text}
-      />
-      <Card.Group itemsPerRow={columnNumber}>
-        {filteredEvents === undefined
-          ? null
-          : filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-      </Card.Group>
-      {/* <Card.Group itemsPerRow={columnNumber}>
+          <Dropdown
+            placeholder="Select Events"
+            fluid
+            selection
+            options={eventsOptions}
+            id="dropdown"
+            value={filterType.value}
+            text={filterType.text}
+          />
+          <Card.Group itemsPerRow={columnNumber}>
+            {filteredEvents === undefined
+              ? null
+              : filteredEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+          </Card.Group>
+          {/* <Card.Group itemsPerRow={columnNumber}>
         {eventInfo.events === undefined
           ? null
           : eventInfo.events.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
       </Card.Group> */}
-   
-    </>
-}
-</div>
+        </>
+      )}
+    </div>
   );
-
 };
 
 export default Events;

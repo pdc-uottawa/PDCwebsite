@@ -5,6 +5,7 @@ import { config } from "../../common/config/config";
 import ProgramCoordinators from './ProgramCoordinators';
 import { Spinner } from "react-activity";
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet";
 import './student.css'
 
 const UpdateForm = (props) => {
@@ -74,52 +75,78 @@ const UpdateForm = (props) => {
             }
         }
     };
-return(
-    loading ?
-            <div className="loadingState">
-                <Spinner color="#727981" size={35} speed={1} animating={true} />
-            </div>
-            :
-    thankYou ?
-        <>
-            <div>
-                <h1 className='center marginTop'>Thank You. Details has been updated!</h1>
-                <Link to='/update-coordinators'>
-                    <input type='submit' className='backButton marginLeft marginTop' value='Back' />
-                </Link>
-            </div>
-        </>
-        :
-        <>
-            <h1>Edit Coordinator details</h1>
-            <h4 className='red'>Only fill the details that needs to be updated and leave the rest fields blank!</h4>
-            <Form>  
-                <Form.Field
-                    control={Input}
-                    label='Name'
-                    placeholder={ProgramCoordinatorsList.name}
-                    id='name'
-                />
-                <Form.Field
-                    control={Input}
-                    label='Program'
-                    placeholder={ProgramCoordinatorsList.program}
-                    id='program'
-                />
-                <Form.Field
-                    id='email'
-                    control={Input}
-                    label='Email'
-                    placeholder={ProgramCoordinatorsList.email}
-                    
-                />
-                <input type='submit' className='submitButton' onClick={handleSubmit} />
-                <input type='reset' className='resetButton marginLeft' onClick={handleReset} />
-                <Link to='/update-coordinators'>
-                    <input type='submit' className='backButtonBlue marginLeft' value='Back' />
-                </Link>
-            </Form>
-        </>
-)
+
+return (
+  <>
+    <Helmet>
+      <title>Update Form | Professional Development Club</title>
+    </Helmet>
+    {loading ? (
+      <div className="loadingState">
+        <Spinner color="#727981" size={35} speed={1} animating={true} />
+      </div>
+    ) : thankYou ? (
+      <>
+        <div>
+          <h1 className="center marginTop">
+            Thank You. Details has been updated!
+          </h1>
+          <Link to="/update-coordinators">
+            <input
+              type="submit"
+              className="backButton marginLeft marginTop"
+              value="Back"
+            />
+          </Link>
+        </div>
+      </>
+    ) : (
+      <>
+        <h1>Edit Coordinator details</h1>
+        <h4 className="red">
+          Only fill the details that needs to be updated and leave the rest
+          fields blank!
+        </h4>
+        <Form>
+          <Form.Field
+            control={Input}
+            label="Name"
+            placeholder={ProgramCoordinatorsList.name}
+            id="name"
+          />
+          <Form.Field
+            control={Input}
+            label="Program"
+            placeholder={ProgramCoordinatorsList.program}
+            id="program"
+          />
+          <Form.Field
+            id="email"
+            control={Input}
+            label="Email"
+            placeholder={ProgramCoordinatorsList.email}
+          />
+          <input
+            type="submit"
+            className="submitButton"
+            onClick={handleSubmit}
+          />
+          <input
+            type="reset"
+            className="resetButton marginLeft"
+            onClick={handleReset}
+          />
+          <Link to="/update-coordinators">
+            <input
+              type="submit"
+              className="backButtonBlue marginLeft"
+              value="Back"
+            />
+          </Link>
+        </Form>
+      </>
+    )}
+  </>
+);
 }
 export default UpdateForm;

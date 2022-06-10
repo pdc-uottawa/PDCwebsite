@@ -47,8 +47,9 @@ import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
 import HomePage from "./view/Home/HomePage";
+import OurVolunteers from "./view/Volunteers/OurVolunteers";
 
-import { useWindowDimensions } from '../src/common/context/WindowDimensionsProvider'
+import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
 
 /**
  * This is routers for the website.
@@ -62,12 +63,11 @@ const Routers = () => {
     <Fragment>
       <Header />
       <Switch>
-        {
-          width > 1024 ? 
+        {width > 1024 ? (
           <Route exact path="/" component={HomePage} />
-          :
+        ) : (
           <Route exact path="/" component={Home} />
-        }
+        )}
         <Fragment>
           <Container className="main">
             {/* <Route exact path="/" component={Home} /> */}
@@ -76,21 +76,13 @@ const Routers = () => {
             <Route exact path="/OurTeam" component={OurTeam} />
             <Route exact path="/create-project" component={CreateProject} />
             <Route exact path="/cdc" component={CDCMainPage} />
-            <Route
-              exact
-              path="/download-user-list"
-              component={DownloadUserInfo}
-            />
+            <Route exact path="/download-user-list" component={DownloadUserInfo} />
             <Route exact path="/project/manage/:id" component={CreateProject} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/student" component={Student} />
             <Route exact path="/create-form" component={CreateForm} />
-            <Route
-              exact
-              path="/program-coordinators"
-              component={ProgramCoordinators}
-            />
+            <Route exact path="/program-coordinators" component={ProgramCoordinators} />
             <Route exact path="/alumni" component={OurAlumni} />
             <Route exact path="/manage-alumni" component={ManageAlumni} />
             <Route exact path="/manage-ourteam" component={ManageTeam} />
@@ -103,32 +95,16 @@ const Routers = () => {
             <Route exact path="/programs" component={Programs} />
             <Route exact path="/fswep" component={Fswep} />
             <Route exact path="/student-form" component={StudentForm} />
-            <Route
-              exact
-              path="/resume-guidelines"
-              component={ResumeGuidelines}
-            />
+            <Route exact path="/resume-guidelines" component={ResumeGuidelines} />
             <Route exact path="/useful-links" component={GNG5299} />
-            <Route
-              exact
-              path="/update-coordinators"
-              component={UpdateCoordinators}
-            />
+            <Route exact path="/update-coordinators" component={UpdateCoordinators} />
             <Route exact path="/hirestudent" component={HireStudent} />
             {/* <Route exact path="/alumni" component={Alumni} /> */}
             <Route exact path="/covid" component={Covid19} />
             <Route exact path="/upload" component={UploadLogo} />
             <Route exact path="/feedback" component={Feedback} />
-            <Route
-              exact
-              path="/student-profile"
-              component={StudentProfileDashboard}
-            />
-            <Route
-              exact
-              path="/student/profile/:id"
-              component={StudentProfileView}
-            />
+            <Route exact path="/student-profile" component={StudentProfileDashboard} />
+            <Route exact path="/student/profile/:id" component={StudentProfileView} />
             <Route exact path="/students/apply/:id" component={ApplyForm} />
             <Route exact path="/AddForm" component={AddForm} />
             <Route exact path="/UpdateForm/:id" component={UpdateForm} />
@@ -139,6 +115,7 @@ const Routers = () => {
             <Route path="/company-dashboard" component={CompanyDashboard} />
             <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/create-ticket" component={CreateTicket} />
+            <Route exact path="/our-volunteers" component={OurVolunteers} />
           </Container>
         </Fragment>
       </Switch>

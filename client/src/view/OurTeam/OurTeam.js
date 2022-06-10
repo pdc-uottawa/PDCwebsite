@@ -7,6 +7,7 @@ import { Spinner } from "react-activity";
 import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
+import { Helmet } from "react-helmet";
 
 const OurTeam = (props) => {
   const path = config();
@@ -40,76 +41,34 @@ const OurTeam = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>Our Team | Professional Development Club</title>
+      </Helmet>
       {loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
-        
         <div>
           <h1 className="center ourTeamHead">OUR FACULTY ADVISORS</h1>
           <div className="row cardsCenter">
-            
-              {OurAdvisors.map((ourAdvisor, index)=> {
-                return (
-                  <div className="cursor col-md-3">
-                   <div className="body">
-                     <Image circular id ={index} centered src={ourAdvisor.imagePath} className="photo" />
-                     <h2 className="titleName">{ourAdvisor.name}</h2>
-                     <h4 className="titlePosition">{ourAdvisor.position}</h4>
-                     <div className="btn">
-                      <a
-                        href={ourAdvisor.linkedinId}
-                        target="_blank"
-                      >
-                        <Image
-                          src={"/assets/linkedin.png"}
-                          id="socialMediaIcon"
-                        />
-                      </a>
-                      
-                    </div>
-                   </div>
-                  </div>
-                )
-              }
-              
-               
-              )}
-          
-          </div>
-          <hr />
-          <div className="marginTop">
-          <h1 className="center ourTeamHead">OUR TEAM</h1>
-          <div className="row cardsCenter">
-            {users.map((user) => {
+            {OurAdvisors.map((ourAdvisor, index) => {
               return (
-                <div key={user._id} className="cursor col-md-3">
+                <div className="cursor col-md-3">
                   <div className="body">
                     <Image
                       circular
-                      src={`https://drive.google.com/thumbnail?id=${user.image}`}
-                      alt={user.name}
+                      id={index}
+                      centered
+                      src={ourAdvisor.imagePath}
                       className="photo"
                     />
-                    <h2 className="titleName">{user.name}</h2>
-                    <h4 className="titlePosition">{user.position}</h4>
+                    <h2 className="titleName">{ourAdvisor.name}</h2>
+                    <h4 className="titlePosition">{ourAdvisor.position}</h4>
                     <div className="btn">
-                      <a
-                        href={user.linkedIn}
-                        target="_blank"
-                      >
+                      <a href={ourAdvisor.linkedinId} target="_blank">
                         <Image
                           src={"/assets/linkedin.png"}
-                          id="socialMediaIcon"
-                        />
-                      </a>
-                      <a
-                        href={"mailto:" + user.email}
-                        target="_blank"
-                      >
-                        <Image
-                          src={"/assets/outlook.png"}
                           id="socialMediaIcon"
                         />
                       </a>
@@ -119,6 +78,41 @@ const OurTeam = (props) => {
               );
             })}
           </div>
+          <hr />
+          <div className="marginTop">
+            <h1 className="center ourTeamHead">OUR TEAM</h1>
+            <div className="row cardsCenter">
+              {users.map((user) => {
+                return (
+                  <div key={user._id} className="cursor col-md-3">
+                    <div className="body">
+                      <Image
+                        circular
+                        src={`https://drive.google.com/thumbnail?id=${user.image}`}
+                        alt={user.name}
+                        className="photo"
+                      />
+                      <h2 className="titleName">{user.name}</h2>
+                      <h4 className="titlePosition">{user.position}</h4>
+                      <div className="btn">
+                        <a href={user.linkedIn} target="_blank">
+                          <Image
+                            src={"/assets/linkedin.png"}
+                            id="socialMediaIcon"
+                          />
+                        </a>
+                        <a href={"mailto:" + user.email} target="_blank">
+                          <Image
+                            src={"/assets/outlook.png"}
+                            id="socialMediaIcon"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <hr />
           <div className="marginTop">
@@ -166,7 +160,6 @@ const OurTeam = (props) => {
               >
                 Meet Our Volunteers
               </Button>
-              
             </div>
           </div>
         </div>

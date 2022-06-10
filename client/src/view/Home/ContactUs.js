@@ -16,6 +16,16 @@ import moment from "moment";
 import { Spinner } from "react-activity";
 const img = require("../../assets/logo.png");
 
+// function emailValidation(){
+//   const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+//   if(!this.state.email || regex.test(this.state.email) === false){
+//       this.setState({
+//           error: "Email is not valid"
+//       });
+//       return false;
+//   }
+//   return true;
+// }
 function ContactUs() {
   const path = config();
   const options = [
@@ -79,34 +89,46 @@ function ContactUs() {
     const category = selectedOption;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-
-    if (category) {
-      Axios.post(path + "home/contact", {
-        fname,
-        lname,
-        category,
-        email,
-        message,
-      })
-        .then((res) => {
-          setLoading(false);
-          document.getElementById("fname").value = null;
-          document.getElementById("lname").value = null;
-          document.getElementById("category").innerHTML = null;
-          document.getElementById("email").value = null;
-          document.getElementById("message").value = null;
-          queryEmailer(fname, lname, category, email, message);
-          alert("Your query has been sent successfully!");
-        })
-        .catch((e) => {
-          setLoading(false);
-          alert("Something went wrong! Please try again after some time.");
-          console.log(e);
-        });
-    } else {
-      alert("Please Enter all Details!");
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if(!email || regex.test(email) === false)
+    {
+      alert("enter valid email id");
       setLoading(false);
     }
+    else
+    {
+      if (category) {
+        Axios.post(path + "home/contact", {
+          fname,
+          lname,
+          category,
+          email,
+          message,
+        })
+          .then((res) => {
+            setLoading(false);
+            document.getElementById("fname").value = null;
+            document.getElementById("lname").value = null;
+            document.getElementById("category").innerHTML = null;
+            document.getElementById("email").value = null;
+            document.getElementById("message").value = null;
+            queryEmailer(fname, lname, category, email, message);
+            alert("Your query has been sent successfully!");
+          })
+          .catch((e) => {
+            setLoading(false);
+            alert("Something went wrong! Please try again after some time.");
+            console.log(e);
+          });
+      } else {
+        alert("Please Enter all Details!");
+        setLoading(false);
+      }
+    }
+
+
+
+    
   }
 
   return (
@@ -160,6 +182,7 @@ function ContactUs() {
                 id="email"
                 control={Input}
                 placeholder="Enter Email"
+
                 required={true}
               />
               <Form.TextArea

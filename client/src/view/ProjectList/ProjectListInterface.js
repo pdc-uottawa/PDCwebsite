@@ -5,14 +5,15 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
+import { Helmet } from "react-helmet";
 import "react-activity/dist/Spinner.css";
-import './projectList.css'
+import "./projectList.css";
 
 /**
  * @author @binjiasata
  * @description This page shows a project list and a create new project button.
  *              The project list is got from server.
- *          
+ *
  */
 const ProjectListInterface = (props) => {
   // path config http://localhost:8080/
@@ -30,12 +31,12 @@ const ProjectListInterface = (props) => {
   useEffect(() => {
     Axios.get(path + "project", {})
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         return res.data;
       })
       .then((data) => {
         setProjectsInfo(data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((e) => {
         console.log(e);
@@ -44,16 +45,18 @@ const ProjectListInterface = (props) => {
 
   return (
     <>
-      {
-        loading ?
+      <Helmet>
+        <title>Project List | Professional Development Club</title>
+      </Helmet>
+      {loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
-        :
+      ) : (
         <div className="container">
-          <ProjectList projectsInfo={projectsInfo} />        
+          <ProjectList projectsInfo={projectsInfo} />
         </div>
-      }
+      )}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Card } from "semantic-ui-react";
+import { Helmet } from "react-helmet";
 import "./Volunteers.css";
 
 const EventManagementTeam = [
@@ -161,6 +162,9 @@ const WebsiteTeam = [
 const Volunteers = (props) => {
   return (
     <div>
+      <Helmet>
+        <title>Volunteers | Professional Development Club</title>
+      </Helmet>
       <h1 class="ui center aligned huge header teams-section">
         Event Management Team
       </h1>
