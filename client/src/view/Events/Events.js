@@ -8,6 +8,7 @@ import Axios from "axios";
 import { deviceType } from "react-device-detect";
 import moment from "moment";
 import "./Event.css";
+import Footer from "../Footer/Footer";
 
 const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
@@ -147,6 +148,8 @@ const Events = (props) => {
       </Card.Group> */}
         </>
       )}
+
+      <Footer/>
     </div>
   );
 };

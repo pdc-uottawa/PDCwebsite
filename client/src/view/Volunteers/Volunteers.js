@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Card } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
 import "./Volunteers.css";
-
+import Footer from "../Footer/Footer";
 const EventManagementTeam = [
   { name: "Monika Gwalani", mail: "mgwal097@uottawa.ca" },
   { name: "Nimish Aggarwal", mail: "nagga078@uottawa.ca" },
@@ -288,6 +288,7 @@ const Volunteers = (props) => {
           </Card>
         ))}
       </Card.Group>
+     
     </div>
   );
 };

@@ -6,6 +6,7 @@ import "react-activity/dist/Spinner.css";
 import { Card } from "semantic-ui-react";
 import "./style.css";
 
+
 const ContactUS = (props) => {
   const path = config();
   const { userInfo, setUserInfo } = useContext(UserContext);
@@ -30,6 +31,7 @@ const ContactUS = (props) => {
           </Card.Group>
         </div>
       </div>
+      
     </>
   );
 };

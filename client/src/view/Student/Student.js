@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Segment, Grid, Image, Button } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 const Student = (props) => {
   return (
@@ -75,6 +76,7 @@ const Student = (props) => {
           </a>
         </div>
       </div>
+      <Footer/>
     </Fragment>
   );
 };

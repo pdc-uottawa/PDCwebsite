@@ -24,6 +24,8 @@ const Alumni = (props) => {
                 </Grid>
             </Segment>
         </Fragment>
+    
+        
     );
 };
 

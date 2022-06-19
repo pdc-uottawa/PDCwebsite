@@ -7,6 +7,7 @@ import { config } from "../../common/config/config";
 import { FaSearch } from "react-icons/fa";
 import "./projectList.css";
 import Select from "react-select";
+import Footer from "../Footer/Footer";
 
 const ProjectList = ({ projectsInfo }) => {
   var project_data;
@@ -223,6 +224,7 @@ const ProjectList = ({ projectsInfo }) => {
             })}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
