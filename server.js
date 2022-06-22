@@ -20,6 +20,8 @@ const alumniRoutes = require("./shared/routes/alumniRoute");
 const ourTeamRoutes = require("./shared/routes/ourTeamRoute");
 const joinOurTeamFormRoutes = require("./shared/routes/joinOurTeamFormRoute");
 const ourVolunteerRoutes=require("./shared/routes/ourVolunteerRoute")
+const studentAssociationRoutes=require("./shared/routes/studentAssociationRoute")
+const fswepProgramRoutes=require("./shared/routes/fswepProgramRoute")
 const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -106,5 +108,7 @@ app.use("/alumni", alumniRoutes);
 app.use("/ourTeam", ourTeamRoutes);
 app.use("/form", joinOurTeamFormRoutes);
 app.use("/ourVolunteers", ourVolunteerRoutes);
+app.use("/studentAssociations", studentAssociationRoutes);
+app.use("/fswepPrograms",fswepProgramRoutes);
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));

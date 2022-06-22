@@ -2,24 +2,17 @@ import React, { Fragment } from "react";
 import { Grid, Segment, Image } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
 
-const ResumeGuidelines = (props) => {
+function ResumeGuidelines(props) {
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Resume Guidelines | Professional Development Club</title>
       </Helmet>
-      <Segment placeholder>
-        <Grid columns={2} stackable textAlign="center">
-          <Grid.Row verticalAlign="middle">
-            <Grid.Column>
-              <h1>Call for Resumes</h1>
-            </Grid.Column>
-            <Grid.Column>
-              <Image centered size="large" src="/assets/pdcimage.png" />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Segment>
+      
+      <div class="container-fluid justify lead all-data">
+      <h1 class="jumbotron center">
+      CALL FOR RESUMES
+      </h1>
       <ol class="ui list">
         <li>
           Make sure you arrange the relevant experience to showcase your
@@ -32,8 +25,9 @@ const ResumeGuidelines = (props) => {
       <p>You can find templates and more resources regarding resumes below.</p>
       <a href="https://www.uottawa.ca/career-development-centre/job-search/resume-writing-advice">
         https://www.uottawa.ca/career-development-centre/job-search/resume-writing-advice
-      </a>
-    </Fragment>
+      </a>   
+      </div>
+    </>
   );
 };
 export default ResumeGuidelines;

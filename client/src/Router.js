@@ -50,6 +50,8 @@ import HomePage from "./view/Home/HomePage";
 import OurVolunteers from "./view/Volunteers/OurVolunteers";
 
 import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
+import ForStudents from "./view/Student/ForStudents";
+import UsefulResources from "./view/Student/UsefulResources";
 
 /**
  * This is routers for the website.
@@ -116,6 +118,8 @@ const Routers = () => {
             <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/create-ticket" component={CreateTicket} />
             <Route exact path="/our-volunteers" component={OurVolunteers} />
+            <Route exact path="/for-students" component={ForStudents} />
+            <Route exact path="/useful-resources" component={UsefulResources} />
           </Container>
         </Fragment>
       </Switch>

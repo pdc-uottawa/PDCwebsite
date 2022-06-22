@@ -6,6 +6,7 @@
 import React, { Fragment } from 'react';
 import { Card, Image} from 'semantic-ui-react';
 import moment from 'moment';
+import LinesEllipsis from 'react-lines-ellipsis';
 
 const EventCard = ({ event }) => {
   let { text } = event.description;
@@ -44,8 +45,12 @@ const EventCard = ({ event }) => {
         <Card.Meta>
           <span>End time: {timeDisplay(event.end.local)}</span>
         </Card.Meta>
-        <Card.Description>
-          {event.description.text}
+        <Card.Description className='event-desc' >
+          <LinesEllipsis 
+          text={event.description.text}
+          ellipsis="..."
+          maxLine={3}>
+          </LinesEllipsis>
         </Card.Description>
         </Card.Content>
         <Card.Content extra>
