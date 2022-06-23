@@ -8,7 +8,7 @@ function ResumeGuidelines(props) {
       <Helmet>
         <title>Resume Guidelines | Professional Development Club</title>
       </Helmet>
-      <div class="container-fluid justify lead all-data">
+      <div class="container-fluid justify all-data">
       <h1 class="jumbotron center hdr">
       call for resumes
       </h1>

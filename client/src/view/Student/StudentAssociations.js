@@ -35,7 +35,7 @@ const StudentForm = (props) => {
         </div>
       ) :
         <div className="container-fluid">
-          <div className="container-fluid justify lead all-data">
+          <div className="container-fluid all-data">
             <h1 className=" jumbotron hdr center">
               Student associations
             </h1>

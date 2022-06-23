@@ -34,7 +34,7 @@ const Fswep = (props) => {
         </div>
       ) :
         <div class="container-fluid">
-          <div className="container-fluid lead all-data">
+          <div className="container-fluid all-data">
             <h1 class="jumbotron center hdr">
               Programs recognized by FSWEP
             </h1>
