@@ -8,10 +8,9 @@ function ResumeGuidelines(props) {
       <Helmet>
         <title>Resume Guidelines | Professional Development Club</title>
       </Helmet>
-      
       <div class="container-fluid justify lead all-data">
-      <h1 class="jumbotron center">
-      CALL FOR RESUMES
+      <h1 class="jumbotron center hdr">
+      call for resumes
       </h1>
       <ol class="ui list">
         <li>
@@ -22,10 +21,12 @@ function ResumeGuidelines(props) {
         <li>Make sure to include LinkedIn profile link</li>
         <li>Limit adding unnecessary line-spacing and content not relevant</li>
       </ol>
-      <p>You can find templates and more resources regarding resumes below.</p>
-      <a href="https://www.uottawa.ca/career-development-centre/job-search/resume-writing-advice">
-        https://www.uottawa.ca/career-development-centre/job-search/resume-writing-advice
-      </a>   
+      <p>Please get in touch with our Career Development Centre experts for getting your LinkedIn and Resume
+        reviewed and having a 1-1 practical interview call.
+      </p>
+      <p>
+      More information on Career Development services provided by PDC can be found <a href="#/cdc"><u>here</u></a>.
+      </p>
       </div>
     </>
   );

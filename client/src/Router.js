@@ -4,12 +4,12 @@ import CreateProject from "./view/CreateProject/CreateProject";
 import DownloadUserInfo from "./view/Users/UserInfoListCsv";
 import Home from "./view/Home/Home";
 import Student from "./view/Student/Student";
-import CreateForm from "./view/Student/CreateForm";
+import CreateForm from "./view/Student/CreateAssociation";
 import ProgramCoordinators from "./view/Student/ProgramCoordinators";
 import OurPartners from "./view/OurPartners/OurPartners";
 import Programs from "./view/Student/Programs";
 import Fswep from "./view/Student/Fswep";
-import StudentForm from "./view/Student/StudentForm";
+import StudentForm from "./view/Student/StudentAssociations";
 import ResumeGuidelines from "./view/Student/ResumeGuidelines";
 import GNG5299 from "./view/Student/GNG5299";
 import UpdateCoordinators from "./view/Student/UpdateCoordinators";
@@ -83,7 +83,7 @@ const Routers = () => {
             <Route exact path="/events" component={Events} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/student" component={Student} />
-            <Route exact path="/create-form" component={CreateForm} />
+            <Route exact path="/create-association" component={CreateForm} />
             <Route exact path="/program-coordinators" component={ProgramCoordinators} />
             <Route exact path="/alumni" component={OurAlumni} />
             <Route exact path="/manage-alumni" component={ManageAlumni} />
@@ -96,7 +96,7 @@ const Routers = () => {
             <Route exact path="/our-partners" component={OurPartners} />
             <Route exact path="/programs" component={Programs} />
             <Route exact path="/fswep" component={Fswep} />
-            <Route exact path="/student-form" component={StudentForm} />
+            <Route exact path="/student-association" component={StudentForm} />
             <Route exact path="/resume-guidelines" component={ResumeGuidelines} />
             <Route exact path="/useful-links" component={GNG5299} />
             <Route exact path="/update-coordinators" component={UpdateCoordinators} />

@@ -6,11 +6,6 @@ import { MdPeople } from "react-icons/md";
 import { Button, Grid, Segment, Image } from "semantic-ui-react";
 
 const UsefulResources = (props) => {
-    const handledownload = () => {
-        window.open(
-            "https://professionaldevclub.files.wordpress.com/2019/08/gng5299_application-template.docx"
-        );
-    };
     return (
         <>
             <Helmet>
@@ -18,8 +13,8 @@ const UsefulResources = (props) => {
             </Helmet>
             <div class="container-fluid">
                 <div className="container-fluid lead all-data">
-                    <h1 class="jumbotron center">
-                        USEFUL UNIVERSITY RESOURCES FOR NEWLY ADMITTED STUDENTS
+                    <h1 class="jumbotron center hdr">
+                        Useful university resources for newly admitted students
                     </h1>
                     <div className="container-fluid">
                         <div className="row ct-rw" >
@@ -105,7 +100,7 @@ const UsefulResources = (props) => {
                                         class="item"
                                         href="https://www.uottawa.ca/career-development-centre/"
                                     >
-                                        Career Development Centre
+                                        University's Career Development Centre
                                     </a>
                                 </div>
                             </div>
