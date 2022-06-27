@@ -69,7 +69,7 @@ function ForStudents(props) {
                   <Card.Body>
                     <h3>
                       <a class="item"
-                        id="join-team-from-for-students"
+                        id="joinTeam-forStudents"
                         target="_blank"
                         href={jointeam}>
                         Join the club as a Volunteer
