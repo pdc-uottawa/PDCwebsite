@@ -1,61 +1,86 @@
-import React, { Fragment } from "react";
+import React, { useState, useEffect } from "react";
+import { config } from "../../common/config/config";
+import Axios from "axios";
 import { Helmet } from "react-helmet";
+import './student.css'
 
 const StudentForm = (props) => {
+  const path = config();
+  const [studentAssociationsList, setStudentAssociationsList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Axios.get(path + "studentAssociations/all", {})
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        setStudentAssociationsList(data);
+        console.log(data)
+        setLoading(false)
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setStudentAssociationsList, path]);
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Student Form | Professional Development Club</title>
       </Helmet>
-      <h1 class="ui center aligned huge header">
-        Student Associations in uOttawa
-      </h1>
-
-      <p>All the associations in university of Ottawa can be found <a href="https://gsaed.ca/en/about-us/structure/departmental-associations/">here</a>.</p>
-
-      <p>
-        Following are the engineering associations that are currently active:
-      </p>
-      <div class="ui bulleted list">
-        <a class="item" href="https://www.cssa-aei.ca/">
-          Computer Science Student Association
-        </a>
-        <a
-          class="item"
-          href="https://catalogue.uottawa.ca/en/graduate/master-engineering-engineering-management/"
-        >
-          Engineering Management Student Association
-        </a>
-        <a class="item" href="https://dtiuottawa.ca/">
-          E-Business Technology Student Association
-        </a>
-        <a
-          class="item"
-          href="http://www.site.uottawa.ca/school/eegsa/public_html/index.shtml"
-        >
-          Electrical Engineering Student Association
-        </a>
-        <a class="item" href="https://ssgsauottawa.wordpress.com/">
-          System Science Student Association
-        </a>
-      </div>
-
-      <p>
-        Following are the engineering associations that are currently Inactive:
-      </p>
-      <div class="ui bulleted list">
-        <div class="item">
-          Civil and Environmental Engineering Student Association
+      <div className="container-fluid">
+        <div className="container-fluid justify lead all-data">
+        <div className="jumbotron">
+          <h1 className="center">
+            STUDENT ASSOCIATIONS
+          </h1>
         </div>
-        <div class="item">Mechanical Engineering Student Association</div>
-        <div class="item">Biomedical Engineering Student Association</div>
-        <div class="item">Electrical Engineering Student Association</div>
-        <div class="item">
-          Chemical Engineering Student Association </div>
+          <h3>All the associations in University of Ottawa can be found&nbsp;
+            <a href="https://gsaed.ca/en/about-us/structure/departmental-associations/">here</a>.
+          </h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Association</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {studentAssociationsList
+                .filter((stAssociationsList) => stAssociationsList.status === true)
+                .map((AssociationsList) => {
+                  return (
+                    <tr>
+                      <td><a class="item" href={AssociationsList.link}>
+                        {AssociationsList.name}
+                      </a>
+                      </td>
+                      <td>
+                        <div className=" col-md-5 center active-status">Active</div>
+                      </td>
+                    </tr>
+                  )
+                })}
+              {studentAssociationsList
+                .filter((stAssociationsList) => stAssociationsList.status === false)
+                .map((AssociationsList) => {
+                  return (
+                    <tr>
+                      <td><a class="item" href={AssociationsList.link}>
+                        {AssociationsList.name}
+                      </a>
+                      </td>
+                      <td>
+                        <div className=" col-md-5 center inactive-status">Inactive</div>
+                      </td>
+                    </tr>
+                  )
+                })}
+            </tbody>
+          </table>
+        </div>
       </div>
-     
-      
-    </Fragment>
+    </>
   );
 };
 
