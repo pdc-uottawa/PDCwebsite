@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Routers from "./Router";
+import { CookiesProvider } from "react-cookie";
 import "semantic-ui-css/semantic.min.css";
 import { HashRouter } from "react-router-dom";
 //import ScrollToTop from "./common/utils/ScrollToTop";
@@ -10,9 +11,9 @@ const App = () => {
     <WindowDimensionsProvider>
       <Fragment>
         <HashRouter>
-          {/* <ScrollToTop> */}
+          <CookiesProvider>
             <Routers />
-          {/* </ScrollToTop> */}
+          </CookiesProvider>
         </HashRouter>
       </Fragment>
     </WindowDimensionsProvider>

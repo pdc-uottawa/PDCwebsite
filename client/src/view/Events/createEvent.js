@@ -144,8 +144,6 @@ const CreateEvent = (props) => {
       event: event,
     };
 
-    console.log(testdata);
-    console.log(event);
     axios
       .post(
         "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW",
