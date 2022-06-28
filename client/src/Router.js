@@ -52,6 +52,7 @@ import OurVolunteers from "./view/Volunteers/OurVolunteers";
 import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
 import ForStudents from "./view/Student/ForStudents";
 import UsefulResources from "./view/Student/UsefulResources";
+import Footer from "./view/Footer/Footer";
 
 /**
  * This is routers for the website.
@@ -62,7 +63,7 @@ import UsefulResources from "./view/Student/UsefulResources";
 const Routers = () => {
   const { width } = useWindowDimensions();
   return (
-    <Fragment>
+    <Fragment style=" min-height: 100vh;display: flex;flex-direction: column;">
       <Header />
       <Switch>
         {width > 1024 ? (
@@ -123,6 +124,7 @@ const Routers = () => {
           </Container>
         </Fragment>
       </Switch>
+      <Footer/>
     </Fragment>
   );
 };

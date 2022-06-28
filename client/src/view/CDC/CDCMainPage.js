@@ -9,7 +9,7 @@ import "react-activity/dist/Spinner.css";
 import { config } from "../../common/config/config";
 import { Helmet } from "react-helmet";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
-import Footer from "../Footer/Footer";
+
 
 const CDCMainPage = (props) => {
   const path = config();
@@ -97,7 +97,6 @@ const CDCMainPage = (props) => {
           <ContactUs contactDetails={contactDetails} />
         </div>
       )}
-      <Footer/>
     </>
   );
 };

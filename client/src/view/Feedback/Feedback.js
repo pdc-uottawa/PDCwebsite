@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import { Segment, Button, Grid, GridRow } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
-import Footer from "../Footer/Footer";
 
 const Feedback = (props) => {
   return (
     <>
-    <Fragment>
+    <Fragment >
       <Helmet>
         <title>Feedback Form | Professional Development Club</title>
       </Helmet>
@@ -34,7 +33,6 @@ const Feedback = (props) => {
         </Grid>
       </Segment>
     </Fragment>
-    <Footer/>
     </>
   );
 };
