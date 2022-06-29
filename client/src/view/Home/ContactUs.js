@@ -16,16 +16,7 @@ import moment from "moment";
 import { Spinner } from "react-activity";
 const img = require("../../assets/logo.png");
 
-// function emailValidation(){
-//   const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-//   if(!this.state.email || regex.test(this.state.email) === false){
-//       this.setState({
-//           error: "Email is not valid"
-//       });
-//       return false;
-//   }
-//   return true;
-// }
+
 function ContactUs() {
   const path = config();
   const options = [
