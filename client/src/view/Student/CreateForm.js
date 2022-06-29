@@ -3,13 +3,15 @@ import { Helmet } from "react-helmet";
 
 const CreateForm = (props) => {
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Create Form | Professional Development Club</title>
       </Helmet>
-      <h1 class="ui center aligned huge header">
-        Create/Activate Your Association
-      </h1>
+          
+        <div className="container-fluid justify lead all-data">
+        <h1 className="jumbotron center">
+          CREATE/ACTIVATE YOUR ASSOCIATION
+          </h1>
       <p>
         {" "}
         Each department in University of Ottawa can have a student association.{" "}
@@ -98,7 +100,8 @@ const CreateForm = (props) => {
         only then will the University will provide the association with money to
         carry out the events for students in your program. Share this:
       </p>
-    </Fragment>
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Segment, Grid, Image, Button } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 const Student = (props) => {
   return (
@@ -24,6 +25,7 @@ const Student = (props) => {
         <div class="ui inverted relaxed divided list">
           <a
             class="item"
+            id="joinTeam-forStudents"
             target="_blank"
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u"
           >
@@ -75,6 +77,7 @@ const Student = (props) => {
           </a>
         </div>
       </div>
+      <Footer/>
     </Fragment>
   );
 };

@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Segment, Button } from "semantic-ui-react";
+import React from "react";
+import { Segment } from "semantic-ui-react";
 import AliceCarousel from "react-alice-carousel";
-import { config } from "../../common/config/config";
-import Axios from "axios";
 import "./Home.css";
-import { Link } from "react-router-dom";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Testimonials(props) {

@@ -8,7 +8,7 @@ import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
 import { Helmet } from "react-helmet";
-import { useCookies } from 'react-cookie';
+import Footer from "../Footer/Footer";
 
 const OurTeam = (props) => {
   const path = config();
@@ -16,7 +16,6 @@ const OurTeam = (props) => {
 
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
-  const [cookies, setCookie] = useCookies(['user']);
 
   // when click create new project, jump to create-project page
   // const handleCreateNewProject = () => {
@@ -32,7 +31,6 @@ const OurTeam = (props) => {
 
       .then((data) => {
         setUsers(data);
-        console.log(cookies.Name)
         setLoading(false);
       })
 
@@ -165,7 +163,9 @@ const OurTeam = (props) => {
               </Button>
             </div>
           </div>
+          <Footer/>
         </div>
+        
       )}
     </>
   );

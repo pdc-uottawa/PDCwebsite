@@ -73,7 +73,7 @@ const Header = (props) => {
   };
 
   const handleStudent = (e, { name }) => {
-    history.push("/student");
+    history.push("/for-students");
     setActiveItem(name);
     handleSideBarClick();
   };
