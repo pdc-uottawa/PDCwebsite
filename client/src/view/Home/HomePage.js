@@ -67,16 +67,12 @@ function HomePage() {
         .then((data) => {
           let currentTime = moment().format().slice(0, 10);
           let futureEvents = data.events.filter(
-            (event) => event.start.local.slice(0, 10) < currentTime
+            (event) => event.start.local.slice(0, 10) > currentTime
           );
           setCount(futureEvents.length);
         }),
     ]);
   }, []);
-
-  const handle = () => {
-    setCookie("popUpShown", true, { path: "/" });
-  };
 
   const onClickButton = () => {
     setOpen(!open);
@@ -109,7 +105,7 @@ function HomePage() {
               This website uses cookies to deliver an enhanced user experience.
             </span>
           </CookieConsent>
-          {cookieConsentAccepted && (count > 0) && open && !cookies.popUpShown ? (
+          {(cookieConsentAccepted || cookies.CookieConsent) && (count > 0) && open && !cookies.popUpShown ? (
             <>
               <PopUp toggle={onClickButton} />
               {
