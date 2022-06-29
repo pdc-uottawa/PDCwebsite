@@ -18,7 +18,7 @@ const Footer = () => {
     window.open("https://www.youtube.com/channel/UCW4nbiQF-186o9kjAoj6FvA");
   };
   return (
-    <Fragment>
+    <Fragment style="margin-top: auto;">
       <Menu>
         <Segment inverted color="black" vertical className="footer">
           <Container textAlign="center">

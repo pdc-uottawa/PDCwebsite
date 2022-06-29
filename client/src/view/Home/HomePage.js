@@ -4,7 +4,7 @@ import AboutUs from "./AboutUs";
 import ImageCarousel from "./Carousel";
 import ContactUs from "./ContactUs";
 import Testimonials from "./Testimonials";
-import Footer from "../Footer/Footer";
+
 import { Spinner } from "react-activity";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
@@ -69,7 +69,7 @@ function HomePage() {
           <AboutUs aboutUsData={aboutUsData} />
           <Testimonials testimonialData={testimonialData} />
           <ContactUs />
-          <Footer />
+          
         </>
       )}
     </>

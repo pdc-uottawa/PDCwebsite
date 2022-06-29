@@ -8,7 +8,6 @@ import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
 import { Helmet } from "react-helmet";
-import Footer from "../Footer/Footer";
 
 const OurTeam = (props) => {
   const path = config();
@@ -163,7 +162,7 @@ const OurTeam = (props) => {
               </Button>
             </div>
           </div>
-          <Footer/>
+          
         </div>
         
       )}

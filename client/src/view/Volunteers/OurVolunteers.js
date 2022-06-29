@@ -6,7 +6,7 @@ import Axios from "axios";
 import { Spinner } from "react-activity";
 import "./Volunteers.css";
 import { Helmet } from "react-helmet";
-import Footer from "../Footer/Footer";
+
 
 const OurVolunteers = (props) => {
     const path = config();
@@ -68,7 +68,7 @@ const OurVolunteers = (props) => {
                     )
                 })
             }
-            <Footer/>
+            
         </>
     );
 };

@@ -5,7 +5,7 @@ import Axios from "axios";
 import { Spinner } from "react-activity";
 import defimg from "./../../assets/default.png";
 import { Helmet } from "react-helmet";
-import Footer from "../Footer/Footer";
+
 
 const OurAlumni = (props) => {
   const path = config();
@@ -122,7 +122,7 @@ const OurAlumni = (props) => {
               )}
             </div>
           </div>
-          <Footer/>
+          
         </>
       )}
     </>
