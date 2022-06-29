@@ -21,12 +21,6 @@ import { useWindowDimensions } from "../../common/context/WindowDimensionsProvid
 
 const img = require("../../assets/logo.png");
 
-/**
- * @author @binjiasata @yiyinzhang
- * @description This is the navbar, contains PDC icon, project list button,
- *              login menu or logout menu for now.
- *
- */
 const Header = (props) => {
   // const { width } = useWindowDimensions();
   // const [width, setWidth] = useState(window.innerWidth)

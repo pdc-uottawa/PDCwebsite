@@ -30,13 +30,13 @@ const OurTeam = (props) => {
 
       .then((data) => {
         setUsers(data);
-
         setLoading(false);
       })
 
       .catch((e) => {
         console.log(e);
       });
+      
   }, []);
 
   return (
