@@ -15,23 +15,36 @@ const CDCButtons = (props) => {
     <>
       <div>
         <div className="container row marginTopButton">
-            {
-                buttonLinks && buttonLinks.map((link) => {
-                    return (
-                        link.name === 'book_appointment' && link.active === true ?
-                        <div className="col-md centerItems">
-                            <Button href={link.link} target="blank" size="large" className="padding5" color='blue' content='Book Appointment for Mock Interviews' />
-                        </div>
-                        :
-                        link.name === 'submit_resume_linkedin' && link.active === true ?
-                        <div className="col-md centerItems">
-                            <Button href={link.link} target="blank" size="large" className="padding5" color='blue' content='Submit your Resume or/and LinkedIn Profile for Review' />
-                        </div>
-                        :
-                        null
-                    )
-                })
-            }
+          {buttonLinks &&
+            buttonLinks.map((link) => {
+              return link.name === "book_appointment" &&
+                link.active === true ? (
+                <div className="col-md centerItems">
+                  <Button
+                    id="bookInterviewAppointment-CDC"
+                    href={link.link}
+                    target="blank"
+                    size="large"
+                    className="padding5"
+                    color="blue"
+                    content="Book Appointment for Mock Interviews"
+                  />
+                </div>
+              ) : link.name === "submit_resume_linkedin" &&
+                link.active === true ? (
+                <div className="col-md centerItems">
+                  <Button
+                    id="submitResumeLinkedinReview-CDC"
+                    href={link.link}
+                    target="blank"
+                    size="large"
+                    className="padding5"
+                    color="blue"
+                    content="Submit your Resume or/and LinkedIn Profile for Review"
+                  />
+                </div>
+              ) : null;
+            })}
         </div>
         <br />
         <hr />

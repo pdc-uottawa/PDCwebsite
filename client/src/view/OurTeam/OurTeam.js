@@ -36,7 +36,6 @@ const OurTeam = (props) => {
       .catch((e) => {
         console.log(e);
       });
-      
   }, []);
 
   return (
@@ -128,6 +127,7 @@ const OurTeam = (props) => {
             </p>
             <div id="buttons-container">
               <Button
+                id="meetPDCRepresentative-ourTeam"
                 primary
                 color="blue"
                 onClick={() =>
@@ -156,15 +156,13 @@ const OurTeam = (props) => {
                 primary
                 color="blue"
                 onClick={() => (window.location.href = "#/volunteers")}
-                id="meetVolunteersButton"
+                id="meetVolunteers-ourTeam"
               >
                 Meet Our Volunteers
               </Button>
             </div>
           </div>
-          
         </div>
-        
       )}
     </>
   );

@@ -9,7 +9,6 @@ import { deviceType } from "react-device-detect";
 import moment from "moment";
 import "./Event.css";
 
-
 const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
 
@@ -128,7 +127,7 @@ const Events = (props) => {
             fluid
             selection
             options={eventsOptions}
-            id="dropdown"
+            id="eventsFiltersDropdown-Events"
             value={filterType.value}
             text={filterType.text}
           />
@@ -148,8 +147,6 @@ const Events = (props) => {
       </Card.Group> */}
         </>
       )}
-
-      
     </div>
   );
 };

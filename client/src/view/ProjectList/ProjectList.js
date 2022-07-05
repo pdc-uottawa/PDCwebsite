@@ -130,7 +130,7 @@ const ProjectList = ({ projectsInfo }) => {
               <div className="col-md-11 mobCenter">
                 <input
                   type="text"
-                  id="searchbar"
+                  id="searchbar-Projects"
                   className="searchbar"
                   placeholder="Search a Project"
                   onChange={handleSearchBar}
@@ -144,6 +144,7 @@ const ProjectList = ({ projectsInfo }) => {
           <div className="col-md-3">
             <div className="select">
               <Select
+                id="projectTypeFilter-Projects"
                 placeholder="Project Type"
                 options={projectTypeOptions}
                 onChange={projectTypeHandler}
@@ -154,6 +155,7 @@ const ProjectList = ({ projectsInfo }) => {
           <div className="col-md-3">
             <div className="select">
               <Select
+                id="hostedByFilter-Projects"
                 placeholder="Hosted By"
                 isClearable
                 isSearchable
@@ -166,6 +168,7 @@ const ProjectList = ({ projectsInfo }) => {
           <div className="col-md-3">
             <div className="select">
               <Select
+                id="tagsFilter-Projects"
                 placeholder="Select Tags"
                 isClearable
                 isMulti
@@ -223,7 +226,6 @@ const ProjectList = ({ projectsInfo }) => {
             })}
         </div>
       </div>
-     
     </>
   );
 };

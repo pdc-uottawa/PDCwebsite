@@ -182,6 +182,7 @@ const Header = (props) => {
             as="a"
             onClick={handleHome}
             header
+            id="PDCHome-header"
           >
             <Image size="mini" src={img} />
           </Menu.Item>
@@ -203,13 +204,26 @@ const Header = (props) => {
           </Menu.Item> */}
           <Dropdown item text="The Team">
             <Dropdown.Menu>
-              <Dropdown.Item className="bg" onClick={handleOurTeam} name="OurTeam">
+              <Dropdown.Item
+                id="ourTeam-header"
+                className="bg"
+                onClick={handleOurTeam}
+                name="OurTeam"
+              >
                 Our Team
               </Dropdown.Item>
-              <Dropdown.Item onClick={handleAlumni} name="OurAlumni">
+              <Dropdown.Item
+                id="ourAlumni-header"
+                onClick={handleAlumni}
+                name="OurAlumni"
+              >
                 Our Alumni
               </Dropdown.Item>
-              <Dropdown.Item onClick={handleVolunteers} name="OurVolunteers">
+              <Dropdown.Item
+                id="ourVolunteers-header"
+                onClick={handleVolunteers}
+                name="OurVolunteers"
+              >
                 Our Volunteers
               </Dropdown.Item>
             </Dropdown.Menu>
@@ -234,6 +248,7 @@ const Header = (props) => {
               name="Student"
               active={activeItem === "Student"}
               onClick={handleStudent}
+              id="forStudents-header"
             >
               For Students
             </Menu.Item>
@@ -267,11 +282,13 @@ const Header = (props) => {
             name="CDC"
             active={activeItem === "CDC"}
             onClick={handleCDC}
+            id="CDC-header"
           >
             Career Development Centre
           </Menu.Item>
           <Menu.Item
             name="Events"
+            id="Events-header"
             active={activeItem === "Events"}
             onClick={handleEvents}
           >
@@ -280,14 +297,16 @@ const Header = (props) => {
 
           <Menu.Item
             name="ProjectList"
+            id="Projects-header"
             active={activeItem === "ProjectList"}
             onClick={handleProjectList}
           >
-            Project List
+            Projects
           </Menu.Item>
 
           <Menu.Item
             name="feedback"
+            id="Feedback-header"
             active={activeItem === "feedback"}
             onClick={handleFeedback}
           >
@@ -299,6 +318,7 @@ const Header = (props) => {
             active={activeItem === "joinTeam"}
           >
             <Button
+              id="joinTeam-header"
               onClick={() =>
                 window.open(
                   "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
@@ -325,7 +345,11 @@ const Header = (props) => {
 
         {/* Sidebar */}
         <Container hidden={sidebarHidden}>
-          <Button onClick={handleSideBarClick} color="grey">
+          <Button
+            id="openSidebar-header-MOB"
+            onClick={handleSideBarClick}
+            color="grey"
+          >
             <Icon name="bars" />
           </Button>
           <Sidebar
@@ -339,11 +363,16 @@ const Header = (props) => {
             inverted
             color="grey"
           >
-            <Button onClick={handleSideBarClick} color="grey">
+            <Button
+              id="closeSidebar-header-MOB"
+              onClick={handleSideBarClick}
+              color="grey"
+            >
               <Icon name="close" />
             </Button>
             <Container>
               <Menu.Item
+                id="PDCHome-header-MOB"
                 name="home"
                 active={activeItem === "home"}
                 as="a"
@@ -361,13 +390,26 @@ const Header = (props) => {
               </Menu.Item> */}
               <Dropdown item text="The Team">
                 <Dropdown.Menu>
-                  <Dropdown.Item className="bg" onClick={handleOurTeam} name="OurTeam">
+                  <Dropdown.Item
+                    id="ourTeam-header-MOB"
+                    className="bg"
+                    onClick={handleOurTeam}
+                    name="OurTeam"
+                  >
                     Our Team
                   </Dropdown.Item>
-                  <Dropdown.Item onClick={handleAlumni} name="OurAlumni">
+                  <Dropdown.Item
+                    id="ourAlumni-header-MOB"
+                    onClick={handleAlumni}
+                    name="OurAlumni"
+                  >
                     Our Alumni
                   </Dropdown.Item>
-                  <Dropdown.Item onClick={handleVolunteers} name="OurVolunteers">
+                  <Dropdown.Item
+                    id="ourVolunteers-header-MOB"
+                    onClick={handleVolunteers}
+                    name="OurVolunteers"
+                  >
                     Our Volunteers
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -392,6 +434,7 @@ const Header = (props) => {
                   name="Student"
                   active={activeItem === "Student"}
                   onClick={handleStudent}
+                  id="forStudents-header-MOB"
                 >
                   For Students
                 </Menu.Item>
@@ -416,6 +459,7 @@ const Header = (props) => {
                 name="CDC"
                 active={activeItem === "CDC"}
                 onClick={handleCDC}
+                id="CDC-header-MOB"
               >
                 Career Development Centre
               </Menu.Item>
@@ -423,6 +467,7 @@ const Header = (props) => {
                 name="Events"
                 active={activeItem === "Events"}
                 onClick={handleEvents}
+                id="Events-header-MOB"
               >
                 Events
               </Menu.Item>
@@ -430,6 +475,7 @@ const Header = (props) => {
                 name="projectList"
                 active={activeItem === "projectList"}
                 onClick={handleProjectList}
+                id="Projects-header-MOB"
               >
                 Project List
               </Menu.Item>
@@ -437,6 +483,7 @@ const Header = (props) => {
                 name="feedback"
                 active={activeItem === "feedback"}
                 onClick={handleFeedback}
+                id="Feedback-header-MOB"
               >
                 Feedback
               </Menu.Item>
@@ -446,6 +493,7 @@ const Header = (props) => {
                 active={activeItem === "joinTeam"}
               >
                 <Button
+                  id="joinTeam-header-MOB"
                   onClick={() =>
                     window.open(
                       "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
