@@ -64,7 +64,7 @@ function HomePage() {
         </div>
       ) : (
         <>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <ImageCarousel carouselData={carouselData} />
           <AboutUs aboutUsData={aboutUsData} />
           <Testimonials testimonialData={testimonialData} />
