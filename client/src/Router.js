@@ -47,6 +47,7 @@ import UpdateAlumni from "./view/Alumni/UpdateAlumniForm";
 import AddAlumni from "./view/Alumni/AddAlumniForm";
 import CDCMainPage from "./view/CDC/CDCMainPage";
 import HomePage from "./view/Home/HomePage";
+import HomePageMob from "./view/Home/HomePageMob";
 import OurVolunteers from "./view/Volunteers/OurVolunteers";
 
 import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvider";
@@ -64,12 +65,12 @@ const Routers = () => {
   const { width } = useWindowDimensions();
   return (
     <Fragment style=" min-height: 100vh;display: flex;flex-direction: column;">
-      <Header />
+      {/* <Header /> */}
       <Switch>
         {width > 1024 ? (
           <Route exact path="/" component={HomePage} />
         ) : (
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePageMob} />
         )}
         <Fragment>
           <Container className="main">
@@ -124,7 +125,7 @@ const Routers = () => {
           </Container>
         </Fragment>
       </Switch>
-      <Footer/>
+      {/* <Footer/> */}
     </Fragment>
   );
 };

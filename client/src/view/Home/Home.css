@@ -1,23 +1,200 @@
-.center{
+.mobBody {
+  overflow-x: hidden !important;
+}
+
+.headerMob {
+  position: absolute;
+  z-index: 1000;
+  padding: 3%;
+  left: 0 !important;
+  top: 0 !important;
+  background-color: rgb(0, 0, 0, 0.9);
+}
+
+.drawerMenu {
+  font-size: 20px;
+  color: white;
+  padding: 5%;
+}
+
+.paddingBottom10 {
+  padding-bottom: 10% !important;
+}
+
+.drawerMenuItem {
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.drawerMenuNestedItem {
+  margin-left: 15%;
+}
+
+.menuItemName {
+  margin-left: 20px;
+}
+
+.homeHeadBg {
+  background-image: linear-gradient(135deg, #a71d31 10%, #3f0d12 100%);
+}
+
+.marginTop10 {
+  margin-top: 10%;
+}
+
+.verticalLine {
+  border-left: 1px solid rgb(255, 255, 255, 0.5);
+  height: 150px;
+}
+
+.verticallyCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.pdcLogoHomeHead {
+  width: 70%;
+}
+
+.white {
+  color: white;
+}
+
+.marginBottom10 {
+  margin-bottom: 10%;
+}
+
+.font20 {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.font25 {
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.padding10 {
+  padding: 9% !important;
+}
+
+.padding3 {
+  padding: 2% !important;
+}
+
+.marginTop100 {
+  margin-top: 100px;
+}
+
+.marginBottom100 {
+  margin-bottom: 100px;
+}
+
+.testimg1 {
+  width: 75%;
+  border-radius: 10px;
+}
+
+.padding9 {
+  padding: 9%;
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+}
+
+.aboutUsMobBg {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.contactUsMobBg {
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+.footerMobBg {
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.horizontalLine {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+  width: 50%;
+  margin-left: 25%;
+}
+
+.horizontalLineBlack {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  width: 50%;
+  margin-left: 25%;
+}
+
+.horizontalLineMenu {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+  width: 75%;
+  margin-left: 10%;
+}
+
+.circles {
+  width: 35%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.langButton {
+  border: 1px solid white;
+  padding: 5%;
+}
+
+.headingMob {
+  color: #000;
+  padding-top: 10% !important;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.headingMobContact {
+  color: #fff;
+  padding-top: 10% !important;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descMob {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  padding: 7%;
+  text-align: justify;
+}
+
+.socialMobButtons {
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.center {
   text-align: center;
 }
 
-.sliderimg{
+.sliderimg {
   width: 100%;
   height: 500px;
   object-fit: cover;
 }
-.top-to-btm{
+.top-to-btm {
   position: relative;
 }
-.icon-position{
+.icon-position {
   position: fixed;
   bottom: 40px;
   right: 25px;
   z-index: 20;
 }
-.icon-style{
-  background-color: #551B54;
+.icon-style {
+  background-color: #551b54;
   border: 2px solid #fff;
   border-radius: 50%;
   height: 50px;
@@ -25,28 +202,28 @@
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.icon-style:hover{
+.icon-style:hover {
   animation: none;
   background: #fff;
-  color: #551B54;
-  border: 2px solid #551B54;
+  color: #551b54;
+  border: 2px solid #551b54;
 }
 @keyframes movebtn {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  25%{
+  25% {
     transform: translateY(20px);
   }
-  50%{
+  50% {
     transform: translateY(0px);
   }
-  75%{
+  75% {
     transform: translateY(-20px);
   }
-  100%{
+  100% {
     transform: translateY(0px);
   }
 }
@@ -68,24 +245,23 @@
   cursor: pointer;
 }
 
-.alice-carousel__prev-btn  {
+.alice-carousel__prev-btn {
   background-color: transparent !important;
   height: 50px !important;
   width: 25px !important;
   position: absolute;
   top: 45% !important;
   left: 3% !important;
-
 }
-.alice-carousel__next-btn{
-  background-color:transparent !important;
+.alice-carousel__next-btn {
+  background-color: transparent !important;
   height: 50px !important;
   width: 25px !important;
   position: absolute;
   top: 45% !important;
   right: 4.5% !important;
 }
-.alice-carousel__prev-btn-item{
+.alice-carousel__prev-btn-item {
   font-size: 50px;
   color: #666 !important;
   font-weight: bolder;
@@ -105,7 +281,7 @@
 .header {
   text-align: center;
   color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 20px;
 }
 
@@ -128,57 +304,64 @@
   cursor: pointer;
 }
 
-.frag3{
+.frag3 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color:#999 !important ;
+  background-color: #999 !important ;
   color: white;
 }
 
-.frag2{
+.frag2 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color:#0A0270 !important ;
+  background-color: #0a0270 !important ;
   color: white;
 }
 
-.frag1{
+.frag1 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color:#0A0270 !important ;
+  background-color: #0a0270 !important ;
   color: white;
 }
 
-.grid-col-1{
+.grid-col-1 {
   margin: 25px !important;
   margin-top: 2% !important;
   padding-bottom: 3% !important;
   /* height: 350px !important; */
 }
 
-.car-img{
+.grid-col-1-MOB {
+  padding: 5% !important;
+  margin-top: 2% !important;
+  /* padding-bottom: 3% !important; */
+  /* height: 350px !important; */
+}
+
+.car-img {
   margin-top: 63px;
   height: 90vh;
 }
 
-.hd-2{
+.hd-2 {
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: 2% !important;
   margin-bottom: 2% !important;
 }
 
-.home-buttons{
+.home-buttons {
   margin-top: -3%;
- padding: 2%;
- margin-left: 33%;
+  padding: 2%;
+  margin-left: 33%;
 }
 
-.ab-des{
+.ab-des {
   margin-bottom: 50px !important;
 }
 
-.pdc-add{
+.pdc-add {
   height: 100px;
   width: 70%;
   margin-left: 10% !important;
@@ -217,10 +400,10 @@
   border-radius: 10px;
   background-color: #4caafd;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 3%;
   width: 95%;
   transition: all 0.5s;
@@ -236,7 +419,7 @@
 }
 
 .takeMeThereButton span:after {
-  content: '\00bb';
+  content: "\00bb";
   font-size: 25px;
   opacity: 0;
   top: 0;
@@ -264,31 +447,32 @@
   margin-bottom: 3%;
 }
 
-.cont-hd{
+.cont-hd {
   margin-left: 5%;
   margin-top: 10%;
   color: white;
 }
 
-.testi{
+.testi {
   border: 0px !important;
   color: #787878;
   background-color: #999 !important;
 }
 
-.but-m-o-t{
-margin-right: 10% !important;
-color: #000 !important
+.but-m-o-t {
+  margin-right: 10% !important;
+  color: #000 !important;
 }
 
-.but-b-o-v{
-margin-left: 10px !important;
-color: #000 !important
+.but-b-o-v {
+  margin-left: 10px !important;
+  color: #000 !important;
 }
 
-.bt-sq{
+.bt-sq {
   text-align: center;
-  color: #000 !important
+  color: #000 !important;
+  margin-top: 10% !important;
 }
 
 .flex {
@@ -296,7 +480,7 @@ color: #000 !important
   justify-content: center;
 }
 
-.ab-img{
+.ab-img {
   margin-top: 4%;
   margin-bottom: 20px !important;
   width: 80%;
@@ -306,11 +490,11 @@ color: #000 !important
   margin-left: 10%;
 }
 
-.ab-desc{
+.ab-desc {
   margin-left: 10% !important;
   margin-right: 10% !important;
   text-align: justify;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   font-size: 11pt;
 }
@@ -331,7 +515,7 @@ color: #000 !important
   font-size: 10px !important;
 }
 
-.card-img{
+.card-img {
   margin-right: 10% !important;
 }
 
@@ -431,8 +615,8 @@ color: #000 !important
   outline: 0;
 }
 
-.carousel.carousel-slider .control-arrow{
-background-color: black !important;
+.carousel.carousel-slider .control-arrow {
+  background-color: black !important;
   height: 50px !important;
   position: absolute;
   top: 35% !important;
@@ -467,50 +651,47 @@ background-color: black !important;
     width: 24% !important;
     border-radius: 50% !important;
   }
-  .but-m-o-t{
+  .but-m-o-t {
     margin-left: -15% !important;
     margin-bottom: 5% !important;
-    }
-    
-    .but-b-o-v{
+  }
+
+  .but-b-o-v {
     margin-left: -23% !important;
-    }
+  }
 
-    .ab-img{
-      width:220% !important;
-      height: 50% !important;
-      margin-top: 10% !important;
-    }
+  .ab-img {
+    width: 220% !important;
+    height: 50% !important;
+    margin-top: 10% !important;
+  }
 
-    .ab-desc{
-      width:220% !important;
-      height: 40% !important;
-      margin-top: 150% !important;
-      text-align: center !important;
-      margin-left: -120% !important;
-      margin-right: 0% !important;
-      font-size: 15px !important;
-      text-align: justify !important;
-      
-    }
-    .cont-hd{
-      font-size: small !important;
-    }
+  .ab-desc {
+    width: 220% !important;
+    height: 40% !important;
+    margin-top: 150% !important;
+    text-align: center !important;
+    margin-left: -120% !important;
+    margin-right: 0% !important;
+    font-size: 15px !important;
+    text-align: justify !important;
+  }
+  .cont-hd {
+    font-size: small !important;
+  }
 
-    .pdc-add{
-      font-size: 10px !important;
-    }
+  .pdc-add {
+    font-size: 10px !important;
+  }
 
-    .ui .form{
-      font-size: small !important;
-    }
+  .ui .form {
+    font-size: small !important;
+  }
 
-    .alice-carousel__prev-btn-item{
-      display: none !important;
-    }
-    .alice-carousel__next-btn-item {
-     display: none !important;
-    }
-
+  .alice-carousel__prev-btn-item {
+    display: none !important;
+  }
+  .alice-carousel__next-btn-item {
+    display: none !important;
+  }
 }
-
