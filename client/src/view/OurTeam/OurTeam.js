@@ -155,8 +155,8 @@ const OurTeam = (props) => {
               <Button
                 primary
                 color="blue"
-                onClick={() => (window.location.href = "#/volunteers")}
-                id="meetVolunteers-ourTeam"
+                onClick={() => (window.location.href = "#/our-volunteers")}
+                id="meetVolunteersButton"
               >
                 Meet Our Volunteers
               </Button>
