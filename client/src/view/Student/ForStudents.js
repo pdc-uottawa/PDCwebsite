@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
-import Card from 'react-bootstrap/Card'
-import './student.css'
-import { FcBusinessman, FcDataRecovery, FcDiploma1, FcDocument, FcList, FcMultipleDevices, FcSearch, FcSurvey } from "react-icons/fc"
+import Card from "react-bootstrap/Card";
+import "./student.css";
+import {
+  FcBusinessman,
+  FcDataRecovery,
+  FcDiploma1,
+  FcDocument,
+  FcList,
+  FcMultipleDevices,
+  FcSearch,
+  FcSurvey,
+  FcVoicePresentation
+} from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { Spinner } from "react-activity";
 
@@ -161,6 +171,20 @@ function ForStudents(props) {
                     <h3>
                       <a class="item" href={reslink}>
                         Ask for Resume review session with us
+                      </a>
+                    </h3>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col-sm-3">
+                <Card>
+                  <Card.Header>
+                    <FcVoicePresentation size="100" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h3>
+                      <a class="item" href="#/FAQs">
+                        Frequently Asked Questions (FAQs)
                       </a>
                     </h3>
                   </Card.Body>

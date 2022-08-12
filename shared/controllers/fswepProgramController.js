@@ -19,7 +19,7 @@ const updateFswepPrograms = async (req, res, next) => {
     const id = req.body._id;
     const name = req.body.name;
     const active = req.body.active;
-    const doc = await studentAssociation.findOneAndUpdate(
+    const doc = await FswepProgram.findOneAndUpdate(
         {_id: id},
         { $set: {name, active}},
         { upsert: true, new: true },

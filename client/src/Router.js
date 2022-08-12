@@ -53,6 +53,7 @@ import { useWindowDimensions } from "../src/common/context/WindowDimensionsProvi
 import ForStudents from "./view/Student/ForStudents";
 import UsefulResources from "./view/Student/UsefulResources";
 import Footer from "./view/Footer/Footer";
+import FAQs from "./view/Student/FAQs";
 
 /**
  * This is routers for the website.
@@ -121,6 +122,7 @@ const Routers = () => {
             <Route exact path="/our-volunteers" component={OurVolunteers} />
             <Route exact path="/for-students" component={ForStudents} />
             <Route exact path="/useful-resources" component={UsefulResources} />
+            <Route exact path="/FAQs" component={FAQs} />
           </Container>
         </Fragment>
       </Switch>
