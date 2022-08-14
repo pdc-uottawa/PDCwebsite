@@ -54,6 +54,7 @@ import ForStudents from "./view/Student/ForStudents";
 import UsefulResources from "./view/Student/UsefulResources";
 import Footer from "./view/Footer/Footer";
 import FAQs from "./view/Student/FAQs";
+import IndustryInternship from "./view/Student/IndustryInternship";
 
 /**
  * This is routers for the website.
@@ -123,6 +124,7 @@ const Routers = () => {
             <Route exact path="/for-students" component={ForStudents} />
             <Route exact path="/useful-resources" component={UsefulResources} />
             <Route exact path="/FAQs" component={FAQs} />
+            <Route exact path="/industry-internship-info" component={IndustryInternship} />
           </Container>
         </Fragment>
       </Switch>
