@@ -10,12 +10,13 @@ import {
     AccordionItemState
 } from 'react-accessible-accordion'
 import { FcMinus, FcPhone } from "react-icons/fc";
+import { BsFillChatDotsFill } from "react-icons/bs"
 import { MdOutlineAdd } from "react-icons/md"
 import './student.css'
 import { Spinner } from "react-activity";
 import { FaHeadphones } from "react-icons/fa";
 import ContactUs from "../Home/ContactUs";
-import { Button,Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 function FAQs(props) {
     const path = config();
@@ -43,7 +44,7 @@ function FAQs(props) {
     const [showContactBtn, setShowContactBtn] = useState(false);
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 190) {
+            if (window.scrollY > 200) {
                 setShowContactBtn(true);
             } else {
                 setShowContactBtn(false);
@@ -56,17 +57,22 @@ function FAQs(props) {
     // const handleShow = () => setShow(true);
     return (
         <>
-         <div className="top-to-btm">
-            {showContactBtn && (
-                <FaHeadphones
-                    className="ic-position ic-style"
-                    onClick={()=>
-                        window.open("/").scrollTo({bottom: 0, left: 0, behavior: 'smooth'})
-                    } 
-                />
-            )}
-        </div>
-      {/* <Modal show={show} onHide={handleClose}>
+            <div class="container-fluid faq-body">
+                <h1 class="faq-bd-hd center">
+                    Frequently Asked Questions
+                </h1>
+            </div>
+            <div className="top-to-btm">
+                {showContactBtn && (
+                    <BsFillChatDotsFill
+                        className="ic-position ic-style"
+                        onClick={() =>
+                            window.open("/").scrollTo({ bottom: 0, left: 0, behavior: 'smooth' })
+                        }
+                    />
+                )}
+            </div>
+            {/* <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Still Need Help??</Modal.Title>
         </Modal.Header>
@@ -95,17 +101,11 @@ function FAQs(props) {
                     </h4>
                 </div>
             </div>
-            <div class="container-fluid faq-body">
-                <h1 class="faq-bd-hd center">
-                    Frequently Asked Questions
-                </h1>
-            </div>
             {loading ? (
                 <div className="loadingState">
                     <Spinner color="#727981" size={35} speed={1} animating={true} />
                 </div>
             ) : <>
-                <hr />
                 {searchTerm ?
                     FAQList.filter((faqdata) => {
                         const fdata = faqdata.ques.toLowerCase().includes(searchTerm) ||
@@ -115,7 +115,6 @@ function FAQs(props) {
                         const faqqans = faqqs.ans.split("\n");
                         return (
                             <>
-                            
                                 <Accordion allowZeroExpanded state>
                                     <AccordionItem className="faq-item">
                                         <AccordionItemHeading className="faq-ques">
@@ -181,7 +180,7 @@ function FAQs(props) {
                 }
             </>
             }
-            
+
         </>
     )
 }

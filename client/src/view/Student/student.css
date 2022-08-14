@@ -152,14 +152,14 @@
 }
 
 .st-tb-hd {
-    background-color:  #def4f6;
+    background-color: #def4f6;
 }
 
 .faq-hdr {
     background-color: rgb(203, 212, 232);
     padding-top: 3%;
     padding-bottom: 3%;
-
+    margin-bottom: 2%;
 }
 
 .ft-style {
@@ -186,8 +186,8 @@
 
 .faq-bd-hd {
     font-weight: lighter;
-    color:  rgb(116, 148, 215);
-    font-size: 170%;
+    color: #0a045e;
+    font-size: 200%;
 }
 
 .faq-item {
@@ -196,14 +196,15 @@
 
 .faq-ques {
     width: 100%;
-    border-radius: 10px;   
+    border-radius: 10px;
 }
-.faq-que{
+
+.faq-que {
     font-size: 5px !important;
 }
 
 .faq-padding {
-    padding:0.5%;
+    padding: 0.5%;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -214,27 +215,31 @@
 .faq-ans {
     font-size: 100%;
     margin: 2%;
-    color:#524ca0;
+    color: #524ca0;
 }
 
-.ic-position{
+.ic-position {
     position: fixed;
     bottom: 40px;
     right: 25px;
     z-index: 20;
-  }
-  .ic-style{
+}
+
+.ic-style {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 100px;
+    margin-right: -2%;
     cursor: pointer;
     animation: movebtn 3s ease-in-out infinite;
     transition: all .5s ease-in-out;
     color: #2185d0;
-  }
-  .ic-style:hover{
+    margin-bottom: 5%;
+}
+
+.ic-style:hover {
     animation: none;
-  }
+}
 
 @media only screen and (max-width: 575px) {
     .ur-name {
@@ -243,7 +248,7 @@
     }
 
     .faq-bd-hd {
-        font-size: 120%;
+        font-size: 150%;
         padding: 6%;
     }
 
@@ -261,8 +266,14 @@
         border-color: #0a045e;
         font-size: large;
     }
+
     .faq-ans {
         font-size: 95%;
+    }
+
+    .ic-style {
+        margin-right: -10%;
+        margin-bottom: 40%;
     }
 }
 

@@ -143,7 +143,7 @@ function ForStudents(props) {
                     <FcMultipleDevices size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a href="https://catalogue.uottawa.ca/en/courses/gng/" target="_blank">
+                    <h3><a class="item" href="#/industry-internship-info">
                       Industry Internship Project
                     </a>
                     </h3>
