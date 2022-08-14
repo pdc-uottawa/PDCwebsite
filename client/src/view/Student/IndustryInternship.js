@@ -21,7 +21,7 @@ const IndustryInternship = (props) => {
                                     <FcTemplate size={80} />
                                 </div>
                                 <div>
-                                    <a href="https://docs.google.com/presentation/d/17pF7FhXr3wVS6fza96TLYeRtBGIthwOG/edit?usp=sharing&ouid=118159311551123468177&rtpof=true&sd=true" target="_blank">
+                                    <a href="https://docs.google.com/presentation/d/17pF7FhXr3wVS6fza96TLYeRtBGIthwOG/" target="_blank">
                                         Project Proposal template
                                     </a>
                                 </div>
