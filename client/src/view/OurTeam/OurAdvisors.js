@@ -13,7 +13,7 @@ export const OurAdvisors = [
     },
     {
         name: "Dr. Hanan Anis",
-        imagePath: "/assets/hanan.png",
+        imagePath: "https://i.postimg.cc/J0wz3SfM/hanan.jpg",
         position: "Director of the School of Engineering Design and Teaching Innovation",
         linkedinId: "https://www.linkedin.com/in/hanan-anis-5b946b11"
     }
