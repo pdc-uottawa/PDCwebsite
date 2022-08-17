@@ -9,15 +9,12 @@ import {
     AccordionItemPanel,
     AccordionItemState
 } from 'react-accessible-accordion'
-import { FcMinus, FcPhone } from "react-icons/fc";
+import { FcMinus } from "react-icons/fc";
 import { BsFillChatDotsFill } from "react-icons/bs"
 import { MdOutlineAdd } from "react-icons/md"
 import './student.css'
 import { Spinner } from "react-activity";
-import { FaHeadphones } from "react-icons/fa";
-import ContactUs from "../Home/ContactUs";
-import { Button, Modal } from 'react-bootstrap';
-
+import ReactHtmlParser from 'react-html-parser'
 function FAQs(props) {
     const path = config();
     const [FAQList, setFAQList] = useState([]);
@@ -52,9 +49,6 @@ function FAQs(props) {
         });
     }, []);
     const [show, setShow] = useState();
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
     return (
         <>
             <div class="container-fluid faq-body">
@@ -72,19 +66,6 @@ function FAQs(props) {
                     />
                 )}
             </div>
-            {/* <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Still Need Help??</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Go fill out our Contact-us form on Homepage
-        <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            HomePage
-          </Button>
-        </Modal.Body>
-      </Modal> */}
             <div class="container-fluid faq-hdr">
                 <h1 class="center ft-style" >
                     How can we help you?
@@ -112,7 +93,6 @@ function FAQs(props) {
                             faqdata.ans.toLowerCase().includes(searchTerm)
                         return (fdata)
                     }).map((faqqs) => {
-                        const faqqans = faqqs.ans.split("\n");
                         return (
                             <>
                                 <Accordion allowZeroExpanded state>
@@ -128,13 +108,9 @@ function FAQs(props) {
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
-                                            {faqqans.map((fqans) => {
-                                                return (
-                                                    <div className=" row faq-ans justify">
-                                                        {fqans}
-                                                    </div>
-                                                )
-                                            })}
+                                            <div className=" row faq-ans justify">
+                                                {ReactHtmlParser(faqqs.ans)}
+                                            </div>
                                         </AccordionItemPanel>
                                     </AccordionItem>
                                 </Accordion>
@@ -145,7 +121,6 @@ function FAQs(props) {
                     : <>
                         <div>
                             {FAQList.map((faqs) => {
-                                const faqans = faqs.ans.split("\n");
                                 return (
                                     <>
                                         <Accordion allowZeroExpanded state>
@@ -161,13 +136,9 @@ function FAQs(props) {
                                                     </AccordionItemButton>
                                                 </AccordionItemHeading>
                                                 <AccordionItemPanel>
-                                                    {faqans.map((fans) => {
-                                                        return (
-                                                            <div className=" row faq-ans justify">
-                                                                {fans}
-                                                            </div>
-                                                        )
-                                                    })}
+                                                    <div className=" row faq-ans justify">
+                                                        {ReactHtmlParser(faqs.ans)}
+                                                    </div>
                                                 </AccordionItemPanel>
                                             </AccordionItem>
                                         </Accordion>
@@ -177,10 +148,11 @@ function FAQs(props) {
                             })}
                         </div>
                     </>
+
                 }
+
             </>
             }
-
         </>
     )
 }

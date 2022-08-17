@@ -21,8 +21,8 @@ const IndustryInternship = (props) => {
                                     <FcTemplate size={80} />
                                 </div>
                                 <div>
-                                    <a href="https://docs.google.com/presentation/d/17pF7FhXr3wVS6fza96TLYeRtBGIthwOG/" target="_blank">
-                                        Project Proposal template
+                                    <a href="https://docs.google.com/presentation/d/17pF7FhXr3wVS6fza96TLYeRtBGIthwOG/export/pptx" target="_blank">
+                                        Download Project Proposal template
                                     </a>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@ const IndustryInternship = (props) => {
                                 </div>
                                 <div>
                                     <a href="https://catalogue.uottawa.ca/en/courses/gng/" target="_blank">
-                                        Other Course Information
+                                        Industry Iternship Project (ELG-5902) Course Details
                                     </a>
                                 </div>
                             </div>
