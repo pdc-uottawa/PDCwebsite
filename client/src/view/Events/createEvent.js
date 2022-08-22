@@ -19,19 +19,17 @@ import { UserContext } from "../../common/context/UserProvider";
 
 // import UploadFile from "./UploadFile";
 
-
-
 const CreateEvent = (props) => {
   const [time, setTime] = useState({
     startDate: "",
     endDate: "",
     startTime: "",
   });
-  
+
   const [dates, setDates] = useState({
     startDate: "",
     endDate: "",
-  })
+  });
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   const [isOnline, setOnline] = useState(false);
@@ -124,17 +122,14 @@ const CreateEvent = (props) => {
   };
 
   const handleEndDateChange = (e, data) => {
-    if (
-      dates.endDate < dates.startDate 
-      
-    ) {
+    if (dates.endDate < dates.startDate) {
       alert("End Date cannot be before the start Date!!");
       setDates({
         ...dates,
         endDate: "",
       });
+    }
   };
-};
 
   const { history } = useReactRouter();
   // post project info to server
@@ -144,8 +139,6 @@ const CreateEvent = (props) => {
       event: event,
     };
 
-    console.log(testdata);
-    console.log(event);
     axios
       .post(
         "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW",
@@ -333,4 +326,3 @@ const CreateEvent = (props) => {
 };
 
 export default CreateEvent;
-

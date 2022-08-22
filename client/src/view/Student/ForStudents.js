@@ -30,7 +30,7 @@ function ForStudents(props) {
       })
       .then((data) => {
         setResumeLink(data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((e) => {
         console.log(e);
@@ -44,7 +44,7 @@ function ForStudents(props) {
       })
       .then((data) => {
         setJoinTeamLink(data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((e) => {
         console.log(e);
@@ -52,7 +52,11 @@ function ForStudents(props) {
   }, [setJoinTeamLink, path]);
 
   const jointeam = joinTeamLink.map((jlink) => jlink.link);
-  const reslink = resumeLink.filter((links) => links.name === "submit_resume_linkedin" && links.active === true)
+  const reslink = resumeLink
+    .filter(
+      (links) =>
+        links.name === "submit_resume_linkedin" && links.active === true
+    )
     .map((remlink) => remlink.link);
 
   return (
@@ -64,13 +68,13 @@ function ForStudents(props) {
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
-      ) :
+      ) : (
         <>
-          <div className="container-fluid" >
+          <div className="container-fluid">
             <h1 class="jumbotron student-header hdr">For students</h1>
           </div>
           <div className="container-fluid">
-            <div className="row ct-rw" >
+            <div className="row ct-rw">
               <div className="col-sm-3">
                 <Card>
                   <Card.Header>
@@ -78,10 +82,12 @@ function ForStudents(props) {
                   </Card.Header>
                   <Card.Body>
                     <h3>
-                      <a class="item"
+                      <a
+                        class="item"
                         id="joinTeam-forStudents"
                         target="_blank"
-                        href={jointeam}>
+                        href={jointeam}
+                      >
                         Join the club as a Volunteer
                       </a>
                     </h3>
@@ -94,9 +100,15 @@ function ForStudents(props) {
                     <FcDataRecovery size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a class="item" href="#/create-association">
-                      Create or Activate Association
-                    </a></h3>
+                    <h3>
+                      <a
+                        id="createActivateAssociation-forStudents"
+                        class="item"
+                        href="#/create-association"
+                      >
+                        Create or Activate Association
+                      </a>
+                    </h3>
                   </Card.Body>
                 </Card>
               </div>
@@ -106,9 +118,15 @@ function ForStudents(props) {
                     <FcList size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a class="item" href="#/student-association">
-                      uOttawa Student Associations
-                    </a></h3>
+                    <h3>
+                      <a
+                        id="uOttawaStudentAssociations-forStudents"
+                        class="item"
+                        href="#/student-association"
+                      >
+                        uOttawa Student Associations
+                      </a>
+                    </h3>
                   </Card.Body>
                 </Card>
               </div>
@@ -118,9 +136,15 @@ function ForStudents(props) {
                     <FcDiploma1 size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a class="item" href="#/fswep/">
-                      Programs Recognized by FSWEP
-                    </a></h3>
+                    <h3>
+                      <a
+                        id="FSWEPPrograms-forStudents"
+                        class="item"
+                        href="#/fswep/"
+                      >
+                        Programs Recognized by FSWEP
+                      </a>
+                    </h3>
                   </Card.Body>
                 </Card>
               </div>
@@ -130,9 +154,14 @@ function ForStudents(props) {
                     <FcSearch size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a class="item" href="#/useful-resources">
-                      Useful Resources for New Students
-                    </a>
+                    <h3>
+                      <a
+                        id="usefulResources-forStudents"
+                        class="item"
+                        href="#/useful-resources"
+                      >
+                        Useful Resources for New Students
+                      </a>
                     </h3>
                   </Card.Body>
                 </Card>
@@ -156,9 +185,15 @@ function ForStudents(props) {
                     <FcSurvey size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3><a class="item" href="#/resume-guidelines">
-                      Resume Writing Guidelines
-                    </a></h3>
+                    <h3>
+                      <a
+                        id="resumeWritingGuidelines-forStudents"
+                        class="item"
+                        href="#/resume-guidelines"
+                      >
+                        Resume Writing Guidelines
+                      </a>
+                    </h3>
                   </Card.Body>
                 </Card>
               </div>
@@ -169,7 +204,11 @@ function ForStudents(props) {
                   </Card.Header>
                   <Card.Body>
                     <h3>
-                      <a class="item" href={reslink}>
+                      <a
+                        id="resumeReviewSession-forStudents"
+                        class="item"
+                        href={reslink}
+                      >
                         Ask for Resume review session with us
                       </a>
                     </h3>
@@ -193,8 +232,8 @@ function ForStudents(props) {
             </div>
           </div>
         </>
-      }
+      )}
     </>
   );
-};
+}
 export default ForStudents;

@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Segment,
-  Form,
-  Grid,
-  Input,
-  Button,
-  Icon,
-  Dropdown,
-  Select,
-} from "semantic-ui-react";
+import { Form, Grid, Input } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css";
 import moment from "moment";
 import { Spinner } from "react-activity";
 const img = require("../../assets/logo.png");
-
 
 function ContactUs() {
   const path = config();
@@ -27,7 +17,6 @@ function ContactUs() {
   ];
   const [selectedOption, setSelectedOption] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [other, setOther] = useState(false);
   const [queryEx, setQueryEx] = useState([]);
 
   useEffect(() => {
@@ -45,18 +34,13 @@ function ContactUs() {
 
   function handleOptionChange(e, val) {
     setSelectedOption(val);
-    // if (val === "other") {
-    //   setOther(true);
-    // } else {
-    //   setOther(false);
-    // }
   }
 
   const queryEmailer = (fname, lname, category, email, message) => {
-    var queryExec = queryEx.find(exec => exec.category === category)
+    var queryExec = queryEx.find((exec) => exec.category === category);
     var toEmail = queryExec.email;
     var toName = queryExec.name;
-    
+
     const emailOptions = {
       email_to_address: toEmail,
       email_to_name: toName,
@@ -80,14 +64,12 @@ function ContactUs() {
     const category = selectedOption;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if(!email || regex.test(email) === false)
-    {
+    const regex =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!email || regex.test(email) === false) {
       alert("enter valid email id");
       setLoading(false);
-    }
-    else
-    {
+    } else {
       if (category) {
         Axios.post(path + "home/contact", {
           fname,
@@ -116,10 +98,6 @@ function ContactUs() {
         setLoading(false);
       }
     }
-
-
-
-    
   }
 
   return (
@@ -161,19 +139,10 @@ function ContactUs() {
                 }
                 required={true}
               />
-              {/* {other ? (
-                <Form.Field
-                  id="other"
-                  control={Input}
-                  placeholder="Enter Subject"
-                  required={true}
-                />
-              ) : null} */}
               <Form.Field
                 id="email"
                 control={Input}
                 placeholder="Enter Email"
-
                 required={true}
               />
               <Form.TextArea
@@ -196,6 +165,7 @@ function ContactUs() {
                   className="bt-sq"
                   size="large"
                   color="#ccc"
+                  id="submitQuery-homepage"
                   onClick={handleSubmit}
                 >
                   Send Message
