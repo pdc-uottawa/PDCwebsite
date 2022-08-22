@@ -10,7 +10,7 @@ import {
     AccordionItemState
 } from 'react-accessible-accordion'
 import { FcMinus } from "react-icons/fc";
-import { BsFillChatDotsFill } from "react-icons/bs"
+// import { BsFillChatDotsFill } from "react-icons/bs"
 import { MdOutlineAdd } from "react-icons/md"
 import './student.css'
 import { Spinner } from "react-activity";
@@ -38,17 +38,16 @@ function FAQs(props) {
         setSearchTerm(e.target.value);
     };
 
-    const [showContactBtn, setShowContactBtn] = useState(false);
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                setShowContactBtn(true);
-            } else {
-                setShowContactBtn(false);
-            }
-        });
-    }, []);
-    const [show, setShow] = useState();
+    // const [showContactBtn, setShowContactBtn] = useState(false);
+    // useEffect(() => {
+    //     window.addEventListener("scroll", () => {
+    //         if (window.scrollY > 200) {
+    //             setShowContactBtn(true);
+    //         } else {
+    //             setShowContactBtn(false);
+    //         }
+    //     });
+    // }, []);
     return (
         <>
             <div class="container-fluid faq-body">
@@ -56,7 +55,7 @@ function FAQs(props) {
                     Frequently Asked Questions
                 </h1>
             </div>
-            <div className="top-to-btm">
+            {/* <div className="top-to-btm">
                 {showContactBtn && (
                     <BsFillChatDotsFill
                         className="ic-position ic-style"
@@ -65,7 +64,7 @@ function FAQs(props) {
                         }
                     />
                 )}
-            </div>
+            </div> */}
             <div class="container-fluid faq-hdr">
                 <h1 class="center ft-style" >
                     How can we help you?
@@ -148,9 +147,7 @@ function FAQs(props) {
                             })}
                         </div>
                     </>
-
                 }
-
             </>
             }
         </>
