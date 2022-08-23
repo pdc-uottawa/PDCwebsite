@@ -12,6 +12,7 @@ import {
   FcMultipleDevices,
   FcSearch,
   FcSurvey,
+  FcVoicePresentation
 } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { Spinner } from "react-activity";
@@ -171,14 +172,9 @@ function ForStudents(props) {
                     <FcMultipleDevices size="100" />
                   </Card.Header>
                   <Card.Body>
-                    <h3>
-                      <a
-                        id="industryInternshipProject-forStudents"
-                        href="https://catalogue.uottawa.ca/en/courses/gng/"
-                        target="_blank"
-                      >
-                        Industry Internship Project
-                      </a>
+                    <h3><a class="item" href="#/industry-internship-info">
+                      Industry Internship Project
+                    </a>
                     </h3>
                   </Card.Body>
                 </Card>
@@ -214,6 +210,20 @@ function ForStudents(props) {
                         href={reslink}
                       >
                         Ask for Resume review session with us
+                      </a>
+                    </h3>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col-sm-3">
+                <Card>
+                  <Card.Header>
+                    <FcVoicePresentation size="100" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h3>
+                      <a class="item" href="#/FAQs">
+                        Frequently Asked Questions (FAQs)
                       </a>
                     </h3>
                   </Card.Body>

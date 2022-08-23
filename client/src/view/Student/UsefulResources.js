@@ -1,9 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { FaAddressCard, FaBuilding, FaTelegramPlane, FaUniversity } from "react-icons/fa";
-import { FcBusinessContact, FcCalendar, FcCollaboration, FcContacts, FcCurrencyExchange, FcDepartment, FcEditImage, FcLeave, FcLibrary, FcMindMap, FcOrganization } from "react-icons/fc";
-import { MdPeople } from "react-icons/md";
-import { Button, Grid, Segment, Image } from "semantic-ui-react";
+import { FaTelegramPlane} from "react-icons/fa";
+import { FcBusinessContact, FcCollaboration, FcContacts, FcCurrencyExchange, FcDepartment, FcEditImage, FcLeave, FcLibrary, FcMindMap, FcOrganization } from "react-icons/fc";
+import "./student.css"
 
 const UsefulResources = (props) => {
     return (
