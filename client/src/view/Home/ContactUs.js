@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Form, Grid, Input } from "semantic-ui-react";
+import { Form, Grid, Input, Image } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import "./Home.css";
 import moment from "moment";
 import { Spinner } from "react-activity";
-const img = require("../../assets/logo.png");
+const img = require("../../assets/pdc-logo.png");
 
 function ContactUs() {
   const path = config();
@@ -104,18 +104,17 @@ function ContactUs() {
     <div className="frag1">
       <h1 className="header">CONTACT US</h1>
       <div>
-        <Grid className="grid-col-1" columns={2}>
-          <Grid.Column>
-            <div className="row">
-              <img className="col-md-4 logo" src={img} />
-              <h3 className="cont-hd col-md-6">
-                Professional Development Club, uOttawa
-              </h3>
-              {/* <button onClick={() => queryEmailer('F', 'L', 'Website', 'E', 'M')} /> */}
-            </div>
-          </Grid.Column>
-          <Grid.Column>
-            <Form>
+        <div className="row">
+          <div className="col-md-3 centre-container">
+            <Image className="logo" src={img} />
+          </div>
+          <div className="col-md-3 centre-container">
+            <h3 className="cont-hd">
+              Professional Development Club, uOttawa
+            </h3>
+          </div>
+          <div className="col-md-6 formPad">
+          <Form>
               <Form.Group widths="equal">
                 <Form.Field
                   control={Input}
@@ -172,8 +171,8 @@ function ContactUs() {
                 </Form.Button>
               )}
             </Form>
-          </Grid.Column>
-        </Grid>
+          </div>
+        </div>
       </div>
     </div>
   );

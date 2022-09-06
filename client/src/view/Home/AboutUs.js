@@ -11,15 +11,19 @@ function AboutUs(props) {
     <>
       <div className="frag2">
         <h1 className="header">ABOUT US</h1>
-        <div>
+        <div className="row">
           {aboutUsData.map((abdata) => (
             <Grid className="grid-col-1" columns={2}>
-              <Grid.Column>
-                <img className="ab-img" src={abdata.image} />
-              </Grid.Column>
-              <Grid.Column>
-                <p className="ab-desc">{parse(abdata.description)}</p>
-              </Grid.Column>
+              <div className="col-md-6">
+                <Grid.Column>
+                  <img className="ab-img" src={abdata.image} />
+                </Grid.Column>
+              </div>
+              <div className="col-md-6">
+                <Grid.Column>
+                  <p className="ab-desc">{parse(abdata.description)}</p>
+                </Grid.Column>
+              </div>
             </Grid>
           ))}
         </div>

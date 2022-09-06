@@ -18,7 +18,7 @@ const Footer = () => {
     window.open("https://www.youtube.com/channel/UCW4nbiQF-186o9kjAoj6FvA");
   };
   return (
-    <Fragment style="margin-top: auto;">
+    <>
       <Menu>
         <Segment inverted color="black" vertical className="footer">
           <Container textAlign="center">
@@ -26,48 +26,55 @@ const Footer = () => {
               <Grid.Column>
                 <Header inverted as="h4" content="FOLLOW US" />
                 <p>
-                  <button
-                    id="facebook-footer"
-                    onClick={handlefacebook}
-                    className="ui facebook button"
-                  >
-                    <i className="facebook icon" />
-                    Facebook
-                  </button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <button
-                    onClick={handleinsta}
-                    id="instagram-footer"
-                    className="ui instagram button"
-                  >
-                    <i className="instagram icon" />
-                    Instagram
-                  </button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <button
-                    onClick={handlelinkedin}
-                    id="linkedIn-footer"
-                    className="ui linkedin button"
-                  >
-                    <i className="linkedin icon" />
-                    LinkedIn
-                  </button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <button
-                    onClick={handleyoutube}
-                    id="youTube-footer"
-                    className="ui youtube button"
-                  >
-                    <i className="youtube icon" />
-                    YouTube
-                  </button>
+                  <div className="row">
+                    <div className="col-md-3 marginTopMob5">
+                      <button
+                        id="facebook-footer"
+                        onClick={handlefacebook}
+                        className="ui facebook button"
+                      >
+                        <i className="facebook icon" />
+                        Facebook
+                      </button>
+                    </div>
+                    <div className="col-md-3 marginTopMob5">
+                    <button
+                      onClick={handleinsta}
+                      id="instagram-footer"
+                      className="ui instagram button"
+                    >
+                      <i className="instagram icon" />
+                      Instagram
+                    </button>
+                    </div>
+                    <div className="col-md-3 marginTopMob5">
+                    <button
+                      onClick={handlelinkedin}
+                      id="linkedIn-footer"
+                      className="ui linkedin button"
+                    >
+                      <i className="linkedin icon" />
+                      LinkedIn
+                    </button>
+                    </div>
+                    <div className="col-md-3 marginTopMob5">
+                    <button
+                      onClick={handleyoutube}
+                      id="youTube-footer"
+                      className="ui youtube button"
+                    >
+                      <i className="youtube icon" />
+                      YouTube
+                    </button>
+                    </div>
+                  </div>                  
                 </p>
               </Grid.Column>
             </Grid>
           </Container>
         </Segment>
       </Menu>
-    </Fragment>
+    </>
   );
 };
 

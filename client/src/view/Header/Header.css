@@ -6,9 +6,60 @@
   ) !important;
 } */
 
-Menu{
+/* Menu{
   background-color: rgb(255,255,255);
 }
 .body{
   background-color: rgb(255,255,255);
+} */
+
+.menuIconMob {
+  margin-top: 1.5% !important;
+  margin-left: 1% !important;
+}
+
+.drawerMenuBg {
+  position: fixed;
+  z-index: 999 !important;
+  min-width: 100vw;
+  background-color: rgb(0, 0, 0, 0.95);
+}
+
+.menuBarBg {
+  position: fixed;
+  z-index: 999 !important;
+  min-width: 100vw;
+  background-color: rgb(0, 0, 0, 0.8);
+  min-height: 5vh !important;
+}
+
+.drawerMenu {
+  font-size: 20px;
+  color: white;
+  padding: 5%;
+}
+
+.drawerMenuItem {
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.drawerMenuNestedItem {
+  margin-left: 15%;
+}
+
+.menuItemName {
+  margin-left: 20px;
+}
+
+.homeLangBut {
+  width: 100vw;
+}
+
+.langButton {
+  position: absolute;
+  right: 5%;
+  border: 1px solid white;
+  padding: 3%;
 }
