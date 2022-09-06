@@ -123,9 +123,7 @@ const Routers = () => {
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/industry-internship-info" component={IndustryInternship} />
       </div>
-      <div className="marginTopNeg10">
-        <Footer />
-      </div>
+      <Footer />
     </Fragment>
   );
 };
