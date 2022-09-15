@@ -125,7 +125,7 @@ const OurTeam = (props) => {
               the course level, but also have many wins across their departments
               and beyond!
             </p>
-            <div id="buttons-container">
+            <div className="centerButtons" id="buttons-container">
               <Button
                 id="meetPDCRepresentative-ourTeam"
                 primary
@@ -148,10 +148,10 @@ const OurTeam = (props) => {
               them. Donating your time, energy, and possibly resources can be
               just as rewarding for you as for those you are helping. Get to
               connect with the student community, make it a better place, expand
-              your network, and boost your social skills.
+              your network, and boost your social skills. <br />
               <b>There's no better time than now to join the team!</b>
             </p>
-            <div id="buttons-container">
+            <div className="centerButtons" id="buttons-container">
               <Button
                 primary
                 color="blue"

@@ -13,10 +13,6 @@ body {
   background-color: white !important;
 }
 
-.marginTopNeg10 {
-  margin-top: -10vh !important;
-}
-
 .footer {
   position: fixed;
   left: 0px;

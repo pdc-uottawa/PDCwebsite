@@ -21,7 +21,7 @@ const Footer = () => {
     <>
       <Menu>
         <Segment inverted color="black" vertical className="footer">
-          <Container textAlign="center">
+          <div className="center">
             <Grid divided inverted stackable>
               <Grid.Column>
                 <Header inverted as="h4" content="FOLLOW US" />
@@ -71,7 +71,7 @@ const Footer = () => {
                 </p>
               </Grid.Column>
             </Grid>
-          </Container>
+          </div>
         </Segment>
       </Menu>
     </>

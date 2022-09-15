@@ -137,3 +137,30 @@
 #image{
   border-radius:5px;
 }
+
+@media screen and (max-width: 600px) {
+  .cardsCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cursor {
+    /* cursor: pointer; */
+    border: 1px solid #0070b8 !important;
+    box-shadow: 10px 10px #dcdcdc !important;
+    margin-bottom: 5%;
+    margin-left: 0 !important;
+    border-radius: 3%;
+  }
+
+  .justify{
+    text-align: justify;
+    font-weight: lighter;
+  }
+
+  .centerButtons {
+    display: flex;
+    justify-content: center;
+  }
+}

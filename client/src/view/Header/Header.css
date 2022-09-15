@@ -58,6 +58,13 @@
 
 .langButton {
   position: absolute;
+  right: 27%;
+  border: 1px solid white;
+  padding: 3%;
+}
+
+.loginButton {
+  position: absolute;
   right: 5%;
   border: 1px solid white;
   padding: 3%;
