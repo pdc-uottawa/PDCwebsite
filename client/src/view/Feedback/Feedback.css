@@ -1,0 +1,9 @@
+.feedbackBody {
+    background-color: rgb(0,0,0,0.2);
+    padding: 5%;
+    text-align: center;
+}
+
+.feedbackText {
+    margin-bottom: 5%;
+}

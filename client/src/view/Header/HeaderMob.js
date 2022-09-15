@@ -1,13 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
-import './Header.css'
+import { UserContext } from "../../common/context/UserProvider";
+import { config } from "../../common/config/config";
+import Axios from "axios";
+import "./Header.css";
 
 function HeaderMob() {
   const history = useHistory();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [alternateLang, setAlternateLang] = useState("FR");
-  const [activeItem, setActiveItem] = useState("");
+  const { userInfo, setUserInfo } = useContext(UserContext);
+
+  let path = config();
+
+  useEffect(() => {
+    Axios.get(path + "auth/login/success", {
+      withCredentials: true,
+    })
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        setUserInfo({
+          ...userInfo,
+          user: data.user,
+          authenticated: data.authenticated,
+        });
+
+        if (data.user.checkUser) {
+          history.push("/");
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   function handleOpen() {
     setDrawerOpen(!drawerOpen);
@@ -17,11 +45,20 @@ function HeaderMob() {
     alternateLang === "EN" ? setAlternateLang("FR") : setAlternateLang("EN");
   }
 
+  function handleLogin() {
+    history.push("/signin");
+    handleOpen();
+  }
+
+  const handleLogout = () => {
+    window.open(path + "auth/logout", "_self");
+  };
+
   const handleHome = () => {
     history.push("/");
     handleOpen();
   };
-  
+
   const handleOurTeam = () => {
     history.push("/OurTeam");
     handleOpen();
@@ -75,19 +112,50 @@ function HeaderMob() {
     <>
       {!drawerOpen ? (
         <div className="menuBarBg">
-          <Icon onClick={handleOpen} className="menuIconMob" name="bars" color="white" size="big" inverted />
+          <Icon
+            onClick={handleOpen}
+            className="menuIconMob"
+            name="bars"
+            color="white"
+            size="big"
+            inverted
+          />
         </div>
       ) : (
         <div className="drawerMenuBg">
           <div>
-            <Icon onClick={handleOpen} className="menuIconMob"  name="close" color="grey" size="big" inverted />
+            <Icon
+              onClick={handleOpen}
+              className="menuIconMob"
+              name="close"
+              color="grey"
+              size="big"
+              inverted
+            />
           </div>
           <div className="drawerMenu">
             <div className="drawerMenuItem homeLangBut">
-              <Icon onClick={handleHome}  name="home" color="grey" size="large" inverted />
-              <div onClick={handleLang} className="langButton">
+              <Icon
+                onClick={handleHome}
+                name="home"
+                color="grey"
+                size="large"
+                inverted
+              />
+              {/* {
+                userInfo.authenticated ? (
+                  <div onClick={handleLogout} className="loginButton">
+                    Logout
+                  </div>
+                ) : (
+                  <div onClick={handleLogin} className="loginButton">
+                    Login
+                  </div>
+                )
+              } */}
+              {/* <div onClick={handleLang} className="langButton">
                 {alternateLang}
-              </div>
+              </div> */}
             </div>
             <div className="drawerMenuItem">
               <Icon name="users" color="grey" inverted />
@@ -95,7 +163,11 @@ function HeaderMob() {
             </div>
             <div className="row drawerMenuItem drawerMenuNestedItem">
               <Icon name="chevron right" color="grey" inverted />
-              <p onClick={handleOurTeam} name="OurTeam" className="menuItemName">
+              <p
+                onClick={handleOurTeam}
+                name="OurTeam"
+                className="menuItemName"
+              >
                 Our Team
               </p>
             </div>
@@ -124,12 +196,7 @@ function HeaderMob() {
               </p>
             </div>
             <div className="drawerMenuItem">
-              <Icon
-                name="calendar alternate outline"
-                color="grey"
-              
-                inverted
-              />
+              <Icon name="calendar alternate outline" color="grey" inverted />
               <p onClick={handleEvents} className="menuItemName">
                 Events
               </p>
