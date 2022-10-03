@@ -11,43 +11,53 @@ function AboutUs(props) {
     <>
       <div className="frag2">
         <h1 className="header">ABOUT US</h1>
-        <div>
+        <div className="row">
           {aboutUsData.map((abdata) => (
             <Grid className="grid-col-1" columns={2}>
-              <Grid.Column>
-                <img className="ab-img" src={abdata.image} />
-              </Grid.Column>
-              <Grid.Column>
-                <p className="ab-desc">{parse(abdata.description)}</p>
-              </Grid.Column>
+              <div className="col-md-6">
+                <Grid.Column>
+                  <img className="ab-img" src={abdata.image} />
+                </Grid.Column>
+              </div>
+              <div className="col-md-6">
+                <Grid.Column>
+                  <p className="ab-desc">{parse(abdata.description)}</p>
+                </Grid.Column>
+              </div>
             </Grid>
           ))}
         </div>
         <div className="home-buttons">
-          <Link to="/OurTeam">
-            <Button
-              id="meetOurTeam-homepage"
-              size="large"
-              color="#ccc"
-              className="but-m-o-t"
-            >
-              Meet Our Team
-            </Button>
-          </Link>
-          <Button
-            size="large"
-            color="#ccc"
-            className="but-b-o-v"
-            id="becomeAVolunteer-homepage"
-            onClick={() =>
-              window.open(
-                "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
-                "_blank"
-              )
-            }
-          >
-            Become A Volunteer
-          </Button>
+          <div className="row center">
+            <div className="col-md-6">
+              <Link to="/OurTeam">
+                <Button
+                  id="meetOurTeam-homepage"
+                  size="large"
+                  color="#ccc"
+                  className="but-m-o-t"
+                >
+                  Meet Our Team
+                </Button>
+              </Link>
+            </div>
+            <div className="col-md-6">
+              <Button
+                size="large"
+                color="#ccc"
+                className="but-b-o-v"
+                id="becomeAVolunteer-homepage"
+                onClick={() =>
+                  window.open(
+                    "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                    "_blank"
+                  )
+                }
+              >
+                Become A Volunteer
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </>

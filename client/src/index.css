@@ -1,8 +1,16 @@
 body {
-  background-color: #f9fafb !important;
+  background-color: white !important;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+.marginTop10 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh !important;
+  background-color: white !important;
 }
 
 .footer {
@@ -46,7 +54,7 @@ body {
     rgb(33, 133, 208) 69%,
     rgb(33, 133, 208) 89%
   ) !important; */
-  background-color: #767676 !important;
+  background-color: rgb(0, 0, 0, 0.8) !important;
   border-bottom: 2px solid white !important;
 }
 
@@ -66,7 +74,6 @@ body {
 }
 
 .footer {
-  margin-top: auto;
   padding: "5em 0em";
 }
 
@@ -96,12 +103,12 @@ Grid {
   margin-right: 1em;
 }
 
-.ui.main.container,
+/* .ui.main.container,
 .main.segment {
-  margin-top: 7em;
+  margin-top: 10%;
   margin-bottom: 7em;
   min-height: 100vh;
-}
+} */
 
 .ui.center.aligned.segment.attendance-preview {
   background-color: rgb(255, 255, 255);

@@ -18,15 +18,15 @@ import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
 import defIcon from "../../assets/defIcon.png";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
-
+import './Header.css'
 const img = require("../../assets/logo.png");
 
 const Header = (props) => {
   // const { width } = useWindowDimensions();
   // const [width, setWidth] = useState(window.innerWidth)
 
-  const { width } = useWindowDimensions();
-  const breakpoint = 730;
+  // const { width } = useWindowDimensions();
+  // const breakpoint = 730;
 
   const { history } = useReactRouter();
   const [activeItem, setActiveItem] = useState("");
@@ -112,27 +112,27 @@ const Header = (props) => {
     setActiveItem(name);
     handleSideBarClick();
   };
-  console.log(width);
+  // console.log(width);
 
-  const handlemobileDesktopView = (width) => {
-    //console.log("device::", device);
+  // const handlemobileDesktopView = (width) => {
+  //   //console.log("device::", device);
 
-    if (width < breakpoint) {
-      setMenuBarVisibility(true);
-      setSideBarVisibility(false);
-    } else {
-      setMenuBarVisibility(false);
-      setSideBarVisibility(true);
-    }
+  //   if (width < breakpoint) {
+  //     setMenuBarVisibility(true);
+  //     setSideBarVisibility(false);
+  //   } else {
+  //     setMenuBarVisibility(false);
+  //     setSideBarVisibility(true);
+  //   }
 
-    // if (device === "mobile" || device === "tablet") {
-    //   setMenuBarVisibility(true);
-    //   setSideBarVisibility(false);
-    // } else {
-    //   setMenuBarVisibility(false);
-    //   setSideBarVisibility(true);
-    // }
-  };
+  //   // if (device === "mobile" || device === "tablet") {
+  //   //   setMenuBarVisibility(true);
+  //   //   setSideBarVisibility(false);
+  //   // } else {
+  //   //   setMenuBarVisibility(false);
+  //   //   setSideBarVisibility(true);
+  //   // }
+  // };
 
   const handleSideBarClick = () => {
     //console.log("sideBarContentVisible::", sideBarContentVisible);
@@ -144,7 +144,7 @@ const Header = (props) => {
 
     // setWidth(window.innerWidth)
 
-    handlemobileDesktopView(width);
+    // handlemobileDesktopView(width);
     // handlemobileDesktopView(device);
     // window.addEventListener('resize', handleResize)
 
@@ -170,7 +170,7 @@ const Header = (props) => {
       .catch((e) => {
         console.log(e);
       });
-  }, [width]);
+  }, []);
 
   return (
     <Fragment>
@@ -344,14 +344,20 @@ const Header = (props) => {
         </Container>
 
         {/* Sidebar */}
-        <Container hidden={sidebarHidden}>
-          <Button
+        {/* <Container hidden={sidebarHidden}> */}
+          {/* <Button
             id="openSidebar-header-MOB"
             onClick={handleSideBarClick}
-            color="grey"
+            color = "transparent"
           >
             <Icon name="bars" />
-          </Button>
+          </Button> */}
+          {/* <div
+            className="menuIconMob" 
+            onClick={handleSideBarClick}
+          >
+            <Icon size="big" color="white" name="bars" inverted/>
+          </div>
           <Sidebar
             visible={sideBarContentVisible}
             as={Menu}
@@ -361,7 +367,7 @@ const Header = (props) => {
             vertical
             width="thin"
             inverted
-            color="grey"
+            color="#727981"
           >
             <Button
               id="closeSidebar-header-MOB"
@@ -380,7 +386,7 @@ const Header = (props) => {
                 header
               >
                 Professional Development Club
-              </Menu.Item>
+              </Menu.Item> */}
               {/* <Menu.Item
                 name="OurTeam"
                 active={activeItem === "OurTeam"}
@@ -388,7 +394,7 @@ const Header = (props) => {
               >
                 Our Team
               </Menu.Item> */}
-              <Dropdown item text="The Team">
+              {/* <Dropdown item text="The Team">
                 <Dropdown.Menu>
                   <Dropdown.Item
                     id="ourTeam-header-MOB"
@@ -413,7 +419,7 @@ const Header = (props) => {
                     Our Volunteers
                   </Dropdown.Item>
                 </Dropdown.Menu>
-              </Dropdown>
+              </Dropdown> */}
               {/* {!userInfo.authenticated ||
               (userInfo.user &&
                 (userInfo.user.company || userInfo.user.admin)) ? (
@@ -428,7 +434,7 @@ const Header = (props) => {
                 ""
               )} */}
 
-              {!userInfo.authenticated ||
+              {/* {!userInfo.authenticated ||
               (userInfo.user && !userInfo.user.company) ? (
                 <Menu.Item
                   name="Student"
@@ -440,7 +446,7 @@ const Header = (props) => {
                 </Menu.Item>
               ) : (
                 ""
-              )}
+              )} */}
               {/* <Menu.Item
                 name="Alumni"
                 active={activeItem === "Alumni"}
@@ -455,7 +461,7 @@ const Header = (props) => {
               >
                 Updates on COVID-19
               </Menu.Item> */}
-              <Menu.Item
+              {/* <Menu.Item
                 name="CDC"
                 active={activeItem === "CDC"}
                 onClick={handleCDC}
@@ -519,7 +525,7 @@ const Header = (props) => {
               )}
             </Container>
           </Sidebar>
-        </Container>
+        </Container> */}
       </Menu>
     </Fragment>
   );
