@@ -27,21 +27,19 @@ const http = require("https");
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-// const sslRedirect  = require("heroku-ssl-redirect");
+const { notFound } = require("./shared/routes/utils")
 require('dotenv').config()
 
 
 
 
 const app = express();
-// app.use(sslRedirect());
 
 const PORT = process.env.PORT || 8080; //Step 1
 
 if (process.env.NODE_ENV === "production") {
   console.log("dir name", __dirname);
   app.use("/", express.static(path.join(__dirname, "/client/build")));
-  // app.use("/",sslRedirect(), express.static(path.join(__dirname, "/client/build")));
 }
 
 app.all("*", function (req, res, next) {
@@ -91,7 +89,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // log output
-app.use(morgan("tiny"));
+app.use(morgan("combined"));
 
 // auth router
 app.use("/home", homeRoutes);
@@ -112,5 +110,8 @@ app.use("/ourVolunteers", ourVolunteerRoutes);
 app.use("/studentAssociations", studentAssociationRoutes);
 app.use("/fswepPrograms",fswepProgramRoutes);
 app.use("/FAQs", FAQRoutes)
+app.use(function(req, res, next) {
+    return res.status(404).send(notFound);
+});
 
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));
