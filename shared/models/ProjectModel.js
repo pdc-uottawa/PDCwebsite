@@ -15,6 +15,7 @@ const projectSchema = new Schema({
   contactEmail: String,
   linkedinProfile: String,
   isDeleted: Boolean,  //used for activating deactivating project
+  lang: {type: String, required: true}
 });
 
 const Project = mongoose.model("projects", projectSchema);

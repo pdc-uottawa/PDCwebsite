@@ -5,7 +5,8 @@ const ourTeamSchema = new mongoose.Schema({
     name: {type: String, required: true},
     position: {type: String, required: true},
     linkedIn: {type: String, required: true},
-    email: {type: String, required: true}
+    email: {type: String, required: true},
+    lang: {type: String, required: true}
 });
 
 module.exports = mongoose.model('our-team-infos', ourTeamSchema);

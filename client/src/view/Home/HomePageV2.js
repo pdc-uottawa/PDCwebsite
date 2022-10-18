@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { config } from "../../common/config/config";
 import AboutUs from "./AboutUs";
 import ImageCarousel from "./Carousel";
@@ -20,13 +21,15 @@ function HomePageV2() {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
   const [cookies, setCookie] = useCookies(["user"]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [count, setCount] = useState(true);
   const [cookieConsentAccepted, setCookieConsentAccepted] = useState(false);
 
+  let { language } = useParams();
+
   useEffect(() => {
     Axios.all([
-      Axios.get(path + "home/about", {})
+      Axios.get(path + `/${language}/home/about`, {})
         .then((res) => {
           return res.data;
         })
@@ -59,12 +62,15 @@ function HomePageV2() {
             (event) => event.start.local.slice(0, 10) > currentTime
           );
           setCount(futureEvents.length);
+          if(futureEvents.length > 0) {
+            setOpen(true)
+          }
         }),
     ]);
   }, []);
 
   const onClickButton = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   return (

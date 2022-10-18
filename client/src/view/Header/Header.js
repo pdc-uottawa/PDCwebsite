@@ -50,6 +50,10 @@ const Header = (props) => {
     window.open(path + "auth/logout", "_self");
   };
 
+  const handleLangToggle = () => {
+    props.passChildData('HELLO');
+  }
+
   const handleHome = (e, { name }) => {
     history.push("/");
     setActiveItem(name);
@@ -330,17 +334,22 @@ const Header = (props) => {
               content="Join the Team"
             />
           </Menu.Item>
-          {userInfo.authenticated ? (
-            <LogedInMenu
-              logOut={handleLogout}
-              username={userInfo.user.name}
-              userPicture={
-                userInfo.user.picture ? userInfo.user.picture : defIcon
-              }
-            />
-          ) : (
-            <LogedOutMenu logIn={handleLogin} />
-          )}
+          {/* <Menu.Item>
+            <Button onClick={handleLangToggle} content="FR" />
+          </Menu.Item> */}
+          <Menu.Item>
+            {userInfo.authenticated ? (
+              <LogedInMenu
+                logOut={handleLogout}
+                username={userInfo.user.name}
+                userPicture={
+                  userInfo.user.picture ? userInfo.user.picture : defIcon
+                }
+              />
+            ) : (
+              <Button onClick={handleLogin} basic inverted content="Login" />
+            )}
+          </Menu.Item>
         </Container>
 
         {/* Sidebar */}

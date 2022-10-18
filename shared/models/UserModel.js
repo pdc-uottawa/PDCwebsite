@@ -14,8 +14,8 @@ const userSchema = new Schema({
   program:String,
   skills:String,
   studentNumber:String,
-  checkUser:Boolean
-
+  checkUser:Boolean,
+  lang: {type: String, required: true}
 });
 
 const User = mongoose.model("pdc-users", userSchema);

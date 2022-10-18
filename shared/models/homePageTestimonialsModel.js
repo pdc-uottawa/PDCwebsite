@@ -5,6 +5,7 @@ const homePageTestimonialSchema = new mongoose.Schema({
     designation: {type: String, required: true},
     name: {type: String, required: true},
     description: {type: String, required: true},
+    lang: {type: String, required: true}
 });
 
 module.exports = mongoose.model('homepage-testimonials', homePageTestimonialSchema);

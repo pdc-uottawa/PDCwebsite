@@ -8,7 +8,8 @@ const eventSchema = new Schema({
   currency: String,
   online_event: Boolean,
   description: String,
-  ticketInfo: Object
+  ticketInfo: Object,
+  lang: {type: String, required: true}
 })
 
 const Event = mongoose.model("events", eventSchema);
