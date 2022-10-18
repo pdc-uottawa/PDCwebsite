@@ -321,7 +321,7 @@ const Header = (props) => {
               id="joinTeam-header"
               onClick={() =>
                 window.open(
-                  "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                  "https://forms.office.com/r/5r9RCEbBrx",
                   "_blank"
                 )
               }
@@ -502,7 +502,7 @@ const Header = (props) => {
                   id="joinTeam-header-MOB"
                   onClick={() =>
                     window.open(
-                      "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                      "https://forms.office.com/r/5r9RCEbBrx",
                       "_blank"
                     )
                   }
