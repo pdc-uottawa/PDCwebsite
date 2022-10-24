@@ -11,6 +11,7 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import UploadLogo from "./UploadLogo";
+import DOMpurify from "dompurify";
 import TextareaAutosize from "react-textarea-autosize";
 import { Helmet } from "react-helmet";
 import "./CreateProject.css";
@@ -191,6 +192,16 @@ const CreateProject = (props) => {
     if (info.category.length < 3) {
       alert("Please Add Atleast 3 Categories.");
     } else {
+      
+      //XSS sanitizer
+      info.title=DOMpurify.sanitize(info.title);
+      info.category=DOMpurify.sanitize(info.category);
+      info.contactEmail=DOMpurify.sanitize(info.contactEmail);
+      info.hostedBy=DOMpurify.sanitize(info.hostedBy);
+      info.description=DOMpurify.sanitize(info.description);
+      info.linkedinProfile=DOMpurify.sanitize(info.linkedinProfile);
+      info.contactPhone=DOMpurify.sanitize(info.contactPhone);
+
       if (id) {
         Axios.post(path + "project/manage/" + id, info).then((res) => {
           props.history.push("/project-list");

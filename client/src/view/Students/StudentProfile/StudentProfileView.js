@@ -3,6 +3,7 @@ import { Segment, Form, Button, Header } from "semantic-ui-react";
 import { config } from "../../../common/config/config";
 import TextareaAutosize from "react-textarea-autosize";
 import Axios from "axios";
+import DOMpurify from "dompurify";
 import { Helmet } from "react-helmet";
 
 /**
@@ -34,7 +35,7 @@ const StudentProfileView = (props) => {
           <label>Name</label>
           <input
             name="name"
-            value={studentProfileInfo[0].name}
+            value={DOMpurify.sanitize(studentProfileInfo[0].name)}
             placeholder="Name"
             disabled
           />
@@ -44,7 +45,7 @@ const StudentProfileView = (props) => {
           <label>Student Number</label>
           <input
             name="studentNumber"
-            value={studentProfileInfo[0].studentNumber}
+            value={DOMpurify.sanitize(studentProfileInfo[0].studentNumber)}
             placeholder="Student Number"
             disabled
           />
@@ -54,7 +55,7 @@ const StudentProfileView = (props) => {
           <label>Email</label>
           <input
             name="email"
-            value={studentProfileInfo[0].email}
+            value={DOMpurify.sanitize(studentProfileInfo[0].email)}
             placeholder="Email"
             disabled
           />
@@ -64,7 +65,7 @@ const StudentProfileView = (props) => {
           <label>Phone Number</label>
           <input
             name="phoneNumber"
-            value={studentProfileInfo[0].phoneNumber}
+            value={DOMpurify.sanitize(studentProfileInfo[0].phoneNumber)}
             placeholder="Phone Number"
             disabled
           />
@@ -74,7 +75,7 @@ const StudentProfileView = (props) => {
           <label>Phone Number</label>
           <input
             name="linkedin"
-            value={studentProfileInfo[0].linkedin}
+            value={DOMpurify.sanitize(studentProfileInfo[0].linkedin)}
             placeholder="Linkedin Url"
             disabled
           />
@@ -84,7 +85,7 @@ const StudentProfileView = (props) => {
           <label>Program</label>
           <input
             name="program"
-            value={studentProfileInfo[0].program}
+            value={DOMpurify.sanitize(studentProfileInfo[0].program)}
             placeholder="Program of study"
             disabled
           />
@@ -95,7 +96,7 @@ const StudentProfileView = (props) => {
           name="skills"
           label="List your skills"
           placeholder="skills"
-          value={studentProfileInfo[0].skills}
+          value={DOMpurify.sanitize(studentProfileInfo[0].skills)}
           disabled
         ></Form.Field>
       </Form>

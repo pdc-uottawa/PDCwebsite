@@ -4,7 +4,9 @@ import { UserContext } from "../../../common/context/UserProvider";
 import { config } from "../../../common/config/config";
 import Axios from "axios";
 import TextareaAutosize from "react-textarea-autosize";
+import DOMpurify from "dompurify";
 import "./studentprofileeditview.css"
+
 
 /**
  * @author @navpreetkaur051
@@ -71,6 +73,13 @@ const StudentProfileEditView = () => {
       document.getElementById("student_program").style.border = "";
       document.getElementById("student_skills_error_msg").style.display = "none";
       document.getElementById("student_skills").style.border = "";
+      
+      //XSS POST sanitzer
+      studentnumber= DOMpurify.sanitize(studentnumber);
+      tel= DOMpurify.sanitize(tel);
+      studentprogram= DOMpurify.sanitize(studentprogram);
+      studentskills= DOMpurify.sanitize(studentskills);
+      studentnumber= DOMpurify.sanitize(studentnumber);
       Axios.post(path + "student/profile/edit/", studentProfileInfo)
      .then((res) => {
        if (res.data.message === "updated successfully") {
@@ -184,7 +193,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           <input
             id="student_name"
             name="name"
-            value={studentProfileInfo.name}
+            value={DOMpurify.sanitize(studentProfileInfo.name)}
             placeholder="Name"
             disabled
           />
@@ -195,7 +204,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           <input
             id="student_number"
             name="studentNumber"
-            value={studentProfileInfo.studentNumber}
+            value={DOMpurify.sanitize(studentProfileInfo.studentNumber)}
             onChange={StudentNumberValidation}
             placeholder="Student Number"
           />
@@ -206,7 +215,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           <label>Email</label>
           <input
             name="email"
-            value={studentProfileInfo.email}
+            value={DOMpurify.sanitize(studentProfileInfo.email)}
             //onChange={handleFormChange}
             placeholder="Email"
             disabled
@@ -218,7 +227,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           <input
             id="student_phoneno"
             name="phoneNumber"
-            value={studentProfileInfo.phoneNumber}
+            value={DOMpurify.sanitize(studentProfileInfo.phoneNumber)}
             onChange={StudentPhoneValidation}
             placeholder="Phone Number"
           />
@@ -241,7 +250,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           <input
             id="student_program"
             name="program"
-            value={studentProfileInfo.program}
+            value={DOMpurify.sanitize(studentProfileInfo.program)}
             onChange={StudentProgramValidation}
             placeholder="Program of study"
           />
@@ -255,7 +264,7 @@ const StudentSkillsValidation = ({ target: { name, value } }) =>
           label="List your skills"
           placeholder="skills"
           onChange={StudentSkillsValidation}
-          value={studentProfileInfo.skills}
+          value={DOMpurify.sanitize(studentProfileInfo.skills)}
         ></Form.Field>
         <Form.Field><div id="student_skills_error_msg"><p>* please provide student skills</p></div></Form.Field>
 

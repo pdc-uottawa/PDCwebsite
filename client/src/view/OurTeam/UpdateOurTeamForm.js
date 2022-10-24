@@ -5,6 +5,7 @@ import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import DOMpurify from "dompurify";
 
 const UpdateOurTeam = (props) => {
   const path = config();
@@ -66,6 +67,12 @@ const UpdateOurTeam = (props) => {
         if (!linkedIn) {
           linkedIn = TeamList.linkedIn;
         }
+        //XSS POST sanitizer
+        name = DOMpurify.sanitize(name);
+        email = DOMpurify.sanitize(email);
+        linkedIn = DOMpurify.sanitize(linkedIn);
+        currentPosition = DOMpurify.sanitize(currentPosition);
+                
         Axios.post(path + "ourTeam/update", {
           _id: id,
           name,
@@ -120,13 +127,13 @@ const UpdateOurTeam = (props) => {
             <Form.Field
               control={Input}
               label="Name"
-              placeholder={TeamList.name}
+              placeholder={DOMpurify.sanitize(TeamList.name)}
               id="name"
             />
             <Form.Field
               control={Input}
               label="Current Position"
-              placeholder={TeamList.currentPosition}
+              placeholder={DOMpurify.sanitize(TeamList.currentPosition)}
               id="currentPosition"
             />
             {TeamList.founder ? null : (
@@ -134,14 +141,14 @@ const UpdateOurTeam = (props) => {
                 id="email"
                 control={Input}
                 label="Email"
-                placeholder={TeamList.email}
+                placeholder={DOMpurify.sanitize(TeamList.email)}
               />
             )}
             <Form.Field
               id="linkedIn"
               control={Input}
               label="LinkedIn"
-              placeholder={TeamList.linkedIn}
+              placeholder={DOMpurify.sanitize(TeamList.linkedIn)}
             />
             <input
               type="submit"

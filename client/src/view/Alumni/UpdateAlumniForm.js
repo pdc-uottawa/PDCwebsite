@@ -4,6 +4,7 @@ import Axios from "axios";
 import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import { Link } from "react-router-dom";
+import DOMpurify from "dompurify";
 import { Helmet } from "react-helmet";
 
 const UpdateAlumni = (props) => {
@@ -66,6 +67,11 @@ const UpdateAlumni = (props) => {
         if (!linkedIn) {
           linkedIn = AlumniList.linkedIn;
         }
+        //XSS sanitizer
+        name = DOMpurify.sanitize(name);
+        email = DOMpurify.sanitize(email);
+        linkedIn = DOMpurify.sanitize(linkedIn);
+        currentPosition = DOMpurify.sanitize(currentPosition);
         Axios.post(path + "alumni/update", {
           _id: id,
           name,

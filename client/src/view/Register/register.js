@@ -5,6 +5,7 @@ import { UserContext } from "../../common/context/UserProvider";
 import TextareaAutosize from "react-textarea-autosize";
 import useReactRouter from "use-react-router";
 import { Helmet } from "react-helmet";
+import DOMpurify from "dompurify";
 import "./register.css";
 import Axios from "axios";
 
@@ -146,6 +147,10 @@ const Register = () => {
       document.getElementById("student_program_error_msg").style.display =
         "none";
       document.getElementById("student_program").style.border = "";
+
+      //XSS sanitizer
+      studentProfileInfo.skills=DOMpurify.sanitize(studentProfileInfo.skills);
+      studentProfileInfo.student_program=DOMpurify.sanitize(studentProfileInfo.student_program);
       Axios.post(path + "student/profile/edit/", studentProfileInfo)
         .then((res) => {
           if (res.data.message === "updated successfully") {

@@ -6,10 +6,10 @@ import { Helmet } from "react-helmet";
 const Signin = (props) => {
   let path = config();
 
-  // Use google login
-  const handleGoogleLogin = () => {
-    window.open(path + "auth/login", "_self");
-  };
+  // Use google login Dead COdE
+  //const handleGoogleLogin = () => {
+  //  window.open(path + "auth/login", "_self");
+  //  };
 
   const handleLinkedinLogin = () => {
     window.open(path + "auth/linkedin", "_self");

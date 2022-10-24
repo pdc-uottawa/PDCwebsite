@@ -7,6 +7,7 @@ import { Spinner } from "react-activity";
 import { Helmet } from "react-helmet";
 import UpdateOurTeamForm from "./UpdateOurTeamForm";
 import "./OurTeam.css";
+import DOMpurify from "dompurify";
 import { UserContext } from "../../common/context/UserProvider";
 
 const ManageTeam = (props) => {
@@ -102,10 +103,10 @@ const ManageTeam = (props) => {
                 <Table.Body>
                   {TeamList.map((team) => (
                     <Table.Row>
-                      <Table.Cell>{team.name}</Table.Cell>
-                      <Table.Cell>{team.position}</Table.Cell>
-                      <Table.Cell>{team.email}</Table.Cell>
-                      <Table.Cell>{team.linkedIn}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(team.name)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(team.position)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(team.email)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(team.linkedIn)}</Table.Cell>
                       <Table.Cell>
                         <div className="row">
                           <div classname="col-md-6">

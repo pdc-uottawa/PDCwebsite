@@ -7,6 +7,7 @@ import { Spinner } from "react-activity";
 import UpdateAlumniForm from "./UpdateAlumniForm";
 import { Helmet } from "react-helmet";
 import "./Alumni.css";
+import DOMpurify from "dompurify";
 import { UserContext } from "../../common/context/UserProvider";
 
 const ManageAlumni = (props) => {
@@ -102,10 +103,10 @@ const ManageAlumni = (props) => {
                 <Table.Body>
                   {AlumniList.map((alumni) => (
                     <Table.Row>
-                      <Table.Cell>{alumni.name}</Table.Cell>
-                      <Table.Cell>{alumni.currentPosition}</Table.Cell>
-                      <Table.Cell>{alumni.email}</Table.Cell>
-                      <Table.Cell>{alumni.linkedIn}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(alumni.name)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(alumni.currentPosition)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(alumni.email)}</Table.Cell>
+                      <Table.Cell>{DOMpurify.sanitize(alumni.linkedIn)}</Table.Cell>
                       <Table.Cell>
                         <div className="row">
                           <div classname="col-md-6">

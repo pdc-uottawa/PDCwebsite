@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Form, Input, Button } from "semantic-ui-react";
+import { Form, Input, Button, IconGroup } from "semantic-ui-react";
 import Axios from "axios";
 import { config } from "../../common/config/config";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import DOMpurify from "dompurify";
 import img from "./../../assets/default.png";
 
 const AddAlumni = (props) => {
@@ -19,6 +20,12 @@ const AddAlumni = (props) => {
     const founder = false;
 
     if (image && name && currentPosition && email && linkedIn) {
+      //XSS sanitizer
+      image=DOMpurify.sanitize(image);
+      name=DOMpurify.sanitize(name);
+      currentPosition=DOMpurify.sanitize(currentPosition);
+      linkedIn=DOMpurify.sanitize(linkedIn);
+      email=DOMpurify.sanitize(email);
       Axios.post(path + "alumni/add", {
         image,
         name,
