@@ -321,7 +321,7 @@ const Header = (props) => {
               id="joinTeam-header"
               onClick={() =>
                 window.open(
-                  "https://forms.office.com/r/5r9RCEbBrx",
+                  "https://forms.office.com/pages/responsepage.aspx?id=sdof1BV-_Uy1-nIA5U3ra0GpeYLBv-hInq2BNuBF7HhUMFhEVlRKUlMzMFFZTFJZQzhWWVgzUDI0QyQlQCN0PWcu",
                   "_blank"
                 )
               }
