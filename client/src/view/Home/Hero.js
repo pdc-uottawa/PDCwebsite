@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Button } from "semantic-ui-react";
 import "./Home.css";
+import { config } from "../../common/config/config";
+import Axios from "axios";
 const img = require("../../assets/pdc-logo.png");
 
 function Hero() {
+  const [formLink, setFormLink] = useState("");
+  let path = config();
+
+  Axios.get(path + "form/link", {})
+    .then((res) => {
+      return res.data;
+    })
+    .then((data) => {
+      setFormLink(data[0].link);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 
   return (
     <>
@@ -34,11 +49,10 @@ function Hero() {
             id="joinTeam-carousel"
             onClick={() =>
               window.open(
-                "https://forms.office.com/pages/responsepage.aspx?id=sdof1BV-_Uy1-nIA5U3ra0GpeYLBv-hInq2BNuBF7HhUMFhEVlRKUlMzMFFZTFJZQzhWWVgzUDI0QyQlQCN0PWcu",
+                formLink,
                 "_blank"
               )
-            }
-          >
+            }>
             <Button>
               <p>Join The Team</p>
             </Button>
