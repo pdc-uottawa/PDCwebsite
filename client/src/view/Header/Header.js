@@ -18,7 +18,7 @@ import { config } from "../../common/config/config";
 import { deviceType } from "react-device-detect";
 import defIcon from "../../assets/defIcon.png";
 import { useWindowDimensions } from "../../common/context/WindowDimensionsProvider";
-import './Header.css'
+import "./Header.css";
 const img = require("../../assets/logo.png");
 
 const Header = (props) => {
@@ -30,7 +30,7 @@ const Header = (props) => {
 
   const { history } = useReactRouter();
   const [activeItem, setActiveItem] = useState("");
-
+  const [formLink, setFormLink] = useState("");
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [menubarHidden, setMenuBarVisibility] = useState(false);
   const [sidebarHidden, setSideBarVisibility] = useState(true);
@@ -162,14 +162,23 @@ const Header = (props) => {
         });
 
         if (data.user.checkUser) {
-          console.log("new user ...... 160");
-          console.log(data.user);
           history.push("/");
         }
       })
       .catch((e) => {
         console.log(e);
       });
+
+      Axios.get(path + "form/link", {})
+        .then((res) => {
+          return res.data;
+        })
+        .then((data) => {
+          setFormLink(data[0].link);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
   }, []);
 
   return (
@@ -182,8 +191,7 @@ const Header = (props) => {
             as="a"
             onClick={handleHome}
             header
-            id="PDCHome-header"
-          >
+            id="PDCHome-header">
             <Image size="mini" src={img} />
           </Menu.Item>
           {/* <Menu.Item
@@ -208,22 +216,19 @@ const Header = (props) => {
                 id="ourTeam-header"
                 className="bg"
                 onClick={handleOurTeam}
-                name="OurTeam"
-              >
+                name="OurTeam">
                 Our Team
               </Dropdown.Item>
               <Dropdown.Item
                 id="ourAlumni-header"
                 onClick={handleAlumni}
-                name="OurAlumni"
-              >
+                name="OurAlumni">
                 Our Alumni
               </Dropdown.Item>
               <Dropdown.Item
                 id="ourVolunteers-header"
                 onClick={handleVolunteers}
-                name="OurVolunteers"
-              >
+                name="OurVolunteers">
                 Our Volunteers
               </Dropdown.Item>
             </Dropdown.Menu>
@@ -248,8 +253,7 @@ const Header = (props) => {
               name="Student"
               active={activeItem === "Student"}
               onClick={handleStudent}
-              id="forStudents-header"
-            >
+              id="forStudents-header">
               For Students
             </Menu.Item>
           ) : (
@@ -282,16 +286,14 @@ const Header = (props) => {
             name="CDC"
             active={activeItem === "CDC"}
             onClick={handleCDC}
-            id="CDC-header"
-          >
+            id="CDC-header">
             Career Development Centre
           </Menu.Item>
           <Menu.Item
             name="Events"
             id="Events-header"
             active={activeItem === "Events"}
-            onClick={handleEvents}
-          >
+            onClick={handleEvents}>
             Events
           </Menu.Item>
 
@@ -299,8 +301,7 @@ const Header = (props) => {
             name="ProjectList"
             id="Projects-header"
             active={activeItem === "ProjectList"}
-            onClick={handleProjectList}
-          >
+            onClick={handleProjectList}>
             Projects
           </Menu.Item>
 
@@ -308,23 +309,16 @@ const Header = (props) => {
             name="feedback"
             id="Feedback-header"
             active={activeItem === "feedback"}
-            onClick={handleFeedback}
-          >
+            onClick={handleFeedback}>
             Feedback
           </Menu.Item>
           <Menu.Item
             name="joinTeam"
             position="left"
-            active={activeItem === "joinTeam"}
-          >
+            active={activeItem === "joinTeam"}>
             <Button
               id="joinTeam-header"
-              onClick={() =>
-                window.open(
-                  "https://forms.office.com/pages/responsepage.aspx?id=sdof1BV-_Uy1-nIA5U3ra0GpeYLBv-hInq2BNuBF7HhUMFhEVlRKUlMzMFFZTFJZQzhWWVgzUDI0QyQlQCN0PWcu",
-                  "_blank"
-                )
-              }
+              onClick={() => window.open(formLink, "_blank")}
               basic
               inverted
               content="Join the Team"
@@ -345,14 +339,14 @@ const Header = (props) => {
 
         {/* Sidebar */}
         {/* <Container hidden={sidebarHidden}> */}
-          {/* <Button
+        {/* <Button
             id="openSidebar-header-MOB"
             onClick={handleSideBarClick}
             color = "transparent"
           >
             <Icon name="bars" />
           </Button> */}
-          {/* <div
+        {/* <div
             className="menuIconMob" 
             onClick={handleSideBarClick}
           >
@@ -387,14 +381,14 @@ const Header = (props) => {
               >
                 Professional Development Club
               </Menu.Item> */}
-              {/* <Menu.Item
+        {/* <Menu.Item
                 name="OurTeam"
                 active={activeItem === "OurTeam"}
                 onClick={handleOurTeam}
               >
                 Our Team
               </Menu.Item> */}
-              {/* <Dropdown item text="The Team">
+        {/* <Dropdown item text="The Team">
                 <Dropdown.Menu>
                   <Dropdown.Item
                     id="ourTeam-header-MOB"
@@ -420,7 +414,7 @@ const Header = (props) => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown> */}
-              {/* {!userInfo.authenticated ||
+        {/* {!userInfo.authenticated ||
               (userInfo.user &&
                 (userInfo.user.company || userInfo.user.admin)) ? (
                 <Menu.Item
@@ -434,7 +428,7 @@ const Header = (props) => {
                 ""
               )} */}
 
-              {/* {!userInfo.authenticated ||
+        {/* {!userInfo.authenticated ||
               (userInfo.user && !userInfo.user.company) ? (
                 <Menu.Item
                   name="Student"
@@ -447,7 +441,7 @@ const Header = (props) => {
               ) : (
                 ""
               )} */}
-              {/* <Menu.Item
+        {/* <Menu.Item
                 name="Alumni"
                 active={activeItem === "Alumni"}
                 onClick={handleAlumni}
@@ -461,7 +455,7 @@ const Header = (props) => {
               >
                 Updates on COVID-19
               </Menu.Item> */}
-              {/* <Menu.Item
+        {/* <Menu.Item
                 name="CDC"
                 active={activeItem === "CDC"}
                 onClick={handleCDC}
