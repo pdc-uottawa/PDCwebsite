@@ -41,7 +41,6 @@ function HomePageV2() {
           return res.data;
         })
         .then((data) => {
-          setLoading(false);
           setTestimonialData(data);
         })
         .catch((e) => {
@@ -58,6 +57,7 @@ function HomePageV2() {
           let futureEvents = data.events.filter(
             (event) => event.start.local.slice(0, 10) > currentTime
           );
+          setLoading(false);
           setCount(futureEvents.length);
         }),
     ]);
