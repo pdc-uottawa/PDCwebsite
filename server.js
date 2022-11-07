@@ -89,7 +89,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // log output
-app.use(morgan("combined"));
+app.use(morgan("tiny"));
 
 // auth router
 app.use("/home", homeRoutes);
