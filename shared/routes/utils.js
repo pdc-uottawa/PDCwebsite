@@ -15,4 +15,12 @@ const secured = (req, res, next) => {
     res.send(notFound);
 };
 
+// const adminSecured = (req, res, next) => {
+//     if (req.user.admin && req.user.email in (list of emails)? ) {
+//         return next();
+//     }
+//     res.send(notFound);
+// };
+
+
 module.exports = { secured, setPath, notFound }
