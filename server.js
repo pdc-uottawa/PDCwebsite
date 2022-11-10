@@ -84,6 +84,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     secret: "SECRET",
+    secure: true,
   })
 );
 

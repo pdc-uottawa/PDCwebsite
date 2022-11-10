@@ -101,7 +101,7 @@ function HomePageV2() {
             <>
               <PopUp toggle={onClickButton} />
               {
-                setCookie("popUpShown", true, { path: "/", maxAge: 86400 }) //1 day expiry of the cookie
+                setCookie("popUpShown", true, { path: "/", maxAge: 86400, httpOnly:1, secure:1 }) //1 day expiry of the cookie
               }
             </>
           ) : null}
