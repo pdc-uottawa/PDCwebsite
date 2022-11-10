@@ -9,6 +9,7 @@ import "./Header.css";
 function HeaderMob() {
   const history = useHistory();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [formLink, setFormLink] = useState("");
   const [alternateLang, setAlternateLang] = useState("FR");
   const { userInfo, setUserInfo } = useContext(UserContext);
 
@@ -35,6 +36,17 @@ function HeaderMob() {
       .catch((e) => {
         console.log(e);
       });
+
+      Axios.get(path + "form/link", {})
+        .then((res) => {
+          return res.data;
+        })
+        .then((data) => {
+          setFormLink(data[0].link);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
   }, []);
 
   function handleOpen() {
@@ -218,7 +230,7 @@ function HeaderMob() {
               <p
                 onClick={() =>
                   window.open(
-                    "https://forms.office.com/Pages/ResponsePage.aspx?id=sdof1BV-_Uy1-nIA5U3ra5WauXDgBfFLkMzBuH0SCR9UOElJOExDSjRON1c2RElYVTY3STY0V0NNVC4u",
+                    formLink,
                     "_blank"
                   )
                 }
