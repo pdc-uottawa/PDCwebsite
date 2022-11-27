@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import DOMpurify from "dompurify";
 import img from "./../../assets/default.png";
-
+//secured by Makwana Harsh
 const AddAlumni = (props) => {
   const path = config();
   const [thankYou, setThankYou] = useState(false);

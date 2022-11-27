@@ -6,7 +6,7 @@ import { Spinner } from "react-activity";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import DOMpurify from "dompurify";
-
+//secured by Makwana Harsh
 const UpdateOurTeam = (props) => {
   const path = config();
   const [thankYou, setThankYou] = useState(false);

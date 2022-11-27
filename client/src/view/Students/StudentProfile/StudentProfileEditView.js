@@ -6,7 +6,7 @@ import Axios from "axios";
 import TextareaAutosize from "react-textarea-autosize";
 import DOMpurify from "dompurify";
 import "./studentprofileeditview.css"
-
+//secured by Makwana Harsh
 
 /**
  * @author @navpreetkaur051

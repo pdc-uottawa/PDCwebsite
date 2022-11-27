@@ -8,6 +8,7 @@ import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import { Segment, Card, Icon } from "semantic-ui-react";
 import "react-activity/dist/Spinner.css";
+//secured by Makwana Harsh
 
 /**
  * @author @binjiasata

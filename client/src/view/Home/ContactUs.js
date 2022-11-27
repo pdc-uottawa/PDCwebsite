@@ -7,7 +7,7 @@ import "./Home.css";
 import moment, { fn } from "moment";
 import { Spinner } from "react-activity";
 const img = require("../../assets/pdc-logo.png");
-
+//secured by Makwana Harsh
 function ContactUs() {
   const path = config();
   const options = [

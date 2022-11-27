@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 import "./Alumni.css";
 import DOMpurify from "dompurify";
 import { UserContext } from "../../common/context/UserProvider";
-
+//secured by Makwana Harsh
 const ManageAlumni = (props) => {
   const path = config();
   const [AlumniList, setAlumniList] = useState([]);

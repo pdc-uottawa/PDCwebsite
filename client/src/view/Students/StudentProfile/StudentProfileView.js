@@ -5,7 +5,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import Axios from "axios";
 import DOMpurify from "dompurify";
 import { Helmet } from "react-helmet";
-
+//secured by Makwana Harsh
 /**
  * @author @navpreetkaur051
  * @description This is student profile to view by project owner

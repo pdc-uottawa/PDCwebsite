@@ -1,6 +1,34 @@
 const Project = require("../models/ProjectModel");
-
 const router = require("express").Router();
+//secured by Makwana Harsh
+
+var auth = function(req, res, next) {
+
+  if(req.user.admin) {
+
+      return next();
+
+  } else {
+
+      return res.status(400)
+
+  }
+};
+
+var authUser = function(req, res, next) {
+
+  if(!req.linkedin) {
+
+      return next();
+
+  } else {
+
+      return res.status(400)
+
+  }
+};
+
+
 
 // create a new project
 router.post("/project", (req, res) => {
@@ -15,7 +43,7 @@ router.post("/project", (req, res) => {
 });
 
 // update a project by id, if does not have, create a new one
-router.post("/project/manage/:id", (req, res) => {
+router.post("/project/manage/:id",auth, (req, res) => {
   let newProject = req.body;
   let id = req.params.id;
   Project.findOneAndUpdate(
@@ -32,7 +60,7 @@ router.post("/project/manage/:id", (req, res) => {
 });
 
 // delete a project by id (set isDeleted to true)
-router.post("/project/delete/:id", (req, res) => {
+router.post("/project/delete/:id", auth, (req, res) => {
   let isDeleted = req.body;
   Project.findByIdAndUpdate(req.params.id, isDeleted, (error, data) => {
     if (error) {
@@ -64,7 +92,7 @@ router.get("/project/:id", (req, res) => {
 });
 
 // get project list by user id
-router.get("/project/user/:id", (req, res) => {
+router.get("/project/user/:id", authUser, (req, res) => {
   let userId = req.params.id;
   Project.find({ "user._id": userId }, (error, data) => {
     if (error) {

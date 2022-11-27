@@ -9,7 +9,7 @@ import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
 import { Helmet } from "react-helmet";
-
+//secured by Makwana Harsh
 const OurTeam = (props) => {
   const path = config();
   //const { userInfo, setUserInfo } = useContext(UserContext);

@@ -6,7 +6,7 @@ import { Spinner } from "react-activity";
 import DOMpurify from "dompurify";
 import defimg from "./../../assets/default.png";
 import { Helmet } from "react-helmet";
-
+//secured by Makwana Harsh
 
 const OurAlumni = (props) => {
   const path = config();

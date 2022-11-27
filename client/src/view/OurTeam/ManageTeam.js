@@ -9,7 +9,7 @@ import UpdateOurTeamForm from "./UpdateOurTeamForm";
 import "./OurTeam.css";
 import DOMpurify from "dompurify";
 import { UserContext } from "../../common/context/UserProvider";
-
+//secured by Makwana Harsh
 const ManageTeam = (props) => {
   const path = config();
   const [TeamList, setTeamList] = useState([]);
