@@ -21,7 +21,6 @@ import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
 import HeaderMob from "./view/Header/HeaderMob";
 import Signin from "./view/Signin/Signin";
-import register from "./view/Register/register";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
 import ProjectDeatiledPageV2 from "./view/ProjectDetailed/ProjectDetailedPageV2";
 import Events from "./view/Events/Events";
@@ -91,7 +90,6 @@ const Routers = () => {
       <div className="container marginTop10">
         <Route exact path="/for-students" component={ForStudents} />
         <Route exact path="/signin" component={Signin} />
-        <Route exact path="/register" component={register} />
         <Route exact path="/OurTeam" component={OurTeam} />
         <Route exact path="/create-project" component={CreateProject} />
         <Route exact path="/cdc" component={CDCMainPage} />
