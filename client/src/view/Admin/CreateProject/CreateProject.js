@@ -8,12 +8,13 @@ import {
   Input,
 } from "semantic-ui-react";
 import Axios from "axios";
-import { UserContext } from "../../common/context/UserProvider";
-import { config } from "../../common/config/config";
+import { UserContext } from "../../../common/context/UserProvider";
+import { config } from "../../../common/config/config";
 import UploadLogo from "./UploadLogo";
 import TextareaAutosize from "react-textarea-autosize";
 import { Helmet } from "react-helmet";
 import "./CreateProject.css";
+import AdminSideBar from "../Admin Dashboard/AdminSideBar";
 
 const CreateProject = (props) => {
   const { userInfo, setUserInfo } = useContext(UserContext);
@@ -36,10 +37,10 @@ const CreateProject = (props) => {
     hostedBy: state
       ? state.hostedBy
       : user && user.admin
-      ? "GES-PDC"
-      : user && user.company
-      ? "Company Name"
-      : "",
+        ? "GES-PDC"
+        : user && user.company
+          ? "Company Name"
+          : "",
     logoUrl: state ? state.logoUrl : "",
     category: state ? state.category : [],
     user: state ? state.user : [user],
@@ -209,7 +210,7 @@ const CreateProject = (props) => {
 
   // when click cancel, go back to the project list page
   const handleFormCancel = () => {
-    props.history.push("/project-list");
+    props.history.push("/admin-dashboard");
   };
 
   // handle form field change
@@ -608,111 +609,117 @@ const CreateProject = (props) => {
         <title>Create Project | Professional Development Club</title>
       </Helmet>
       {user && user.admin ? (
-        <Form onSubmit={handleFormSubmit} autoComplete="off">
-          <Form.Field>
-            <label>Project Title</label>
-            <Input
-              id="project_title"
-              name="title"
-              value={info.title}
-              maxLength={50}
-              onChange={handleFormValidationTitle}
-              placeholder="Project Title"
-            />
-            <div id="project_title_error_msg">
-              <p>* please provide a project title </p>
-            </div>
-          </Form.Field>
+        <div className="admin-dashboard">
+          <AdminSideBar />
+          <div className="admin-home">
+            <h2 className="admin-h2">
+              Create New Project
+            </h2>
+            <Form onSubmit={handleFormSubmit} autoComplete="off">
+              <Form.Field>
+                <label>Project Title</label>
+                <Input
+                  id="project_title"
+                  name="title"
+                  value={info.title}
+                  maxLength={50}
+                  onChange={handleFormValidationTitle}
+                  placeholder="Project Title"
+                />
+                <div id="project_title_error_msg">
+                  <p>* please provide a project title </p>
+                </div>
+              </Form.Field>
 
-          <Form.Group widths="equal">
-            <Form.Field>
-              <label>Contact Email</label>
-              <input
-                id="email_id"
-                name="contactEmail"
-                value={info.contactEmail}
-                onChange={handleFormValidationEmail}
-                placeholder="Contact Email"
-              />
-              <div id="project_email_error_msg">
-                <p>* please provide a proper contact email </p>
-              </div>
-            </Form.Field>
+              <Form.Group widths="equal">
+                <Form.Field>
+                  <label>Contact Email</label>
+                  <input
+                    id="email_id"
+                    name="contactEmail"
+                    value={info.contactEmail}
+                    onChange={handleFormValidationEmail}
+                    placeholder="Contact Email"
+                  />
+                  <div id="project_email_error_msg">
+                    <p>* please provide a proper contact email </p>
+                  </div>
+                </Form.Field>
 
-            <Form.Field>
-              <label>Contact Phone</label>
-              <input
-                id="contact_tel"
-                name="contactPhone"
-                value={info.contactPhone}
-                onChange={handleFormValidationtel}
-                placeholder="Contact Phone"
-              />
-              <div id="project_tel_error_msg">
-                <p>*should be a 10-digit number only</p>
-              </div>
-            </Form.Field>
+                <Form.Field>
+                  <label>Contact Phone</label>
+                  <input
+                    id="contact_tel"
+                    name="contactPhone"
+                    value={info.contactPhone}
+                    onChange={handleFormValidationtel}
+                    placeholder="Contact Phone"
+                  />
+                  <div id="project_tel_error_msg">
+                    <p>*should be a 10-digit number only</p>
+                  </div>
+                </Form.Field>
 
-            <Form.Field>
-              <label>LinkedIn Profile</label>
-              <input
-                name="linkedinProfile"
-                value={info.linkedinProfile}
-                onChange={handleFormChange}
-                placeholder="Your LinkedIn URL"
-              />
-            </Form.Field>
-          </Form.Group>
+                <Form.Field>
+                  <label>LinkedIn Profile</label>
+                  <input
+                    name="linkedinProfile"
+                    value={info.linkedinProfile}
+                    onChange={handleFormChange}
+                    placeholder="Your LinkedIn URL"
+                  />
+                </Form.Field>
+              </Form.Group>
 
-          <Form.Field>
-            <Checkbox
-              id="to_date_check"
-              onClick={() => setIsDisable(!isDisable)}
-              onChange={handleFormValidationtodate}
-              label="Set a expire date on project (Default is 4 weeks)"
-            />
-          </Form.Field>
+              <Form.Field>
+                <Checkbox
+                  id="to_date_check"
+                  onClick={() => setIsDisable(!isDisable)}
+                  onChange={handleFormValidationtodate}
+                  label="Set a expire date on project (Default is 4 weeks)"
+                />
+              </Form.Field>
 
-          <Form.Group widths="equal">
-            <Form.Field>
-              <label>Posted On</label>
-              <input
-                id="from_date"
-                name="postedOn"
-                value={info.postedOn}
-                onChange={handleFormValidationdate}
-                type="date"
-                placeholder="Posted On"
-              />
-              <div id="project_frm_date_error_msg">
-                <p>* please select a future date or today's date</p>
-              </div>
-              <div id="project_frm_date_blank_error_msg">
-                <p>* date cannot be blank</p>
-              </div>
-            </Form.Field>
+              <Form.Group widths="equal">
+                <Form.Field>
+                  <label>Posted On</label>
+                  <input
+                    id="from_date"
+                    name="postedOn"
+                    value={info.postedOn}
+                    onChange={handleFormValidationdate}
+                    type="date"
+                    placeholder="Posted On"
+                  />
+                  <div id="project_frm_date_error_msg">
+                    <p>* please select a future date or today's date</p>
+                  </div>
+                  <div id="project_frm_date_blank_error_msg">
+                    <p>* date cannot be blank</p>
+                  </div>
+                </Form.Field>
 
-            <Form.Field>
-              <label>Valid Until</label>
-              <input
-                id="to_date"
-                name="validUntil"
-                value={info.validUntil}
-                onChange={handleFormValidationtodate}
-                disabled={isDisable}
-                type="date"
-                placeholder="Valid Until"
-              />
-              <div id="project_to_date_error_msg">
-                <p>* Selected date cannot be less than posted date</p>
-              </div>
-              <div id="project_to_date_blank_error_msg">
-                <p>* date cannot be blank</p>
-              </div>
-            </Form.Field>
-          </Form.Group>
+                <Form.Field>
+                  <label>Valid Until</label>
+                  <input
+                    id="to_date"
+                    name="validUntil"
+                    value={info.validUntil}
+                    onChange={handleFormValidationtodate}
+                    disabled={isDisable}
+                    type="date"
+                    placeholder="Valid Until"
+                  />
+                  <div id="project_to_date_error_msg">
+                    <p>* Selected date cannot be less than posted date</p>
+                  </div>
+                  <div id="project_to_date_blank_error_msg">
+                    <p>* date cannot be blank</p>
+                  </div>
+                </Form.Field>
+              </Form.Group>
 
-          {/* <Form.Field>
+              {/* <Form.Field>
           <label>Skills</label>
           <input
             name="skills"
@@ -721,85 +728,86 @@ const CreateProject = (props) => {
             placeholder="Required Skills"
           />
         </Form.Field> */}
-          <Form.Group widths="equal">
-            <Form.Field>
-              <label>Hosted By</label>
-              <input
-                id="project_host"
-                name="hostedBy"
-                value={info.hostedBy}
-                onChange={handleFormValidationhost}
-                placeholder="Enter the name of company hosting"
-              />
-              <div id="project_host_error_msg">
-                <p>* please provide a project host </p>
-              </div>
-            </Form.Field>
-            <Form.Field>
-              <label>Project Owner</label>
-              <Dropdown
-                name="project owner"
-                placeholder="Project Owner"
-                fluid
-                multiple
-                selection
-                onChange={handleOwnerChange}
-                options={adminList}
-              />
-            </Form.Field>
-          </Form.Group>
-          <Form.Field>
-            <label>Category</label>
-            <div id="project_category">
-              <Dropdown
-                name="category"
-                placeholder="Category"
-                fluid
-                multiple
-                selection
-                onChange={handleCategoryChange}
-                defaultValue={info.category}
-                options={categoryOptions}
-                onBlur={validateCategory}
-              />
-            </div>
-            <div id="project_category_error_msg">
-              <p>* Please Select a Minimum of Three Categories</p>
-            </div>
-          </Form.Field>
+              <Form.Group widths="equal">
+                <Form.Field>
+                  <label>Hosted By</label>
+                  <input
+                    id="project_host"
+                    name="hostedBy"
+                    value={info.hostedBy}
+                    onChange={handleFormValidationhost}
+                    placeholder="Enter the name of company hosting"
+                  />
+                  <div id="project_host_error_msg">
+                    <p>* please provide a project host </p>
+                  </div>
+                </Form.Field>
+                <Form.Field>
+                  <label>Project Owner</label>
+                  <Dropdown
+                    name="project owner"
+                    placeholder="Project Owner"
+                    fluid
+                    multiple
+                    selection
+                    onChange={handleOwnerChange}
+                    options={adminList}
+                  />
+                </Form.Field>
+              </Form.Group>
+              <Form.Field>
+                <label>Category</label>
+                <div id="project_category">
+                  <Dropdown
+                    name="category"
+                    placeholder="Category"
+                    fluid
+                    multiple
+                    selection
+                    onChange={handleCategoryChange}
+                    defaultValue={info.category}
+                    options={categoryOptions}
+                    onBlur={validateCategory}
+                  />
+                </div>
+                <div id="project_category_error_msg">
+                  <p>* Please Select a Minimum of Three Categories</p>
+                </div>
+              </Form.Field>
 
-          <Form.Field>
-            <label>Upload your logo</label>
-            <UploadLogo info={info} setInfo={setInfo} />
-          </Form.Field>
+              <Form.Field>
+                <label>Upload your logo</label>
+                <UploadLogo info={info} setInfo={setInfo} />
+              </Form.Field>
 
-          <Form.Field
-            id="project_description"
-            control={TextareaAutosize}
-            name="description"
-            label="Description"
-            placeholder="Enter description of the project"
-            onChange={handleFormValidationdesc}
-            value={info.description}
-          ></Form.Field>
-          <Form.Field>
-            <div id="project_description_error_msg">
-              <p>* please provide a project description </p>
-            </div>
-          </Form.Field>
+              <Form.Field
+                id="project_description"
+                control={TextareaAutosize}
+                name="description"
+                label="Description"
+                placeholder="Enter description of the project"
+                onChange={handleFormValidationdesc}
+                value={info.description}
+              ></Form.Field>
+              <Form.Field>
+                <div id="project_description_error_msg">
+                  <p>* please provide a project description </p>
+                </div>
+              </Form.Field>
 
-          <Button positive type="submit" onClick={handleFormValdiation}>
-            {state ? "Update" : "Submit"}
-          </Button>
-          <Button onClick={handleFormCancel} type="button">
-            Cancel
-          </Button>
-        </Form>
+              <Button positive type="submit" onClick={handleFormValdiation}>
+                {state ? "Update" : "Submit"}
+              </Button>
+              <Button onClick={handleFormCancel} type="button">
+                Cancel
+              </Button>
+            </Form>
+          </div></div>
       ) : (
         <>
-          <center>
+          <center className="page-not-found">
             <h1>Oops, Page Not Found!</h1>
-            <h3>Please login as an admin to create a project!</h3>
+            <h3>Please login as an admin to view this page!</h3>
           </center>
         </>
       )}

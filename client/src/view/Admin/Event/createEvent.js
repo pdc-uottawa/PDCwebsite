@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import {
   Button,
   Form,
-  Segment,
   Dropdown,
   TextArea,
   Checkbox,
@@ -10,12 +9,10 @@ import {
 } from "semantic-ui-react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
-import { EventsContext } from "../../common/context/EventContext";
-import { config } from "../../common/config/config";
-import CreateTicket from "./createTicket";
 import useReactRouter from "use-react-router";
 import moment from "moment";
-import { UserContext } from "../../common/context/UserProvider";
+import { UserContext } from "../../../common/context/UserProvider";
+import AdminSideBar from "../Admin Dashboard/AdminSideBar";
 
 // import UploadFile from "./UploadFile";
 
@@ -160,7 +157,7 @@ const CreateEvent = (props) => {
 
   // when click cancel, go back to the project list page
   const handleFormCancel = () => {
-    props.history.push("/events");
+    props.history.push("/admin-dashboard");
   };
 
   // handle form field change
@@ -209,74 +206,78 @@ const CreateEvent = (props) => {
       <Helmet>
         <title>Create Event | Professional Development Club</title>
       </Helmet>
-      {user && user.admin ? (
-        <>
-          <Form onSubmit={handleFormSubmit} autoComplete="off">
-            <Form.Field>
-              <label>Event title</label>
-              <input
-                name="name"
-                value={event.name.html}
-                onChange={handleFormChange}
-                placeholder="Event title"
-                required
-              />
-            </Form.Field>
-
-            <Form.Field>
-              <Grid style={{ paddindBottom: "10px" }}>
-                <Grid.Column width={8}>
-                  <label>Event start date</label>
+      <>
+        {user && user.admin ? (
+          <div className="admin-dashboard">
+            <AdminSideBar />
+            <div className="admin-home">
+              <h3 className="admin-h3">
+                Create New Event
+              </h3>
+              <Form onSubmit={handleFormSubmit} autoComplete="off">
+                <Form.Field>
+                  <label>Event title</label>
                   <input
-                    name="startDate"
-                    value={time.startDate}
-                    onChange={handleTimeChange}
-                    type="date"
-                    placeholder="Start Date"
+                    name="name"
+                    value={event.name.html}
+                    onChange={handleFormChange}
+                    placeholder="Event title"
                     required
                   />
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <label>Start time</label>
-                  <Dropdown
-                    id="selectStart"
-                    onChange={handleStartTimeChange}
-                    placeholder="select start time"
-                    fluid
-                    selection
-                    options={timeOptions}
-                    required
-                  />
-                </Grid.Column>
-              </Grid>
-              <Grid>
-                <Grid.Column width={8}>
-                  <label>Event end date</label>
-                  <input
-                    name="endDate"
-                    value={time.endDate}
-                    onChange={handleEndDateChange}
-                    type="date"
-                    placeholder="End Date"
-                    required
-                  />
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <label>End time</label>
-                  <Dropdown
-                    name={"endTime"}
-                    onChange={handleEndTimeChange}
-                    placeholder="select end time"
-                    fluid
-                    selection
-                    options={timeOptions}
-                    required
-                  />
-                </Grid.Column>
-              </Grid>
-            </Form.Field>
-
-            {/* <Form.Field>
+                </Form.Field>
+                <Form.Field>
+                  <Grid style={{ paddindBottom: "10px" }}>
+                    <Grid.Column width={8}>
+                      <label>Event start date</label>
+                      <input
+                        name="startDate"
+                        value={time.startDate}
+                        onChange={handleTimeChange}
+                        type="date"
+                        placeholder="Start Date"
+                        required
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                      <label>Start time</label>
+                      <Dropdown
+                        id="selectStart"
+                        onChange={handleStartTimeChange}
+                        placeholder="select start time"
+                        fluid
+                        selection
+                        options={timeOptions}
+                        required
+                      />
+                    </Grid.Column>
+                  </Grid>
+                  <Grid>
+                    <Grid.Column width={8}>
+                      <label>Event end date</label>
+                      <input
+                        name="endDate"
+                        value={time.endDate}
+                        onChange={handleEndDateChange}
+                        type="date"
+                        placeholder="End Date"
+                        required
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                      <label>End time</label>
+                      <Dropdown
+                        name={"endTime"}
+                        onChange={handleEndTimeChange}
+                        placeholder="select end time"
+                        fluid
+                        selection
+                        options={timeOptions}
+                        required
+                      />
+                    </Grid.Column>
+                  </Grid>
+                </Form.Field>
+                {/* <Form.Field>
           <label>Summary</label>
           <input
             name="summary"
@@ -285,42 +286,42 @@ const CreateEvent = (props) => {
             placeholder="Enter the Event summary"
           />
         </Form.Field> */}
+                <Form.Field>
+                  <Checkbox
+                    onClick={() => setOnline(!isOnline)}
+                    label="Set it as an online event"
+                  />
+                </Form.Field>
 
-            <Form.Field>
-              <Checkbox
-                onClick={() => setOnline(!isOnline)}
-                label="Set it as an online event"
-              />
-            </Form.Field>
-
-            <Form.Field>
-              <label>Description</label>
-              <TextArea
-                name="description"
-                rows={3}
-                value={event.description.html}
-                onChange={handleFormChange}
-                placeholder="Enter description of the event"
-              />
-            </Form.Field>
-
-            <Button positive type="submit">
-              Save and continue
-              {/* {state ? "Update" : "Submit"} */}
-            </Button>
-            <Button onClick={handleFormCancel} type="button">
-              Cancel
-            </Button>
-          </Form>
-        </>
-      ) : (
-        <>
-          <center>
-            <h1>Oops, Page Not Found!</h1>
-            <h3>Please login as an admin to manage events!</h3>
-          </center>
-        </>
-      )}
+                <Form.Field>
+                  <label>Description</label>
+                  <TextArea
+                    name="description"
+                    rows={3}
+                    value={event.description.html}
+                    onChange={handleFormChange}
+                    placeholder="Enter description of the event"
+                  />
+                </Form.Field>
+                <Button positive type="submit">
+                  Save and continue
+                  {/* {state ? "Update" : "Submit"} */}
+                </Button>
+                <Button onClick={handleFormCancel} type="button">
+                  Cancel
+                </Button>
+              </Form>
+            </div>
+          </div>
+        ) : (
+          <>
+            <center className="page-not-found"s>
+              <h1>Oops, Page Not Found!</h1>
+              <h3>Please login as an admin to view this page!</h3>
+            </center>
+          </>
+        )}
+      </>
     </>
   );
 };

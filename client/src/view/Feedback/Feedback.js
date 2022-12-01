@@ -9,7 +9,7 @@ const Feedback = (props) => {
       <Helmet>
         <title>Feedback Form | Professional Development Club</title>
       </Helmet>
-      <div>
+      <div className="feedback">
         <div className="row feedbackBody">
           <div className="col-md-12 feedbackText">
             <h3>

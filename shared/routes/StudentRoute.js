@@ -1,6 +1,7 @@
 const ApplyForm = require("../models/StudentApplyModel");
 const User = require("../models/UserModel");
 const Project = require("../models/ProjectModel");
+const { secured } = require("./utils")
 var ObjectId = require('mongodb').ObjectID;
 
 const router = require("express").Router();
@@ -33,7 +34,7 @@ router.post("/apply", (req, res) => {
   );
 });
 
-router.get("/apply/:id", (req, res) => {
+router.get("/apply/:id", secured, (req, res) => {
   let projectId = req.params.id;
   ApplyForm.find({ projectId: projectId }, (error, data) => {
     if (error) {

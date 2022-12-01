@@ -91,7 +91,7 @@ const OurAlumni = (props) => {
                         ) : (
                           <Image
                             circular
-                            src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
+                            src={alumni.image}
                             alt={alumni.name}
                             className="photo"
                           />

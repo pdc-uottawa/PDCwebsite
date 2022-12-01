@@ -1,13 +1,10 @@
 const router = require("express").Router();
 const passport = require("passport");
+const { setPath } = require("./utils")
 let user = {};
 
 // for deploy
-let path = "/";
-if (process.env.NODE_ENV !== "production") {
-  //for local setup
-  path = "http://localhost:3000";
-}
+path = setPath();
 
 router.get(
   "/login",
