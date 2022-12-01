@@ -57,7 +57,7 @@ const UpdateForm = (props) => {
                     program = ProgramCoordinatorsList.program
                 }
                 if(!email) {
-                    email = ProgramCoordinatorsList.email
+                    email = ProgramCoordinatorsList.mail
                 }
                 Axios.post(path + "coordinators/update", {
                     _id: id,
@@ -124,7 +124,7 @@ return (
             id="email"
             control={Input}
             label="Email"
-            placeholder={ProgramCoordinatorsList.email}
+            placeholder={ProgramCoordinatorsList.mail}
           />
           <input
             type="submit"

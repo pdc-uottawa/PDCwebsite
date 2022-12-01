@@ -108,7 +108,7 @@ const UpdateCoordinators = (props) => {
                         <Table.Row>
                           <Table.Cell>{programCoordinator.name}</Table.Cell>
                           <Table.Cell>{programCoordinator.program}</Table.Cell>
-                          <Table.Cell>{programCoordinator.email}</Table.Cell>
+                          <Table.Cell>{programCoordinator.mail}</Table.Cell>
                           <Table.Cell>
                             <Link to={`/UpdateForm/${programCoordinator._id}`}>
                               <Icon className="edit-icon" name="edit" color="blue" />
