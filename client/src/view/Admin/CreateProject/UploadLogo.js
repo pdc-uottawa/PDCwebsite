@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Icon, Label } from "semantic-ui-react";
 import { Upload, Button } from "antd";
 import "antd/dist/antd.css";
-import { config } from "../../common/config/config";
+import { config } from "../../../common/config/config";
 import Axios from "axios";
 
 /**

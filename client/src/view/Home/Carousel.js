@@ -47,9 +47,9 @@ function ImageCarousel(props) {
                     )
                   }
                 >
-                  <Button>
+                  {/* <Button>
                     <p>Join The Team</p>
-                  </Button>
+                  </Button> */}
                 </div>
               ) : null}
             </>
