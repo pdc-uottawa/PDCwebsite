@@ -12,6 +12,7 @@ import {
   Search,
 } from "semantic-ui-react";
 import _ from "lodash";
+import moment from "moment";
 import ProjectListUser from "./ProjectListUser";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
@@ -27,12 +28,13 @@ const ProjectListItem = ({ project }) => {
     user,
     category,
     _id,
+    isDeleted
   } = project;
 
   const [readMore, setReadMore] = useState(false);
   const [ellipsisText, setEllipsisText] = useState("Read More");
   const [clamped, setClamped] = useState(false);
-
+  var currentDate = moment().format("YYYY-MM-DD");
   const cnt = category.length - 2;
 
   // if click Read More button, show content and Collapse button.
@@ -59,6 +61,14 @@ const ProjectListItem = ({ project }) => {
       <Segment.Group className="cursor">
         <div className="heightSetting">
           <Segment className="HeaderHeight">
+            {
+              isDeleted || (validUntil ? validUntil < currentDate : null) ? 
+              <div className="view">
+                <div class="banner">CLOSED</div>
+              </div>
+              :
+              null
+            }
             <Item.Group>
               <Item>
                 <Item.Image rounded size="tiny" src={logoUrl} />
