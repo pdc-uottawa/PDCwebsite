@@ -2,7 +2,7 @@ import React, { Component, useState } from "react"
 import { Segment, Image, Item, Header, Button, Modal, Icon, Grid } from "semantic-ui-react"
 import Axios from "axios";
 import useReactRouter from "use-react-router";
-
+import moment from "moment";
 
 const ProjectName = ({
     id,
@@ -16,7 +16,7 @@ const ProjectName = ({
     };
     const { history } = useReactRouter();
     const [modalOpen, setModalOpen] = useState(false);
-
+    var currentDate = moment().format("YYYY-MM-DD");
     const handleActiveStatus = () => {
         Axios.post(path + "project/delete/" + id, {
             isDeleted: !project.isDeleted,
@@ -115,9 +115,9 @@ const ProjectName = ({
                                                 JSON.stringify(appliedStudentsList).indexOf(userInfo.user.email) !==
                                                 -1 ? (
                                                 <Button disabled floated="right" color="orange" content="Applied" />
-                                            ) : (
-                                                <Button floated='right' color="green" size='large' onClick={handleApply}>Apply</Button>
-                                            )}
+                                            ) : project.isDeleted || (project.validUntil ? project.validUntil < currentDate : null) ? (
+                                                <Button disabled floated='right' color="red" size='large' content="Closed" />
+                                            ) : (<Button floated='right' color="green" size='large' onClick={handleApply}>Apply</Button>)}
                                         </Item.Extra>
                                     )}
                             </Item.Extra>

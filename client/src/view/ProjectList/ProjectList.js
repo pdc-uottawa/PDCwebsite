@@ -188,6 +188,16 @@ const ProjectList = ({ projectsInfo }) => {
             .filter((pro) =>
               hostedByValue ? pro.hostedBy === hostedByValue : true
             )
+            .sort((a,b) => {
+              if (a.postedOn < b.postedOn) {
+                return 1
+              }
+              if (a.postedOn > b.postedOn) {
+                return -1
+              }
+              return 0
+              }
+            )
             .map((proj) => {
               if (projectTypeValue === "all") {
                 return (

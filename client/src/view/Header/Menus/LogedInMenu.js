@@ -19,7 +19,7 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
         <Dropdown.Menu>
           {userInfo.user && (userInfo.user.admin) && (
             <Fragment>
-              <Dropdown.Item
+              {/* <Dropdown.Item
                 onClick={() => {
                   history.push("/create-event");
                 }}
@@ -64,17 +64,17 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
                 text="Download User Information"
                 icon="download"
               >
-              </Dropdown.Item>
+              </Dropdown.Item> */}
               <Dropdown.Item
                 onClick={() => {
-                  history.push("/company-dashboard");
+                  history.push("/admin-dashboard");
                 }}
-                text="Dashboard"
+                text="Admin Dashboard"
                 icon="dashboard"
               />
             </Fragment>
           )}
-          {userInfo.user && (userInfo.user.company) && (
+          {/* {userInfo.user && (userInfo.user.company) && (
             <Fragment>
               <Dropdown.Item
                 onClick={() => {
@@ -98,7 +98,7 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
                 icon="dashboard"
               />
             </Fragment>
-          )}
+          )} */}
           {userInfo.user && !(userInfo.user.admin || userInfo.user.company) && (
             <Fragment>
               <Dropdown.Item

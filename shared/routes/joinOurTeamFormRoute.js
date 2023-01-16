@@ -4,5 +4,8 @@ const joinOurTeamFormController = require('../controllers/joinOurTeamFormControl
 const router = express.Router();
 
 router.get('/link', joinOurTeamFormController.getFormLink);
+router.post('/link/update', joinOurTeamFormController.updateJoinTeamLink);
+router.get('/feedbackLink',joinOurTeamFormController.getFeedbackFormLink);
+router.post('/feedbackLink/update',joinOurTeamFormController.updateFeedbackFormLink);
 
 module.exports = router;

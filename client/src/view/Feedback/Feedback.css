@@ -2,8 +2,13 @@
     background-color: rgb(0,0,0,0.2);
     padding: 5%;
     text-align: center;
+    margin-top:10%
 }
 
 .feedbackText {
     margin-bottom: 5%;
+}
+
+.feedback{
+    min-height: 70vh;
 }

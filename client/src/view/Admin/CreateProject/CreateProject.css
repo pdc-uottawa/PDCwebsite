@@ -1,0 +1,34 @@
+#project_title_error_msg,#project_email_error_msg,#project_tel_error_msg,
+#project_frm_date_error_msg,#project_frm_date_blank_error_msg,
+#project_to_date_error_msg,#project_to_date_blank_error_msg,#prjct_owner_blank_error_msg,
+#project_host_error_msg,#project_description_error_msg
+{
+    color:black;
+    display: none;
+}
+
+ .active-stats {
+   font-weight: 500;
+    margin-bottom: 2% ;
+    margin-top: 5% ;
+    color: #008000;
+    border: 1px solid #008000 ; 
+    margin: 5%;
+    margin-right:7%;
+    padding-right:1px ;
+    border-radius: 5px ;
+    padding: 1% ; 
+    background-color: #F5FFFA;
+}
+
+.inactive-stats {
+     font-weight: 500;
+    margin-bottom: 2% ;
+    margin-top: 5% ;
+    color: #e70b0b;
+    border: 1px solid #e70b0b;
+    margin: -5%;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: #fff6f5;
+}
