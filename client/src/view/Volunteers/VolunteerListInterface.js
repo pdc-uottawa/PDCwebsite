@@ -2,11 +2,13 @@ import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Grid } from "semantic-ui-react";
 import Volunteers from "./Volunteers";
 import Axios from "axios";
+import DOMpurify from "dompurify";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
 import { Segment, Card, Icon } from "semantic-ui-react";
 import "react-activity/dist/Spinner.css";
+//secured by Makwana Harsh
 
 /**
  * @author @binjiasata
@@ -60,15 +62,15 @@ const VoulnteerListInterface = (props) => {
               <Card color="black">
                 <Card.Content>
                   <Card.Header>
-                    <u>{programCoordinator.program}</u>
+                    <u>{DOMpurify.sanitize(programCoordinator.program)}</u>
                   </Card.Header>
                   <Card.Description>
-                    <h4>{programCoordinator.name}</h4>
+                    <h4>{DOMpurify.sanitize(programCoordinator.name)}</h4>
                   </Card.Description>
                   <Card.Description>
                     <a href={"mailto:" + programCoordinator.mail}>
                       <Icon name="mail" />
-                      {programCoordinator.mail}
+                      {DOMpurify.sanitize(programCoordinator.mail)}
                     </a>
                   </Card.Description>
                 </Card.Content>

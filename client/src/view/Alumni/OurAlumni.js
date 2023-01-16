@@ -3,9 +3,10 @@ import { Image } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import { Spinner } from "react-activity";
+import DOMpurify from "dompurify";
 import defimg from "./../../assets/default.png";
 import { Helmet } from "react-helmet";
-
+//secured by Makwana Harsh
 
 const OurAlumni = (props) => {
   const path = config();
@@ -49,17 +50,17 @@ const OurAlumni = (props) => {
                       <div className="body">
                         <Image
                           circular
-                          src={alumni.image}
-                          alt={alumni.name}
+                          src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
+                          alt={DOMpurify.sanitize(alumni.name)}
                           className="photo"
                         />
-                        <h2 className="titleName">{alumni.name}</h2>
+                        <h2 className="titleName">{DOMpurify.sanitize(alumni.name)}</h2>
 
                         <h4 className="titlePosition">
-                          {alumni.currentPosition}
+                          {DOMpurify.sanitize(alumni.currentPosition)}
                         </h4>
                         <div className="btn">
-                          <a href={alumni.linkedIn} target="_blank">
+                          <a href={DOMpurify.sanitize(alumni.linkedIn)} target="_blank">
                             <Image
                               src={"/assets/linkedin.png"}
                               id="socialMediaIcon"
@@ -96,10 +97,10 @@ const OurAlumni = (props) => {
                             className="photo"
                           />
                         )}
-                        <h2 className="titleName">{alumni.name}</h2>
+                        <h2 className="titleName">{DOMpurify.sanitize(alumni.name)}</h2>
 
                         <h4 className="titlePosition">
-                          {alumni.currentPosition}
+                          {DOMpurify.sanitize(alumni.currentPosition)}
                         </h4>
                         <div className="btn">
                           <a href={alumni.linkedIn} target="_blank">
@@ -108,7 +109,7 @@ const OurAlumni = (props) => {
                               id="socialMediaIcon"
                             />
                           </a>
-                          <a href={"mailto:" + alumni.email} target="_blank">
+                          <a href={"mailto:" + DOMpurify.sanitize(alumni.email)} target="_blank">
                             <Image
                               src={"/assets/outlook.png"}
                               id="socialMediaIcon"

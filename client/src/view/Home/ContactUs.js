@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Form, Grid, Input, Image } from "semantic-ui-react";
 import { config } from "../../common/config/config";
+import DOMpurify from "dompurify";
 import Axios from "axios";
 import "./Home.css";
-import moment from "moment";
+import moment, { fn } from "moment";
 import { Spinner } from "react-activity";
 const img = require("../../assets/pdc-logo.png");
-
+//secured by Makwana Harsh
 function ContactUs() {
   const path = config();
   const options = [
@@ -51,6 +52,12 @@ function ContactUs() {
       query_email: email,
       date: moment().format("YYYY-MM-DD"),
     };
+    //XSS Sanitizer
+    emailOptions.first_name=DOMpurify.sanitize(emailOptions.first_name);
+    emailOptions.last_name=DOMpurify.sanitize(emailOptions.last_name);
+    emailOptions.query_category_name=DOMpurify.sanitize(emailOptions.query_category);
+    emailOptions.query_email=DOMpurify.sanitize(emailOptions.query_email);
+    emailOptions.query_message=DOMpurify.sanitize(emailOptions.query_message);
     //send email
     Axios.post(path + "email/query", emailOptions).catch((e) => {
       console.log(e);
@@ -70,6 +77,11 @@ function ContactUs() {
       alert("enter valid email id");
       setLoading(false);
     } else {
+      fname=DOMpurify.sanitize(fname);
+      lname=DOMpurify.sanitize(lname);
+      category=DOMpurify.sanitize(category);
+      email=DOMpurify.sanitize(email);
+      message=DOMpurify.sanitize(message);
       if (category) {
         Axios.post(path + "home/contact", {
           fname,

@@ -3,8 +3,36 @@ const User = require("../models/UserModel");
 const Project = require("../models/ProjectModel");
 const { secured } = require("./utils")
 var ObjectId = require('mongodb').ObjectID;
-
 const router = require("express").Router();
+//secured by Makwana Harsh
+
+var auth = function(req, res, next) {
+
+  if(req.user.admin) {
+
+      return next();
+
+  } else {
+
+      return res.status(400)
+
+  }
+};
+
+var authUser = function(req, res, next) {
+
+  if(!req.linkedin) {
+
+      return next();
+
+  } else {
+
+      return res.status(400)
+
+  }
+};
+
+
 
 // create a new application
 router.post("/apply", (req, res) => {
@@ -44,7 +72,7 @@ router.get("/apply/:id", secured, (req, res) => {
   });
 });
 
-router.get("/appliedprojects/:email", (req, res) => {
+router.get("/appliedprojects/:email",authUser, (req, res) => {
   let email = req.params.email;
   ApplyForm.find({ email: email }, (error, data) => {
     if (error) {
@@ -54,7 +82,7 @@ router.get("/appliedprojects/:email", (req, res) => {
   });
 });
 
-router.get("/profile/:id", (req, res) => {
+router.get("/profile/:id", authUser, (req, res) => {
   let studentId = req.params.id;
   User.find({ _id: studentId }, (error, data) => {
     if (error) {
@@ -64,7 +92,7 @@ router.get("/profile/:id", (req, res) => {
   });
 });
 
-router.post("/profile/edit/", (req, res) => {
+router.post("/profile/edit/", authUser,(req, res) => {
   let updatedProfile = req.body;
   let id = updatedProfile.studentId;
   User.findOneAndUpdate(
@@ -83,7 +111,7 @@ router.post("/profile/edit/", (req, res) => {
   );
 });
 
-router.post("/appliedprojectsDetails/", (req, res) => {
+router.post("/appliedprojectsDetails/",authUser,(req, res) => {
   let ProjectIDs = req.body;
 
   var obj_ids = ProjectIDs.map(function(id) { return ObjectId(id); });

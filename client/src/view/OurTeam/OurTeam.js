@@ -4,11 +4,12 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import { Spinner } from "react-activity";
+import DOMpurify from "dompurify";
 import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
 import { Helmet } from "react-helmet";
-
+//secured by Makwana Harsh
 const OurTeam = (props) => {
   const path = config();
   //const { userInfo, setUserInfo } = useContext(UserContext);
@@ -62,8 +63,8 @@ const OurTeam = (props) => {
                       src={ourAdvisor.imagePath}
                       className="photo"
                     />
-                    <h2 className="titleName">{ourAdvisor.name}</h2>
-                    <h4 className="titlePosition">{ourAdvisor.position}</h4>
+                    <h2 className="titleName">{DOMpurify.sanitize(ourAdvisor.name)}</h2>
+                    <h4 className="titlePosition">{DOMpurify.sanitize(ourAdvisor.position)}</h4>
                     <div className="btn">
                       <a href={ourAdvisor.linkedinId} target="_blank">
                         <Image
@@ -83,24 +84,24 @@ const OurTeam = (props) => {
             <div className="row cardsCenter">
               {users.map((user) => {
                 return (
-                  <div key={user._id} className="cursor col-md-3">
+                  <div key={DOMpurify.sanitize(user._id)} className="cursor col-md-3">
                     <div className="body">
                       <Image
                         circular
-                        src={user.image}
-                        alt={user.name}
+                        src={`https://drive.google.com/thumbnail?id=${user.image}`}
+                        alt={DOMpurify.sanitize(user.name)}
                         className="photo"
                       />
-                      <h2 className="titleName">{user.name}</h2>
-                      <h4 className="titlePosition">{user.position}</h4>
+                      <h2 className="titleName">{DOMpurify.sanitize(user.name)}</h2>
+                      <h4 className="titlePosition">{DOMpurify.sanitize(user.position)}</h4>
                       <div className="btn">
-                        <a href={user.linkedIn} target="_blank">
+                        <a href={DOMpurify.sanitize(user.linkedIn)} target="_blank">
                           <Image
                             src={"/assets/linkedin.png"}
                             id="socialMediaIcon"
                           />
                         </a>
-                        <a href={"mailto:" + user.email} target="_blank">
+                        <a href={"mailto:" + DOMpurify.sanitize(user.email)} target="_blank">
                           <Image
                             src={"/assets/outlook.png"}
                             id="socialMediaIcon"

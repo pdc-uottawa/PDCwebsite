@@ -35,6 +35,8 @@ const ProjectListItem = ({ project }) => {
   const [ellipsisText, setEllipsisText] = useState("Read More");
   const [clamped, setClamped] = useState(false);
   var currentDate = moment().format("YYYY-MM-DD");
+  var postedOnFormat = moment(postedOn)
+  var timeDiff = Math.abs((postedOnFormat.diff(currentDate))/86400000)
   const cnt = category.length - 2;
 
   // if click Read More button, show content and Collapse button.
@@ -67,7 +69,11 @@ const ProjectListItem = ({ project }) => {
                 <div class="banner">CLOSED</div>
               </div>
               :
-              null
+              timeDiff < 31 ?
+              <div className="view">
+                <div class="newBanner">NEW!</div>
+              </div>
+              : null
             }
             <Item.Group>
               <Item>
