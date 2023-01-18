@@ -86,7 +86,7 @@ const Routers = () => {
   return (
     <Fragment style=" min-height: 100vh;display: flex;flex-direction: column;">
       {width < 730 ? <HeaderMob /> : <Header />}
-      <Route exact path="/" component={HomePage} />
+      <Route exact path="/" component={HomePageV2} />
       <div className="container marginTop10">
         <Route exact path="/for-students" component={ForStudents} />
         <Route exact path="/signin" component={Signin} />
