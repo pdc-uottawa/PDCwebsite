@@ -88,7 +88,7 @@ const OurTeam = (props) => {
                     <div className="body">
                       <Image
                         circular
-                        src={`https://drive.google.com/thumbnail?id=${user.image}`}
+                        src={user.image}
                         alt={DOMpurify.sanitize(user.name)}
                         className="photo"
                       />
