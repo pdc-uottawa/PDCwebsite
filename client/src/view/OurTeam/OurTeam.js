@@ -9,6 +9,8 @@ import "./OurTeam.css";
 import { TeamMembers } from "./TeamMembers";
 import { OurAdvisors } from "./OurAdvisors";
 import { Helmet } from "react-helmet";
+const img = require("../../assets/default.png");
+
 //secured by Makwana Harsh
 const OurTeam = (props) => {
   const path = config();
@@ -88,7 +90,7 @@ const OurTeam = (props) => {
                     <div className="body">
                       <Image
                         circular
-                        src={user.image}
+                        src={user.image ? user.image : img}
                         alt={DOMpurify.sanitize(user.name)}
                         className="photo"
                       />
