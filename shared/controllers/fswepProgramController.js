@@ -33,16 +33,12 @@ const updateFswepPrograms = async (req, res, next) => {
 }
 
 const deleteFswepPrograms = async (req, res, next) => {
-    const id = req.body._id;
-    const doc = await FswepProgram.findOneAndDelete(
-        {_id: id},
-        (error, data) => {
-            if (error) {
-              console.log(error);
-            }
-        }
-    )
-    res.json(doc);
+    try {
+        const doc = await FswepProgram.findOneAndDelete({ _id: req.body._id });
+        doc === null ? res.json("Error while deleting.") : res.json("Success!");
+      } catch (err) {
+        res.json("Error while deleting.");
+      }
 }
 
 exports.getAllFswepPrograms = getAllFswepPrograms;
