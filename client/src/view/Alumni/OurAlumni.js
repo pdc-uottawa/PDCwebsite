@@ -48,7 +48,7 @@ const OurAlumni = (props) => {
                   return (
                     <div key={alumni._id} className="cursor col-md-3">
                       <div className="body">
-                        {alumni.image ? (
+                        {alumni.image === "" || !alumni.image ? (
                           <Image
                             circular
                             src={defimg}
@@ -94,7 +94,7 @@ const OurAlumni = (props) => {
                   return (
                     <div key={alumni._id} className="cursor col-md-3">
                       <div className="body">
-                        {alumni.image ? (
+                        {alumni.image === "" || !alumni.image ? (
                           <Image
                             circular
                             src={defimg}
