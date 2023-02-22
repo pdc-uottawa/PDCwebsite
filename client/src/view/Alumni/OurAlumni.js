@@ -21,7 +21,7 @@ const OurAlumni = (props) => {
       })
       .then((data) => {
         setAlumniList(data);
-        console.log(data);
+        // console.log(data);
         setLoading(false);
       })
       .catch((e) => {
@@ -48,19 +48,31 @@ const OurAlumni = (props) => {
                   return (
                     <div key={alumni._id} className="cursor col-md-3">
                       <div className="body">
-                        <Image
-                          circular
-                          src={`https://drive.google.com/thumbnail?id=${alumni.image}`}
-                          alt={DOMpurify.sanitize(alumni.name)}
-                          className="photo"
-                        />
-                        <h2 className="titleName">{DOMpurify.sanitize(alumni.name)}</h2>
-
+                        {alumni.image ? (
+                          <Image
+                            circular
+                            src={defimg}
+                            alt={alumni.name}
+                            className="photo"
+                          />
+                        ) : (
+                          <Image
+                            circular
+                            src={alumni.image}
+                            alt={alumni.name}
+                            className="photo"
+                          />
+                        )}
+                        <h2 className="titleName">
+                          {DOMpurify.sanitize(alumni.name)}
+                        </h2>
                         <h4 className="titlePosition">
                           {DOMpurify.sanitize(alumni.currentPosition)}
                         </h4>
                         <div className="btn">
-                          <a href={DOMpurify.sanitize(alumni.linkedIn)} target="_blank">
+                          <a
+                            href={DOMpurify.sanitize(alumni.linkedIn)}
+                            target="_blank">
                             <Image
                               src={"/assets/linkedin.png"}
                               id="socialMediaIcon"
@@ -82,7 +94,7 @@ const OurAlumni = (props) => {
                   return (
                     <div key={alumni._id} className="cursor col-md-3">
                       <div className="body">
-                        {alumni.image === "default" ? (
+                        {alumni.image ? (
                           <Image
                             circular
                             src={defimg}
@@ -97,7 +109,9 @@ const OurAlumni = (props) => {
                             className="photo"
                           />
                         )}
-                        <h2 className="titleName">{DOMpurify.sanitize(alumni.name)}</h2>
+                        <h2 className="titleName">
+                          {DOMpurify.sanitize(alumni.name)}
+                        </h2>
 
                         <h4 className="titlePosition">
                           {DOMpurify.sanitize(alumni.currentPosition)}
@@ -109,7 +123,9 @@ const OurAlumni = (props) => {
                               id="socialMediaIcon"
                             />
                           </a>
-                          <a href={"mailto:" + DOMpurify.sanitize(alumni.email)} target="_blank">
+                          <a
+                            href={"mailto:" + DOMpurify.sanitize(alumni.email)}
+                            target="_blank">
                             <Image
                               src={"/assets/outlook.png"}
                               id="socialMediaIcon"
@@ -123,7 +139,6 @@ const OurAlumni = (props) => {
               )}
             </div>
           </div>
-          
         </>
       )}
     </>
