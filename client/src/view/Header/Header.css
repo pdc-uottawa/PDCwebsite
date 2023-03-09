@@ -18,6 +18,13 @@
   margin-left: 1% !important;
 }
 
+.PDC_Header_Logo {
+  font-weight: 800 !important;
+  font-size: 20px;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 20px !important;
+}
+
 .drawerMenuBg {
   position: fixed;
   z-index: 999 !important;

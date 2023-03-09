@@ -15,18 +15,17 @@ import GNG5299 from "./view/Student/GNG5299";
 import HireStudent from "./view/HireStudent/HireStudent";
 import Covid19 from "./view/Covid19/Covid19";
 import OurTeam from "./view/OurTeam/OurTeam";
-import OurTeamV2 from "./view/OurTeam/OurTeamV2";
+// import OurTeamV2 from "./view/OurTeam/OurTeamV2";
 import AddTeam from "./view/Admin/Team/AddTeamMember";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
 import Header from "./view/Header/Header";
-import HeaderV2 from "./view/HeaderV2/Header";
 import HeaderMob from "./view/Header/HeaderMob";
 import Signin from "./view/Signin/Signin";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
 import ProjectDeatiledPageV2 from "./view/ProjectDetailed/ProjectDetailedPageV2";
 import Events from "./view/Events/Events";
-import EventsV2 from "./view/Events/EventsV2";
+// import EventsV2 from "./view/Events/EventsV2";
 import CreateEvent from "./view/Admin/Event/createEvent";
 import CreateTicket from "./view/Events/createTicket";
 import UploadLogo from "./view/Events/logoUpload";
@@ -95,13 +94,13 @@ const Routers = () => {
         <Route exact path="/for-students" component={ForStudents} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/OurTeam" component={OurTeam} />
-        <Route exact path="/OurTeamV2" component={OurTeamV2} />
+        {/* <Route exact path="/OurTeamV2" component={OurTeamV2} /> */}
         <Route exact path="/create-project" component={CreateProject} />
         <Route exact path="/cdc" component={CDCMainPage} />
         <Route exact path="/download-user-list" component={DownloadUserInfo} />
         <Route exact path="/project/manage/:id" component={CreateProject} />
         <Route exact path="/events" component={Events} />
-        <Route exact path="/eventsV2" component={EventsV2} />
+        {/* <Route exact path="/eventsV2" component={EventsV2} /> */}
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/student" component={Student} />
         <Route exact path="/create-association" component={CreateForm} />
