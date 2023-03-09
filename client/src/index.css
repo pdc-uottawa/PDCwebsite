@@ -14,11 +14,55 @@ body {
 }
 
 .footer {
-  position: fixed;
-  left: 0px;
+  padding-left:5%;
   bottom: 0px;
   width: 100%;
   text-align: left;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+background-color: #D9D9D9 !important;
+}
+.Subbutton{
+  padding-left:7%;
+  padding-bottom: 6%;
+  
+}
+.textstyle{
+padding: 5.5%;
+  font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #000000;
+
+}
+.followUs{
+  padding-top:5%;
+  padding-left:5%;
+  padding-right: 5%;
+font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+color: #000000;
+}
+.allign{
+  padding-bottom: 5%;
+}
+
+
+.greybg
+{
+  background-color: gray;
+
 }
 
 .masthead {
@@ -54,8 +98,9 @@ body {
     rgb(33, 133, 208) 69%,
     rgb(33, 133, 208) 89%
   ) !important; */
-  background-color: rgb(0, 0, 0, 0.8) !important;
-  border-bottom: 2px solid white !important;
+  background-color: #ccc !important;
+  padding: 0.5%;
+  
 }
 
 .masthead.segment {
@@ -64,7 +109,7 @@ body {
 }
 
 .masthead .ui.menu .ui.button,
-.ui.menu a.ui.inverted.button {
+.ui.menu a.ui.button {
   margin-left: 0.5em;
 }
 
@@ -87,9 +132,10 @@ Grid {
   font-weight: normal;
 }
 
-/* .footer.segment {
+ .footer.segment {
   padding: 5em 0;
-} */
+  color: #D9D9D9;
+} 
 
 .secondary.inverted.pointing.menu {
   border: none;
@@ -115,7 +161,7 @@ Grid {
 }
 
 .masthead .ui.menu .ui.button,
-.ui.menu a.ui.inverted.button {
+.ui.menu a.ui.button {
   margin-left: 0.3em;
 }
 
