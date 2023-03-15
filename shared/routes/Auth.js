@@ -1,10 +1,15 @@
 const router = require("express").Router();
 const passport = require("passport");
-const { setPath } = require("./utils")
+// const { setPath } = require("./utils")
 let user = {};
 
 // for deploy
-path = setPath();
+let path = "/";
+if (process.env.NODE_ENV !== "production") {
+  //for local setup
+  path = "http://localhost:3000";
+}
+// path = setPath();
 
 router.get(
   "/login",
@@ -31,6 +36,7 @@ router.get("/failed", (req, res) => {
 });
 
 router.get("/login/success", (req, res) => {
+  // console.log('USER: ', req.user)
   if (req.user !== undefined) {
     res.json({
       authenticated: true,
@@ -86,6 +92,7 @@ router.get('/outlook',
 router.post('/outlook/callback',
   passport.authenticate('azuread-openidconnect', { failureRedirect: '/auth/failed' }),
   function(req, res) { 
+    // console.log('RES: ', res)
     res.redirect(path);
   });
  

@@ -22,8 +22,6 @@ import "./Header.css";
 const img = require("../../assets/logo.png");
 
 const Header = (props) => {
-
-
   const { history } = useReactRouter();
   const [activeItem, setActiveItem] = useState("");
   const [formLink, setFormLink] = useState("");
@@ -109,7 +107,6 @@ const Header = (props) => {
     handleSideBarClick();
   };
 
-
   const handleSideBarClick = () => {
     //console.log("sideBarContentVisible::", sideBarContentVisible);
     setSideBarContentVisibility(!sideBarContentVisible);
@@ -139,16 +136,16 @@ const Header = (props) => {
         console.log(e);
       });
 
-      Axios.get(path + "form/link", {})
-        .then((res) => {
-          return res.data;
-        })
-        .then((data) => {
-          setFormLink(data[0].link);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    Axios.get(path + "form/link", {})
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        setFormLink(data[0].link);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
 
   return (
@@ -162,7 +159,7 @@ const Header = (props) => {
             onClick={handleHome}
             id="PDCHome-header"
             className="PDC_Header_Logo">
-              PDC
+            PDC
             {/* <Image size="mini" src={img} /> */}
           </Menu.Item>
           <Dropdown item text="Who We Are">
@@ -235,7 +232,6 @@ const Header = (props) => {
             <LogedOutMenu logIn={handleLogin} />
           )}
         </Container>
-
       </Menu>
     </Fragment>
   );
