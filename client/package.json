@@ -16,6 +16,7 @@
     "draftjs-to-html": "^0.9.1",
     "history": "^5.0.0",
     "html-react-parser": "^1.4.8",
+    "immutable": "^4.3.0",
     "less": "^3.13.1",
     "less-loader": "^6.1.2",
     "moment": "^2.27.0",
