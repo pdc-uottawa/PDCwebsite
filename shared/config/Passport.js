@@ -286,6 +286,9 @@ passport.use(
             // if it does not, save the new user
             // Redirect to={"/register/" + newUser}
             console.log("actual redirect code here ...");
+            newUser.save().then((newUser) => {
+              done(null, newUser);
+            });
             // newUser.save().then((newUser) => {
             //   done(null, newUser);
             // });
