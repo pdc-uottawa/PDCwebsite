@@ -49,7 +49,6 @@ const LogedInMenu = ({ logOut, username, userPicture }) => {
               <Dropdown pointing="top left" text={username}>
                 {/* if a user is admin, show create project button, dashboard,csv download */}
                 <Dropdown.Menu>
-                  {console.log('USER FROM : ', user)}
                   {user.data && (user.data.admin) && (
                     <Fragment>
                       {/* <Dropdown.Item

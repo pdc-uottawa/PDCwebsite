@@ -12,7 +12,6 @@ const AdminDashboard = (props) => {
   let path = config();
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [adminUsers, setAdminUsers] = useState([]);
-  const adminList = [];
   const { user } = userInfo;
   useEffect(() => {
     Axios.get(path + "user/adminuserlist")
@@ -27,20 +26,14 @@ const AdminDashboard = (props) => {
       });
   }, [null]);
 
-  adminUsers.map((admin) => {
-    adminList.push({
-      key: admin._id,
-      value: admin,
-      text: admin.name,
-    });
-  });
+  const currUser = user && adminUsers.filter((admin) => admin._id === user._id)
 
   return (
     <Fragment>
       <Helmet>
         <title>Admin Dashboard| Professional Development Club</title>
       </Helmet>
-      {user && user.admin ? (
+      {user && currUser ? (
         <div className="admin-dashboard">
           <AdminSideBar />
           <div className="admin-home">
