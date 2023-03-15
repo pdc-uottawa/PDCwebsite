@@ -17,59 +17,85 @@ const Footer = () => {
   const handleyoutube = () => {
     window.open("https://www.youtube.com/channel/UCW4nbiQF-186o9kjAoj6FvA");
   };
+  const handlesubscribe = () => {
+    window.open(
+      "https://gespdc.us9.list-manage.com/subscribe?u=c0d97c0b972136dcc031f31cc&id=426379abe6"
+    );
+  };
   return (
     <>
       <Menu>
-        <Segment inverted color="black" vertical className="footer">
-          <div className="center">
-            <Grid divided inverted stackable>
-              <Grid.Column>
-                <Header inverted as="h4" content="FOLLOW US" />
-                <p>
-                  <div className="row">
-                    <div className="col-md-3 marginTopMob5">
+        <Segment className=" greybg footer">
+          <div>
+            <Grid divided stackable>
+            <div className="col-md-6">
+                <Grid.Column>
+                <blockquote className="textstyle">
+                Want to receive the PDC Monthly Newsletter<br />
+                with the latest news and events?<br />
+                  </blockquote>
+                  <div className="row Subbutton ">
+                    <div className=" marginTopMob5">
                       <button
-                        id="facebook-footer"
-                        onClick={handlefacebook}
-                        className="ui facebook button"
+                        id="linkedIn-footer"
+                        onClick={handlesubscribe}
+                        className="ui button "
                       >
-                        <i className="facebook icon" />
-                        Facebook
+                      Subscribe
                       </button>
                     </div>
-                    <div className="col-md-3 marginTopMob5">
-                    <button
-                      onClick={handleinsta}
-                      id="instagram-footer"
-                      className="ui instagram button"
-                    >
-                      <i className="instagram icon" />
-                      Instagram
-                    </button>
+                  </div>
+                </Grid.Column>
+                </div>
+                <div className="col-md-6">
+                <Grid.Column>
+                <p className="followUs">
+                    
+                    Follow Us
+                  
+                  </p>
+                  <p>
+                    <div className="row allign">
+                      <div className=" col-md-3">
+                        <button
+                          id="facebook-footer"
+                          onClick={handlefacebook}
+                          className="ui facebook button"
+                        >
+                          <i className="facebook icon" />
+                        </button>
+                      </div>
+                      <div className="col-md-3 ">
+                        <button
+                          onClick={handleinsta}
+                          id="instagram-footer"
+                          className="ui instagram button"
+                        >
+                          <i className="instagram icon" />
+                        </button>
+                      </div>
+                      <div className="col-md-3 ">
+                        <button
+                          onClick={handlelinkedin}
+                          id="linkedIn-footer"
+                          className="ui linkedin button"
+                        >
+                          <i className="linkedin icon" />
+                        </button>
+                      </div>
+                      <div className=" col-md-3 ">
+                        <button
+                          onClick={handleyoutube}
+                          id="youTube-footer"
+                          className="ui youtube button"
+                        >
+                          <i className="youtube icon" />
+                        </button>
+                      </div>
                     </div>
-                    <div className="col-md-3 marginTopMob5">
-                    <button
-                      onClick={handlelinkedin}
-                      id="linkedIn-footer"
-                      className="ui linkedin button"
-                    >
-                      <i className="linkedin icon" />
-                      LinkedIn
-                    </button>
-                    </div>
-                    <div className="col-md-3 marginTopMob5">
-                    <button
-                      onClick={handleyoutube}
-                      id="youTube-footer"
-                      className="ui youtube button"
-                    >
-                      <i className="youtube icon" />
-                      YouTube
-                    </button>
-                    </div>
-                  </div>                  
-                </p>
-              </Grid.Column>
+                  </p>
+                </Grid.Column>
+             </div>
             </Grid>
           </div>
         </Segment>

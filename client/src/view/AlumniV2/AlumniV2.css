@@ -1,0 +1,168 @@
+
+.center{
+    text-align: center;
+}
+
+#user_image
+{
+    height:220px;
+    width:220px;
+}
+
+#column{
+    margin-bottom: 20px;
+}
+
+.buttonn {
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+.titlePosition {
+    min-height: 40px;
+}
+
+.paddingLeft {
+    padding-left: 20px !important;
+}
+
+#contentContainer{
+    text-align: left;
+    margin: 20px 40px;
+    font-size: 18px;
+    justify-content: flex-start;
+}
+
+#meetVolunteersButton{
+    margin-right: 20px;
+}
+
+#buttons-container{
+    display: flex;
+}
+
+#socialMediaIcon{
+    width:36px;
+    height:36px;
+    margin-right: 5px;
+    background: #F5F5F5;
+    position: absolute;
+    top :90%;
+   
+}
+
+#socialMediaIconsContainer{
+    display: flex;
+    justify-content:left;
+}
+
+#image{
+    border-radius:5px;
+}
+
+.titleFont{
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: left;
+    padding-left: 5%;
+    color: #000000;
+   
+    }
+.subTitle {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 3%;
+   
+    }
+    .subTitles {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: left;
+        padding-left: 5%;
+        min-height: 40px;
+        }
+    
+.font{
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 78px;
+    margin-left: 5%;
+    /* identical to box height */
+    color: #000000;
+    margin-top: 10% !important;
+    }
+    
+.sfont{
+    
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    margin-left: 5%;
+    
+    /* identical to box height */
+    color: #000000; 
+    }
+    
+.rectangel{
+    box-sizing: border-box;
+    /* position: absolute; */
+    width: 300px;
+    height: 500px;
+    left: 490px;
+    top: 481px;
+    
+    background: #F5F5F5;
+    }
+    
+.nfont{
+    /* position: absolute; */
+    width: 282px;
+    height: 49px;
+    left: 100px;
+    top: 1723px;
+    
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+    margin-left: 5%;
+    color: #000000;
+    
+    }
+    
+.cardss{
+    
+        margin-bottom: 5%;
+        min-width: 25%;
+        min-height: 40%;
+        /* border: 1px solid #0070b8 !important; */
+        margin-bottom: 5%;
+        margin-left: 5% !important;  
+        background: #F5F5F5;
+        width: 300px;
+        height: 460px;
+    
+    }
+    
+.userimage{
+    margin-top: 5% !important;  
+    width: 220px;
+    height: 220px;
+}
+    
