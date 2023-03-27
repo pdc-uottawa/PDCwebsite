@@ -8,3 +8,73 @@
     margin-top: 30%;
 } */
 
+.cardstyle{
+   
+    /* background-color: #9EB0FF !important;  
+ padding:1% !important; */
+
+ margin-bottom: 5%;
+ min-width: 25%;
+ min-height: 40%;
+ margin-bottom: 5%;
+ background: #9EB0FF !important;
+ width: 372px;
+ height: 358px;
+ padding: 2% !important;
+ border-radius: 0% !important;
+
+}
+
+.pageHeader{
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 78px;
+    /* identical to box height */
+    color: #000000;
+    margin-top: 10% !important;
+}
+
+.eventButton {
+    position: absolute;
+    bottom: 11%; 
+    background-color: transparent;
+    border: none;
+}
+.eventButtontext{
+font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+} 
+
+.cardHeader{
+font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+}
+
+.event-desc{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+
+}
+.datetime{
+font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #000000 !important;
+}

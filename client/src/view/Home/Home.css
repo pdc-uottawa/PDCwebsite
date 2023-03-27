@@ -1,12 +1,14 @@
 .HeroBg {
-  background-color: #8f001a;
+  background-color: #E6E7EB;
   min-width: 100%;
   left: 0;
   min-height: 100%;
+  border-radius: 50px;
+    height: 550px;
 }
 
-.paddingTop12 {
-  padding-top: 12%;
+.paddingTop10 {
+  padding-top: 10%;
 }
 
 .logoImg {
@@ -23,41 +25,60 @@
 }
 
 .HeroTextSmall {
-  color: white;
-  margin-top: -12% !important;
-  font-size: 20px;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  color: #000000;
+  margin-top: -5%;
+}
+.HeroTextGrad {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-style: normal;
+  /* identical to box height */
+  color: #000000;
+
+  margin-top: 2%;
+
 }
 
 .HeroTextBig {
-  color: white;
-  margin-top: 10%;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
   font-size: 40px;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 49px;
+  margin-top: 2%;
 }
 
 .IntroText {
   width: 100vw;
-  margin-top: 15%;
+  margin-top: 12%;
 }
 
 .JTTButton {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -5%;
-  margin-bottom: 5%;
+
+  margin-top: 5%;
+
 }
 
 .ab-desc {
-  margin-left: 5% !important;
-  margin-right: 5% !important;
   text-align: justify;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  font-size: 11pt;
+  color: black;
+  font-size: 20px;
+  padding-top: 5%;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+margin-left: 20% !important;
 }
 
 .formPad {
@@ -66,7 +87,7 @@
 
 @media screen and (max-width: 600px) {
   .logoImg {
-    width: 75%;
+    width: 50%;
   }
 
   .borderLeft1 {
@@ -74,8 +95,8 @@
   }
 
   .HeroTextSmall {
-    margin-top: -20%;
-    color: white;
+    margin-top: -15% !important;
+    color: black;
     margin-top: 10%;
     font-size: 15px;
     text-align: center;
@@ -83,8 +104,7 @@
   }
 
   .HeroTextBig {
-    color: white;
-    margin-top: 10%;
+    color: black;
     font-size: 25px;
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -92,7 +112,6 @@
 
   .IntroText {
     width: 100vw;
-    margin-top: -25%;
     margin-left: 8%;
   }
 
@@ -100,7 +119,7 @@
     margin-bottom: 20px !important;
     width: auto;
     height: auto;
-    border: 3px solid white !important;
+    border: 3px solid black !important;
     border-radius: 10px !important;
     display: block;
     margin-left: auto;
@@ -142,7 +161,6 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
-
 }
 
 .center {
@@ -235,7 +253,7 @@
   font-size: 50px;
   color: #666 !important;
   font-weight: bolder;
-  background-color: black;
+  /* background-color: black; */
   opacity: 0.5;
   border-radius: 10%;
 }
@@ -243,16 +261,21 @@
   font-size: 50px;
   color: #666 !important;
   font-weight: bolder;
-  background-color: black;
+  /* background-color: black; */
   opacity: 0.5;
   border-radius: 10%;
 }
 
 .header {
-  text-align: center;
-  color: white;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 20px;
+  text-align: left;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-left: 8%;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 78px;
 }
 
 .logo {
@@ -277,26 +300,33 @@
   cursor: pointer;
 }
 
-.frag3 {
+.frag1 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color: #999 !important ;
+  background-color: white !important ;
   color: white;
+  padding-left: 4%;
 }
 
 .frag2 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color: #0a0270 !important ;
+  background-color: white !important ;
   color: white;
+  padding: 4%;
+  margin-top: -6%;
+  margin-left: 4%;
+  
 }
 
-.frag1 {
+.frag3 {
   border: 10px solid white !important;
   border-radius: 15px !important;
-  background-color: #0a0270 !important ;
+  background-color: white !important ;
   color: white;
-  margin-bottom: -9vh;
+  padding-left: 4%;
+  padding-bottom: 1%;
+  margin-top: -2%;
 }
 
 .grid-col-1 {
@@ -312,8 +342,10 @@
 }
 
 .hd-2 {
-  text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: left;
+  padding: 20px;
+  font-size: 40px;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 2% !important;
   margin-bottom: 2% !important;
 }
@@ -325,6 +357,7 @@
 
 .ab-des {
   margin-bottom: 50px !important;
+  
 }
 
 .pdc-add {
@@ -429,12 +462,6 @@
   color: white;
 }
 
-.testi {
-  border: 0px !important;
-  color: #787878;
-  background-color: #999 !important;
-}
-
 .but-m-o-t {
   /* margin-right: 10% !important; */
   color: #000 !important;
@@ -458,10 +485,8 @@
 .ab-img {
   margin-top: 4%;
   margin-bottom: 20px !important;
-  width: 80%;
+  width: 75%;
   height: auto;
-  border: 3px solid white !important;
-  border-radius: 10px !important;
   margin-left: 10%;
 }
 
@@ -470,18 +495,22 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 100%;
-  width: 175px;
+  width: 300px;
+  height: 300px;
   z-index: 999;
+  margin-top: 15%;
 }
 
 .testi-name {
-  text-align: center;
-  margin-top: 3% !important;
+  text-align: left;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  
 }
 
 .testi-designation {
-  text-align: center;
-  font-size: 10px !important;
+  text-align: left;
+  font-size: 16px !important;
 }
 
 .card-img {
@@ -506,14 +535,17 @@
 }
 
 .maxHeight {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: medium;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
   font-style: italic;
-  font-weight: 500;
   line-height: 2 !important;
   margin-top: 3%;
   text-align: justify;
-  background-color: #cdcdcd !important;
+  padding-right: 15%;
 }
 
 .myCarousel {
@@ -624,38 +656,56 @@
     width: 24% !important;
     border-radius: 50% !important;
   }
-  
+
   .but-m-o-t {
     margin-bottom: 5% !important;
   }
 
-  /* .ab-img{
-      width:220% !important;
-      height: 50% !important;
-      margin-top: 10% !important;
-    } */
+ .ab-img{
+      width:100% !important;
+      height: 70% !important;
+      margin-top: 20% !important;
+      margin-left: 2% !important;
+    } 
 
-  /* .ab-desc{
-      width:220% !important;
-      height: 40% !important;
-      margin-top: 150% !important;
+   .ab-desc{
+      width: fit-content !important;
+      height: fit-content !important;
+      margin-top: 3% !important;
       text-align: center !important;
-      margin-left: -120% !important;
-      margin-right: 0% !important;
+      margin-left: 10% !important;
+      margin-right: 2% !important;
       font-size: 15px !important;
       text-align: justify !important;
       
-    } */
-  /* .cont-hd{
+    } 
+    
+.JTTButton {
+
+  margin-top: 8%;
+  margin-left: 8%;
+
+}
+    .header {
+      text-align: left;
+      color: black;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding-top: 3%;
+      padding-right: 3%;
+      margin-left: 8%;
+      font-size: 40px;
+    }
+.cont-hd{
       font-size: small !important;
-    } */
+    } 
 
   .pdc-add {
     font-size: 10px !important;
   }
 
-  .ui .form {
+  .ui .form{
     font-size: small !important;
+
   }
 
   .alice-carousel__prev-btn-item {
@@ -664,4 +714,11 @@
   .alice-carousel__next-btn-item {
     display: none !important;
   }
+  .paddingleft{
+    padding-left: 4% !important;
+  }
+
+}
+.marginTop3{
+  margin-top: 2%!important;
 }

@@ -1,14 +1,116 @@
+
 .feedbackBody {
-    background-color: rgb(0,0,0,0.2);
-    padding: 5%;
-    text-align: center;
-    margin-top:10%
+  background-color: rgb(0, 0, 0, 0.2);
+  padding: 5%;
+  text-align: center;
+  margin-top: 10%;
 }
 
 .feedbackText {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
-.feedback{
-    min-height: 70vh;
+.feedback {
+  min-height: 70vh;
+}
+
+.titleHead {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 78px;
+  /* margin-left: 5%; */
+  /* identical to box height */
+  color: #ffffff;
+  margin-top: 10% !important;
+}
+.size {
+  padding: 0.5%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
+  width: 30%;
+  color: gray;
+}
+/* 
+.inputStyle{
+    background-color: blue !important;
+    border-radius: none !important;
+    color: red !important;
+} */
+
+.ui.form input[type="text"] {
+  background-color: #d9d9d9 !important;
+  border-radius: 0% !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.ui.selection.dropdown {
+  background-color: #d9d9d9 !important;
+  border-radius: 0% !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.ui.large.button {
+  text-align: center !important;
+  background-color: #4c6cfa !important;
+  margin-left: 81% !important;
+  margin-top: 5%;
+  width: 19% ;
+  color: #ffffff;
+}
+.formPad {
+  padding: 1%;
+  margin-top: 1% !important;
+  margin-left: 1% !important;
+}
+.h1 {
+  margin-top: 2% !important;
+}
+.h4{
+  color: #FFFFFF !important;
+}
+.contactText {
+  margin-top: 5% !important;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+.marginLeft{
+    margin-left: 4% !important;
+}
+.marginLeft3{
+    margin-left: 2%!important; 
+    margin-bottom: 4% !important;
+}
+
+.ui.small.button {
+    background-color: #DE0317 !important;
+    color:#FFFFFF !important;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: 700;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    color:#FFFFFF !important;
+}
+
+.colorwhite{
+  color: white !important;
+}
+.headercontact{
+  
+  text-align: left;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-left: 0%;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 78px;
+
 }

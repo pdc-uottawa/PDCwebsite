@@ -216,15 +216,15 @@ const Header = (props) => {
             name="joinTeam"
             position="left"
             active={activeItem === "joinTeam"}>
-            <Button
+            <Button className="newBlue"
               id="joinTeam-header"
               onClick={() => window.open(formLink, "_blank")}
-              basic
+              
               content="Join the Team"
             />
-          </Menu.Item>
+          </Menu.Item >
           {userInfo.authenticated ? (
-            <LogedInMenu
+            <LogedInMenu 
               logOut={handleLogout}
               username={userInfo.user.name}
               userPicture={

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import CDCButtons from "./CDCButtons";
-import ContactUs from "./ContactUs";
+import AcademicResources from "./AcademicResources";
 import TipsAndTricks from "./TipsAndTricks";
-import AboutUs from "./AboutUs";
+import AboutCDC from "./AboutCDC";
 import { Spinner } from "react-activity";
 import "react-activity/dist/Spinner.css";
 import { config } from "../../common/config/config";
@@ -87,14 +87,13 @@ const CDCMainPage = (props) => {
         </div>
       ) : (
         <div className="container">
-          <AboutUs />
-          <CDCButtons buttonLinks={buttonLinks} />
+          <AboutCDC buttonLinks={buttonLinks}/>
           <TipsAndTricks
             resumeTips={resumeTips}
             linkedInTips={linkedInTips}
             interviewTips={interviewTips}
           />
-          <ContactUs contactDetails={contactDetails} />
+          <AcademicResources />
         </div>
       )}
     </>

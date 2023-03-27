@@ -118,21 +118,19 @@ const ProjectList = ({ projectsInfo }) => {
       <div className="backWhite">
         <div className="row">
           <div className="col-md-6">
-            <h1 className="mobCenter">Projects</h1>
+            <h1 className="header marginTop10 leftMargin">Projects</h1>
           </div>
           <div className="col-md-6">
             <div className="row">
-              <div className="col-md-1 mobCenter">
-                <p className="searchIcon">
-                  <FaSearch size="18px" />
-                </p>
+              <div className="col-md mobCenter">
+                
               </div>
-              <div className="col-md-11 mobCenter">
+              <div className="col-md mobCenter">
                 <input
                   type="text"
                   id="searchbar-Projects"
                   className="searchbar"
-                  placeholder="Search a Project"
+                  placeholder="Search by keyword"
                   onChange={handleSearchBar}
                 />
               </div>
@@ -140,42 +138,19 @@ const ProjectList = ({ projectsInfo }) => {
           </div>
         </div>
         <hr />
-        <div className="row alignCenter">
-          <div className="col-md-3">
+        <div className="row ">
+          <div className="col-md-6">
             <div className="select">
-              <Select
-                id="projectTypeFilter-Projects"
-                placeholder="Project Type"
-                options={projectTypeOptions}
-                onChange={projectTypeHandler}
-              />
-            </div>
-          </div>
-          <div className="col-md-1" />
-          <div className="col-md-3">
-            <div className="select">
-              <Select
-                id="hostedByFilter-Projects"
-                placeholder="Hosted By"
-                isClearable
-                isSearchable
-                options={hostedByOptions}
-                onChange={hostedByHandler}
-              />
-            </div>
-          </div>
-          <div className="col-md-1" />
-          <div className="col-md-3">
-            <div className="select">
-              <Select
+             <p>Skills</p>
+             <input
+                type="checkbox"
                 id="tagsFilter-Projects"
                 placeholder="Select Tags"
-                isClearable
-                isMulti
-                isSearchable
-                options={tagsOptions}
+                value={tagsOptions}
                 onChange={tagsHandler}
               />
+              <button > Apply</button>
+              <button > Clear Filters</button>
             </div>
           </div>
         </div>
@@ -201,7 +176,7 @@ const ProjectList = ({ projectsInfo }) => {
             .map((proj) => {
               if (projectTypeValue === "all") {
                 return (
-                  <div className="col-md-4">
+                  <div className="col-md-12">
                     <ProjectListItem key={proj._id} project={proj} />
                     <br />
                   </div>
@@ -212,7 +187,7 @@ const ProjectList = ({ projectsInfo }) => {
                   proj.isDeleted === true
                 ) {
                   return (
-                    <div className="col-md-4">
+                    <div className="col-md-12">
                       <ProjectListItem key={proj._id} project={proj} />
                       <br />
                     </div>
@@ -226,7 +201,7 @@ const ProjectList = ({ projectsInfo }) => {
                   (!proj.validUntil && !proj.isDeleted)
                 ) {
                   return (
-                    <div className="col-md-4">
+                    <div className="col-md-12">
                       <ProjectListItem key={proj._id} project={proj} />
                       <br />
                     </div>

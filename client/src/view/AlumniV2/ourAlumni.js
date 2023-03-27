@@ -41,9 +41,9 @@ const OurAlumni = (props) => {
         </div>
       ) : (
         <>
-          <p className="font row">Alumni</p>
-          <p className="sfont row">PDC Founders</p>
-          <div className="row ">
+          <p className="titleHead row padding2">Alumni</p>
+          <p className="subheading row padding2">PDC Founders</p>
+          <div className="row padding2 ">
             {AlumniList.filter((alumnus) => alumnus.founder === true).map(
               (alumni) => {
                 return (
@@ -87,7 +87,7 @@ const OurAlumni = (props) => {
           </div>
 
           <p className="nfont">Notable Alumni</p>
-          <div className="row ">
+          <div className="row padding2">
             {AlumniList.filter((alumnus) => alumnus.founder === false).map(
               (alumni) => {
                 return (

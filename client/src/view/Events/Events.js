@@ -122,15 +122,7 @@ const Events = (props) => {
         </div>
       ) : (
         <>
-          <Dropdown
-            placeholder="Select Events"
-            fluid
-            selection
-            options={eventsOptions}
-            id="eventsFiltersDropdown-Events"
-            value={filterType.value}
-            text={filterType.text}
-          />
+         <p className="pageHeader">Events</p>
           <Card.Group itemsPerRow={columnNumber}>
             {filteredEvents === undefined
               ? null
@@ -138,13 +130,7 @@ const Events = (props) => {
                   <EventCard key={event.id} event={event} />
                 ))}
           </Card.Group>
-          {/* <Card.Group itemsPerRow={columnNumber}>
-        {eventInfo.events === undefined
-          ? null
-          : eventInfo.events.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-      </Card.Group> */}
+        
         </>
       )}
     </div>

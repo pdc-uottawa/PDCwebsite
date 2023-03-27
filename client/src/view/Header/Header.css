@@ -13,6 +13,10 @@
   background-color: rgb(255,255,255);
 } */
 
+.joinTeam-header {
+  color: #000 !important;
+}
+
 .menuIconMob {
   margin-top: 1.5% !important;
   margin-left: 1% !important;
@@ -75,4 +79,13 @@
   right: 5%;
   border: 1px solid white;
   padding: 3%;
+}
+
+.ui.button.login{
+  color: #4C6CFA !important;
+  border: 2px solid #4C6CFA !important
+}
+.ui.item{
+  border-left: none !important;
+  border-right: none !important;
 }

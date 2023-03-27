@@ -57,9 +57,9 @@
 .projectItem {
     border: 1px solid #ccc;
     padding: 1%;
-    margin: 1%
+    margin: 1%;
+    background-color: #EAEAEA;
 }
-
 .imageHeader {
     /* width: 100%; */
     /* max-height: 150px; */
@@ -71,7 +71,8 @@
 }
 
 .heightSetting {
-    height: 275px;
+   min-height: 243px;
+    background-color: #EAEAEA;
 }
 
 .postedOnBg {
@@ -80,24 +81,44 @@
 
 .cursor {
     /* cursor: pointer; */
-    border: 1px solid #0070b8 !important;
-    box-shadow: 10px 10px #dcdcdc !important;
+    border: none !important;
+    
 }
 
 .HeaderHeight {
     height: 160px;
+    text-align: left !important;
 }
 
 .nameHeader {
-    text-align: center !important;
+    text-align: left !important;
     display: flex !important;
-    justify-content: center !important;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+font-style: normal;
+font-weight: 700;
+font-size: 24px !important;
+line-height: 29px;
+text-align: left !important;
+margin-left: 3% !important;
+
+color: #000000;
+
 }
 
 .hostedByHeader {
-    text-align: center;
-    padding: 3%;
-    background-color: wheat;
+    text-align:left !important;
+   margin-left: 3%;
+   padding-top: 3%;
+   font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px !important;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #000000;
+
 }
 
 .tagsHeader {
@@ -226,3 +247,60 @@
     }
 
 }
+
+.rightAlign{
+    text-align: right !important;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}
+
+.ui.segment, .ui.segments .segment, .ui.segments{
+    background-color: #EAEAEA;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.projectBox{
+    background-color: #EAEAEA;
+    text-align: left;
+}
+.roundedTags{
+  background-color: #9EB0FF;
+  border-radius: 50px;
+  color: #FFFFFF;
+  width: fit-content;
+  font-size: 16px;
+  font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+line-height: 22px;
+height: 60px;
+width: 216px;
+padding: 1%;
+text-align: center !important;
+margin-left: 1%;
+}
+
+.header {
+    text-align: left;
+    color: black;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 3%;
+    padding-right: 3%;
+    margin-left: 8%;
+    
+font-weight: 800;
+font-size: 64px;
+line-height: 78px;
+/* identical to box height */
+
+
+color: #000000;
+  }
+
+.leftMargin{
+    margin-left: 2%;
+}
+
+  

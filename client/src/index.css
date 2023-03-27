@@ -17,6 +17,7 @@ body {
   padding-left:5%;
   bottom: 0px;
   width: 100%;
+  max-height: fit-content;
   text-align: left;
 font-family: 'Open Sans';
 font-style: normal;
@@ -26,24 +27,20 @@ line-height: 22px;
 color: #000000;
 background-color: #D9D9D9 !important;
 }
-.Subbutton{
-  padding-left:7%;
-  padding-bottom: 6%;
-  
-}
+
 .textstyle{
-padding: 5.5%;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+padding: 4.5%;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
 line-height: 22px;
-
+margin: auto;
 color: #000000;
 
 }
 .followUs{
-  padding-top:5%;
+  padding-top:4.5%;
   padding-left:5%;
   padding-right: 5%;
 font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -53,9 +50,11 @@ font-size: 36px;
 line-height: 44px;
 /* identical to box height */
 color: #000000;
+margin-left: 3%;
 }
 .allign{
   padding-bottom: 5%;
+  margin-right: 18%;
 }
 
 
@@ -111,6 +110,7 @@ color: #000000;
 .masthead .ui.menu .ui.button,
 .ui.menu a.ui.button {
   margin-left: 0.5em;
+  
 }
 
 .masthead h1.ui.header {
@@ -133,8 +133,9 @@ Grid {
 }
 
  .footer.segment {
-  padding: 5em 0;
+  padding: 1%;
   color: #D9D9D9;
+ 
 } 
 
 .secondary.inverted.pointing.menu {
@@ -163,24 +164,30 @@ Grid {
 .masthead .ui.menu .ui.button,
 .ui.menu a.ui.button {
   margin-left: 0.3em;
+ 
+  
 }
 
 .ui.menu .item > img:not(.ui) {
   margin-right: 1.5em !important;
+
 }
 
 .ui.menu:not(.vertical) .item > .button {
   margin-left: 0.5em;
+  
 }
 
 /* project list item style */
 .ui.list > .item > .image img {
   height: 35px;
   width: 35px;
+
 }
 .ui.items > .item > .image > img {
   height: 80px !important;
   width: 80px !important;
+
 }
 
 details summary::-webkit-details-marker {
@@ -191,4 +198,40 @@ details summary::-webkit-details-marker {
 } */
 .mysummaryItem{
   cursor: pointer;
+}
+
+.ui.button{
+  border: none !important;
+  border-radius: 0% !important;
+}
+
+.marginFooter{
+  margin-top: 5%;
+  margin-left: 25%;
+  
+}
+
+.header {
+  text-align: left;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-left: 8%;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 78px;
+}
+.ui.button.newBlue{
+  background:#4C6CFA;
+  color:#FFFFFF !important;
+  font-family:"Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 500;
+font-size: 16px;
+line-height: 22px;
+}
+
+.ui.button.newBlue:hover {
+  color: #000000 !important;
+  background-color: #999 !important;
 }
