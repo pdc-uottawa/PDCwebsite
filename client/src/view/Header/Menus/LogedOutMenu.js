@@ -8,7 +8,8 @@ import { Menu, Button } from "semantic-ui-react";
 const LogedOutMenu = ({ logIn }) => {
   return (
     <Menu.Item position="right">
-      <Button onClick={logIn} basic content="Login" />
+      <Button
+      className="login" onClick={logIn} content="Login" />
     </Menu.Item>
   );
 };

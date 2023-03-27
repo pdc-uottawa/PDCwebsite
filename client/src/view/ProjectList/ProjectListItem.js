@@ -28,15 +28,15 @@ const ProjectListItem = ({ project }) => {
     user,
     category,
     _id,
-    isDeleted
+    isDeleted,
   } = project;
 
   const [readMore, setReadMore] = useState(false);
   const [ellipsisText, setEllipsisText] = useState("Read More");
   const [clamped, setClamped] = useState(false);
   var currentDate = moment().format("YYYY-MM-DD");
-  var postedOnFormat = moment(postedOn)
-  var timeDiff = Math.abs((postedOnFormat.diff(currentDate))/86400000)
+  var postedOnFormat = moment(postedOn);
+  var timeDiff = Math.abs(postedOnFormat.diff(currentDate) / 86400000);
   const cnt = category.length - 2;
 
   // if click Read More button, show content and Collapse button.
@@ -60,102 +60,52 @@ const ProjectListItem = ({ project }) => {
   return (
     <div className="marginBottom">
       {/*Logo + Name + Hosted By Section*/}
-      <Segment.Group className="cursor">
+      <Segment.Group className=" projectBox">
         <div className="heightSetting">
           <Segment className="HeaderHeight">
-            {
-              isDeleted || (validUntil ? validUntil < currentDate : null) ? 
+            {isDeleted || (validUntil ? validUntil < currentDate : null) ? (
               <div className="view">
                 <div class="banner">CLOSED</div>
               </div>
-              :
-              timeDiff < 31 ?
+            ) : timeDiff < 31 ? (
               <div className="view">
                 <div class="newBanner">NEW!</div>
               </div>
-              : null
-            }
+            ) : null}
             <Item.Group>
               <Item>
-                <Item.Image rounded size="tiny" src={logoUrl} />
                 <Item.Content>
-                  <Item.Header
-                    className="nameHeader"
+                  <Item
+                    className="nameHeader leftalign"
                     as={Link}
                     to={`/project-detail/${_id}`}
                   >
                     {title}
-                  </Item.Header>
+                  </Item>
+                  <p className="mobTextSmall rightAlign">
+                    <b>
+                      <Icon /> Posted: {postedOn}
+                      {validUntil ? "| Valid Till: " + validUntil : ""}
+                    </b>
+                  </p>
                   <Item.Description className="hostedByHeader">
-                    Hosted By: <strong>{hostedBy}</strong>
+                    Hosted By: {hostedBy}
                   </Item.Description>
                 </Item.Content>
               </Item>
             </Item.Group>
+
+            <div className="mobTagsHeight row col-md-12">
+              {/*Tags Section*/}
+              {category !== []
+                ? category.map((cate, index) => {
+                    return <p className="roundedTags col-md-2">{cate}</p>;
+                  })
+                : null}
+            </div>
+            {/*Posted On and Valid Until Section*/}
           </Segment>
-
-          <div className="mobTagsHeight">
-            {/*Tags Section*/}
-            {category !== []
-              ? category.map((cate, index) => {
-                  return (
-                    <ul>
-                      {index <= 1 ? (
-                        <li>{cate}</li>
-                      ) : index === 2 ? (
-                        `And ${cnt} More...`
-                      ) : null}
-                    </ul>
-                  );
-                })
-              : null}
-          </div>
         </div>
-        
-        {/*Posted On and Valid Until Section*/}
-        <Segment>
-          <p className="mobTextSmall">
-            <b>
-              <Icon name="clock" /> Posted: {postedOn}
-              &nbsp;
-              {validUntil ? "| Valid Till: " + validUntil : ""}
-            </b>
-          </p>
-        </Segment>
-
-        {/*User Section*/}
-        <Segment secondary>
-          <List horizontal>
-            {user &&
-              user.map((user, index) => (
-                <ProjectListUser key={index} user={user} />
-              ))}
-          </List>
-        </Segment>
-
-        {/*Description Section*/}
-        <Segment clearing>
-          <LinesEllipsis
-            style={{ whiteSpace: "pre-wrap", padding: "2%" }}
-            text={description}
-            ellipsis="..."
-            maxLine={3}
-            trimRight
-            basedOn="letters"
-            onReflow={handleReflow}
-          />
-          {clamped || ellipsisText === "Collapse" ? (
-            <Button
-              as={Link}
-              to={`/project-detail/${_id}`}
-              basic
-              floated="right"
-              content={ellipsisText}
-            />
-          ) : (
-            ""
-          )}
-        </Segment>
       </Segment.Group>
     </div>
   );

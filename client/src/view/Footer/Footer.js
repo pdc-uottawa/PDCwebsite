@@ -1,5 +1,13 @@
 import React, { Fragment, useState } from "react";
-import { Segment, Container, Grid, Header, Menu } from "semantic-ui-react";
+import {
+  Segment,
+  Container,
+  Grid,
+  Header,
+  Menu,
+  Image,
+} from "semantic-ui-react";
+import "./Footer.css";
 
 const Footer = () => {
   const [focused, setFocused] = useState(false);
@@ -24,78 +32,75 @@ const Footer = () => {
   };
   return (
     <>
-      <Menu>
-        <Segment className=" greybg footer">
+      <Menu className="margintop10">
+        <Segment className=" greybg footer ">
           <div>
             <Grid divided stackable>
-            <div className="col-md-6">
+              <div className="col-md-6">
                 <Grid.Column>
-                <blockquote className="textstyle">
-                Want to receive the PDC Monthly Newsletter<br />
-                with the latest news and events?<br />
+                  <blockquote className="textstyleNew marginFooter">
+                    Want to receive the PDC Monthly Newsletter
+                    <br />
+                    with the latest news and events?
+                    <br />
                   </blockquote>
-                  <div className="row Subbutton ">
+                  <div className="row marginFooter ">
                     <div className=" marginTopMob5">
                       <button
-                        id="linkedIn-footer"
                         onClick={handlesubscribe}
-                        className="ui button "
+                        className="ui button newBlue"
                       >
-                      Subscribe
+                        Subscribe
                       </button>
                     </div>
                   </div>
                 </Grid.Column>
-                </div>
-                <div className="col-md-6">
+              </div>
+              <div className="col-md-6">
                 <Grid.Column>
-                <p className="followUs">
-                    
-                    Follow Us
-                  
-                  </p>
+                  <p className="followUs">Follow Us</p>
                   <p>
                     <div className="row allign">
                       <div className=" col-md-3">
-                        <button
+                        <Image
+                        className="icon"
+                          centered
+                          src="/assets/newFacebook.png"
                           id="facebook-footer"
                           onClick={handlefacebook}
-                          className="ui facebook button"
-                        >
-                          <i className="facebook icon" />
-                        </button>
+                        />
                       </div>
                       <div className="col-md-3 ">
-                        <button
-                          onClick={handleinsta}
+                        <Image
+                        className="icon"
+                          centered
+                          src="/assets/newInstagram.png"
                           id="instagram-footer"
-                          className="ui instagram button"
-                        >
-                          <i className="instagram icon" />
-                        </button>
+                          onClick={handleinsta}
+                        />
                       </div>
-                      <div className="col-md-3 ">
-                        <button
+                      <div className=" col-md-3">
+                        <Image className="icon"
+                          centered 
+                          src="/assets/newLinkedicon.png"
+                          id="facebook-footer"
                           onClick={handlelinkedin}
-                          id="linkedIn-footer"
-                          className="ui linkedin button"
-                        >
-                          <i className="linkedin icon" />
-                        </button>
+                        />
                       </div>
                       <div className=" col-md-3 ">
-                        <button
+                        <Image
+                        className="icon"
+                          centered
+                          icon
+                          src="/assets/newYoutube.png"
                           onClick={handleyoutube}
                           id="youTube-footer"
-                          className="ui youtube button"
-                        >
-                          <i className="youtube icon" />
-                        </button>
+                        />
                       </div>
                     </div>
                   </p>
                 </Grid.Column>
-             </div>
+              </div>
             </Grid>
           </div>
         </Segment>

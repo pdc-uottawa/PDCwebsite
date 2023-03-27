@@ -15,7 +15,7 @@ import GNG5299 from "./view/Student/GNG5299";
 import HireStudent from "./view/HireStudent/HireStudent";
 import Covid19 from "./view/Covid19/Covid19";
 import OurTeam from "./view/OurTeam/OurTeam";
-// import OurTeamV2 from "./view/OurTeam/OurTeamV2";
+//  import OurTeamV2 from "./view/OurTeam/OurTeamV2";
 import AddTeam from "./view/Admin/Team/AddTeamMember";
 import Alumni from "./view/Alumni/Alumni";
 import Feedback from "./view/Feedback/Feedback";
@@ -25,7 +25,6 @@ import Signin from "./view/Signin/Signin";
 import ProjectListInterface from "./view/ProjectList/ProjectListInterface";
 import ProjectDeatiledPageV2 from "./view/ProjectDetailed/ProjectDetailedPageV2";
 import Events from "./view/Events/Events";
-// import EventsV2 from "./view/Events/EventsV2";
 import CreateEvent from "./view/Admin/Event/createEvent";
 import CreateTicket from "./view/Events/createTicket";
 import UploadLogo from "./view/Events/logoUpload";
@@ -100,7 +99,6 @@ const Routers = () => {
         <Route exact path="/download-user-list" component={DownloadUserInfo} />
         <Route exact path="/project/manage/:id" component={CreateProject} />
         <Route exact path="/events" component={Events} />
-        {/* <Route exact path="/eventsV2" component={EventsV2} /> */}
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/student" component={Student} />
         <Route exact path="/create-association" component={CreateForm} />

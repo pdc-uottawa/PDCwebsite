@@ -24,13 +24,11 @@ const TipsAndTricks = (props) => {
   return (
     <>
       <div className="container">
-        <div>
-          <h1 className="head">TIPS AND TRICKS FOR GROOMING YOUR PROFILE</h1>
-        </div>
+        <div></div>
         <div className="accordionDiv">
           <Accordion allowZeroExpanded state>
             <AccordionItem className="accordionItem">
-              <AccordionItemHeading className="accordionHeadResume">
+              <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
                   RESUME TIPS
                   <AccordionItemState>
@@ -58,7 +56,7 @@ const TipsAndTricks = (props) => {
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <div className="row centerItems">
-                  <div className="col-md borderItem">
+                  <div className="bgColorGray borderItem">
                     <div>
                       <h1 className="marginTop">DO's</h1>
                     </div>
@@ -71,11 +69,8 @@ const TipsAndTricks = (props) => {
                           })}
                       </ul>
                     </div>
-                  </div>
-                  <div className="col-md borderItem">
-                    <div>
-                      <h1 className="marginTop">DONT's</h1>
-                    </div>
+                    <h1 className="marginTop">DONT's</h1>
+
                     <div>
                       <ul>
                         {resumeTips
@@ -85,11 +80,9 @@ const TipsAndTricks = (props) => {
                           })}
                       </ul>
                     </div>
-                  </div>
-                  <div className="col-md borderItem">
-                    <div>
-                      <h1 className="marginTop">Top 6 Resume Mistakes</h1>
-                    </div>
+
+                    <h1 className="marginTop">Top 6 Resume Mistakes</h1>
+
                     <div>
                       <ul>
                         {resumeTips
@@ -104,7 +97,7 @@ const TipsAndTricks = (props) => {
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className="accordionItem">
-              <AccordionItemHeading className="accordionHeadLinkedIn">
+              <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
                   LINKEDIN TIPS
                   <AccordionItemState>
@@ -132,19 +125,23 @@ const TipsAndTricks = (props) => {
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <div className="row centerItems">
-                  <div className="linkedinDesc">
+                  <div className="linkedinDesc bgColorGray borderItem">
                     <p>
                       Almost{" "}
-                      <a href="https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-filled-via-networking-lou-adler/">
                         65-85 per cent of the jobs are not posted online
-                      </a>
+                
                       . This is why building your network is crucial and{" "}
-                      <a href="https://www.linkedin.com/">LinkedIn</a> is an
+                      is an
                       excellent tool to get you started on your job search
                       journey in Canada.
+                      <br>
+                      </br>
+                      Treat your LinkedIn profile differently from your resume.<br></br>
+                       Resumes are typically customized to a specific position you are applying for. 
+                      Your LinkedIn profile, on the other hand, is <br></br>universal and speaks to not just one, but all potential employers. 
+                      <br></br><b></b>Use a professional headshot Members with profile photos receive up to 21x more views and 9x more connection requests. 
                     </p>
-                  </div>
-                  <div className="col-md borderItem">
+                 
                     <div>
                       <ul>
                         {linkedInTips.map((tip) => {
@@ -158,12 +155,12 @@ const TipsAndTricks = (props) => {
                         })}
                       </ul>
                     </div>
-                  </div>
+                </div>
                 </div>
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className="accordionItem">
-              <AccordionItemHeading className="accordionHeadInterview">
+              <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
                   INTERVIEW TIPS
                   <AccordionItemState>
@@ -191,7 +188,7 @@ const TipsAndTricks = (props) => {
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <div className="row centerItems">
-                  <div className="interviewDesc">
+                  <div className="interviewDesc bgColorGray borderItem">
                     <h4>Preparing for Job Interviews</h4>
                     <p>
                       Job interview practice is important because it will help
@@ -224,8 +221,7 @@ const TipsAndTricks = (props) => {
                       and practice are:
                       <br />
                     </p>
-                  </div>
-                  <div className="col-md borderItem">
+                  
                     <div>
                       <h1 className="marginTop">Common Interview Questions</h1>
                     </div>
@@ -238,8 +234,8 @@ const TipsAndTricks = (props) => {
                           })}
                       </ul>
                     </div>
-                  </div>
-                  <div className="col-md borderItem">
+                  
+             
                     <div>
                       <h1 className="marginTop">
                         Situational Interview Questions
@@ -253,9 +249,7 @@ const TipsAndTricks = (props) => {
                             return <li className="marginBottom">{tip.ques}</li>;
                           })}
                       </ul>
-                    </div>
-                  </div>
-                  <div className="col-md borderItem">
+                  
                     <div>
                       <h1 className="marginTop">
                         Behavioural Interview Questions
@@ -270,8 +264,7 @@ const TipsAndTricks = (props) => {
                           })}
                       </ul>
                     </div>
-                  </div>
-                  <div className="interviewDesc">
+                  
                     <p>
                       You should practice answering general interview questions,
                       behavioural interview questions and questions that are
@@ -288,6 +281,7 @@ const TipsAndTricks = (props) => {
                       record yourself and provide yourself with honest feedback
                       as you go through your practice interview.
                     </p>
+                  </div>
                   </div>
                 </div>
               </AccordionItemPanel>

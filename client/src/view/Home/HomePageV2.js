@@ -3,7 +3,7 @@ import { config } from "../../common/config/config";
 import AboutUs from "./AboutUs";
 import ImageCarousel from "./Carousel";
 import ContactUs from "./ContactUs";
-import Testimonials from "./Testimonials";
+import TestimonialsV2 from "./TestimonialsV2";
 import Hero from "./Hero";
 import { Spinner } from "react-activity";
 import { Helmet } from "react-helmet";
@@ -13,6 +13,7 @@ import { useCookies } from "react-cookie";
 import PopUp from "./PopUp";
 import moment from "moment";
 import CookieConsent from "react-cookie-consent";
+import LatestEvents from "./UpcomingEventsandProjects"
 
 function HomePageV2() {
   const path = config();
@@ -108,8 +109,9 @@ function HomePageV2() {
           <ScrollToTop />
           <Hero />
           <AboutUs aboutUsData={aboutUsData} />
-          <Testimonials testimonialData={testimonialData} />
-          <ContactUs />
+          <LatestEvents/>
+          <TestimonialsV2 testimonialData={testimonialData} />
+         
         </>
       )}
     </>
