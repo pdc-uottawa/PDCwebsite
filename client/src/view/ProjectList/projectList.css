@@ -1,306 +1,298 @@
-.banner{
+.banner {
   position: absolute;
   top: -10px;
   right: -1px;
-  padding: 5px 50px; 
+  padding: 5px 50px;
   background-color: #eb0000;
   color: white;
   font-weight: bold;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.newBanner{
+.newBanner {
   position: absolute;
   top: -10px;
   right: -1px;
-  padding: 5px 50px; 
+  padding: 5px 50px;
   background-color: green;
   color: white;
   font-weight: bold;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.view{
+.view {
   position: absolute;
   right: 0;
   width: 100%;
 }
 
 .backWhite {
-    background-color: white !important;
+  background-color: white !important;
 }
 
 .hr {
-    margin-bottom: 3%;
+  margin-bottom: 3%;
 }
 
 .loadingState {
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
-    margin-bottom: 15%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 .padding10 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .border {
-    border: 2px solid black !important;
+  border: 2px solid black !important;
 }
 
 .heading {
-    text-align: center;
-    margin-top: -25px;
+  text-align: center;
+  margin-top: -25px;
 }
 
 .projectItem {
-    border: 1px solid #ccc;
-    padding: 1%;
-    margin: 1%;
-    background-color: #EAEAEA;
+  border: 1px solid #ccc;
+  padding: 1%;
+  margin: 1%;
+  background-color: #eaeaea;
 }
 .imageHeader {
-    /* width: 100%; */
-    /* max-height: 150px; */
-    background-color: #d8d8d8;
+  /* width: 100%; */
+  /* max-height: 150px; */
+  background-color: #d8d8d8;
 }
 
 .marginBottom {
-    margin-bottom: 10% !important;
+  margin-bottom: 10% !important;
 }
 
 .heightSetting {
-   min-height: 243px;
-    background-color: #EAEAEA;
+  min-height: 243px;
+  background-color: #eaeaea;
 }
 
 .postedOnBg {
-    background-color: silver;
+  background-color: silver;
 }
 
 .cursor {
-    /* cursor: pointer; */
-    border: none !important;
-    
+  /* cursor: pointer; */
+  border: none !important;
 }
 
 .HeaderHeight {
-    height: 160px;
-    text-align: left !important;
+  height: 160px;
+  text-align: left !important;
 }
 
 .nameHeader {
-    text-align: left !important;
-    display: flex !important;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-font-style: normal;
-font-weight: 700;
-font-size: 24px !important;
-line-height: 29px;
-text-align: left !important;
-margin-left: 3% !important;
+  text-align: left !important;
+  display: flex !important;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px !important;
+  line-height: 29px;
+  text-align: left !important;
+  margin-left: 3% !important;
 
-color: #000000;
-
+  color: #000000;
 }
 
 .hostedByHeader {
-    text-align:left !important;
-   margin-left: 3%;
-   padding-top: 3%;
-   font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 16px !important;
-line-height: 22px;
-/* identical to box height */
+  text-align: left !important;
+  margin-left: 3%;
+  padding-top: 3%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px !important;
+  line-height: 22px;
+  /* identical to box height */
 
-
-color: #000000;
-
+  color: #000000;
 }
 
 .tagsHeader {
-    display: flex !important;
-    justify-content: center !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .imageRow {
-    height: 150px;
+  height: 150px;
 }
 
 .nameRow {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .hostedByRow {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .searchbar {
-    padding: 1%;
-    border-radius: 5px;
-    min-width: 100%;
-    height: 35px;
+  padding: 1%;
+  border-radius: 5px;
+  min-width: 100%;
+  height: 35px;
 }
 
 .roww {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 
 .rowWoCenter {
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  margin-left: 10%;
 }
 
 .rowCenter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .searchIcon {
-    margin-top: 9px !important;
+  margin-top: 9px !important;
 }
 
 .search {
-    width: 70%
+  width: 70%;
 }
 
 .alignCenter {
-    justify-content: center;
+  justify-content: center;
 }
 
 .alignRight {
-    display: flex;
-    flex-direction: row;
-    float: right;
-    width: 30%;
-    margin-right: -5%;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  width: 30%;
+  margin-right: -5%;
 }
 
 .select {
-    margin: 5px;
-    /* margin-left: 0px;
+  margin: 5px;
+  /* margin-left: 0px;
     margin-top: 10px; */
 }
 
 @media screen and (max-width: 450px) {
-    .mobCenter {
-        text-align: center;
-    }
+  .mobCenter {
+    text-align: center;
+  }
 
-    .searchIcon {
-        /* display: flex; */
-        margin-top: 10% !important;
-        justify-content: center;
-    }
+  .searchIcon {
+    /* display: flex; */
+    margin-top: 10% !important;
+    justify-content: center;
+  }
 
-    .HeaderHeight {
-        height: 55%;
-    }
+  .HeaderHeight {
+    height: 55%;
+  }
 
-    .heightSetting {
-        height: 100%;
-    }
+  .heightSetting {
+    height: 100%;
+  }
 
-    .mobTagsHeight {
-        height: 50%;
-    }
+  .mobTagsHeight {
+    height: 50%;
+  }
 
-    .mobTextSmall {
-        font-size: 12px !important;
-    }
+  .mobTextSmall {
+    font-size: 12px !important;
+  }
 
-    .loadingState {
-        display: flex;
-        justify-content: center;
-        margin-top: 100%;
-    }
+  .loadingState {
+    display: flex;
+    justify-content: center;
+    margin-top: 100%;
+  }
 }
 
 @media screen and (min-width: 451px) and (max-width: 1025px) {
+  .HeaderHeight {
+    height: 65%;
+  }
 
-    .HeaderHeight {
-        height: 65%;
-    }
+  .heightSetting {
+    height: 350px;
+  }
 
-    .heightSetting {
-        height: 350px;
-    }
+  .mobTextSmall {
+    font-size: 11px !important;
+  }
 
-    .mobTextSmall {
-        font-size: 11px !important;
-    }
-
-    .loadingState {
-        display: flex;
-        justify-content: center;
-        margin-top: 100%;
-    }
-
+  .loadingState {
+    display: flex;
+    justify-content: center;
+    margin-top: 100%;
+  }
 }
 
-.rightAlign{
-    text-align: right !important;
-    position: absolute;
-    top: 30%;
-    right: 5%;
+.rightAlign {
+  text-align: right !important;
+  position: absolute;
+  top: 30%;
+  right: 5%;
 }
 
-.ui.segment, .ui.segments .segment, .ui.segments{
-    background-color: #EAEAEA;
-    border: none !important;
-    box-shadow: none !important;
+.ui.segment,
+.ui.segments .segment,
+.ui.segments {
+  background-color: #eaeaea;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-.projectBox{
-    background-color: #EAEAEA;
-    text-align: left;
+.projectBox {
+  background-color: #eaeaea;
+  text-align: left;
 }
-.roundedTags{
-  background-color: #9EB0FF;
+.roundedTags {
+  background-color: #9eb0ff;
   border-radius: 50px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: fit-content;
   font-size: 16px;
-  font-family: 'Open Sans';
-font-style: normal;
-font-weight: 600;
-line-height: 22px;
-height: 60px;
-width: 216px;
-padding: 1%;
-text-align: center !important;
-margin-left: 1%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  height: 60px;
+  width: 216px;
+  padding: 1%;
+  text-align: center !important;
+  margin-left: 1%;
 }
 
 .header {
-    text-align: left;
-    color: black;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-top: 3%;
-    padding-right: 3%;
-    margin-left: 8%;
-    
-font-weight: 800;
-font-size: 64px;
-line-height: 78px;
-/* identical to box height */
+  text-align: left;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-left: 8%;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 78px;
+  /* identical to box height */
 
-
-color: #000000;
-  }
-
-.leftMargin{
-    margin-left: 2%;
+  color: #000000;
 }
 
-  
+.leftMargin {
+  margin-left: 2%;
+}

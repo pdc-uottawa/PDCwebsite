@@ -10,7 +10,7 @@ function Testimonials(props) {
   return (
     <>
       <div className="frag3">
-        <h1 className="hd-2">TESTIMONIALS</h1>
+        <h1 className="header">Testimonials</h1>
         <AliceCarousel
           disableDotsControls
           autoPlay
