@@ -51,6 +51,10 @@ line-height: 29px;
     margin-top: 4%;
 }
 
+.accordionDivTips{
+    margin-left: -2% !important;
+}
+
 .accordionItem {
     margin-bottom: 1%;
 }
@@ -222,6 +226,7 @@ height: 233px;
   }
   .ui.grid.leftMarginCDC{
     margin-left: 0% !important;
+    margin-top: -7% !important;
   }
 
   .accordionHeadNewCDC {
@@ -239,7 +244,7 @@ height: 233px;
 
   .bgColorGray{
     
-    background-color: #D9D9D9 !important;
+    background-color: #eaeaea !important;
  
   }
 
@@ -266,7 +271,8 @@ color: #000000;
     line-height: 78px;
 }
 .leftspace{
-    margin-left: -8%;
+    margin-left: -7%;
+    
 }
 .ui.image.newIconsAcademic {
     background-color: #D9D9D9 !important;
@@ -291,3 +297,10 @@ color: #000000;
     color: #000000;
   
   }
+.ui.image img,
+.ui.image svg {
+  max-width: 84% !important;
+  height: 170px !important;
+  width: 200px !important;
+  margin-left: 10% !important;
+}

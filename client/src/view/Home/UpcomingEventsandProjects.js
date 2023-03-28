@@ -68,19 +68,16 @@ const LatestEvents = (props) => {
               <Grid.Column>
                 <h1 className="header">Upcoming/Recent Events</h1>
                 <Card className="eventBox" itemsPerRow={columnNumber}>
-                  {filteredEvents === undefined
-                    ? null
-                    : filteredEvents.map((event) => (
-                        <EventCard key={event.id} event={event} />
-                      ))}
-                      
-                </Card>
+            {filteredEvents === undefined
+              ? null
+              : filteredEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+          </Card>
                 <div
                   className="Button paddingTop5 marginleft10"
-                  id="joinTeam-carousel"
-                  onClick={() => window.open(formLink, "_blank")}
                 >
-                  <Button className="alleventButton">
+                  <Button href="/#/events" className="alleventButton ">
                     <p>All Events</p>
                   </Button>
                 </div>
@@ -99,10 +96,11 @@ const LatestEvents = (props) => {
                 <div
                   className="Button paddingTop5"
                   id="joinTeam-carousel"
-                  onClick={() => window.open(formLink, "_blank")}
+                  href = "/#/eventsv2"
                 >
-                  <Button className="findProject">
+                  <Button href="/#/project-list" className="findProject">
                     <p>Find a Project</p>
+                    
                   </Button>
                 </div>
               </Grid.Column>

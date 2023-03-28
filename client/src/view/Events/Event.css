@@ -17,7 +17,7 @@
  min-width: 25%;
  min-height: 40%;
  margin-bottom: 5%;
- background: #9EB0FF !important;
+ background: rgba(158, 176, 255, 0.7) !important;
  width: 372px;
  height: 358px;
  padding: 2% !important;
@@ -78,3 +78,7 @@ font-size: 16px;
 line-height: 19px;
 color: #000000 !important;
 }
+.ui.three.cards{
+
+        margin-right: 1% !important;
+    }

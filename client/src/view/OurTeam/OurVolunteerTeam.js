@@ -93,10 +93,10 @@ const OurVolunteerTeam = (props) => {
                                     <Card className="volunteer" color="blue">
                                       <Card.Content className="volunteer">
                                         <Card.Header>
-                                          Name: {tvolunteer.name}
+                                          {tvolunteer.name}
                                         </Card.Header>
                                         <Card.Description>
-                                          Email: {tvolunteer.email}
+                                          {tvolunteer.email}
                                         </Card.Description>
                                       </Card.Content>
                                     </Card>

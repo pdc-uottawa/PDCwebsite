@@ -117,14 +117,7 @@ function Feedback() {
       <h1 className="headercontact ">Contact Us</h1>
       <div>
         <div className="row">
-          <div className="col-md-3 centre-container">
-
-          </div>
-          <div className="col-md-3 centre-container">
-            <h3 className="cont-hd">
-              Professional Development Club, uOttawa
-            </h3>
-          </div>
+        
           <div className="col-md-8 formPad">
           <Form>
               <Form.Group widths="equal">
