@@ -18,15 +18,12 @@ class ProjectInfo extends Component {
     return (
       <Grid.Column width={this.state.width < 768 ? 16 : 9}>
         <Segment
-          textAlign="center"
+          textAlign="left"
           className="heading"
           attached="top"
         >
-          <Icon name="file alternate" />
           Description
-        </Segment>
-        <Segment>
-          <LinesEllipsis
+          <LinesEllipsis 
             id="project_description"
             style={{ whiteSpace: "pre-wrap" }}
             text={this.props.project.description}

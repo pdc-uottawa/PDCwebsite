@@ -48,6 +48,7 @@ const Footer = () => {
                     <div className=" marginTopMob5">
                       <button
                         onClick={handlesubscribe}
+                        id="subscribe-footer"
                         className="ui button newBlue"
                       >
                         Subscribe
@@ -83,7 +84,7 @@ const Footer = () => {
                         <Image className="icon"
                           centered 
                           src="/assets/newLinkedicon.png"
-                          id="facebook-footer"
+                          id="linkedin-footer"
                           onClick={handlelinkedin}
                         />
                       </div>

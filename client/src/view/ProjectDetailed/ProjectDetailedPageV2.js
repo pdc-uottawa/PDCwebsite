@@ -3,6 +3,7 @@ import { Grid } from "semantic-ui-react";
 import ProjectName from "./ProjectName";
 import ProjectInfo from "./ProjectInfo";
 import ProjectDates from "./ProjectDates";
+import ProjectSkills from "./ProjectSkills"
 import { Helmet } from "react-helmet";
 import ProjectHost from "./ProjectHost";
 import Axios from "axios";
@@ -94,11 +95,16 @@ const ProjectDeatiledPageNeww = (props) => {
             project={projectDetails}
             userInfo={userInfo}
             appliedStudentsList={appliedStudentsList}
-          />
+           
+          /> 
+          
           <ProjectInfo project={projectDetails} />
+          {/* <ProjectDates project={projectDetails} /> */}
+          
           <Grid.Column width={7}>
-            <ProjectDates project={projectDetails} />
-            <ProjectHost project={projectDetails} />
+          <ProjectSkills project={projectDetails} />
+          <ProjectHost project={projectDetails} />
+          
           </Grid.Column>
           <Grid.Row>
             {userInfo.user &&

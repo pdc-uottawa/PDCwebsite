@@ -3,6 +3,7 @@ import { Segment, Image, Item, Header, Button, Modal, Icon, Grid } from "semanti
 import Axios from "axios";
 import useReactRouter from "use-react-router";
 import moment from "moment";
+import "./projectdetail.css";
 
 const ProjectName = ({
     id,
@@ -52,20 +53,18 @@ const ProjectName = ({
 
     return (
         <Grid.Column width={16}>
-            <Segment className='project_name' color="teal" secondary>
+            <Segment className='project_name'>
                 <Item.Group>
                     <Item>
-                        <Item.Image size="small" src={project.logoUrl} />
+                        
                         <Item.Content >
-                            <Item.Header>
+                            <Item.Header className="headerextraSpace">
                                 {
                                     console.log(project)
                                 }
-                                <h1>{project.title}</h1>
+                                <p>{project.title}</p>
                             </Item.Header>
-                            <Item.Description>
-                                Hosted by <a>{project.hostedBy}</a>
-                            </Item.Description>
+                         
                             <Item.Extra>
                                 {/* For student, only show Apply button. For company and admin, show Manage and Delete button */}
                                 {userInfo.user &&
@@ -109,7 +108,7 @@ const ProjectName = ({
                                     ""
                                 ) :
                                     (
-                                        <Item.Extra>
+                                        <Item.Extra className="spacingLeft">
                                             {/* use email to judge the student applied or not */}
                                             {userInfo.user &&
                                                 JSON.stringify(appliedStudentsList).indexOf(userInfo.user.email) !==

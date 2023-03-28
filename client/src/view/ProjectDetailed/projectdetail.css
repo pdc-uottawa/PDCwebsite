@@ -1,26 +1,81 @@
-#project_description
-{
+#project_description {
     text-align: justify;
     margin-top: 15px;
-    margin-left: 30px;
+    margin-left: 0%;
     margin-right: 30px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
 }
 
 .heading {
     font-size: 17px !important;
     font-weight: bold;
-    background-color: #333 !important;
-    color: white;
+    background-color: white !important;
+    color: black !important;
+    text-align: left;
 }
 
-.project_name{
-    padding-left: 50px !important;
-    padding-top: 60px !important;
-}
+.project_name {}
 
 @media screen and (max-width: 450px) {
-    .project_name{
+    .project_name {
         padding-left: 20px !important;
         padding-top: 0px !important;
     }
+}
+
+.ui.large.button {
+    text-align: center !important;
+    background-color: #DE0317 !important;
+    color: #ffffff;
+    width: 11%;
+}
+
+
+
+.roundedTagsDetail {
+    background-color: #9eb0ff;
+    border-radius: 50px;
+    color: #ffffff;
+    width: fit-content;
+    font-size: 16px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    height: 60px;
+    width: 216px;
+    padding: 5% !important;
+    text-align: center !important;
+    margin-left: -11%;
+}
+
+.spacingLeft{
+    margin-left: -30% !important;
+}
+
+.hostedbyText {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+        color: #000000;
+        padding: 3%;
+        margin-top: 7% !important;
+}
+.headerextraSpace{
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+font-style: normal;
+font-weight: 800;
+font-size: 64px !important;
+line-height: 78px !important;
+color: #000000;
+margin-top: -4% !important;
 }

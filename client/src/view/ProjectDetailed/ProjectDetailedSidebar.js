@@ -23,14 +23,7 @@ const ProjectDetailedSidebar = ({ project }) => {
       </Segment>
       <Segment attached>
         <Item.Group divided>
-          <Item style={{ position: "relative" }}>
-            <Label
-              style={{ position: "absolute" }}
-              color="orange"
-              ribbon="right">
-              Host
-            </Label>
-            </Item>
+         
             {project.user && project.user.map((user) =>
             <Item>
                 {
