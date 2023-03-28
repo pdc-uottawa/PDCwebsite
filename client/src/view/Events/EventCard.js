@@ -41,12 +41,14 @@
    const dateDisplay = (date) => {
  
      //example: date = "2020-08-15T07:30:00"
-     date = date.split("T");  // date = ["2020-08-15", "07:30:00"]
-     let date0 = date[0].split("-"); // date[0] = ["2020", "08", "15"];
-    let monthString = date0[1].toLocaleString('en-US', { month: 'long' });
-     let timeDate = monthString+" "+date0[2]+", "+date0[0];  //timeD="15/08/2020"
-    
-     return date = timeDate;
+    //  date = date.split("T");  // date = ["2020-08-15", "07:30:00"]
+    //  let date0 = date[0].split("-"); // date[0] = ["2020", "08", "15"];
+    // let monthString = date0[1].toLocaleString('en-US', { month: 'long' });
+    //  let timeDate = monthString+" "+date0[2]+", "+date0[0];  //timeD="15/08/2020"
+    // let formattedDate = 
+    //  console.log(moment(date).format("MMM Do YY"));
+    return moment(date).format('LL');
+    //  return date = timeDate;
    }
  
    return (

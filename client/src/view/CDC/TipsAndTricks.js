@@ -25,12 +25,12 @@ const TipsAndTricks = (props) => {
     <>
       <div className="container">
         <div></div>
-        <div className="accordionDiv">
+        <div className="accordionDivTips">
           <Accordion allowZeroExpanded state>
             <AccordionItem className="accordionItem">
               <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
-                  RESUME TIPS
+                  Resume Tips
                   <AccordionItemState>
                     {({ expanded }) =>
                       expanded ? (
@@ -58,7 +58,7 @@ const TipsAndTricks = (props) => {
                 <div className="row centerItems">
                   <div className="bgColorGray borderItem">
                     <div>
-                      <h1 className="marginTop">DO's</h1>
+                      <h1 className="marginTop">Do's</h1>
                     </div>
                     <div>
                       <ul>
@@ -69,7 +69,7 @@ const TipsAndTricks = (props) => {
                           })}
                       </ul>
                     </div>
-                    <h1 className="marginTop">DONT's</h1>
+                    <h1 className="marginTop">Dont's</h1>
 
                     <div>
                       <ul>
@@ -99,7 +99,7 @@ const TipsAndTricks = (props) => {
             <AccordionItem className="accordionItem">
               <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
-                  LINKEDIN TIPS
+                  LinkedIn Tips
                   <AccordionItemState>
                     {({ expanded }) =>
                       expanded ? (
@@ -162,7 +162,7 @@ const TipsAndTricks = (props) => {
             <AccordionItem className="accordionItem">
               <AccordionItemHeading className="accordionHeadNewCDC">
                 <AccordionItemButton className="padding">
-                  INTERVIEW TIPS
+                  Interview Tips
                   <AccordionItemState>
                     {({ expanded }) =>
                       expanded ? (
@@ -289,7 +289,7 @@ const TipsAndTricks = (props) => {
           </Accordion>
         </div>
         <br />
-        <hr />
+       
       </div>
     </>
   );

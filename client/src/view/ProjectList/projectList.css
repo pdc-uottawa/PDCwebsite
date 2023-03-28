@@ -99,7 +99,7 @@
   line-height: 29px;
   text-align: left !important;
   margin-left: 3% !important;
-
+  margin-top: 3% ;
   color: #000000;
 }
 
@@ -135,10 +135,12 @@
 }
 
 .searchbar {
-  padding: 1%;
+  padding: 2%;
   border-radius: 5px;
-  min-width: 100%;
-  height: 35px;
+  width:620px;
+  height: 50px;
+  margin-left: 2%;
+  border-radius: 0%;
 }
 
 .roww {
@@ -294,5 +296,25 @@
 }
 
 .leftMargin {
-  margin-left: 2%;
+  margin-left: -4%;
+  margin-top: -3% !important;
+}
+.topSpace{
+  margin-top: 5%;
+}
+ui.button.sort{
+color: #4C6CFA !important;
+border: 2px solid #4C6CFA !important
+}
+.applyButtonBlue{
+  background-color: #2A3257 !important;
+  color: #ffffff !important;
+}
+.ui.button.sort{
+  background-color: transparent !important;
+  border: 1px solid black !important;
+  position: absolute;
+  right: 0%;
+ color: #000000;
+  height: 50px;
 }

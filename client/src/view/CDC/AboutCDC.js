@@ -30,7 +30,7 @@ const buttonLinks = props.buttonLinks;
           <div classname= "col-md-6 ">
           <Grid.Column>
         <p className="titleHead row ">Career Resources</p>
-          <p className="subheading row">Career Develop Centre</p>
+          <p className="subheading row">Career Development Centre</p>
       
         <div className="marginTop">
           <p className="Desc">The Career Development Centre is a newly established group under the Professional Development <br></br>Club of the University of Ottawa, that aims to mentor, guide and help students build their career. <br></br>Our motto is to inspire students to embrace their potential and strive for career excellence. <br /><br /> We believe that:</p>
@@ -84,7 +84,7 @@ const buttonLinks = props.buttonLinks;
                       class="item resources"
                       href={link.link}
                     >
-                      <text className="textMargin">Book a Mock Interview</text>
+                      <p className="textMargin">Book a Mock Interview</p>
                     </a>
                   </p>
                 </div>
@@ -103,7 +103,7 @@ const buttonLinks = props.buttonLinks;
                         class="item"
                         href={link.link}
                       >
-                       <text className="textMargin"> Request a Resume<br></br>/LinkedIn Profile Review</text>
+                       <p className="textMargin"> Request a Resume<br></br>/LinkedIn Profile Review</p>
                       </a>
                     </p>
                   </div>
@@ -117,7 +117,6 @@ const buttonLinks = props.buttonLinks;
       </Grid>
       </div>
 
-      <hr />
     </>
   );
 };
