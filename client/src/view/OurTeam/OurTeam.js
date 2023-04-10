@@ -101,7 +101,12 @@ const OurTeam = (props) => {
               );
             })}
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <p className="nfont">Board Members</p>
+       
           <div className="marginTop">
             <div className="row padding2">
               {users.map((user) => {

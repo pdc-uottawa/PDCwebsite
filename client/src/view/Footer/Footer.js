@@ -62,7 +62,7 @@ const Footer = () => {
                   <p className="followUs">Follow Us</p>
                   <p>
                     <div className="row allign">
-                      <div className=" col-md-3">
+                      <div className=" col-md-2">
                         <Image
                         className="icon"
                           centered
@@ -71,7 +71,7 @@ const Footer = () => {
                           onClick={handlefacebook}
                         />
                       </div>
-                      <div className="col-md-3 ">
+                      <div className="col-md-2 ">
                         <Image
                         className="icon"
                           centered
@@ -80,7 +80,7 @@ const Footer = () => {
                           onClick={handleinsta}
                         />
                       </div>
-                      <div className=" col-md-3">
+                      <div className=" col-md-2">
                         <Image className="icon"
                           centered 
                           src="/assets/newLinkedicon.png"
@@ -88,7 +88,7 @@ const Footer = () => {
                           onClick={handlelinkedin}
                         />
                       </div>
-                      <div className=" col-md-3 ">
+                      <div className=" col-md-2 ">
                         <Image
                         className="icon"
                           centered

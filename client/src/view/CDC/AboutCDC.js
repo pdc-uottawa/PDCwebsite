@@ -41,7 +41,7 @@ const buttonLinks = props.buttonLinks;
                     </div>
                     <br></br>
                     <div>
-                        <h5>Is What You Are Capable Of Doing</h5>
+                        <h5 className="subheadAbout">is What You Are Capable Of Doing</h5>
                     </div>
                 </div>
                 <div className="col-md borderItemAbout">
@@ -50,7 +50,7 @@ const buttonLinks = props.buttonLinks;
                     </div>
                     <br></br>
                     <div>
-                        <h5>Determines What You Do</h5>
+                        <h5 className="subheadAbout">determines What You Do</h5>
                     </div>
                 </div>
                 <div className="col-md borderItemAbout">
@@ -59,14 +59,14 @@ const buttonLinks = props.buttonLinks;
                     </div>
                     <br></br>
                     <div>
-                        <h5>Determines How Well You Do It</h5>
+                        <h5 className="subheadAbout">determines How Well You Do It</h5>
                     </div>
                 </div>
             </div>
         </div>
         </Grid.Column>
         </div>
-        <div className="col-md-4 newButtonRight">
+        <div className="col-md-3 newButtonRight">
         <Grid.Column>
         {buttonLinks &&
             buttonLinks.map((link) => {

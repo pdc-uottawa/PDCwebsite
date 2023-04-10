@@ -23,7 +23,7 @@ const ContactUS = (props) => {
                         <h1 className="headAbout">ABILITY</h1>
                     </div>
                     <div>
-                        <h5>Is What You Are Capable Of Doing</h5>
+                        <h5 className="subheadAbout">Is What You Are Capable Of Doing</h5>
                     </div>
                 </div>
                 <div className="col-md borderItemAbout">
@@ -31,7 +31,7 @@ const ContactUS = (props) => {
                         <h1 className="headAbout">MOTIVATION</h1>
                     </div>
                     <div>
-                        <h5>Determines What You Do</h5>
+                        <h5 className="subheadAbout">Determines What You Do</h5>
                     </div>
                 </div>
                 <div className="col-md borderItemAbout">
@@ -39,7 +39,7 @@ const ContactUS = (props) => {
                         <h1 className="headAbout">ATTITUDE</h1>
                     </div>
                     <div>
-                        <h5>Determines How Well You Do It</h5>
+                        <h5 className="subheadAbout">Determines How Well You Do It</h5>
                     </div>
                 </div>
             </div>

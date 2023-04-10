@@ -214,12 +214,10 @@ const Header = (props) => {
           </Menu.Item>
           <Menu.Item
             name="joinTeam"
-            position="left"
             active={activeItem === "joinTeam"}>
-            <Button className="newBlue"
+            <Button className="newBlue marginLeftspace"
               id="joinTeam-header"
-              onClick={() => window.open(formLink, "_blank")}
-              
+              onClick={() => window.open(formLink, "_blank")}  
               content="Join the Team"
             />
           </Menu.Item >
