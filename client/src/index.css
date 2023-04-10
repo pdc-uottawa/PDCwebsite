@@ -46,15 +46,15 @@ color: #000000;
 font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-style: normal;
 font-weight: 800;
-font-size: 24px;
+font-size: 36px;
 line-height: 44px;
 /* identical to box height */
 color: #000000;
-margin-left: 33%;
+margin-left: 3%;
 }
 .allign{
   padding-bottom: 5%;
-  margin-left: 35%;
+  margin-right: 18%;
 }
 
 
@@ -219,7 +219,7 @@ details summary::-webkit-details-marker {
   padding-right: 3%;
   margin-left: 8%;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 64px;
   line-height: 78px;
 }
 .ui.button.newBlue{
@@ -234,9 +234,4 @@ line-height: 22px;
 .ui.button.newBlue:hover {
   color: #000000 !important;
   background-color: #999 !important;
-}
-
-.ui.menu .item {
-  border: none !important;
-  position: inherit !important;
 }
