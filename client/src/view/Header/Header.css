@@ -17,6 +17,28 @@
   color: #000 !important;
 }
 
+.menuItemClass {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  margin-right: 1.5% !important;
+  font-weight: bold !important;
+}
+
+.LogInOutHeaderButtonPosition {
+  position: absolute !important;
+  right: 7.5% !important;
+}
+
+.LogInOutButton {
+  margin-top: 5% !important;
+  height: 50px !important;
+}
+
+.joinTeamHeaderButton {
+  position: absolute !important;
+  right: 14% !important;
+}
+
 .menuIconMob {
   margin-top: 1.5% !important;
   margin-left: 1% !important;
@@ -27,6 +49,10 @@
   font-size: 20px;
   font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 20px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  margin-right: 1.5% !important;
+  margin-left: 7.75% !important;
 }
 
 .drawerMenuBg {
@@ -83,7 +109,7 @@
 
 .ui.button.login{
   color: #4C6CFA !important;
-  border: 2px solid #4C6CFA !important
+  border: 2px solid #4C6CFA !important;
 }
 .ui.item{
   border-left: none !important;

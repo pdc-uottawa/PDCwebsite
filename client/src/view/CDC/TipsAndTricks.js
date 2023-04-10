@@ -3,7 +3,7 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import "react-activity/dist/Spinner.css";
-import { Icon } from "semantic-ui-react";
+import { Container, Icon } from "semantic-ui-react";
 import "./style.css";
 import {
   Accordion,
@@ -23,7 +23,7 @@ const TipsAndTricks = (props) => {
 
   return (
     <>
-      <div className="container">
+      <Container fluid>
         <div></div>
         <div className="accordionDivTips">
           <Accordion allowZeroExpanded state>
@@ -290,7 +290,7 @@ const TipsAndTricks = (props) => {
         </div>
         <br />
        
-      </div>
+      </Container>
     </>
   );
 };

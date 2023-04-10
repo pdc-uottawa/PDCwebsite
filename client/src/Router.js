@@ -89,73 +89,75 @@ const Routers = () => {
     <Fragment style=" min-height: 100vh;display: flex;flex-direction: column;">
       {width < 730 ? <HeaderMob /> : <Header />}
       <Route exact path="/" component={HomePageV2} />
-      <div className="container marginTop10">
-        <Route exact path="/for-students" component={ForStudents} />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/OurTeam" component={OurTeam} />
-        {/* <Route exact path="/OurTeamV2" component={OurTeamV2} /> */}
-        <Route exact path="/create-project" component={CreateProject} />
-        <Route exact path="/cdc" component={CDCMainPage} />
-        <Route exact path="/download-user-list" component={DownloadUserInfo} />
-        <Route exact path="/project/manage/:id" component={CreateProject} />
-        <Route exact path="/events" component={Events} />
-        <Route exact path="/admin" component={Admin} />
-        <Route exact path="/student" component={Student} />
-        <Route exact path="/create-association" component={CreateForm} />
-        <Route exact path="/program-coordinators" component={ProgramCoordinators} />
-        <Route exact path="/alumni" component={OurAlumniV2} />
-        {/* <Route exact path="/alumniV2" component={OurAlumniV2} /> */}
-        <Route exact path="/manage-alumni" component={ManageAlumni} />
-        <Route exact path="/manage-ourteam" component={ManageTeam} />
-        <Route exact path="/add-alumni" component={AddAlumni} />
-        <Route exact path="/add-ourteam" component={AddTeam} />
-        <Route exact path="/update-ourTeam/:id" component={UpdateOurTeam} />
-        <Route exact path="/volunteers" component={Volunteers} />
-        <Route exact path="/our-partners" component={OurPartners} />
-        <Route exact path="/programs" component={Programs} />
-        <Route exact path="/fswep" component={Fswep} />
-        <Route exact path="/student-association" component={StudentForm} />
-        <Route exact path="/resume-guidelines" component={ResumeGuidelines} />
-        <Route exact path="/useful-links" component={GNG5299} />
-        <Route exact path="/update-coordinators" component={UpdateCoordinators} />
-        <Route exact path="/hirestudent" component={HireStudent} />
-        <Route exact path="/covid" component={Covid19} />
-        <Route exact path="/upload" component={UploadLogo} />
-        <Route exact path="/feedback" component={Feedback} />
-        <Route exact path="/student-profile" component={StudentProfileDashboard} />
-        <Route exact path="/student/profile/:id" component={StudentProfileView} />
-        <Route exact path="/students/apply/:id" component={ApplyForm} />
-        <Route exact path="/AddForm" component={AddForm} />
-        <Route exact path="/UpdateForm/:id" component={UpdateForm} />
-        <Route exact path="/students/list" component={StudentAppliedList} />
-        <Route exact path="/project-list" component={ProjectListInterface} />
-        <Route exact path="/project-detail/:id" component={ProjectDeatiledPageV2} />
-        <Route path="/company-dashboard" component={CompanyDashboard} />
-        <Route exact path="/create-event" component={CreateEvent} />
-        <Route exact path="/create-ticket" component={CreateTicket} />
-        <Route exact path="/our-volunteers" component={OurVolunteers} />
-        <Route exact path="/useful-resources" component={UsefulResources} />
-        <Route exact path="/FAQs" component={FAQs} />
-        <Route exact path="/industry-internship-info" component={IndustryInternship} />
-{/* Admin */}
-        <Route exact path="/admin-dashboard" component={AdminDashboard} />
-        <Route exact path="/manage-FAQs" component={ManageFAQ} />
-        <Route exact path="/add-FAQ" component={AddFAQ} />
-        <Route exact path="/update-FAQ/:id" component={UpdateFAQ} />
-        <Route exact path="/update-volunteers/:team" component={UpdateVolunteerTeams} />
-        <Route exact path="/update-volunteer/:id" component={UpdateTeamWiseVolunteer} />
-        <Route exact path="/manage-volunteers" component={ManageVolunteers} />
-        <Route exact path="/add-volunteer" component={AddVolunteer} />
-        <Route exact path="/update-alumni/:id" component={UpdateAlumni} />
-        <Route exact path="/manage-other-info" component={ManageOtherInfo} />
-        <Route exact path="/manage-testimonials" component={ManageTestimonials} />
-        <Route exact path="/add-testimonial" component={AddTestimonial} />
-        <Route exact path="/update-testimonial/:id" component={UpdateTestimonial} />
-        <Route exact path="/update-link/joinOurTeamLink/:id" component={UpdateJoinTeamLink} />
-        <Route exact path="/update-link/feedbackLink/:id" component={UpdateFeedbackFormLink} />
-        <Route exact path="/update-link/mockInterviewLink/:id" component={UpdateMockInterviewLink} />
-        <Route exact path="/update-link/ResumeLinkedInReviewLink/:id" component={UpdateResumeLinkedInReviewLink} />
-      </div>
+      <Container fluid>
+        <div className="marginOverall">
+          <Route exact path="/for-students" component={ForStudents} />
+          <Route exact path="/signin" component={Signin} />
+          <Route exact path="/OurTeam" component={OurTeam} />
+          {/* <Route exact path="/OurTeamV2" component={OurTeamV2} /> */}
+          <Route exact path="/create-project" component={CreateProject} />
+          <Route exact path="/cdc" component={CDCMainPage} />
+          <Route exact path="/download-user-list" component={DownloadUserInfo} />
+          <Route exact path="/project/manage/:id" component={CreateProject} />
+          <Route exact path="/events" component={Events} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/student" component={Student} />
+          <Route exact path="/create-association" component={CreateForm} />
+          <Route exact path="/program-coordinators" component={ProgramCoordinators} />
+          <Route exact path="/alumni" component={OurAlumniV2} />
+          {/* <Route exact path="/alumniV2" component={OurAlumniV2} /> */}
+          <Route exact path="/manage-alumni" component={ManageAlumni} />
+          <Route exact path="/manage-ourteam" component={ManageTeam} />
+          <Route exact path="/add-alumni" component={AddAlumni} />
+          <Route exact path="/add-ourteam" component={AddTeam} />
+          <Route exact path="/update-ourTeam/:id" component={UpdateOurTeam} />
+          <Route exact path="/volunteers" component={Volunteers} />
+          <Route exact path="/our-partners" component={OurPartners} />
+          <Route exact path="/programs" component={Programs} />
+          <Route exact path="/fswep" component={Fswep} />
+          <Route exact path="/student-association" component={StudentForm} />
+          <Route exact path="/resume-guidelines" component={ResumeGuidelines} />
+          <Route exact path="/useful-links" component={GNG5299} />
+          <Route exact path="/update-coordinators" component={UpdateCoordinators} />
+          <Route exact path="/hirestudent" component={HireStudent} />
+          <Route exact path="/covid" component={Covid19} />
+          <Route exact path="/upload" component={UploadLogo} />
+          <Route exact path="/feedback" component={Feedback} />
+          <Route exact path="/student-profile" component={StudentProfileDashboard} />
+          <Route exact path="/student/profile/:id" component={StudentProfileView} />
+          <Route exact path="/students/apply/:id" component={ApplyForm} />
+          <Route exact path="/AddForm" component={AddForm} />
+          <Route exact path="/UpdateForm/:id" component={UpdateForm} />
+          <Route exact path="/students/list" component={StudentAppliedList} />
+          <Route exact path="/project-list" component={ProjectListInterface} />
+          <Route exact path="/project-detail/:id" component={ProjectDeatiledPageV2} />
+          <Route path="/company-dashboard" component={CompanyDashboard} />
+          <Route exact path="/create-event" component={CreateEvent} />
+          <Route exact path="/create-ticket" component={CreateTicket} />
+          <Route exact path="/our-volunteers" component={OurVolunteers} />
+          <Route exact path="/useful-resources" component={UsefulResources} />
+          <Route exact path="/FAQs" component={FAQs} />
+          <Route exact path="/industry-internship-info" component={IndustryInternship} />
+          {/* Admin */}
+          <Route exact path="/admin-dashboard" component={AdminDashboard} />
+          <Route exact path="/manage-FAQs" component={ManageFAQ} />
+          <Route exact path="/add-FAQ" component={AddFAQ} />
+          <Route exact path="/update-FAQ/:id" component={UpdateFAQ} />
+          <Route exact path="/update-volunteers/:team" component={UpdateVolunteerTeams} />
+          <Route exact path="/update-volunteer/:id" component={UpdateTeamWiseVolunteer} />
+          <Route exact path="/manage-volunteers" component={ManageVolunteers} />
+          <Route exact path="/add-volunteer" component={AddVolunteer} />
+          <Route exact path="/update-alumni/:id" component={UpdateAlumni} />
+          <Route exact path="/manage-other-info" component={ManageOtherInfo} />
+          <Route exact path="/manage-testimonials" component={ManageTestimonials} />
+          <Route exact path="/add-testimonial" component={AddTestimonial} />
+          <Route exact path="/update-testimonial/:id" component={UpdateTestimonial} />
+          <Route exact path="/update-link/joinOurTeamLink/:id" component={UpdateJoinTeamLink} />
+          <Route exact path="/update-link/feedbackLink/:id" component={UpdateFeedbackFormLink} />
+          <Route exact path="/update-link/mockInterviewLink/:id" component={UpdateMockInterviewLink} />
+          <Route exact path="/update-link/ResumeLinkedInReviewLink/:id" component={UpdateResumeLinkedInReviewLink} />
+        </div>
+      </Container>
       <Footer />
     </Fragment>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Container } from 'semantic-ui-react'
 import { config } from "../../common/config/config";
 import AboutUs from "./AboutUs";
 import ImageCarousel from "./Carousel";
@@ -107,11 +108,12 @@ function HomePageV2() {
             </>
           ) : null}
           <ScrollToTop />
-          <Hero />
-          <AboutUs aboutUsData={aboutUsData} />
-          <LatestEvents/>
-          <TestimonialsV2 testimonialData={testimonialData} />
-         
+            <Hero />
+          <Container fluid>
+            <AboutUs aboutUsData={aboutUsData} />
+            <LatestEvents/>
+            <TestimonialsV2 testimonialData={testimonialData} />
+          </Container>         
         </>
       )}
     </>

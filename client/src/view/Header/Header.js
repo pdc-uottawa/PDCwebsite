@@ -1,13 +1,4 @@
-import {
-  Container,
-  Menu,
-  Sidebar,
-  Button,
-  Icon,
-  Segment,
-  Dropdown,
-  Image,
-} from "semantic-ui-react";
+import { Container, Menu, Button, Dropdown } from 'semantic-ui-react'
 import React, { useEffect, useState, Fragment, useContext } from "react";
 import useReactRouter from "use-react-router";
 import Axios from "axios";
@@ -25,7 +16,7 @@ const Header = (props) => {
 
 
   const { history } = useReactRouter();
-  const [activeItem, setActiveItem] = useState("");
+  const [activeItem, setActiveItem] = useState("home");
   const [formLink, setFormLink] = useState("");
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [menubarHidden, setMenuBarVisibility] = useState(false);
@@ -153,88 +144,95 @@ const Header = (props) => {
 
   return (
     <Fragment>
-      <Menu fixed="top">
-        <Container hidden={menubarHidden}>
-          <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            as="a"
-            onClick={handleHome}
-            id="PDCHome-header"
-            className="PDC_Header_Logo">
-              PDC
-            {/* <Image size="mini" src={img} /> */}
-          </Menu.Item>
-          <Dropdown item text="Who We Are">
-            <Dropdown.Menu>
-              <Dropdown.Item
-                id="ourTeam-header"
-                onClick={handleOurTeam}
-                name="OurTeam">
-                The Team
-              </Dropdown.Item>
-              <Dropdown.Item
-                id="ourAlumni-header"
-                onClick={handleAlumni}
-                name="OurAlumni">
-                Alumni
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+      <div className='row'>
+        <div className='col-md-12'>
 
-          <Menu.Item
-            name="CDC"
-            active={activeItem === "CDC"}
-            onClick={handleCDC}
-            id="CDC-header">
-            Career & Academic Resources
-          </Menu.Item>
-          <Menu.Item
-            name="Events"
-            id="Events-header"
-            active={activeItem === "Events"}
-            onClick={handleEvents}>
-            Events
-          </Menu.Item>
-
-          <Menu.Item
-            name="ProjectList"
-            id="Projects-header"
-            active={activeItem === "ProjectList"}
-            onClick={handleProjectList}>
-            Projects
-          </Menu.Item>
-
-          <Menu.Item
-            name="feedback"
-            id="Feedback-header"
-            active={activeItem === "feedback"}
-            onClick={handleFeedback}>
-            Contact Us
-          </Menu.Item>
-          <Menu.Item
-            name="joinTeam"
-            active={activeItem === "joinTeam"}>
-            <Button className="newBlue marginLeftspace"
-              id="joinTeam-header"
-              onClick={() => window.open(formLink, "_blank")}  
-              content="Join the Team"
-            />
-          </Menu.Item >
-          {userInfo.authenticated ? (
-            <LogedInMenu 
-              logOut={handleLogout}
-              username={userInfo.user.name}
-              userPicture={
-                userInfo.user.picture ? userInfo.user.picture : defIcon
-              }
-            />
-          ) : (
-            <LogedOutMenu logIn={handleLogin} />
-          )}
-        </Container>
-
-      </Menu>
+        <Menu pointing secondary fixed="top">
+          <Container fluid hidden={menubarHidden}>
+            <Menu.Item
+              name="home"
+              active={activeItem === "home"}
+              as="a"
+              onClick={handleHome}
+              id="PDCHome-header"
+              className="PDC_Header_Logo">
+                PDC
+            </Menu.Item>
+            <Dropdown item className="menuItemClass" text="Who We Are">
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  id="ourTeam-header"
+                  onClick={handleOurTeam}
+                  name="OurTeam">
+                  The Team
+                </Dropdown.Item>
+                <Dropdown.Item
+                  id="ourAlumni-header"
+                  onClick={handleAlumni}
+                  name="OurAlumni">
+                  Alumni
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Menu.Item
+              name="CDC"
+              className="menuItemClass"
+              active={activeItem === "CDC"}
+              onClick={handleCDC}
+              id="CDC-header">
+              Career & Academic Resources
+            </Menu.Item>
+            <Menu.Item
+              name="Events"
+              className="menuItemClass"
+              id="Events-header"
+              active={activeItem === "Events"}
+              onClick={handleEvents}>
+              Events
+            </Menu.Item>
+            <Menu.Item
+              name="ProjectList"
+              className="menuItemClass"
+              id="Projects-header"
+              active={activeItem === "ProjectList"}
+              onClick={handleProjectList}>
+              Projects
+            </Menu.Item>
+            <Menu.Item
+              name="feedback"
+              className="menuItemClass"
+              id="Feedback-header"
+              active={activeItem === "feedback"}
+              onClick={handleFeedback}>
+              Contact Us
+            </Menu.Item>
+            <Menu.Item
+              name="joinTeam"
+              className="joinTeamHeaderButton"
+              active={activeItem === "joinTeam"}>
+              <Button className="newBlue"
+                id="joinTeam-header"
+                onClick={() => window.open(formLink, "_blank")}  
+                content="Join the Team"
+              />
+            </Menu.Item >
+            <div className="LogInOutHeaderButtonPosition">
+              {userInfo.authenticated ? (
+                <LogedInMenu 
+                  logOut={handleLogout}
+                  username={userInfo.user.name}
+                  userPicture={
+                    userInfo.user.picture ? userInfo.user.picture : defIcon
+                  }
+                />
+              ) : (
+                <LogedOutMenu logIn={handleLogin} />
+              )}
+            </div>
+          </Container>
+        </Menu>
+        </div>
+      </div>
     </Fragment>
   );
 };
