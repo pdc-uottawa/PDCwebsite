@@ -14,9 +14,8 @@ import {
   FcMultipleDevices,
   FcSearch,
   FcSurvey,
-  FcVoicePresentation
+  FcVoicePresentation,
 } from "react-icons/fc";
-
 
 const AboutCDC = (props) => {
   const path = config();
@@ -25,15 +24,23 @@ const AboutCDC = (props) => {
   return (
     <>
       <Container fluid>
-        <Grid className="leftMarginCDC">
-          <div className="row">
+        <div>
+          <Grid>
             <div classname="col-md-9">
               <Grid.Column>
-                <p className="titleHead row ">Career Resources</p>
-                <p className="subheading row">Career Development Centre</p>
+                <p className="mainHeading">Career Resources</p>
+                <p className="subHeadings">Career Development Centre</p>
 
                 <div className="marginTop">
-                  <p className="Desc">The Career Development Centre is a newly established group under the Professional Development <br></br>Club of the University of Ottawa, that aims to mentor, guide and help students build their career. <br></br>Our motto is to inspire students to embrace their potential and strive for career excellence. <br /><br /> We believe that:</p>
+                  <p className="Desc">
+                    The Career Development Centre is a newly established group
+                    under the Professional Development <br></br>Club of the
+                    University of Ottawa, that aims to mentor, guide and help
+                    students build their career. <br></br>Our motto is to
+                    inspire students to embrace their potential and strive for
+                    career excellence. <br />
+                    <br /> We believe that:
+                  </p>
                   <div className="row textCenter">
                     <div className="col-md borderItemAbout">
                       <div>
@@ -41,7 +48,9 @@ const AboutCDC = (props) => {
                       </div>
                       <br></br>
                       <div>
-                        <h5 className="subheadAbout">is What You Are Capable Of Doing</h5>
+                        <h5 className="subheadAbout">
+                          is what you are capable of doing
+                        </h5>
                       </div>
                     </div>
                     <div className="col-md borderItemAbout">
@@ -50,7 +59,7 @@ const AboutCDC = (props) => {
                       </div>
                       <br></br>
                       <div>
-                        <h5 className="subheadAbout">determines What You Do</h5>
+                        <h5 className="subheadAbout">determines what you do</h5>
                       </div>
                     </div>
                     <div className="col-md borderItemAbout">
@@ -59,7 +68,9 @@ const AboutCDC = (props) => {
                       </div>
                       <br></br>
                       <div>
-                        <h5 className="subheadAbout">determines How Well You Do It</h5>
+                        <h5 className="subheadAbout">
+                          determines how well you do it
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -72,7 +83,7 @@ const AboutCDC = (props) => {
                   buttonLinks.map((link) => {
                     return link.name === "book_appointment" &&
                       link.active === true ? (
-                      <div >
+                      <div>
                         <p>
                           <Image
                             className="newIconsRight"
@@ -91,7 +102,7 @@ const AboutCDC = (props) => {
                     ) : link.name === "submit_resume_linkedin" &&
                       link.active === true ? (
                       <>
-                        <div >
+                        <div>
                           <p>
                             <Image
                               className="newIconsRight"
@@ -103,20 +114,22 @@ const AboutCDC = (props) => {
                               class="item"
                               href={link.link}
                             >
-                              <p className="textMargin"> Request a Resume<br></br>/LinkedIn Profile Review</p>
+                              <p className="textMargin">
+                                {" "}
+                                Request a Resume<br></br>/LinkedIn Profile
+                                Review
+                              </p>
                             </a>
                           </p>
                         </div>
-
                       </>
                     ) : null;
                   })}
               </Grid.Column>
             </div>
-          </div>
-        </Grid>
+          </Grid>
+        </div>
       </Container>
-
     </>
   );
 };

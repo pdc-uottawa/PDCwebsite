@@ -26,12 +26,13 @@
         font-family:'Open Sans';
         color: black;
         font-size: 16px;
-        margin-left: 10%;
+        
      
       }
 .eventBox{
      
-        margin: 10% !important;
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
       }
       
 .marginleft10{
@@ -53,5 +54,5 @@
 .ui.button.findProject{
     background-color: #DE0317 !important;
     color: #FFFFFF !important;
-    margin-left: 10% !important;
+ 
 }

@@ -24,8 +24,7 @@ const TipsAndTricks = (props) => {
   return (
     <>
       <Container fluid>
-        <div></div>
-        <div className="accordionDivTips">
+        <div className="marginTopBottom5">
           <Accordion allowZeroExpanded state>
             <AccordionItem className="accordionItem">
               <AccordionItemHeading className="accordionHeadNewCDC">
@@ -287,9 +286,9 @@ const TipsAndTricks = (props) => {
               </AccordionItemPanel>
             </AccordionItem>
           </Accordion>
-        </div>
+      
         <br />
-       
+       </div>
       </Container>
     </>
   );

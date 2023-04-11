@@ -95,11 +95,11 @@ const ProjectListItem = ({ project }) => {
               </Item>
             </Item.Group>
 
-            <div className="mobTagsHeight row col-md-12">
+            <div className="mobTagsHeight row">
               {/*Tags Section*/}
               {category !== []
                 ? category.map((cate, index) => {
-                    return <p className="roundedTags col-md-2">{cate}</p>;
+                    return <p className="roundedTags">{cate}</p>;
                   })
                 : null}
             </div>

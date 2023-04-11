@@ -23,19 +23,7 @@
  padding: 2% !important;
  border-radius: 0% !important;
 
-}
-
-.pageHeader{
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
-    line-height: 78px;
-    /* identical to box height */
-    color: #000000;
-    margin-top: 10% !important;
-}
-
+} 
 .eventButton {
     position: absolute;
     bottom: 11%; 
@@ -79,6 +67,5 @@ line-height: 19px;
 color: #000000 !important;
 }
 .ui.three.cards{
-
-        margin-right: 1% !important;
+    margin-right: 1% !important;
     }

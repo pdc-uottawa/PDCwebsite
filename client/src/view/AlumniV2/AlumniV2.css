@@ -161,14 +161,14 @@
     width: 220px;
     height: 220px;
 }
-.padding2{
-padding-left: 2%!important;    
-}
+
 
 .margingtop3{
     margin-top: -3%;
 }
-.ui.three.cards{
-padding-left: 1%;
-    margin-right: 1% !important;
+.ui.three.cards{ 
+margin-right: 1% !important;
+}
+.padding1{
+    padding-left: 1.5% ;
 }

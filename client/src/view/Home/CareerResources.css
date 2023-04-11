@@ -62,8 +62,7 @@
 
 .marginTopButton {
   margin-top: 3% !important;
-  margin-bottom: 3% !important;
-  margin-left: 3% !important;
+  margin-bottom: 3% !important; 
 }
 
 .marginTop {
@@ -112,7 +111,10 @@
 }
 
 .padding5 {
-  padding: 4% !important;
+  padding-top: 4% !important;
+  padding-bottom: 4% !important;
+  padding-right: 4% !important;
+  padding-left: 0% !important;
 }
 
 .orangeButton {
@@ -211,6 +213,7 @@
   margin: 5%;
   padding: 5%;
   height: 200px !important;
+  width : 300px !important;
 
 }
 
@@ -232,4 +235,7 @@
 .ui.image img,
 .ui.image svg {
   max-width: 84% !important;
+}
+.marginTop10{
+  margin-top: 10% !important;
 }

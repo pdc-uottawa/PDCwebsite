@@ -1,39 +1,57 @@
-
-  ui.button.newRed{
-    background:#DE0317 !important;
-    color:#FFFFFF !important;
-    font-family:"Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-weight: 500;
+ui.button.newRed {
+  background: #DE0317 !important;
+  color: #FFFFFF !important;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  } 
-  .footerIcon{
-    background: none !important;
-    width:36px;
-    height:36px;
-    font: 5% !important;
-    Margin-top: -16% !important; 
-        padding-right: 10%;
-
-  }
-  .textstyleNew{
-font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 22px;
-
-color: #000000;
-
-  }
-
-.ui.centered.image.icon, .ui.centered.images.icon 
-{
-    cursor: pointer;
-    height: 36px;
-    width:36px;
 }
 
-.margintop10{
+.footerIcon {
+  background: none !important;
+  width: 36px;
+  height: 36px;
+  font: 5% !important;
+  Margin-top: -16% !important;
+  padding-right: 10%;
+
+}
+
+.textstyleNew {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+
+}
+
+.ui.centered.image.icon,
+.ui.centered.images.icon {
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+}
+
+.margintop10 {
   margin-top: 10% !important;
+}
+
+.marginFooter {
+  margin-top: 5%;
+  margin-left: 14.75%;
+
+}
+.followUs {
+  padding-top: 4.5%;
+  padding-right: 5%;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+  color: #000000;
+  margin-left: 7%;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid, Button, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import "./Home.css";
@@ -28,10 +28,13 @@ function AboutUs(props) {
   }, []);
 
   return (
-    <>
+    <> 
+    <Container fluid>
+      <div className="marginOverall">
       <div className="frag1">
-        <h1 className="header">About Us</h1>
+        
         <div className="row">
+        <h1 className="subHeadings">About Us</h1>
           {aboutUsData.map((abdata) => (
             <Grid>
               <div className="col-md-6">
@@ -54,6 +57,8 @@ function AboutUs(props) {
           <CareerResources buttonLinks={buttonLinks} />
         </div>
       </div>
+      </div>
+      </Container>
     </>
   );
 }

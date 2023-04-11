@@ -36,7 +36,7 @@
 }
 
 .accordionDiv {
-  margin-top: 0% !important;
+  margin-top: 0% !important; 
 }
 
 .accordionItem {
@@ -78,7 +78,7 @@
   border-radius: 0px !important;
   padding: 2%;
   background-color: #2a3257 !important;
-  width: 90% !important;
+  width: 100% !important;
 }
 
 .centerItems {

@@ -87,7 +87,7 @@ const CDCMainPage = (props) => {
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
-        <Container fluid>
+        <div>
           <AboutCDC buttonLinks={buttonLinks}/>
           <TipsAndTricks
             resumeTips={resumeTips}
@@ -95,7 +95,7 @@ const CDCMainPage = (props) => {
             interviewTips={interviewTips}
           />
           <AcademicResources />
-        </Container>
+        </div>
       )}
     </>
   );

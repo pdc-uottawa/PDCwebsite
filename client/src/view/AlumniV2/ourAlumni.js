@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image } from "semantic-ui-react";
+import { Image, Container } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import { Spinner } from "react-activity";
@@ -41,9 +41,11 @@ const OurAlumni = (props) => {
         </div>
       ) : (
         <>
-          <p className="titleHead row padding2">Alumni</p>
-          <p className="subheading row padding2">PDC Founders</p>
-          <div className="row padding2 ">
+        <Container fluid>
+          <div>
+          <p className="mainHeading">Alumni</p>
+          <p className="subHeadings">PDC Founders</p>
+          <div className="row">
             {AlumniList.filter((alumnus) => alumnus.founder === true).map(
               (alumni) => {
                 return (
@@ -87,7 +89,7 @@ const OurAlumni = (props) => {
           </div>
 
           <p className="nfont">Notable Alumni</p>
-          <div className="row padding2">
+          <div className="row">
             {AlumniList.filter((alumnus) => alumnus.founder === false).map(
               (alumni) => {
                 return (
@@ -129,6 +131,8 @@ const OurAlumni = (props) => {
               }
             )}
           </div>
+          </div>
+          </Container>
         </>
       )}
     </>

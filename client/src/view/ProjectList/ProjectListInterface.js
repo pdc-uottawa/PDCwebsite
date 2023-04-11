@@ -53,7 +53,7 @@ const ProjectListInterface = (props) => {
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
-        <div className="container">
+        <div>
           <ProjectList projectsInfo={projectsInfo} />
         </div>
       )}

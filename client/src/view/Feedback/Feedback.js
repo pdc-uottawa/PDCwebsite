@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Grid, Input, Image, Button } from "semantic-ui-react";
+import { Form, Grid, Input, Image, Button, Container } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import DOMpurify from "dompurify";
 import Axios from "axios";
@@ -113,8 +113,8 @@ function Feedback() {
   }
 
   return (
-    <div >
-      <h1 className="headercontact ">Contact Us</h1>
+    <Container fluid >
+      <h1 className="mainHeading marginTopBottom5">Contact Us</h1>
       <div>
         <div className="row">
         
@@ -176,32 +176,28 @@ function Feedback() {
                 </Form.Button>
               )}
             </Form>
-          </div>
-          <div className="col-md-4">
-
-          </div>
-          <div className="row">
-
-          <h1 className="header marginLeft">Website Feedback</h1>
-        
-          <div className="col-md-12">
-          <p className="contactText marginLeft3">Please share your website experience with us. Your feedback help us improve.</p>
+          </div> 
+          <div className="marginTopBottom5"> 
+          <p className="subHeadings marginTopBottom5 ">Website Feedback</p> 
+          <div className= "marginTopBottom5">
+            <br></br> <br></br> 
+          <p className="contactText marginTopBottom5">Please share your website experience with us. Your feedback help us improve.</p>
            <br>
            </br>
             <Button
               id="takeSurvery-Feedback"
               size="small"
               href="https://forms.office.com/r/53RY8BBPRf"
-              className="survey-reminder marginLeft3"
+              className="survey-reminder"
               target="_blank"
             >
-              <h4 className="colorwhite">Take the Survey!</h4>
+              <h4 className="colorwhite  ">Take the Survey!</h4>
             </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

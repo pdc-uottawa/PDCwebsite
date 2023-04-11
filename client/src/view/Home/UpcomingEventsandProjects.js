@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Card, Dropdown } from "semantic-ui-react";
+import { Card, Dropdown, Container } from "semantic-ui-react";
 import { EventsContext } from "../../common/context/EventContext";
 import EventCard from "./EventCard";
 import { Spinner } from "react-activity";
@@ -56,17 +56,19 @@ const LatestEvents = (props) => {
   }, [setEventInfo, setFilteredEvents]);
 
   return (
-    <div className="frag2">
+    <Container fluid>
+    <div className="frag2 marginOverall">
       {loading ? (
         <div className="loadingState">
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
         <>
+      
           <Grid>
-            <div className="col-md-6 centerItems">
+            <div className="col-md-6">
               <Grid.Column>
-                <h1 className="header">Upcoming/Recent Events</h1>
+                <h1 className="subHeadings">Upcoming/Recent Events</h1>
                 <Card className="eventBox" itemsPerRow={columnNumber}>
             {filteredEvents === undefined
               ? null
@@ -75,7 +77,7 @@ const LatestEvents = (props) => {
                 ))}
           </Card>
                 <div
-                  className="Button paddingTop5 marginleft10"
+                  className="Button paddingTop5"
                 >
                   <Button href="/#/events" className="alleventButton ">
                     <p>All Events</p>
@@ -85,7 +87,7 @@ const LatestEvents = (props) => {
             </div>
             <div className="col-md-6 ">
               <Grid.Column>
-                <h1 className="header">Projects</h1>
+                <p className="subHeadings">Projects</p>
                 <p className="projectText">
                 The PDC coordinates various project <br></br>
                   opportunities with companies and the university.
@@ -106,9 +108,11 @@ const LatestEvents = (props) => {
               </Grid.Column>
             </div>
           </Grid>
+          
         </>
       )}
     </div>
+    </Container>
   );
 };
 

@@ -218,17 +218,12 @@
 
 .ui.image.newIconsRight {
   background-color: #d9d9d9; 
-  max-width: 70%;
   margin: 5%;
   padding: 5%;
   height: 200px !important;
   width: 300px !important;
 }
 
-.ui.grid.leftMarginCDC {
-  margin-left: 0% !important;
-  margin-top: -7% !important;
-}
 
 .accordionHeadNewCDC {
   background-color: #eaeaea;
@@ -277,15 +272,14 @@
 .ui.image.newIconsAcademic {
   background-color: #d9d9d9 !important;
   height: fit-content;
-  max-width: 100%;
-  margin-left: 10%;
+  max-width: 100%; 
   padding: 5%;
   height: 200px !important;
   width: 300px !important;
 }
 
 .iconTextInfo {
-  margin-left: 9% !important;
+  margin-top: 3% !important;
   text-decoration: underline gray;
   color: #000000 !important;
   font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -312,3 +306,4 @@
 
   color: #000000;
 }
+

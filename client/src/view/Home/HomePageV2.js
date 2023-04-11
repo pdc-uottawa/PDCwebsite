@@ -4,7 +4,7 @@ import { config } from "../../common/config/config";
 import AboutUs from "./AboutUs";
 import ImageCarousel from "./Carousel";
 import ContactUs from "./ContactUs";
-import TestimonialsV2 from "./TestimonialsV2";
+import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 import { Spinner } from "react-activity";
 import { Helmet } from "react-helmet";
@@ -109,11 +109,11 @@ function HomePageV2() {
           ) : null}
           <ScrollToTop />
             <Hero />
-          <Container fluid>
+         
             <AboutUs aboutUsData={aboutUsData} />
             <LatestEvents/>
-            <TestimonialsV2 testimonialData={testimonialData} />
-          </Container>         
+            <Testimonials testimonialData={testimonialData} />
+               
         </>
       )}
     </>
