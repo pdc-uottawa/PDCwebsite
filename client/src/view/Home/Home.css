@@ -78,8 +78,7 @@
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
-line-height: 22px;
-margin-left: 20% !important;
+line-height: 22px; 
 }
 
 .formPad {
@@ -240,7 +239,7 @@ margin-left: 20% !important;
   width: 25px !important;
   position: absolute;
   top: 45% !important;
-  left: 3% !important;
+  left: 3% !important; 
 }
 .alice-carousel__next-btn {
   background-color: transparent !important;
@@ -275,7 +274,7 @@ margin-left: 20% !important;
   padding-right: 3%;
   margin-left: 8%;
   font-weight: 800;
-  font-size: 64px;
+  font-size: 40px;
   line-height: 78px;
 }
 
@@ -306,26 +305,21 @@ margin-left: 20% !important;
   border-radius: 15px !important;
   background-color: white !important ;
   color: white;
-  padding-left: 4%;
+  margin-top: 0% !important; 
 }
 
 .frag2 {
   border: 10px solid white !important;
   border-radius: 15px !important;
   background-color: white !important ;
-  color: white;
-  padding: 4%;
-  margin-top: -6%;
-  margin-left: 4%;
+  color: white; 
+
   
 }
 
-.frag3 {
-  border: 10px solid white !important;
-  border-radius: 15px !important;
+.frag3 { 
   background-color: white !important ;
-  color: white;
-  padding-left: 4%;
+  color: white; 
   padding-bottom: 1%;
   margin-top: -2%;
 }
@@ -720,8 +714,8 @@ margin-left: 20% !important;
   }
 
 }
-.marginTop3{
-  margin-top: -2%!important;
+.marginTop6{
+  margin-top: 6%!important;
 }
 
 .a.whiteColor{

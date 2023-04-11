@@ -3,7 +3,7 @@ import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import "react-activity/dist/Spinner.css";
-import { Icon } from "semantic-ui-react";
+import { Container, Icon } from "semantic-ui-react";
 import "./style.css";
 import {
   Accordion,
@@ -23,9 +23,8 @@ const TipsAndTricks = (props) => {
 
   return (
     <>
-      <div className="container">
-        <div></div>
-        <div className="accordionDivTips">
+      <Container fluid>
+        <div className="marginTopBottom5">
           <Accordion allowZeroExpanded state>
             <AccordionItem className="accordionItem">
               <AccordionItemHeading className="accordionHeadNewCDC">
@@ -287,10 +286,10 @@ const TipsAndTricks = (props) => {
               </AccordionItemPanel>
             </AccordionItem>
           </Accordion>
-        </div>
+      
         <br />
-       
-      </div>
+       </div>
+      </Container>
     </>
   );
 };

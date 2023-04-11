@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Card, Dropdown } from "semantic-ui-react";
+import { Card, Dropdown, Container } from "semantic-ui-react";
 import { EventsContext } from "../../common/context/EventContext";
 import EventCard from "./EventCard";
 import { Spinner } from "react-activity";
@@ -122,7 +122,8 @@ const Events = (props) => {
         </div>
       ) : (
         <>
-         <p className="pageHeader">Events</p>
+        <Container fluid>
+         <p className="mainHeading">Events</p>
           <Card.Group itemsPerRow={columnNumber}>
             {filteredEvents === undefined
               ? null
@@ -130,7 +131,7 @@ const Events = (props) => {
                   <EventCard key={event.id} event={event} />
                 ))}
           </Card.Group>
-        
+          </Container>
         </>
       )}
     </div>

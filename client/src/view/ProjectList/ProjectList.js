@@ -7,7 +7,14 @@ import { config } from "../../common/config/config";
 import { FaSearch } from "react-icons/fa";
 import "./projectList.css";
 import Select from "react-select";
-import { Image, Grid, Segment, Button, Icon } from "semantic-ui-react";
+import {
+  Image,
+  Grid,
+  Segment,
+  Button,
+  Icon,
+  Container,
+} from "semantic-ui-react";
 
 const ProjectList = ({ projectsInfo }) => {
   var project_data;
@@ -20,7 +27,6 @@ const ProjectList = ({ projectsInfo }) => {
   const [tagsValue, setTagsValue] = useState(null);
   const [projectsInfos, setProjectsInfo] = useState([]);
   const [sortedBy, setsortedBy] = useState("");
-
 
   if (projectsInfos[0]) {
     source_copy.title = projectsInfos[0].title;
@@ -117,74 +123,65 @@ const ProjectList = ({ projectsInfo }) => {
       });
   });
 
- 
   const mapData = tagsValue ? testData : project_data;
 
   return (
     <>
-      <div className="backWhite">
-      <div className="col-md-6">
-            <h1 className="header marginTop10 leftMargin">Projects</h1>
-          </div>
-        <div className="row col-md-12 topSpace">
-          <div className="col-md-3 topSpace"></div>  
-         
-            <div className="row col-md-6 ">
-              <div className="mobCenter">
-                <input
-                  type="text"
-                  id="searchbar-Projects"
-                  className="searchbar"
-                  placeholder="Search by keyword"
-                  onChange={handleSearchBar}
-                />
-              </div>
-            
+      <Container fluid>
+        <div>
+          <h1 className="mainHeading">Projects</h1>
+        </div>
+        <div className="row topSpace">
+          <div className="col-md-3 topSpace"></div>
+
+          <div className="row col-md-6 ">
+            <div className="mobCenter">
+              <input
+                type="text"
+                id="searchbar-Projects"
+                className="searchbar"
+                placeholder="Search by keyword"
+                onChange={handleSearchBar}
+              />
+            </div>
           </div>
           <div className="row col-md-3">
-              <div className="mobCenter">
-                <Button className="sort"
-                  onClick={handleSearchBar}
-                  image="/asset/iconsort.png"
-                  id="sort-a-z">
-              
-                  <p>Sort By </p>
-                  
-                  </Button>
-              </div>
-            
-          </div>
+            <div className="mobCenter">
+              <Button
+                className="sort"
+                onClick={handleSearchBar}
+                image="/asset/iconsort.png"
+                id="sort-a-z"
+              >
+                <p>Sort By </p>
+              </Button>
+            </div>
           </div>
         </div>
-    <br></br>
-    <br></br>
+
+        <br></br>
+        <br></br>
         <div className="row col-md-12 ">
           <div className="col-md-3">
             <div className="select">
-             <p>Skills</p>
-             {
-              tagsOptions.map((tag)=> {
-                return(
+              <p>Skills</p>
+              {tagsOptions.map((tag) => {
+                return (
                   <>
-                  <div className="row">
-                    <div className="col-md-2">
-                    <input
-                    type="checkbox"
-                    id="tagsFilter-Projects"
-                    placeholder="Select Tags"
-                  />
+                    <div className="row">
+                      <div className="col-md-2">
+                        <input
+                          type="checkbox"
+                          id="tagsFilter-Projects"
+                          placeholder="Select Tags"
+                        />
                       </div>
-                      <div className="col-md-10">
-                      {tag.label}
-                      </div>
-                  </div>
-                  
-
+                      <div className="col-md-10">{tag.label}</div>
+                    </div>
                   </>
-                )
-              })
-             }
-             <br></br>
+                );
+              })}
+              <br></br>
               <Button className="applyButtonBlue"> Apply</Button>
               <br></br>
               <br></br>
@@ -192,64 +189,61 @@ const ProjectList = ({ projectsInfo }) => {
             </div>
           </div>
           <div className="row col-md-9">
-          {mapData
-            .filter((project) =>
-              project.title.toLowerCase().includes(searchTerm)
-            )
-            .filter((pro) =>
-              hostedByValue ? pro.hostedBy === hostedByValue : true
-            )
-            .sort((a,b) => {
-              if (a.postedOn < b.postedOn) {
-                return 1
-              }
-              if (a.postedOn > b.postedOn) {
-                return -1
-              }
-              return 0
-              }
-            )
-            .map((proj) => {
-              if (projectTypeValue === "all") {
-                return (
-                  <div className="col-md-12">
-                    <ProjectListItem key={proj._id} project={proj} />
-                    <br />
-                  </div>
-                );
-              } else if (projectTypeValue === "past") {
-                if (
-                  (proj.validUntil && currentDate > proj.validUntil) ||
-                  proj.isDeleted === true
-                ) {
+            {mapData
+              .filter((project) =>
+                project.title.toLowerCase().includes(searchTerm)
+              )
+              .filter((pro) =>
+                hostedByValue ? pro.hostedBy === hostedByValue : true
+              )
+              .sort((a, b) => {
+                if (a.postedOn < b.postedOn) {
+                  return 1;
+                }
+                if (a.postedOn > b.postedOn) {
+                  return -1;
+                }
+                return 0;
+              })
+              .map((proj) => {
+                if (projectTypeValue === "all") {
                   return (
                     <div className="col-md-12">
                       <ProjectListItem key={proj._id} project={proj} />
                       <br />
                     </div>
                   );
+                } else if (projectTypeValue === "past") {
+                  if (
+                    (proj.validUntil && currentDate > proj.validUntil) ||
+                    proj.isDeleted === true
+                  ) {
+                    return (
+                      <div className="col-md-12">
+                        <ProjectListItem key={proj._id} project={proj} />
+                        <br />
+                      </div>
+                    );
+                  }
+                } else if (projectTypeValue === "ongoing") {
+                  if (
+                    (proj.validUntil &&
+                      currentDate <= proj.validUntil &&
+                      !proj.isDeleted) ||
+                    (!proj.validUntil && !proj.isDeleted)
+                  ) {
+                    return (
+                      <div className="col-md-12">
+                        <ProjectListItem key={proj._id} project={proj} />
+                        <br />
+                      </div>
+                    );
+                  }
                 }
-              } else if (projectTypeValue === "ongoing") {
-                if (
-                  (proj.validUntil &&
-                    currentDate <= proj.validUntil &&
-                    !proj.isDeleted) ||
-                  (!proj.validUntil && !proj.isDeleted)
-                ) {
-                  return (
-                    <div className="col-md-12">
-                      <ProjectListItem key={proj._id} project={proj} />
-                      <br />
-                    </div>
-                  );
-                }
-              }
-            })}
+              })}
+          </div>
         </div>
-        </div>
-     
-       
-     
+      </Container>
     </>
   );
 };

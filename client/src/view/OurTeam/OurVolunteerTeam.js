@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Icon } from "semantic-ui-react";
+import { Card, Icon, Container } from "semantic-ui-react";
 import { config } from "../../common/config/config";
 import Axios from "axios";
 import { Spinner } from "react-activity";
@@ -51,6 +51,7 @@ const OurVolunteerTeam = (props) => {
         uniqueTeams.map((teams) => {
           return (
             <>
+            <Container fluid>
               <div className="accordionDiv">
                 <Accordion allowZeroExpanded state>
                   <AccordionItem className="accordionItem">
@@ -81,7 +82,7 @@ const OurVolunteerTeam = (props) => {
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                      <div className="row centerItems">
+                      <div className="row">
                         <div className="col-md borderItem">
                           <div>
                             <ul>
@@ -110,6 +111,7 @@ const OurVolunteerTeam = (props) => {
                   </AccordionItem>
                 </Accordion>
               </div>
+              </Container>
             </>
           );
         })

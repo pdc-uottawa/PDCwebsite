@@ -7,14 +7,6 @@
   margin-top: 4%;
 }
 
-.headAbout {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  margin-bottom: 2% !important;
-  margin-top: 4%;
-  color: #008000;
-}
 
 .textCenter {
   text-align: center;
@@ -70,8 +62,7 @@
 
 .marginTopButton {
   margin-top: 3% !important;
-  margin-bottom: 3% !important;
-  margin-left: 3% !important;
+  margin-bottom: 3% !important; 
 }
 
 .marginTop {
@@ -120,7 +111,10 @@
 }
 
 .padding5 {
-  padding: 4% !important;
+  padding-top: 4% !important;
+  padding-bottom: 4% !important;
+  padding-right: 4% !important;
+  padding-left: 0% !important;
 }
 
 .orangeButton {
@@ -140,15 +134,7 @@
     /* margin-bottom: 5% !important; */
   }
 
-  .headAbout {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: bolder;
-    margin-bottom: 2% !important;
-    margin-top: 4%;
-    color: #008000;
-    font-size: 17px;
-  }
+ 
 
 
   .head {
@@ -227,20 +213,19 @@
   margin: 5%;
   padding: 5%;
   height: 200px !important;
+  width : 300px !important;
 
 }
 
 .textMargin {
   margin-left: 5% !important;
-  text-decoration: underline gray;
-  color: #000000;
+  text-decoration: underline gray; 
   font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 29px;
   color: #000000;
-
 }
 
 .marginTop3 {
@@ -250,4 +235,7 @@
 .ui.image img,
 .ui.image svg {
   max-width: 84% !important;
+}
+.marginTop10{
+  margin-top: 10% !important;
 }

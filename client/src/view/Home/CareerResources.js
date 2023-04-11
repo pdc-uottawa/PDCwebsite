@@ -4,7 +4,7 @@ import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import "react-activity/dist/Spinner.css";
 import "./CareerResources.css";
-import { Button, Image } from "semantic-ui-react";
+import { Button, Image, Container } from "semantic-ui-react";
 
 import {
   FcBusinessman,
@@ -25,14 +25,15 @@ const CareerResources = (props) => {
 
   return (
     <>
-      <div >
-        <h1 className="header marginTop3">Career Resources</h1>
-        <div className="container row marginTopButton">
+      
+        <div className="marginTop10">
+        <h1 className="subHeadings">Career Resources</h1>
+        <div className="row marginTopButton">
           {buttonLinks &&
             buttonLinks.map((link) => {
               return link.name === "book_appointment" &&
                 link.active === true ? (
-                <div className="col-md-4 centerItems padding5">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIcons"
@@ -44,14 +45,16 @@ const CareerResources = (props) => {
                       class="item resources"
                       href={link.link}
                     >
-                      <text className="textMargin">Book a Mock Interview</text>
+                      <p className="textMargin"><br></br>
+                        Book a Mock Interview
+                        </p>
                     </a>
                   </p>
                 </div>
               ) : link.name === "submit_resume_linkedin" &&
                 link.active === true ? (
                 <>
-                  <div className="col-md-4  centerItems padding5">
+                  <div className="col-md-4 padding5">
                     <p>
                       <Image
                         className="newIcons smallWidth"
@@ -63,11 +66,11 @@ const CareerResources = (props) => {
                         class="item"
                         href={link.link}
                       >
-                       <text className="textMargin"> Request a Resume<br></br>/LinkedIn Profile Review</text>
+                       <p className="textMargin"> Request a Resume<br></br>/LinkedIn Profile Review</p>
                       </a>
                     </p>
                   </div>
-                  <div className="col-md-4 centerItems padding5">
+                  <div className="col-md-4 padding5">
                     <p className="resources">
                       <Image
                         className="newIcons"
@@ -79,7 +82,7 @@ const CareerResources = (props) => {
                         class="item"
                         href={link.link}
                       >
-                       <text className="textMargin">More Resources</text> 
+                       <p className="textMargin"><br></br>More Resources</p> 
                       </a>
                     </p>
                   </div>
@@ -88,6 +91,7 @@ const CareerResources = (props) => {
             })}
         </div>
       </div>
+      
     </>
   );
 };

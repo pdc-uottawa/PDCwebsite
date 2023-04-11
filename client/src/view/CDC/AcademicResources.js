@@ -4,7 +4,7 @@ import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
 import "react-activity/dist/Spinner.css";
 import "./style.css";
-import { Button, Image } from "semantic-ui-react";
+import { Button, Image, Container } from "semantic-ui-react";
 
 
 import {
@@ -26,10 +26,10 @@ const AcademicResourcespage = (props) => {
 
   return (
     <>
-      <div >
-        <h1 className="headerAcademic">Academic Resources</h1>
-        <div className="container row leftspace">
-                <div className="col-md-4 centerItems padding5">
+      <Container fluid>
+        <h1 className="subHeadings marginTopBottom5">Academic Resources</h1>
+        <div className="row">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIconsAcademic"
@@ -45,7 +45,7 @@ const AcademicResourcespage = (props) => {
                     </a>
                   </p>
                 </div>
-                <div className="col-md-4 centerItems padding5">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIconsAcademic"
@@ -61,7 +61,7 @@ const AcademicResourcespage = (props) => {
                     </a>
                   </p>
                 </div>
-                <div className="col-md-4 centerItems padding5">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIconsAcademic"
@@ -77,7 +77,7 @@ const AcademicResourcespage = (props) => {
                     </a>
                   </p>
                 </div>
-                <div className="col-md-4 centerItems padding5">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIconsAcademic"
@@ -93,7 +93,7 @@ const AcademicResourcespage = (props) => {
                     </a>
                   </p>
                 </div>
-                <div className="col-md-4 centerItems padding5">
+                <div className="col-md-4 padding5">
                   <p>
                     <Image
                       className="newIconsAcademic"
@@ -113,7 +113,8 @@ const AcademicResourcespage = (props) => {
           
             
         </div>
-      </div>
+      </Container>
+
     </>
   );
 };

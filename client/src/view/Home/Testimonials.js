@@ -1,16 +1,17 @@
 import React from "react";
-import { Segment, Image } from "semantic-ui-react";
+import { Grid, Segment, Image, Container } from "semantic-ui-react";
 import AliceCarousel from "react-alice-carousel";
 import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-function Testimonials(props) {
+function TestimonialsV2(props) {
   const testimonialData = props.testimonialData;
 
   return (
     <>
-      <div className="frag3">
-        <h1 className="header">Testimonials</h1>
+     <Container fluid>
+      <div className="frag3 marginOverall">
+        <h1 className="subHeadings">Testimonials</h1>
         <AliceCarousel
           disableDotsControls
           autoPlay
@@ -19,31 +20,32 @@ function Testimonials(props) {
           infinite
         >
           {testimonialData.map((data) => (
-            <Segment className="testi" secondary>
-              <div className="row">
-                <div className="col-md-12 center">
-                  <Image className="testi-img" src={data.image} />
+            <>
+              <Grid>
+                <div className="col-md-6">
+                  <Grid.Column>
+                    <Image className="testi-img" src={data.image} />
+                  </Grid.Column>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="myCarousel">
+                <div className="col-md-6 marginTop6">
+                  <Grid.Column className="grid-col-1">
                     <h3 className="testi-name">{data.name}</h3>
                     <h4 className="testi-designation">{data.designation}</h4>
                     <div className="maxHeight">
                       {/* <p> */}
-                        {data.description}
+                      {data.description}
                       {/* </p> */}
                     </div>
-                  </div>
+                  </Grid.Column>
                 </div>
-              </div>
-            </Segment>
+              </Grid>
+            </>
           ))}
         </AliceCarousel>
       </div>
+      </Container>
     </>
   );
 }
 
-export default Testimonials;
+export default TestimonialsV2;

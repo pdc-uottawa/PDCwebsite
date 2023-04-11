@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import { Container } from 'semantic-ui-react'
 import CDCButtons from "./CDCButtons";
 import AcademicResources from "./AcademicResources";
 import TipsAndTricks from "./TipsAndTricks";
@@ -86,7 +87,7 @@ const CDCMainPage = (props) => {
           <Spinner color="#727981" size={35} speed={1} animating={true} />
         </div>
       ) : (
-        <div className="container">
+        <div>
           <AboutCDC buttonLinks={buttonLinks}/>
           <TipsAndTricks
             resumeTips={resumeTips}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, Button } from "semantic-ui-react";
+import './../Header.css';
 
 /**
  * @author @binjiasata
@@ -7,7 +8,7 @@ import { Menu, Button } from "semantic-ui-react";
  */
 const LogedOutMenu = ({ logIn }) => {
   return (
-    <Menu.Item position="right">
+    <Menu.Item position="right" className="LogInOutButton">
       <Button
       className="login" onClick={logIn} content="Login" />
     </Menu.Item>

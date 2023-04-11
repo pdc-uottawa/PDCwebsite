@@ -1,111 +1,115 @@
 .head {
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    color: #666;
-    margin-top: 4%;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  color: #666;
+  margin-top: 4%;
 }
 
 .headAbout {
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
-    margin-bottom: 2% !important;
-    margin-top: 4%;
-    color: black !important;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 2% !important;
+  margin-top: 4%;
+  color: black !important;
 }
 
 .textCenter {
-    text-align: center;
+  text-align: center;
 }
 
 .accordionHeadResume {
-    background-color: #FFFACD;
-    text-align: center;
-    width: 100%;
-    border-radius: 10px;
-    color: #8B7500;
-    border: 1px solid #8B7500;
+  background-color: #fffacd;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  color: #8b7500;
+  border: 1px solid #8b7500;
 }
 
 .accordionHeadLinkedIn {
-    background-color: #E0FFFF;
-    text-align: center;
-    width: 100%;
-    border-radius: 10px;
-    color: #0a66c2;
-    border: 1px solid #0a66c2;
+  background-color: #e0ffff;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  color: #0a66c2;
+  border: 1px solid #0a66c2;
 }
+
 .accordionHeadInterview {
-    background-color: #CCFFCC;
-    text-align: center;
-    width: 100%;
-    border-radius: 10px;
-    color: #008000;
-    border: 1px solid #008000;
+  background-color: #ccffcc;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  color: #008000;
+  border: 1px solid #008000;
 }
 
 .accordionDiv {
-    margin-top: 4%;
+  margin-top: 4%;
 }
 
-.accordionDivTips{
-    margin-left: -2% !important;
+.accordionDivTips {
+  margin-left: -2% !important;
 }
 
 .accordionItem {
-    margin-bottom: 1%;
+  margin-bottom: 1%;
 }
 
 .padding {
-    padding: 1.5%;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bolder;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 1.5%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .down {
-    float: right;
+  float: right;
 }
 
 .marginTopButton {
-    margin-top: 3% !important;
+  margin-top: 3% !important;
 }
 
 .marginTop {
-    margin-top: 2% !important;
-    margin-bottom: 5% !important;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
+  margin-top: 2% !important;
+  margin-bottom: 5% !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
 }
 
 .marginBottom {
-    margin-bottom: 3% !important;
+  margin-bottom: 3% !important;
 }
 
 .borderItem {
-    border: 1px solid black;
-    margin: 1%;
-    border-radius: 10px;
-    padding: 2%;
-    background-color: #f2f2f2;
+  border: 1px solid black;
+  margin: 1%;
+  border-radius: 10px;
+  padding: 2%;
+  background-color: #f2f2f2;
 }
 
 .borderItemAbout {
-    color: #9EB0FF !important;
-    margin: 1%;
-    padding: 7% !important;
-    background-color:#9EB0FF !important;
-    width: 226px;
-height: 233px;
+  color: #9eb0ff !important;
+  margin: 1%;
+  padding: 7% !important;
+  background-color: #9eb0ff !important;
+  width: 226px;
+  height: 233px;
 }
 
 .centerItems {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Desc {
@@ -113,190 +117,179 @@ height: 233px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 22px;
-    
+    line-height: 22px; 
     color: #000000;
-    
-    text-align: justify;
 }
 
 .interviewDesc {
-    margin: 1%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    padding: 1%;
-    text-align: justify;
+  margin: 1%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  padding: 1%;
+  text-align: justify;
 }
 
 .padding5 {
-    padding: 4% !important;
+  padding: 4% !important;
 }
 
 .orangeButton {
-    box-shadow: 0 0 0 1px #333 !important;
-    color: #333 !important;
+  box-shadow: 0 0 0 1px #333 !important;
+  color: #333 !important;
 }
 
 .marginTopContactUs {
-    margin-top: 3% !important;
+  margin-top: 3% !important;
 }
 
 @media screen and (max-width: 450px) {
-    .centerItems {
-        display: flex;
-        justify-content: center;
-        margin-top: 7% !important;
-        /* margin-bottom: 5% !important; */
-    }
-
-    .head {
-        text-align: center;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: bold;
-        color: #666;
-        margin-top: 4%;
-        font-size: 20px;
-        margin-bottom: 7% !important;
-    }
-
-    .padding {
-        padding: 1.5%;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: bolder;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-
-    .accordionItem {
-        margin-bottom: 5% !important;
-    }
-
-    .marginTop {
-        margin-top: 2% !important;
-        margin-bottom: 5% !important;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: bold;
-        font-size: 20px;
-        margin-left: 1% !important;
-    }
-
-
-    
-}
-.titleHead{
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 64px;
-    line-height: 78px;
- 
-    color: #000000;
-    margin-top: 10% !important;
-    }
-    
-.subheading{
-    
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    color: #000000; 
-    }
-
-.bookAppoint{
-    border: none;
-}
-
-.newButtonRight{
-    margin-top: 10%;
-    margin-left: 2%;
-    margin-right: 3%;
-    margin-bottom: 5%;
-}
-
-.ui.image.newIconsRight{
-    background-color: #D9D9D9;
-    height: fit-content;
-    max-width: 70%;
-    margin: 5%;
-    padding: 5%;
-    height: 200px !important;
-  
-  }
-  .ui.grid.leftMarginCDC{
-    margin-left: 0% !important;
-    margin-top: -7% !important;
+  .centerItems {
+    display: flex;
+    justify-content: center;
+    margin-top: 7% !important;
+    /* margin-bottom: 5% !important; */
   }
 
-  .accordionHeadNewCDC {
-    background-color: #eaeaea;
-    text-align: left;
-    width: 100%;
-    color: black !important;
-  
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  .bgColorGray{
-    
-    background-color: #eaeaea !important;
- 
-  }
-
-  .LinkedInTextFixed{
-padding: 2%;
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 25px;
-
-color: #000000;
-  }
-
-.headerAcademic{
-    text-align: left;
-    color: black;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-top: 3%;
-    padding-right: 3%;
-    margin-left: -1%;
-    font-weight: 800;
-    font-size: 64px;
-    line-height: 78px;
-}
-.leftspace{
-    margin-left: -7%;
-    
-}
-.ui.image.newIconsAcademic {
-    background-color: #D9D9D9 !important;
-    height: fit-content;
-    max-width: 100%;
-    margin-left: 10%;
-    padding: 5%;
-    height: 200px !important;
-    width:300px !important;
-  
-  }
-
-  .iconTextInfo {
-    margin-left: 9% !important;
-    text-decoration: underline gray ;
-    color: #000000 !important;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-style: normal;
-    font-weight: 700;
+  .head {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    color: #666;
+    margin-top: 4%;
     font-size: 20px;
-    line-height: 29px;
-    color: #000000;
-  
+    margin-bottom: 7% !important;
   }
+
+  .padding {
+    padding: 1.5%;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+  .accordionItem {
+    margin-bottom: 5% !important;
+  }
+
+  .marginTop {
+    margin-top: 2% !important;
+    margin-bottom: 5% !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 1% !important;
+  }
+}
+
+.titleHead {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 78px;
+  color: #000000;
+  margin-top: 10% !important;
+}
+
+.subheading {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+}
+
+.bookAppoint {
+  border: none;
+}
+
+.newButtonRight {
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+}
+
+.ui.image.newIconsRight {
+  background-color: #d9d9d9; 
+  margin: 5%;
+  padding: 5%;
+  height: 200px !important;
+  width: 300px !important;
+}
+
+
+.accordionHeadNewCDC {
+  background-color: #eaeaea;
+  text-align: left;
+  width: 100%;
+  color: black !important;
+
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.bgColorGray {
+  background-color: #eaeaea !important;
+}
+
+.LinkedInTextFixed {
+  padding: 2%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+
+  color: #000000;
+}
+
+.headerAcademic {
+  text-align: left;
+  color: black;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-left: -1%;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 78px;
+}
+
+.leftspace {
+  margin-left: -7%;
+}
+
+.ui.image.newIconsAcademic {
+  background-color: #d9d9d9 !important;
+  height: fit-content;
+  max-width: 100%; 
+  padding: 5%;
+  height: 200px !important;
+  width: 300px !important;
+}
+
+.iconTextInfo {
+  margin-top: 3% !important;
+  text-decoration: underline gray;
+  color: #000000 !important;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+}
+
 .ui.image img,
 .ui.image svg {
   max-width: 84% !important;
@@ -304,3 +297,13 @@ color: #000000;
   width: 200px !important;
   margin-left: 10% !important;
 }
+.subheadAbout {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #000000;
+}
+

@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
-import { Image, Grid, Segment, Button, Icon } from "semantic-ui-react";
+import { Image, Grid, Segment, Button, Icon, Container } from "semantic-ui-react";
 import Axios from "axios";
 import { UserContext } from "../../common/context/UserProvider";
 import { config } from "../../common/config/config";
@@ -66,10 +66,12 @@ const OurTeam = (props) => {
         </div>
       ) : (
         <>
-          <p className="titleHead row padding2">The Team</p>
-          <p className="subheading row padding2">Faculty Advisors</p>
+        <Container fluid>
+          <div>
+          <p className="mainHeading">The Team</p>
+          <p className="subHeadings">Faculty Advisors</p>
 
-          <div className="row padding2">
+          <div className="row">
             {OurAdvisors.map((ourAdvisor, index) => {
               return (
                 <div className="col-md-3 cardss">
@@ -101,9 +103,14 @@ const OurTeam = (props) => {
               );
             })}
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <p className="nfont">Board Members</p>
+       
           <div className="marginTop">
-            <div className="row padding2">
+            <div className="row">
               {users.map((user) => {
                 return (
                   <div
@@ -139,6 +146,8 @@ const OurTeam = (props) => {
               })}
             </div>
           </div>
+          </div>
+        </Container>
           <OurVolunteerTeam />
         </>
       )}
