@@ -22,7 +22,7 @@ function Hero() {
 
   return (
     <>
-      <div className="container-fluid">
+      <div>
         <div className="row HeroBg">
           <div className="col-md-5 paddingTop10">
             <div className="logoImg">
