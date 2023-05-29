@@ -8,7 +8,7 @@ const Footer = () => {
   };
   const handlelinkedin = () => {
     window.open(
-      "https://www.linkedin.com/company/g-e-s-professional-development-club/"
+      "https://www.linkedin.com/groups/10528074/"
     );
   };
   const handleinsta = () => {
