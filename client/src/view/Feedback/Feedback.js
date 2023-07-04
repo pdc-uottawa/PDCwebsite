@@ -20,7 +20,7 @@ const Feedback = (props) => {
           <div className="col-md-12">
             <Button
               id="takeSurvery-Feedback"
-              href="https://forms.office.com/r/53RY8BBPRf"
+              href="https://forms.gle/SNks8oVmo3UAbmVg8"
               size="lg"
               className="survey-reminder"
               target="_blank"
