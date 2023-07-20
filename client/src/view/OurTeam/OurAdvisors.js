@@ -1,9 +1,9 @@
 export const OurAdvisors = [
     {
-        name: "Dr. Liam Peyton",
-        imagePath: "/assets/liam_peyton3.jpg",
-        position: "Vice-Dean Graduate Studies for the Faculty of Engineering",
-        linkedinId: "https://www.linkedin.com/in/liam-peyton-8346812",
+        name: "Dr. Hanan Anis",
+        imagePath: "https://i.postimg.cc/J0wz3SfM/hanan.jpg",
+        position: "Director of the School of Engineering Design and Teaching Innovation",
+        linkedinId: "https://www.linkedin.com/in/hanan-anis-5b946b11"
     },
     {
         name: "Dr. Sawsan Abdul- Majid",
@@ -12,10 +12,9 @@ export const OurAdvisors = [
         linkedinId: "https://www.linkedin.com/in/drsawsanmajid"
     },
     {
-        name: "Dr. Hanan Anis",
-        imagePath: "https://i.postimg.cc/J0wz3SfM/hanan.jpg",
-        position: "Director of the School of Engineering Design and Teaching Innovation",
-        linkedinId: "https://www.linkedin.com/in/hanan-anis-5b946b11"
+        name: "Dr. Liam Peyton",
+        imagePath: "/assets/liam_peyton3.jpg",
+        position: "Professor(PDC Founder), School of Engineering Design and Teaching Innovation",
+        linkedinId: "https://www.linkedin.com/in/liam-peyton-8346812",
     }
-
 ]
