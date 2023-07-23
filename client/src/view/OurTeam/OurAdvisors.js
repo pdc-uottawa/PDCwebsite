@@ -8,7 +8,7 @@ export const OurAdvisors = [
     {
         name: "Dr. Sawsan Abdul- Majid",
         imagePath: "/assets/sawson.png",
-        position: "President, ANCWT",
+        position: "Teaching Professor, EECS, University of Ottawa | President, ANCWT",
         linkedinId: "https://www.linkedin.com/in/drsawsanmajid"
     },
     {
