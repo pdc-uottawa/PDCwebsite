@@ -12,7 +12,8 @@ import {
   FcMultipleDevices,
   FcSearch,
   FcSurvey,
-  FcVoicePresentation
+  FcVoicePresentation, 
+  FcViewDetails
 } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { Spinner } from "react-activity";
@@ -224,6 +225,24 @@ function ForStudents(props) {
                     <h3>
                       <a class="item" href="#/FAQs">
                         Frequently Asked Questions (FAQs)
+                      </a>
+                    </h3>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col-sm-3">
+                <Card>
+                  <Card.Header>
+                    <FcViewDetails size="100" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h3>
+                      <a
+                        id="fac-dir"
+                        class="item"
+                        href="#/faculty-directories"
+                      >
+                       Here You Can Find The  Faculty Directories
                       </a>
                     </h3>
                   </Card.Body>
