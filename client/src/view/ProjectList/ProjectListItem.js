@@ -66,7 +66,7 @@ const ProjectListItem = ({ project }) => {
             {
               isDeleted || (validUntil ? validUntil < currentDate : null) ? 
               <div className="view">
-                <div class="banner">CLOSED</div>
+                <div class="banner">RECRUITED</div>
               </div>
               :
               timeDiff < 31 ?
