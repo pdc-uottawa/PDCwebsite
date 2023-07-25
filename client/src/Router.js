@@ -72,7 +72,7 @@ import UpdateJoinTeamLink from "./view/Admin/Other/UpdateJoinTeamLink";
 import UpdateFeedbackFormLink from "./view/Admin/Other/UpdateFeedbackFormLink";
 import UpdateMockInterviewLink from "./view/Admin/Other/UpdateMockInterviewLink";
 import UpdateResumeLinkedInReviewLink from "./view/Admin/Other/UpdateResumeLinkedInReviewLink";
-
+import FacultyDirectories from "./view/Student/FacultyDirectories";
 import "./index.css";
 
 /**
@@ -133,6 +133,7 @@ const Routers = () => {
         <Route exact path="/useful-resources" component={UsefulResources} />
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/industry-internship-info" component={IndustryInternship} />
+        <Route exact path="/faculty-directories" component={FacultyDirectories} />
 {/* Admin */}
         <Route exact path="/admin-dashboard" component={AdminDashboard} />
         <Route exact path="/manage-FAQs" component={ManageFAQ} />
