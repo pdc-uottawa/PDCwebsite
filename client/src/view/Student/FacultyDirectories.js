@@ -16,13 +16,16 @@ const FacultyDirectories = (props) => {
                     </h1>
                     <div className="container-fluid">
                         <div className="row ct-rw" >
-                            <div className="col-sm-3 ur-card">
+                            <div id="fac-dir-content" className="col-sm-3 ur-card">
                                 <div class="ur-icon">
                                     <FcSettings size={80} />
                                 </div>
-                                <div class="ur-name">
-                                    <a class="item" href="https://engineering.uottawa.ca/people">
-                                        Engineering
+                                <div  class="ur-name">
+                                    <a class="item" 
+                                        href="https://engineering.uottawa.ca/people" 
+                                        target="_blank"
+                                    >
+                                        Faculty of Engineering 
                                     </a>
                                 </div>
                             </div>
@@ -34,8 +37,9 @@ const FacultyDirectories = (props) => {
                                     <a
                                         class="item"
                                         href="https://www.uottawa.ca/faculty-science/professors"
+                                        target="_blank"
                                     >
-                                        Science
+                                      Faculty of Science
                                     </a>
                                 </div>
                             </div>
@@ -47,8 +51,9 @@ const FacultyDirectories = (props) => {
                                     <a
                                         class="item"
                                         href="https://www.uottawa.ca/faculty-arts/communication/faculty"
+                                        target="_blank"
                                     >
-                                        Communication
+                                      Faculty of Arts Communication
 
                                     </a>
                                 </div>
@@ -62,8 +67,9 @@ const FacultyDirectories = (props) => {
                                     <a
                                         class="item"
                                         href="https://www.uottawa.ca/faculty-law/common-law/about/staff"
+                                        target="_blank"
                                     >
-                                        Law
+                                    Faculty of Common Law
 
                                     </a>
                                 </div>
