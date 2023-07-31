@@ -49,6 +49,7 @@ import Footer from "./view/Footer/Footer";
 import FAQs from "./view/Student/FAQs";
 import IndustryInternship from "./view/Student/IndustryInternship";
 import HomePageV2 from "./view/Home/HomePageV2";
+import GngQueries from "./view/Student/GngQueries";
 //Admin
 import AdminDashboard from "./view/Admin/Admin Dashboard/AdminDashboard";
 import ManageFAQ from "./view/Admin/FAQ/Manage FAQ";
@@ -134,6 +135,7 @@ const Routers = () => {
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/industry-internship-info" component={IndustryInternship} />
         <Route exact path="/faculty-directories" component={FacultyDirectories} />
+        <Route exact path="/gng-queries" component={GngQueries} />
 {/* Admin */}
         <Route exact path="/admin-dashboard" component={AdminDashboard} />
         <Route exact path="/manage-FAQs" component={ManageFAQ} />

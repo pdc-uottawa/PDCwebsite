@@ -13,7 +13,8 @@ import {
   FcSearch,
   FcSurvey,
   FcVoicePresentation, 
-  FcViewDetails
+  FcViewDetails,
+  FcKindle
 } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { Spinner } from "react-activity";
@@ -219,20 +220,6 @@ function ForStudents(props) {
               <div className="col-sm-3">
                 <Card>
                   <Card.Header>
-                    <FcVoicePresentation size="100" />
-                  </Card.Header>
-                  <Card.Body>
-                    <h3>
-                      <a class="item" href="#/FAQs">
-                        Frequently Asked Questions (FAQs)
-                      </a>
-                    </h3>
-                  </Card.Body>
-                </Card>
-              </div>
-              <div className="col-sm-3">
-                <Card>
-                  <Card.Header>
                     <FcViewDetails size="100" />
                   </Card.Header>
                   <Card.Body>
@@ -243,6 +230,38 @@ function ForStudents(props) {
                         href="#/faculty-directories"
                       >
                        Here You Can Find The  Faculty Directories
+                      </a>
+                    </h3>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col-sm-3">
+                <Card>
+                  <Card.Header>
+                    <FcKindle size="100" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h3>
+                      <a
+                        id="GNG"
+                        class="item"
+                        href="#/gng-queries"
+                      >
+                       5901 Guide: FAQ and Queries
+                      </a>
+                    </h3>
+                  </Card.Body>
+                </Card>
+              </div>
+              <div className="col-sm-3">
+                <Card>
+                  <Card.Header>
+                    <FcVoicePresentation size="100" />
+                  </Card.Header>
+                  <Card.Body>
+                    <h3>
+                      <a class="item" href="#/FAQs">
+                        Frequently Asked Questions (FAQs)
                       </a>
                     </h3>
                   </Card.Body>
