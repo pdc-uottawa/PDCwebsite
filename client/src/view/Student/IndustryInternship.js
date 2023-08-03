@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { FcInfo, FcLibrary, FcTemplate } from "react-icons/fc";
+import { FcInfo, FcLibrary, FcTemplate, FcCollaboration } from "react-icons/fc";
 import "./student.css"
 
 const IndustryInternship = (props) => {
@@ -32,7 +32,17 @@ const IndustryInternship = (props) => {
                                 </div>
                                 <div>
                                     <a href="https://catalogue.uottawa.ca/en/courses/gng/" target="_blank">
-                                        Industry Iternship Project (ELG-5902) Course Details
+                                        Industry Internship Project (ELG-5902) Course Details
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-md-6 ur-card">
+                                <div class="ur-icon">
+                                    <FcCollaboration size={80} />
+                                </div>
+                                <div>
+                                    <a href="#/weekly-seminar">
+                                        Industry Internship Project Weekly Seminar
                                     </a>
                                 </div>
                             </div>
