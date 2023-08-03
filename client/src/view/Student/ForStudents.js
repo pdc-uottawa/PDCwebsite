@@ -175,7 +175,7 @@ function ForStudents(props) {
                   </Card.Header>
                   <Card.Body>
                     <h3><a class="item" href="#/industry-internship-info">
-                      Industry Internship Project
+                      Industry Internship Project (GNG/ELG/DTI 5902)
                     </a>
                     </h3>
                   </Card.Body>
