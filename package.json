@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "proxy": "http://localhost:8080",
   "engines": {
     "node": "12.x",
     "npm": "6.x"

@@ -36,6 +36,9 @@ require('dotenv').config()
 
 const app = express();
 
+//Enabling CORS
+app.use(cors());
+
 const PORT = process.env.PORT || 8080; //Step 1
 
 if (process.env.NODE_ENV === "production") {
@@ -87,6 +90,12 @@ app.use(
   })
 );
 
+//Test API
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Hello World' });
+});
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -117,4 +126,6 @@ app.use(function(req, res, next) {
     return res.status(404).send(notFound);
 });
 
-app.listen(PORT, () => console.log(`Server is starting at ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server is starting at ${PORT}`)
+});

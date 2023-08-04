@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import "./student.css"
 
 const WeeklySeminar = (props) => {
+
     return (
         <>
             <Helmet>
