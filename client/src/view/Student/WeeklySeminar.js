@@ -21,13 +21,11 @@ const WeeklySeminar = (props) => {
                     </h2>
                 </div>
                 <div class="faq-ans"  style={{margin: 1 + '%'}}>
-                Exciting news! <strong>The Professional Development Club</strong> is thrilled to introduce the Industry Internship Project weekly seminars with the esteemed Professor Liam Peyton.
+                Exciting news! <strong>The Professional Development Club</strong> is thrilled to introduce the Industry Internship Project weekly seminars.
                 If you're a graduate student, these sessions are tailor-made to address your concerns and help you grow.
                 <br></br>
                 <br></br>
-                Our sessions will be interactive, providing you with a platform to ask questions and get valuable insights from Prof Liam Peyton and the PDC team.
-                We've got some fantastic topics lined up, including the latest updates on GNG 5902/5901, tips for international students on finding projects and internships in Canada,
-                preparing your 5902 proposals before the fall session, polishing your networking skills, and much more!
+                Our sessions will be interactive, providing you with a platform to ask questions and get valuable insights from the Professional Development Club.
                 <br></br>
                 <br/>
                 <div style={{
@@ -41,7 +39,7 @@ const WeeklySeminar = (props) => {
                         <strong><u>Click here to join the meeting</u></strong>
                     </a>
                 </div>
-                <div style={{
+                {/* <div style={{
                     padding: '2%',
                     textAlign: 'center'
                 }}>
@@ -50,7 +48,7 @@ const WeeklySeminar = (props) => {
                             <u>Click here to see weekly recording</u>
                         </a>
                     </h2>
-                </div>
+                </div> */}
                 </div>
             </div>
         </>
