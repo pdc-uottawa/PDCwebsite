@@ -42,9 +42,21 @@ const ProgramCoordinators = (props) => {
             style={{ borderRadius: "10px" }}
           >
             <h1 class="ui center aligned huge header">
-              PROGRAM &nbsp; CO-ORDINATORS
+              PDC PROGRAM&nbsp;COORDINATORS
             </h1>
           </Segment>
+          <div className="marginTop">
+            <p className="justify">
+              Program coordinators primarily represent matters relating to the academic
+              experience of their cohort and relating to the impact of the more
+              comprehensive student experience on academic issues and make sure
+              that the voice and feedback of the University and the Students
+              Union are taken and utilized, thus creating a real difference at
+              the course level, but also have many wins across their departments
+              and beyond!
+            </p>
+          </div>
+          <hr />
           <Card.Group centered="true" textAlign="center">
             {ProgramCoordinatorsList.map((programCoordinator) => (
               <Card color="black">

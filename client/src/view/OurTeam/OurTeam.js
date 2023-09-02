@@ -118,31 +118,6 @@ const OurTeam = (props) => {
           </div>
           <hr />
           <div className="marginTop">
-            <h1 className="center">PDC STUDENT REPRESENTATIVES</h1>
-            <p className="justify">
-              Student Reps primarily represent matters relating to the academic
-              experience of their cohort and relating to the impact of the more
-              comprehensive student experience on academic issues and make sure
-              that the voice and feedback of the University and the Students
-              Union are taken and utilized, thus creating a real difference at
-              the course level, but also have many wins across their departments
-              and beyond!
-            </p>
-            <div className="centerButtons" id="buttons-container">
-              <Button
-                id="meetPDCRepresentative-ourTeam"
-                primary
-                color="blue"
-                onClick={() =>
-                  (window.location.href = "#/program-coordinators")
-                }
-              >
-                Meet Your PDC Student Representative
-              </Button>
-            </div>
-          </div>
-          <hr />
-          <div className="marginTop">
             <h1 className="center">PDC VOLUNTEERS</h1>
             <p className="justify">
               Whether you want to learn a new skill, meet new people, experience

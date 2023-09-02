@@ -61,6 +61,11 @@ const Header = (props) => {
     setActiveItem(name);
     handleSideBarClick();
   };
+  const handleProgramCoordinators = (e, { name }) => {
+    history.push("/program-coordinators");
+    setActiveItem(name);
+    handleSideBarClick();
+  };
   const handleEvents = (e, { name }) => {
     history.push("/events");
     setActiveItem(name);
@@ -230,6 +235,12 @@ const Header = (props) => {
                 onClick={handleVolunteers}
                 name="OurVolunteers">
                 Our Volunteers
+              </Dropdown.Item>
+              <Dropdown.Item
+                id="ourProgramCoordinators-header"
+                onClick={handleProgramCoordinators}
+                name="OurProgramCoordinators">
+                Our Program Coordinators
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
