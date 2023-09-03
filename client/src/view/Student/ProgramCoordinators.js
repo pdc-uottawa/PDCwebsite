@@ -42,7 +42,7 @@ const ProgramCoordinators = (props) => {
             style={{ borderRadius: "10px" }}
           >
             <h1 class="ui center aligned huge header">
-              PDC PROGRAM&nbsp;COORDINATORS
+              PDC PROGRAM COORDINATORS
             </h1>
           </Segment>
           <div className="marginTop">
