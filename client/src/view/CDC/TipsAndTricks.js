@@ -192,8 +192,101 @@ const TipsAndTricks = (props) => {
               <AccordionItemPanel>
                 <div className="row centerItems">
                   <div className="interviewDesc">
-                    <h4>Preparing for Job Interviews</h4>
-                    <p>
+                    
+                    {/* <h4>Preparing for Job Interviews</h4> */}
+                    <ul>
+                      <li>
+                          <h3>Research the Company</h3>
+                          <p>Thoroughly research the company you're interviewing with. Understand its mission, values, products/services, recent news, and culture. This knowledge will allow you to tailor your responses to align with the company's goals and values.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Review the Job Description</h3>
+                          <p>Revisit the job posting to understand the specific requirements and responsibilities of the role. Prepare examples from your experience that demonstrate your ability to meet these requirements.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Practice Common Interview Questions</h3>
+                          <p>Prepare for common interview questions like "Tell me about yourself," "Why do you want to work here?" and "What are your strengths and weaknesses?" Practice your responses to these questions but avoid sounding rehearsed</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Behavioral Interview Questions</h3>
+                          <p>Many interviews include behavioral questions that ask about specific situations you've faced in the past. Use the STAR method (Situation, Task, Action, Result) to structure your responses.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Prepare Questions</h3>
+                          <p>Have a list of thoughtful questions to ask the interviewer. Questions should demonstrate your interest in the role and company while also helping you evaluate if the company is a good fit for you.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Dress Professionally</h3>
+                          <p>Choose appropriate attire based on the company's dress code. When in doubt, it's better to be slightly overdressed than underdressed.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Arrive Early or Join on Time</h3>
+                          <p>If the interview is in person, arrive early to allow time for unexpected delays. For virtual interviews, log in a few minutes ahead of the scheduled time.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Body Language</h3>
+                          <p>Maintain good posture, make eye contact (even in virtual interviews), and offer a firm handshake (if in person). Non-verbal cues are important in conveying confidence and professionalism.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Technology Check (for Virtual Interviews)</h3>
+                          <p>Ensure that your internet connection, camera, microphone, and any necessary software are working correctly before the interview.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Tell Compelling Stories</h3>
+                          <p>When answering questions, use real-life examples and stories from your experiences to illustrate your skills and accomplishments.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Be Concise</h3>
+                          <p>Avoid rambling responses. Be concise and focused on your answers while providing enough detail to answer the question effectively.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Stay Positive</h3>
+                          <p>Maintain a positive attitude throughout the interview. Even if asked about challenges or weaknesses, frame your responses in a positive light and discuss what you learned or how you improved.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Show Enthusiasm</h3>
+                          <p>Express your enthusiasm for the role and the company. Employers want to hire candidates who are genuinely excited about the opportunity.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Follow-up</h3>
+                          <p>Send a personalized thank-you email within 24 hours of the interview. Reiterate your interest in the position and express gratitude for the opportunity to interview.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Handle Salary Discussions Wisely</h3>
+                          <p>If asked about salary expectations, be prepared with a well-researched range based on your skills, experience, and industry standards. Consider discussing compensation at a later stage if possible.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Stay Updated on Industry Trends</h3>
+                          <p>Be prepared to discuss current trends, technologies, or changes in your industry, demonstrating your commitment to staying informed.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Practice Interview Etiquette</h3>
+                          <p>Be polite and professional to everyone you encounter during the interview process, from receptionists to interviewers.</p>
+                      </li>
+                      <br></br>
+                      <li>
+                          <h3>Reflect and Improve</h3>
+                          <p>After each interview, reflect on what went well and where you can improve. Use this feedback to enhance your performance in future interviews.</p>
+                      </li>
+                    </ul>
+
+                    {/* <p>
                       Job interview practice is important because it will help
                       you feel confident and comfortable during your real
                       interview and will ensure you are prepared to answer
@@ -223,9 +316,9 @@ const TipsAndTricks = (props) => {
                       Some of the common questions that will help you to prepare
                       and practice are:
                       <br />
-                    </p>
+                    </p> */}
                   </div>
-                  <div className="col-md borderItem">
+                  {/* <div className="col-md borderItem">
                     <div>
                       <h1 className="marginTop">Common Interview Questions</h1>
                     </div>
@@ -288,7 +381,7 @@ const TipsAndTricks = (props) => {
                       record yourself and provide yourself with honest feedback
                       as you go through your practice interview.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </AccordionItemPanel>
             </AccordionItem>
