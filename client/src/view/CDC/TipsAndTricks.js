@@ -25,7 +25,7 @@ const TipsAndTricks = (props) => {
     <>
       <div className="container">
         <div>
-          <h1 className="head">TIPS AND TRICKS FOR GROOMING YOUR PROFILE</h1>
+          <h1 className="head">REFINE YOUR PROFILE</h1>
         </div>
         <div className="accordionDiv">
           <Accordion allowZeroExpanded state>
