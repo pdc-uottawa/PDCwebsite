@@ -284,104 +284,11 @@ const TipsAndTricks = (props) => {
                           <h3>Reflect and Improve</h3>
                           <p>After each interview, reflect on what went well and where you can improve. Use this feedback to enhance your performance in future interviews.</p>
                       </li>
+                      <br></br>
                     </ul>
+                    <p><b>Note: </b>Remember that interviews are an opportunity for both you and the employer to assess each other. Be authentic, confident, and well-prepared to make a positive impression and increase your chances of landing the job.</p>
 
-                    {/* <p>
-                      Job interview practice is important because it will help
-                      you feel confident and comfortable during your real
-                      interview and will ensure you are prepared to answer
-                      questions the interviewer asks. <br />
-                      Follow these steps to use job interview practice to
-                      prepare for an interview:
-                      <ul>
-                        <li>Prepare your interview space</li>
-                        <li>
-                          Decide whether you will practice alone or with someone
-                          else
-                        </li>
-                        <li>Gather a list of practice questions</li>
-                        <li>Dress for the interview</li>
-                        <li>Practice answering questions</li>
-                        <li>
-                          Ask for feedback If you choose the practice questions
-                          yourself, you can ask the person you are practicing
-                          with to ask the questions in a random order, so you
-                          won't know when to expect each question.
-                        </li>
-                      </ul>
-                      If you are practicing alone, you can write each interview
-                      question on a flashcard and shuffle the cards for the same
-                      effect.
-                      <br />
-                      Some of the common questions that will help you to prepare
-                      and practice are:
-                      <br />
-                    </p> */}
-                  </div>
-                  {/* <div className="col-md borderItem">
-                    <div>
-                      <h1 className="marginTop">Common Interview Questions</h1>
                     </div>
-                    <div>
-                      <ul>
-                        {interviewTips
-                          .filter((cat) => cat.category == "common")
-                          .map((tip) => {
-                            return <li className="marginBottom">{tip.ques}</li>;
-                          })}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-md borderItem">
-                    <div>
-                      <h1 className="marginTop">
-                        Situational Interview Questions
-                      </h1>
-                    </div>
-                    <div>
-                      <ul>
-                        {interviewTips
-                          .filter((cat) => cat.category == "situational")
-                          .map((tip) => {
-                            return <li className="marginBottom">{tip.ques}</li>;
-                          })}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-md borderItem">
-                    <div>
-                      <h1 className="marginTop">
-                        Behavioural Interview Questions
-                      </h1>
-                    </div>
-                    <div>
-                      <ul>
-                        {interviewTips
-                          .filter((cat) => cat.category == "behavioural")
-                          .map((tip) => {
-                            return <li className="marginBottom">{tip.ques}</li>;
-                          })}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="interviewDesc">
-                    <p>
-                      You should practice answering general interview questions,
-                      behavioural interview questions and questions that are
-                      specific to the position you are applying for. Even if you
-                      are practicing alone, you should practice answering
-                      questions out loud to help you prepare for the real
-                      interview. You can also take notes while you answer each
-                      question of ways to improve your answer. <br />
-                      Finally, you should ask the person who is practicing with
-                      you to provide you with feedback. Hopefully, this person
-                      will be able to find areas in which you can continue to
-                      practice improving before your real interview. If you are
-                      practicing alone, you can watch yourself in a mirror or
-                      record yourself and provide yourself with honest feedback
-                      as you go through your practice interview.
-                    </p>
-                  </div> */}
                 </div>
               </AccordionItemPanel>
             </AccordionItem>
