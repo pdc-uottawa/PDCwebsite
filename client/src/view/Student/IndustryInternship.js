@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { FcInfo, FcLibrary, FcTemplate, FcCollaboration } from "react-icons/fc";
+import { FcInfo, FcLibrary, FcTemplate, FcCollaboration, FcDocument } from "react-icons/fc";
 import "./student.css"
 
 const IndustryInternship = (props) => {
@@ -43,6 +43,16 @@ const IndustryInternship = (props) => {
                                 <div>
                                     <a href="#/weekly-seminar">
                                         Industry Internship Project Weekly Seminar
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-md-6 ur-card">
+                                <div class="ur-icon">
+                                    <FcDocument size={80} />
+                                </div>
+                                <div>
+                                    <a href="https://docs.google.com/document/d/1oFnUDR9do-GucifcPOjaJxt7iZj8Wp3Z/edit?usp=sharing&ouid=101306041920964046409&rtpof=true&sd=true" target="_blank">
+                                        5902 FAQ
                                     </a>
                                 </div>
                             </div>

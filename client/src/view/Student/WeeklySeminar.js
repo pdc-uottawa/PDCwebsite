@@ -32,7 +32,7 @@ const WeeklySeminar = (props) => {
                                 textAlign: 'center',
                                 fontSize: '125%'
                             }}>
-                    Starting from August 2nd, 2023, these sessions will continue every Wednesday, from 7 PM to 8 PM.
+                    Starting from August 2nd, 2023, these sessions will continue every Thursday, from 7 PM to 8 PM.
                     <br/>
                     <br/>
                     <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTBiNmU3YjYtZWEzYS00Yjc5LTk3YjEtZTBhYzQxYjExMmQ2%40thread.v2/0?context=%7b%22Tid%22%3a%22d41fdab1-7e15-4cfd-b5fa-7200e54deb6b%22%2c%22Oid%22%3a%223f6ce6c0-916a-44f1-ac91-5c86a0f94774%22%7d" target="_blank">
