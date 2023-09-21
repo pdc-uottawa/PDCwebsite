@@ -117,7 +117,7 @@ const ProjectName = ({
                                                 <Button disabled floated="right" color="orange" content="Applied" />
                                             ) : project.isDeleted || (project.validUntil ? project.validUntil < currentDate : null) ? (
                                                 <Button disabled floated='right' color="red" size='large' content="Closed" />
-                                            ) : ({/*<Button floated='right' color="green" size='large' onClick={handleApply}>Apply</Button>*/})}
+                                            ) : (<Button floated='right' color="green" size='large' onClick={handleApply}>Apply</Button>)}
                                         </Item.Extra>
                                     )}
                             </Item.Extra>
