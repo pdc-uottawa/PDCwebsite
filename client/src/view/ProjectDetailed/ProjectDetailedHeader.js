@@ -137,17 +137,17 @@ const ProjectDetailedHeader = ({
       ) : userInfo.user && (userInfo.user.company || userInfo.user.admin) ? (
         ""
       ) : (
+        
         <Segment attached="bottom" clearing>
           {/* use email to judge the student applied or not */}
-          {userInfo.user &&
-          JSON.stringify(appliedStudentsList).indexOf(userInfo.user.email) !==
+          {/* {userInfo.user &&JSON.stringify(appliedStudentsList).indexOf(userInfo.user.email) !==
             -1 ? (
             <Button disabled floated="right" color="orange" content="Applied" />
           ) : (
             <Button floated="right" color="green" onClick={handleApply}>
               Apply
             </Button>
-          )}
+          )} */} {/** Not using apply button**/}
         </Segment>
       )}
     </Segment.Group>
