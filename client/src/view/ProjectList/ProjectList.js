@@ -139,6 +139,12 @@ const ProjectList = ({ projectsInfo }) => {
             </div>
           </div>
         </div>
+        <hr/>
+        <div className="row">
+          <h2>Note: To apply to a project please use the link provided in project description
+            or email to the designated email specified in the description.
+          </h2>
+        </div>
         <hr />
         <div className="row alignCenter">
           <div className="col-md-3">
