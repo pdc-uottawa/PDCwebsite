@@ -59,7 +59,7 @@ function HomePage() {
           console.log(e);
         }),
       Axios.get(
-        "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW&page_size=200"
+        "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW"
       )
         .then((res) => {
           return res.data;
