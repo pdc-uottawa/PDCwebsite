@@ -13,7 +13,7 @@ const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
 
   const url =
-    "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW";
+    "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW&page_size=200";
 
   const [columnNumber, setColumnNumber] = useState(3);
 
