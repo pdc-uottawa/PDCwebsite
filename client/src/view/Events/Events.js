@@ -13,7 +13,7 @@ const Events = (props) => {
   const { eventInfo, setEventInfo } = useContext(EventsContext);
 
   const url =
-    "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW";
+    "https://www.eventbriteapi.com/v3/organizations/464741062423/events/?token=2SWITQPH72SPNCSRK7OW&page_size=55";
 
   const [columnNumber, setColumnNumber] = useState(3);
 
@@ -45,6 +45,7 @@ const Events = (props) => {
       .then((data) => {
         setEventInfo(data);
         let eventsInReverseOrder = data.events.reverse();
+        // console.log(eventsInReverseOrder)
         setFilteredEvents(eventsInReverseOrder);
         setLoading(false);
       })
