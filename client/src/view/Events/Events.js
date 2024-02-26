@@ -45,7 +45,7 @@ const Events = (props) => {
       .then((data) => {
         setEventInfo(data);
         let eventsInReverseOrder = data.events.reverse();
-        console.log(eventsInReverseOrder)
+        // console.log(eventsInReverseOrder)
         setFilteredEvents(eventsInReverseOrder);
         setLoading(false);
       })
