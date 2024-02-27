@@ -10,6 +10,7 @@ export const config = () => {
   if (process.env.NODE_ENV !== "production") {
     //for local setup
     path = "http://localhost:8080/";
+    // path = "https://www.gespdc.com/";
   }
   return path;
 };

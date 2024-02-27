@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import "./Home.css";
+import {config} from "../../common/config/config";
+import Axios from "axios";
 
 function AboutUs(props) {
   const aboutUsData = props.aboutUsData;
+
+  const [formLink, setFormLink] = useState("");
+  let path = config();
+
+  Axios.get(path + "form/link", {})
+    .then((res) => {
+      return res.data;
+    })
+    .then((data) => {
+      setFormLink(data[0].link);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 
   return (
     <>
@@ -49,7 +65,7 @@ function AboutUs(props) {
                 id="becomeAVolunteer-homepage"
                 onClick={() =>
                   window.open(
-                    "https://forms.gle/2F7RYb1itUi3nXY16",
+                    formLink,
                     "_blank"
                   )
                 }
